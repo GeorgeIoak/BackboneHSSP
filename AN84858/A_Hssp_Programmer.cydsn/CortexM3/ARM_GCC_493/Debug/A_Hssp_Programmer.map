@@ -1,0 +1,1243 @@
+Archive member included because of file (symbol)
+
+.\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyfitter_cfg.o)
+                              .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o (cyfitter_cfg)
+.\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(LCD_Char.o)
+                              .\CortexM3\ARM_GCC_493\Debug\main.o (LCD_Char_WriteControl)
+.\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(Pin_Start.o)
+                              .\CortexM3\ARM_GCC_493\Debug\main.o (Pin_Start_Read)
+.\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+                              .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o (CyResetStatus)
+.\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyPm.o)
+                              .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o) (CyPmReadStatus)
+.\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyBootAsmGnu.o)
+                              .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyfitter_cfg.o) (CyDelayCycles)
+.\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyFlash.o)
+                              .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyPm.o) (CyFlash_SetWaitCycles)
+.\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CySpc.o)
+                              .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyFlash.o) (CySpcStart)
+c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+                              .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o (__errno)
+c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+                              c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m/crt0.o (exit)
+c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+                              c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o) (_global_impure_ptr)
+c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+                              c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m/crt0.o (__libc_init_array)
+c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
+                              .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyfitter_cfg.o) (memcpy)
+c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+                              c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m/crt0.o (memset)
+
+Allocating common symbols
+Common symbol       size              file
+
+swd_PacketData      0x4               .\CortexM3\ARM_GCC_493\Debug\SWD_PacketLayer.o
+flow                0x1               .\CortexM3\ARM_GCC_493\Debug\ProgrammingSteps.o
+swd_PacketAck       0x1               .\CortexM3\ARM_GCC_493\Debug\SWD_PacketLayer.o
+swd_PacketHeader    0x1               .\CortexM3\ARM_GCC_493\Debug\SWD_PacketLayer.o
+dieTemperature      0x2               .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyFlash.o)
+currentStep         0x1               .\CortexM3\ARM_GCC_493\Debug\main.o
+
+Discarded input sections
+
+ .text          0x00000000        0x0 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crti.o
+ .data          0x00000000        0x0 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crti.o
+ .bss           0x00000000        0x0 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crti.o
+ .data          0x00000000        0x4 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+ .text          0x00000000       0x74 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m/crt0.o
+ .data          0x00000000        0x0 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m/crt0.o
+ .bss           0x00000000        0x0 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m/crt0.o
+ .ARM.extab     0x00000000        0x0 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m/crt0.o
+ .ARM.exidx     0x00000000        0x8 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m/crt0.o
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\main.o
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\main.o
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\main.o
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\SWD_PhysicalLayer.o
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\SWD_PhysicalLayer.o
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\SWD_PhysicalLayer.o
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\SWD_PacketLayer.o
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\SWD_PacketLayer.o
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\SWD_PacketLayer.o
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\ProgrammingSteps.o
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\ProgrammingSteps.o
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\SWD_UpperPacketLayer.o
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\SWD_UpperPacketLayer.o
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\SWD_UpperPacketLayer.o
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\Timeout.o
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\Timeout.o
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\Timeout.o
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\DataFetch.o
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\DataFetch.o
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\DataFetch.o
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\HexImage.o
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\HexImage.o
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\HexImage.o
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .data          0x00000000        0x4 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .text._exit    0x00000000       0x14 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .text._sbrk    0x00000000       0x54 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyfitter_cfg.o)
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyfitter_cfg.o)
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyfitter_cfg.o)
+ .text.CYCONFIGCPYCODE
+                0x00000000       0x1c .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyfitter_cfg.o)
+ .text.SetAnalogRoutingPumps
+                0x00000000       0x28 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyfitter_cfg.o)
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(LCD_Char.o)
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(LCD_Char.o)
+ .text.LCD_Char_Stop
+                0x00000000       0x18 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(LCD_Char.o)
+ .text.LCD_Char_PrintInt16
+                0x00000000       0x28 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(LCD_Char.o)
+ .text.LCD_Char_PrintInt32
+                0x00000000       0x30 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(LCD_Char.o)
+ .text.LCD_Char_PrintU32Number
+                0x00000000       0xa4 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(LCD_Char.o)
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(Pin_Start.o)
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(Pin_Start.o)
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(Pin_Start.o)
+ .text.Pin_Start_Write
+                0x00000000       0x34 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(Pin_Start.o)
+ .text.Pin_Start_SetDriveMode
+                0x00000000       0x38 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(Pin_Start.o)
+ .text.Pin_Start_ReadDataReg
+                0x00000000       0x1c .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(Pin_Start.o)
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .bss           0x00000000       0x1c .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyPLL_OUT_Start
+                0x00000000       0xb0 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyPLL_OUT_Stop
+                0x00000000       0x20 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyPLL_OUT_SetPQ
+                0x00000000       0x90 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyPLL_OUT_SetSource
+                0x00000000       0x54 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyIMO_Start
+                0x00000000       0x94 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyIMO_Stop
+                0x00000000       0x34 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyUSB_PowerOnCheck
+                0x00000000       0x60 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyIMO_SetTrimValue
+                0x00000000      0x108 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyIMO_SetFreq
+                0x00000000      0x1ac .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyIMO_SetSource
+                0x00000000       0x8c .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyIMO_EnableDoubler
+                0x00000000       0x20 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyIMO_DisableDoubler
+                0x00000000       0x20 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyMasterClk_SetSource
+                0x00000000       0x34 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyMasterClk_SetDivider
+                0x00000000       0x20 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyBusClk_Internal_SetDivider
+                0x00000000       0x78 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyBusClk_SetDivider
+                0x00000000       0xb4 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyUsbClk_SetSource
+                0x00000000       0x34 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyILO_Start1K
+                0x00000000       0x20 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyILO_Stop1K
+                0x00000000       0x20 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyILO_Start100K
+                0x00000000       0x20 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyILO_Stop100K
+                0x00000000       0x20 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyILO_Enable33K
+                0x00000000       0x20 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyILO_Disable33K
+                0x00000000       0x20 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyILO_SetSource
+                0x00000000       0x38 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyILO_SetPowerMode
+                0x00000000       0x4c .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyXTAL_32KHZ_Start
+                0x00000000       0x84 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyXTAL_32KHZ_Stop
+                0x00000000       0x50 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyXTAL_32KHZ_ReadStatus
+                0x00000000       0x20 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyXTAL_32KHZ_SetPowerMode
+                0x00000000       0xb4 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyXTAL_Start
+                0x00000000       0xd0 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyXTAL_Stop
+                0x00000000       0x20 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyXTAL_EnableErrStatus
+                0x00000000       0x20 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyXTAL_DisableErrStatus
+                0x00000000       0x20 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyXTAL_ReadStatus
+                0x00000000       0x28 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyXTAL_EnableFaultRecovery
+                0x00000000       0x20 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyXTAL_DisableFaultRecovery
+                0x00000000       0x20 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyXTAL_SetStartup
+                0x00000000       0x34 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyXTAL_SetFbVoltage
+                0x00000000       0x34 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyXTAL_SetWdVoltage
+                0x00000000       0x38 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyHalt   0x00000000       0x18 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CySoftwareReset
+                0x00000000       0x20 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyDelayFreq
+                0x00000000       0x7c .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyWdtStart
+                0x00000000       0x8c .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyWdtClear
+                0x00000000       0x18 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyVdLvDigitEnable
+                0x00000000       0xcc .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyVdLvAnalogEnable
+                0x00000000       0xc8 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyVdLvDigitDisable
+                0x00000000       0x48 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyVdLvAnalogDisable
+                0x00000000       0x40 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyVdHvAnalogEnable
+                0x00000000       0x78 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyVdHvAnalogDisable
+                0x00000000       0x2c .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyVdStickyStatus
+                0x00000000       0x5c .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyVdRealTimeStatus
+                0x00000000       0x30 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyDisableInts
+                0x00000000       0x34 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyEnableInts
+                0x00000000       0x28 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyFlushCache
+                0x00000000       0x58 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyIntSetSysVector
+                0x00000000       0x4c .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyIntGetSysVector
+                0x00000000       0x38 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyIntSetVector
+                0x00000000       0x50 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyIntGetVector
+                0x00000000       0x38 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyIntSetPriority
+                0x00000000       0x44 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyIntGetPriority
+                0x00000000       0x38 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyIntGetState
+                0x00000000       0x44 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CySysTickStart
+                0x00000000       0x20 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CySysTickInit
+                0x00000000       0x68 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CySysTickEnable
+                0x00000000       0x1c .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CySysTickStop
+                0x00000000       0x1c .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CySysTickEnableInterrupt
+                0x00000000       0x1c .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CySysTickDisableInterrupt
+                0x00000000       0x1c .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CySysTickSetReload
+                0x00000000       0x20 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CySysTickGetReload
+                0x00000000       0x1c .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CySysTickGetValue
+                0x00000000       0x1c .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CySysTickSetClockSource
+                0x00000000       0x38 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CySysTickGetClockSource
+                0x00000000       0x1c .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CySysTickGetCountFlag
+                0x00000000       0x1c .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CySysTickClear
+                0x00000000       0x18 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CySysTickSetCallback
+                0x00000000       0x30 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CySysTickGetCallback
+                0x00000000       0x20 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CySysTickServiceCallbacks
+                0x00000000       0x44 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text.CyGetUniqueId
+                0x00000000       0xc4 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyPm.o)
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyPm.o)
+ .bss           0x00000000       0x44 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyPm.o)
+ .rodata        0x00000000       0x10 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyPm.o)
+ .text.CyPmSaveClocks
+                0x00000000      0x284 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyPm.o)
+ .text.CyPmRestoreClocks
+                0x00000000      0x300 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyPm.o)
+ .text.CyPmAltAct
+                0x00000000       0xb8 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyPm.o)
+ .text.CyPmSleep
+                0x00000000      0x170 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyPm.o)
+ .text.CyPmHibernate
+                0x00000000        0xc .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyPm.o)
+ .text.CyPmHibernateEx
+                0x00000000      0x158 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyPm.o)
+ .text.CyPmReadStatus
+                0x00000000       0x5c .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyPm.o)
+ .text.CyPmHibSaveSet
+                0x00000000       0xd4 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyPm.o)
+ .text.CyPmHibRestore
+                0x00000000       0x68 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyPm.o)
+ .text.CyPmCtwSetInterval
+                0x00000000       0x90 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyPm.o)
+ .text.CyPmOppsSet
+                0x00000000       0x40 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyPm.o)
+ .text.CyPmFtwSetInterval
+                0x00000000       0x90 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyPm.o)
+ .text.CyPmHibSlpSaveSet
+                0x00000000      0x280 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyPm.o)
+ .text.CyPmHibSlpRestore
+                0x00000000      0x188 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyPm.o)
+ .text.CyPmHviLviSaveDisable
+                0x00000000       0xd4 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyPm.o)
+ .text.CyPmHviLviRestore
+                0x00000000       0x54 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyPm.o)
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyBootAsmGnu.o)
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyBootAsmGnu.o)
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyFlash.o)
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyFlash.o)
+ .bss           0x00000000        0x4 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyFlash.o)
+ .text.CyFlash_Start
+                0x00000000       0x8c .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyFlash.o)
+ .text.CyFlash_Stop
+                0x00000000       0x44 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyFlash.o)
+ .text.CySetTempInt
+                0x00000000       0x7c .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyFlash.o)
+ .text.CyFlashGetSpcAlgorithm
+                0x00000000       0x70 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyFlash.o)
+ .text.CySetTemp
+                0x00000000       0x24 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyFlash.o)
+ .text.CySetFlashEEBuffer
+                0x00000000       0x54 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyFlash.o)
+ .text.CyWriteRowData
+                0x00000000       0x3c .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyFlash.o)
+ .text.CyWriteRowFull
+                0x00000000      0x158 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyFlash.o)
+ .text.CyFlash_SetWaitCycles
+                0x00000000       0xbc .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyFlash.o)
+ .text.CyEEPROM_Start
+                0x00000000       0x8c .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyFlash.o)
+ .text.CyEEPROM_Stop
+                0x00000000       0x44 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyFlash.o)
+ .text.CyEEPROM_ReadReserve
+                0x00000000       0x30 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyFlash.o)
+ .text.CyEEPROM_ReadRelease
+                0x00000000       0x20 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyFlash.o)
+ COMMON         0x00000000        0x2 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyFlash.o)
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CySpc.o)
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CySpc.o)
+ .bss           0x00000000        0x8 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CySpc.o)
+ .text.CySpcStart
+                0x00000000       0x44 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CySpc.o)
+ .text.CySpcStop
+                0x00000000       0x44 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CySpc.o)
+ .text.CySpcReadData
+                0x00000000       0x58 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CySpc.o)
+ .text.CySpcLoadMultiByte
+                0x00000000       0xd4 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CySpc.o)
+ .text.CySpcLoadRow
+                0x00000000       0x8c .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CySpc.o)
+ .text.CySpcLoadRowFull
+                0x00000000       0xd0 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CySpc.o)
+ .text.CySpcWriteRow
+                0x00000000       0x98 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CySpc.o)
+ .text.CySpcEraseSector
+                0x00000000       0x70 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CySpc.o)
+ .text.CySpcGetTemp
+                0x00000000       0x64 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CySpc.o)
+ .text.CySpcLock
+                0x00000000       0x68 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CySpc.o)
+ .text.CySpcUnlock
+                0x00000000       0x50 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CySpc.o)
+ .text.CySpcGetAlgorithm
+                0x00000000       0x48 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CySpc.o)
+ .text          0x00000000        0x0 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+ .data          0x00000000        0x0 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+ .bss           0x00000000        0x0 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+ .text          0x00000000        0x0 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+ .data          0x00000000        0x0 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+ .bss           0x00000000        0x0 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+ .text.exit     0x00000000       0x28 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+ .text          0x00000000        0x0 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+ .data          0x00000000        0x0 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+ .bss           0x00000000        0x0 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+ .rodata._global_impure_ptr
+                0x00000000        0x4 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+ .text          0x00000000        0x0 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+ .data          0x00000000        0x0 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+ .bss           0x00000000        0x0 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+ .text          0x00000000        0x0 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
+ .data          0x00000000        0x0 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
+ .bss           0x00000000        0x0 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
+ .text          0x00000000        0x0 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+ .data          0x00000000        0x0 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+ .bss           0x00000000        0x0 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+ .text          0x00000000        0x0 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtend.o
+ .data          0x00000000        0x0 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtend.o
+ .bss           0x00000000        0x0 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtend.o
+ .text          0x00000000        0x0 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtn.o
+ .data          0x00000000        0x0 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtn.o
+ .bss           0x00000000        0x0 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtn.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+rom              0x00000000         0x00040000         xr
+ram              0x1fff8000         0x00010000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crti.o
+LOAD c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+LOAD c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m/crt0.o
+START GROUP
+LOAD .\CortexM3\ARM_GCC_493\Debug\main.o
+LOAD .\CortexM3\ARM_GCC_493\Debug\SWD_PhysicalLayer.o
+LOAD .\CortexM3\ARM_GCC_493\Debug\SWD_PacketLayer.o
+LOAD .\CortexM3\ARM_GCC_493\Debug\ProgrammingSteps.o
+LOAD .\CortexM3\ARM_GCC_493\Debug\SWD_UpperPacketLayer.o
+LOAD .\CortexM3\ARM_GCC_493\Debug\Timeout.o
+LOAD .\CortexM3\ARM_GCC_493\Debug\DataFetch.o
+LOAD .\CortexM3\ARM_GCC_493\Debug\HexImage.o
+LOAD .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+LOAD .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+LOAD .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a
+LOAD C:\Program Files\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_493\Debug\CyComponentLibrary.a
+END GROUP
+START GROUP
+LOAD c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a
+LOAD c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a
+LOAD c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libc_nano.a
+END GROUP
+START GROUP
+LOAD c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a
+LOAD c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libc_nano.a
+END GROUP
+LOAD c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtend.o
+LOAD c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtn.o
+START GROUP
+LOAD c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a
+LOAD c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libc.a
+LOAD c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libnosys.a
+END GROUP
+                0x00000000                CY_APPL_ORIGIN = 0x0
+                0x00000100                CY_FLASH_ROW_SIZE = 0x100
+                0x00000020                CY_ECC_ROW_SIZE = 0x20
+                0x00000000                CY_EE_IN_BTLDR = 0x0
+                0x00000000                CY_APPL_LOADABLE = 0x0
+                0x00000800                CY_EE_SIZE = 0x800
+                0x00000001                CY_APPL_NUM = 0x1
+                0x00000001                CY_APPL_MAX = 0x1
+                0x00000040                CY_METADATA_SIZE = 0x40
+                0x00000000                CY_APPL_LOADABLE = 0x0
+                0x00000000                CY_CHECKSUM_EXCLUDE_SIZE = ALIGN (0x0, CY_FLASH_ROW_SIZE)
+                0x1fff81b8                PROVIDE (__cy_heap_start, _end)
+                0x00000001                PROVIDE (__cy_region_num, ((__cy_regions_end - __cy_regions) / 0x10))
+                0x20008000                PROVIDE (__cy_stack, (ORIGIN (ram) + 0x10000))
+                0x20004000                PROVIDE (__cy_heap_end, (__cy_stack - 0x4000))
+
+.cybootloader   0x00000000        0x0
+ *(.cybootloader)
+                0x00000000                appl1_start = CY_APPL_ORIGIN?CY_APPL_ORIGIN:ALIGN (CY_FLASH_ROW_SIZE)
+                0x0001ff00                appl2_start = (appl1_start + ALIGN ((((0x40000 - appl1_start) - (0x2 * CY_FLASH_ROW_SIZE)) / 0x2), CY_FLASH_ROW_SIZE))
+                0x00000000                appl_start = (CY_APPL_NUM == 0x1)?appl1_start:appl2_start
+                0x00000000                ecc_offset = ((appl_start / CY_FLASH_ROW_SIZE) * CY_ECC_ROW_SIZE)
+                0x00000000                ee_offset = (CY_APPL_LOADABLE && ! (CY_EE_IN_BTLDR))?((CY_EE_SIZE / CY_APPL_MAX) * (CY_APPL_NUM - 0x1)):0x0
+                0x00000800                ee_size = (CY_APPL_LOADABLE && ! (CY_EE_IN_BTLDR))?(CY_EE_SIZE / CY_APPL_MAX):CY_EE_SIZE
+                0x00000000                PROVIDE (CY_ECC_OFFSET, ecc_offset)
+
+.text           0x00000000     0x224e
+ CREATE_OBJECT_SYMBOLS
+                0x00000000                PROVIDE (__cy_interrupt_vector, RomVectors)
+ *(.romvectors)
+ .romvectors    0x00000000       0x10 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                0x00000000                RomVectors
+                0x00000001                ASSERT ((. != __cy_interrupt_vector), No interrupt vector)
+                0x00000001                ASSERT (CY_APPL_ORIGIN?(SIZEOF (.cybootloader) <= CY_APPL_ORIGIN):0x1, Wrong image location)
+                0x00000010                PROVIDE (__cy_reset, Reset)
+ *(.text.Reset)
+ .text.Reset    0x00000010       0x18 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                0x00000010                Reset
+                0x00000001                ASSERT ((. != __cy_reset), No reset code)
+ *(.dma_init)
+                0x00000001                ASSERT ((((appl_start + .) <= 0x10000) || 0x1), DMA Init must be within the first 64k of flash)
+ *(.text .text.* .gnu.linkonce.t.*)
+ .text          0x00000028       0x5c c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+ .text.main     0x00000084       0xd0 .\CortexM3\ARM_GCC_493\Debug\main.o
+                0x00000084                main
+ .text.ProgramDevice
+                0x00000154      0x104 .\CortexM3\ARM_GCC_493\Debug\main.o
+                0x00000154                ProgramDevice
+ .text.SetSwdckCmosOutput
+                0x00000258       0x2c .\CortexM3\ARM_GCC_493\Debug\SWD_PhysicalLayer.o
+                0x00000258                SetSwdckCmosOutput
+ .text.SetSwdckHizInput
+                0x00000284       0x2c .\CortexM3\ARM_GCC_493\Debug\SWD_PhysicalLayer.o
+                0x00000284                SetSwdckHizInput
+ .text.SetSwdioCmosOutput
+                0x000002b0       0x2c .\CortexM3\ARM_GCC_493\Debug\SWD_PhysicalLayer.o
+                0x000002b0                SetSwdioCmosOutput
+ .text.SetSwdioHizInput
+                0x000002dc       0x2c .\CortexM3\ARM_GCC_493\Debug\SWD_PhysicalLayer.o
+                0x000002dc                SetSwdioHizInput
+ .text.SetXresCmosOutput
+                0x00000308       0x2c .\CortexM3\ARM_GCC_493\Debug\SWD_PhysicalLayer.o
+                0x00000308                SetXresCmosOutput
+ .text.SetXresHizInput
+                0x00000334       0x2c .\CortexM3\ARM_GCC_493\Debug\SWD_PhysicalLayer.o
+                0x00000334                SetXresHizInput
+ .text.SetSwdckHigh
+                0x00000360       0x20 .\CortexM3\ARM_GCC_493\Debug\SWD_PhysicalLayer.o
+                0x00000360                SetSwdckHigh
+ .text.SetSwdckLow
+                0x00000380       0x20 .\CortexM3\ARM_GCC_493\Debug\SWD_PhysicalLayer.o
+                0x00000380                SetSwdckLow
+ .text.SetSwdioHigh
+                0x000003a0       0x20 .\CortexM3\ARM_GCC_493\Debug\SWD_PhysicalLayer.o
+                0x000003a0                SetSwdioHigh
+ .text.SetSwdioLow
+                0x000003c0       0x20 .\CortexM3\ARM_GCC_493\Debug\SWD_PhysicalLayer.o
+                0x000003c0                SetSwdioLow
+ .text.SetXresHigh
+                0x000003e0       0x20 .\CortexM3\ARM_GCC_493\Debug\SWD_PhysicalLayer.o
+                0x000003e0                SetXresHigh
+ .text.SetXresLow
+                0x00000400       0x20 .\CortexM3\ARM_GCC_493\Debug\SWD_PhysicalLayer.o
+                0x00000400                SetXresLow
+ .text.ReadSwdio
+                0x00000420       0x20 .\CortexM3\ARM_GCC_493\Debug\SWD_PhysicalLayer.o
+                0x00000420                ReadSwdio
+ .text.Swd_SendByte
+                0x00000440       0x50 .\CortexM3\ARM_GCC_493\Debug\SWD_PacketLayer.o
+ .text.Swd_ReceiveByte
+                0x00000490       0x78 .\CortexM3\ARM_GCC_493\Debug\SWD_PacketLayer.o
+ .text.Swd_FirstTurnAroundPhase
+                0x00000508       0x14 .\CortexM3\ARM_GCC_493\Debug\SWD_PacketLayer.o
+ .text.Swd_SecondTurnAroundPhase
+                0x0000051c       0x14 .\CortexM3\ARM_GCC_493\Debug\SWD_PacketLayer.o
+ .text.Swd_GetAckSegment
+                0x00000530       0x50 .\CortexM3\ARM_GCC_493\Debug\SWD_PacketLayer.o
+ .text.Swd_SendParity
+                0x00000580       0x28 .\CortexM3\ARM_GCC_493\Debug\SWD_PacketLayer.o
+ .text.Swd_ReceiveParity
+                0x000005a8       0x20 .\CortexM3\ARM_GCC_493\Debug\SWD_PacketLayer.o
+ .text.Swd_SendDummyClocks
+                0x000005c8       0x2c .\CortexM3\ARM_GCC_493\Debug\SWD_PacketLayer.o
+ .text.Swd_CountOneBits
+                0x000005f4       0x44 .\CortexM3\ARM_GCC_493\Debug\SWD_PacketLayer.o
+ .text.Swd_ComputeDataParity
+                0x00000638       0x48 .\CortexM3\ARM_GCC_493\Debug\SWD_PacketLayer.o
+ .text.Swd_ReadPacket
+                0x00000680       0xa0 .\CortexM3\ARM_GCC_493\Debug\SWD_PacketLayer.o
+                0x00000680                Swd_ReadPacket
+ .text.Swd_WritePacket
+                0x00000720       0x80 .\CortexM3\ARM_GCC_493\Debug\SWD_PacketLayer.o
+                0x00000720                Swd_WritePacket
+ .text.Swd_LineReset
+                0x000007a0       0x88 .\CortexM3\ARM_GCC_493\Debug\SWD_PacketLayer.o
+                0x000007a0                Swd_LineReset
+ .text.PollSromStatus
+                0x00000828       0x9c .\CortexM3\ARM_GCC_493\Debug\ProgrammingSteps.o
+                0x00000828                PollSromStatus
+ .text.SetIMO48MHz
+                0x000008c4       0x34 .\CortexM3\ARM_GCC_493\Debug\ProgrammingSteps.o
+                0x000008c4                SetIMO48MHz
+ .text.ReadSromStatus
+                0x000008f8       0x18 .\CortexM3\ARM_GCC_493\Debug\ProgrammingSteps.o
+                0x000008f8                ReadSromStatus
+ .text.GetChipProtectionVal
+                0x00000910       0x94 .\CortexM3\ARM_GCC_493\Debug\ProgrammingSteps.o
+                0x00000910                GetChipProtectionVal
+ .text.GetTransitionMode
+                0x000009a4       0xa4 .\CortexM3\ARM_GCC_493\Debug\ProgrammingSteps.o
+                0x000009a4                GetTransitionMode
+ .text.LoadLatch
+                0x00000a48      0x124 .\CortexM3\ARM_GCC_493\Debug\ProgrammingSteps.o
+                0x00000a48                LoadLatch
+ .text.ChecksumAPI
+                0x00000b6c       0xac .\CortexM3\ARM_GCC_493\Debug\ProgrammingSteps.o
+                0x00000b6c                ChecksumAPI
+ .text.DeviceAcquire
+                0x00000c18      0x150 .\CortexM3\ARM_GCC_493\Debug\ProgrammingSteps.o
+                0x00000c18                DeviceAcquire
+ .text.VerifySiliconId
+                0x00000d68      0x100 .\CortexM3\ARM_GCC_493\Debug\ProgrammingSteps.o
+                0x00000d68                VerifySiliconId
+ .text.EraseAllFlash
+                0x00000e68      0x124 .\CortexM3\ARM_GCC_493\Debug\ProgrammingSteps.o
+                0x00000e68                EraseAllFlash
+ .text.ChecksumPrivileged
+                0x00000f8c       0x30 .\CortexM3\ARM_GCC_493\Debug\ProgrammingSteps.o
+                0x00000f8c                ChecksumPrivileged
+ .text.ProgramFlash
+                0x00000fbc      0x11c .\CortexM3\ARM_GCC_493\Debug\ProgrammingSteps.o
+                0x00000fbc                ProgramFlash
+ .text.VerifyFlash
+                0x000010d8      0x130 .\CortexM3\ARM_GCC_493\Debug\ProgrammingSteps.o
+                0x000010d8                VerifyFlash
+ .text.ProgramProtectionSettings
+                0x00001208      0x120 .\CortexM3\ARM_GCC_493\Debug\ProgrammingSteps.o
+                0x00001208                ProgramProtectionSettings
+ .text.VerifyProtectionSettings
+                0x00001328      0x218 .\CortexM3\ARM_GCC_493\Debug\ProgrammingSteps.o
+                0x00001328                VerifyProtectionSettings
+ .text.VerifyChecksum
+                0x00001540       0x7c .\CortexM3\ARM_GCC_493\Debug\ProgrammingSteps.o
+                0x00001540                VerifyChecksum
+ .text.ReadHsspErrorStatus
+                0x000015bc       0x18 .\CortexM3\ARM_GCC_493\Debug\ProgrammingSteps.o
+                0x000015bc                ReadHsspErrorStatus
+ .text.ExitProgrammingMode
+                0x000015d4       0x28 .\CortexM3\ARM_GCC_493\Debug\ProgrammingSteps.o
+                0x000015d4                ExitProgrammingMode
+ .text.Read_DAP
+                0x000015fc       0x54 .\CortexM3\ARM_GCC_493\Debug\SWD_UpperPacketLayer.o
+                0x000015fc                Read_DAP
+ .text.Write_DAP
+                0x00001650       0x4c .\CortexM3\ARM_GCC_493\Debug\SWD_UpperPacketLayer.o
+                0x00001650                Write_DAP
+ .text.Read_IO  0x0000169c       0x5c .\CortexM3\ARM_GCC_493\Debug\SWD_UpperPacketLayer.o
+                0x0000169c                Read_IO
+ .text.Write_IO
+                0x000016f8       0x48 .\CortexM3\ARM_GCC_493\Debug\SWD_UpperPacketLayer.o
+                0x000016f8                Write_IO
+ .text.DelayHundredUs
+                0x00001740       0x24 .\CortexM3\ARM_GCC_493\Debug\Timeout.o
+                0x00001740                DelayHundredUs
+ .text.HEX_ReadSiliconId
+                0x00001764       0x44 .\CortexM3\ARM_GCC_493\Debug\DataFetch.o
+                0x00001764                HEX_ReadSiliconId
+ .text.HEX_ReadRowData
+                0x000017a8       0x44 .\CortexM3\ARM_GCC_493\Debug\DataFetch.o
+                0x000017a8                HEX_ReadRowData
+ .text.HEX_ReadChipProtectionData
+                0x000017ec       0x20 .\CortexM3\ARM_GCC_493\Debug\DataFetch.o
+                0x000017ec                HEX_ReadChipProtectionData
+ .text.HEX_ReadRowProtectionData
+                0x0000180c       0x4c .\CortexM3\ARM_GCC_493\Debug\DataFetch.o
+                0x0000180c                HEX_ReadRowProtectionData
+ .text.HEX_ReadChecksumData
+                0x00001858       0x4c .\CortexM3\ARM_GCC_493\Debug\DataFetch.o
+                0x00001858                HEX_ReadChecksumData
+ .text.GetFlashRowCount
+                0x000018a4       0x14 .\CortexM3\ARM_GCC_493\Debug\DataFetch.o
+                0x000018a4                GetFlashRowCount
+ .text.IntDefaultHandler
+                0x000018b8       0x14 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                0x000018b8                IntDefaultHandler
+ .text.Start_c  0x000018cc       0x98 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                0x000018cc                Start_c
+ .text.initialize_psoc
+                0x00001964       0x8c .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                0x00001964                initialize_psoc
+ .text.CYMEMZERO
+                0x000019f0       0x1c .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyfitter_cfg.o)
+ .text.CYCONFIGCPY
+                0x00001a0c       0x1c .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyfitter_cfg.o)
+ .text.CyClockStartupError
+                0x00001a28        0xc .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyfitter_cfg.o)
+ .text.cfg_write_bytes32
+                0x00001a34       0x74 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyfitter_cfg.o)
+ .text.ClockSetup
+                0x00001aa8       0xd8 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyfitter_cfg.o)
+ .text.AnalogSetDefault
+                0x00001b80       0x44 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyfitter_cfg.o)
+ .text.cyfitter_cfg
+                0x00001bc4      0x114 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyfitter_cfg.o)
+                0x00001bc4                cyfitter_cfg
+ .text.LCD_Char_Init
+                0x00001cd8       0x6c .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(LCD_Char.o)
+                0x00001cd8                LCD_Char_Init
+ .text.LCD_Char_Enable
+                0x00001d44       0x18 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(LCD_Char.o)
+                0x00001d44                LCD_Char_Enable
+ .text.LCD_Char_Start
+                0x00001d5c       0x20 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(LCD_Char.o)
+                0x00001d5c                LCD_Char_Start
+ .text.LCD_Char_Position
+                0x00001d7c       0x6c .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(LCD_Char.o)
+                0x00001d7c                LCD_Char_Position
+ .text.LCD_Char_PrintString
+                0x00001de8       0x38 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(LCD_Char.o)
+                0x00001de8                LCD_Char_PrintString
+ .text.LCD_Char_PutChar
+                0x00001e20       0x18 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(LCD_Char.o)
+                0x00001e20                LCD_Char_PutChar
+ .text.LCD_Char_WriteData
+                0x00001e38       0x34 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(LCD_Char.o)
+                0x00001e38                LCD_Char_WriteData
+ .text.LCD_Char_WriteControl
+                0x00001e6c       0x34 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(LCD_Char.o)
+                0x00001e6c                LCD_Char_WriteControl
+ .text.LCD_Char_IsReady
+                0x00001ea0      0x178 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(LCD_Char.o)
+                0x00001ea0                LCD_Char_IsReady
+ .text.LCD_Char_WrDatNib
+                0x00002018       0x78 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(LCD_Char.o)
+ .text.LCD_Char_WrCntrlNib
+                0x00002090       0x60 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(LCD_Char.o)
+ .text.LCD_Char_PrintInt8
+                0x000020f0       0x38 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(LCD_Char.o)
+                0x000020f0                LCD_Char_PrintInt8
+ .text.Pin_Start_Read
+                0x00002128       0x1c .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(Pin_Start.o)
+                0x00002128                Pin_Start_Read
+ .text.CyDelay  0x00002144       0x44 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+                0x00002144                CyDelay
+ .text.CyDelayUs
+                0x00002188       0x24 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+                0x00002188                CyDelayUs
+ *fill*         0x000021ac        0x4 
+ .text          0x000021b0       0x20 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyBootAsmGnu.o)
+                0x000021b0                CyDelayCycles
+                0x000021c0                CyEnterCriticalSection
+                0x000021c8                CyExitCriticalSection
+ .text.__errno  0x000021d0        0xc c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+                0x000021d0                __errno
+ .text.__libc_init_array
+                0x000021dc       0x4c c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+                0x000021dc                __libc_init_array
+ .text.memcpy   0x00002228       0x16 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
+                0x00002228                memcpy
+ .text.memset   0x0000223e       0x10 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+                0x0000223e                memset
+ *(.plt)
+ *(.gnu.warning)
+ *(.glue_7t)
+ .glue_7t       0x00000000        0x0 linker stubs
+ *(.glue_7)
+ .glue_7        0x00000000        0x0 linker stubs
+ *(.vfp11_veneer)
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+ *(.bootloader)
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+ *(.gcc_except_table)
+
+.v4_bx          0x00002250        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.iplt           0x00002250        0x0
+ .iplt          0x00000000        0x0 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+
+.eh_frame_hdr
+ *(.eh_frame_hdr)
+
+.eh_frame       0x00002250        0x4
+ *(.eh_frame)
+ .eh_frame      0x00002250        0x0 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+ .eh_frame      0x00002250        0x4 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtend.o
+                0x00002254                PROVIDE (__exidx_start, .)
+
+.ARM.exidx
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+                0x00002254                __exidx_end = .
+
+.rodata         0x00002254    0x2015c
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata        0x00002254       0x58 .\CortexM3\ARM_GCC_493\Debug\main.o
+ .rodata        0x000022ac    0x2008c .\CortexM3\ARM_GCC_493\Debug\HexImage.o
+                0x000022ac                deviceSiliconId_HexFile
+                0x000022b0                checksumData_HexFile
+                0x000022b4                flashProtectionData_HexFile
+                0x00002334                chipProtectionData_HexFile
+                0x00002338                flashData_HexFile
+ .rodata        0x00022338       0x30 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyfitter_cfg.o)
+ .rodata        0x00022368       0x10 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(LCD_Char.o)
+ .rodata.str1.1
+                0x00022378        0x2 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+                0x0002237c                . = ALIGN (0x4)
+ *fill*         0x0002237a        0x2 
+ *(.init)
+ .init          0x0002237c        0x4 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crti.o
+                0x0002237c                _init
+ .init          0x00022380        0x8 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtn.o
+                0x00022388                . = ALIGN (0x4)
+                0x00022388                __preinit_array_start = .
+ *(.preinit_array)
+                0x00022388                __preinit_array_end = .
+                0x00022388                . = ALIGN (0x4)
+                0x00022388                __init_array_start = .
+ *(SORT(.init_array.*))
+ *(.init_array)
+ .init_array    0x00022388        0x4 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+ .init_array    0x0002238c        0x4 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                0x00022390                __init_array_end = .
+                0x00022390                . = ALIGN (0x4)
+ *(.fini)
+ .fini          0x00022390        0x4 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crti.o
+                0x00022390                _fini
+ .fini          0x00022394        0x8 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtn.o
+                0x0002239c                . = ALIGN (0x4)
+                0x0002239c                __fini_array_start = .
+ *(.fini_array)
+ .fini_array    0x0002239c        0x4 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+ *(SORT(.fini_array.*))
+                0x000223a0                __fini_array_end = .
+                0x000223a0                . = ALIGN (0x4)
+ *crtbegin.o(.ctors)
+ *(EXCLUDE_FILE(*crtend.o) .ctors)
+ *(SORT(.ctors.*))
+ *crtend.o(.ctors)
+                0x000223a0                . = ALIGN (0x4)
+ *crtbegin.o(.dtors)
+ *(EXCLUDE_FILE(*crtend.o) .dtors)
+ *(SORT(.dtors.*))
+ *crtend.o(.dtors)
+                0x000223a0                . = ALIGN (0x4)
+                0x000223a0                __cy_regions = .
+                0x000223a0        0x4 LONG 0x223b0 __cy_region_init_ram
+                0x000223a4        0x4 LONG 0x1fff8108 __cy_region_start_data
+                0x000223a8        0x4 LONG 0x78 __cy_region_init_size_ram
+                0x000223ac        0x4 LONG 0x38 __cy_region_zero_size_ram
+                0x000223b0                __cy_regions_end = .
+                0x000223b0                . = ALIGN (0x8)
+                0x000223b0                _etext = .
+
+.cy_checksum_exclude
+                0x000223b0        0x0
+ *(.cy_checksum_exclude)
+
+.ramvectors     0x1fff8000      0x100
+                0x1fff8000                __cy_region_start_ram = .
+ *(.ramvectors)
+ .ramvectors    0x1fff8000      0x100 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                0x1fff8000                CyRamVectors
+
+.noinit         0x1fff8100        0x5
+ *(.noinit)
+ .noinit        0x1fff8100        0x4 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .noinit        0x1fff8104        0x1 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+                0x1fff8104                CyResetStatus
+
+.data           0x1fff8108       0x78 load address 0x000223b0
+                0x1fff8108                __cy_region_start_data = .
+ *(.jcr)
+ .jcr           0x1fff8108        0x0 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+ .jcr           0x1fff8108        0x4 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtend.o
+ *(.got.plt)
+ *(.got)
+ *(.shdata)
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x1fff810c       0x10 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+                0x1fff810c                cydelay_freq_hz
+                0x1fff8110                cydelay_freq_khz
+                0x1fff8114                cydelay_freq_mhz
+                0x1fff8118                cydelay_32k_ms
+ .data.impure_data
+                0x1fff811c       0x60 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+ .data._impure_ptr
+                0x1fff817c        0x4 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+                0x1fff817c                _impure_ptr
+                0x1fff8180                . = ALIGN (0x8)
+ *(.ram)
+                0x1fff8180                _edata = .
+
+.igot.plt       0x1fff8180        0x0 load address 0x00022428
+ .igot.plt      0x00000000        0x0 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+
+.bss            0x1fff8180       0x38 load address 0x00022428
+                0x1fff8180                PROVIDE (__bss_start__, .)
+ *(.shbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x1fff8180       0x1c c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+ .bss           0x1fff819c        0xc .\CortexM3\ARM_GCC_493\Debug\ProgrammingSteps.o
+                0x1fff819c                checksum_Privileged
+                0x1fff81a0                statusCode
+                0x1fff81a4                result
+                0x1fff81a5                chipProtectionData_Chip
+ .bss           0x1fff81a8        0x2 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(LCD_Char.o)
+                0x1fff81a8                LCD_Char_enableState
+                0x1fff81a9                LCD_Char_initVar
+ *(COMMON)
+ COMMON         0x1fff81aa        0x1 .\CortexM3\ARM_GCC_493\Debug\main.o
+                0x1fff81aa                currentStep
+ *fill*         0x1fff81ab        0x1 
+ COMMON         0x1fff81ac        0x6 .\CortexM3\ARM_GCC_493\Debug\SWD_PacketLayer.o
+                0x1fff81ac                swd_PacketData
+                0x1fff81b0                swd_PacketAck
+                0x1fff81b1                swd_PacketHeader
+ COMMON         0x1fff81b2        0x1 .\CortexM3\ARM_GCC_493\Debug\ProgrammingSteps.o
+                0x1fff81b2                flow
+                0x1fff81b8                . = ALIGN (0x8)
+ *fill*         0x1fff81b3        0x5 
+ *(.ram.b)
+                0x1fff81b8                _end = .
+                0x1fff81b8                __end = .
+                0x1fff81b8                PROVIDE (end, .)
+                0x1fff81b8                PROVIDE (__bss_end__, .)
+                0x000223b0                __cy_region_init_ram = LOADADDR (.data)
+                0x00000078                __cy_region_init_size_ram = (_edata - ADDR (.data))
+                0x00000038                __cy_region_zero_size_ram = (_end - _edata)
+
+.heap           0x1fff81b8     0x1000 load address 0x00022428
+                0x1fff81b8                . = _end
+                0x1fff91b8                . = (. + 0x1000)
+ *fill*         0x1fff81b8     0x1000 
+                0x1fff91b8                __cy_heap_limit = .
+
+.stack          0x20004000     0x4000
+                0x20004000                __cy_stack_limit = .
+                0x20008000                . = (. + 0x4000)
+ *fill*         0x20004000     0x4000 
+                0x00000001                ASSERT ((__cy_stack_limit >= __cy_heap_limit), region RAM overflowed with stack)
+                0x00000000                cy_checksum_exclude_size = (CY_APPL_LOADABLE == 0x1)?SIZEOF (.cy_checksum_exclude):0x0
+                0x00000001                ASSERT ((cy_checksum_exclude_size <= CY_CHECKSUM_EXCLUDE_SIZE), CY_BOOT: Section .cy_checksum_exclude size exceedes specified limit.)
+
+.cyloadermeta
+ *(.cyloadermeta)
+
+.cyloadablemeta
+ *(.cyloadablemeta)
+
+.cyconfigecc    0x80000000       0x24
+ *(.cyconfigecc)
+ .cyconfigecc   0x80000000       0x24 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+                0x80000000                cy_meta_configecc
+
+.cycustnvl      0x90000000        0x4
+ *(.cycustnvl)
+ .cycustnvl     0x90000000        0x4 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+                0x90000000                cy_meta_custnvl
+
+.cywolatch      0x90100000        0x4
+ *(.cywolatch)
+ .cywolatch     0x90100000        0x4 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+                0x90100000                cy_meta_wonvl
+
+.cyeeprom       0x90200000        0x0
+ *(.cyeeprom)
+                0x00000001                ASSERT ((. <= ((0x90200000 + ee_offset) + ee_size)), .cyeeprom data will not fit in EEPROM)
+
+.cyflashprotect
+                0x90400000      0x100
+ *(.cyflashprotect)
+ .cyflashprotect
+                0x90400000      0x100 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+                0x90400000                cy_meta_flashprotect
+
+.cymeta         0x90500000        0xc
+ *(.cymeta)
+ .cymeta        0x90500000        0xc .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+                0x90500000                cy_metadata
+
+.rel.dyn        0x00022428        0x0 load address 0x9050000c
+ .rel.iplt      0x00000000        0x0 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0x868
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x28 .\CortexM3\ARM_GCC_493\Debug\main.o
+ .debug_aranges
+                0x00000028       0x80 .\CortexM3\ARM_GCC_493\Debug\SWD_PhysicalLayer.o
+ .debug_aranges
+                0x000000a8       0x80 .\CortexM3\ARM_GCC_493\Debug\SWD_PacketLayer.o
+ .debug_aranges
+                0x00000128       0xa8 .\CortexM3\ARM_GCC_493\Debug\ProgrammingSteps.o
+ .debug_aranges
+                0x000001d0       0x38 .\CortexM3\ARM_GCC_493\Debug\SWD_UpperPacketLayer.o
+ .debug_aranges
+                0x00000208       0x20 .\CortexM3\ARM_GCC_493\Debug\Timeout.o
+ .debug_aranges
+                0x00000228       0x48 .\CortexM3\ARM_GCC_493\Debug\DataFetch.o
+ .debug_aranges
+                0x00000270       0x18 .\CortexM3\ARM_GCC_493\Debug\HexImage.o
+ .debug_aranges
+                0x00000288       0x18 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+ .debug_aranges
+                0x000002a0       0x48 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .debug_aranges
+                0x000002e8       0x60 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyfitter_cfg.o)
+ .debug_aranges
+                0x00000348       0x98 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(LCD_Char.o)
+ .debug_aranges
+                0x000003e0       0x38 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(Pin_Start.o)
+ .debug_aranges
+                0x00000418      0x2a0 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .debug_aranges
+                0x000006b8       0x98 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyPm.o)
+ .debug_aranges
+                0x00000750       0x20 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyBootAsmGnu.o)
+ .debug_aranges
+                0x00000770       0x80 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyFlash.o)
+ .debug_aranges
+                0x000007f0       0x78 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CySpc.o)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x00000000     0x397a
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x00000000      0x115 .\CortexM3\ARM_GCC_493\Debug\main.o
+ .debug_info    0x00000115      0x113 .\CortexM3\ARM_GCC_493\Debug\SWD_PhysicalLayer.o
+ .debug_info    0x00000228      0x2f0 .\CortexM3\ARM_GCC_493\Debug\SWD_PacketLayer.o
+ .debug_info    0x00000518      0x678 .\CortexM3\ARM_GCC_493\Debug\ProgrammingSteps.o
+ .debug_info    0x00000b90      0x142 .\CortexM3\ARM_GCC_493\Debug\SWD_UpperPacketLayer.o
+ .debug_info    0x00000cd2       0x51 .\CortexM3\ARM_GCC_493\Debug\Timeout.o
+ .debug_info    0x00000d23      0x27b .\CortexM3\ARM_GCC_493\Debug\DataFetch.o
+ .debug_info    0x00000f9e       0xe1 .\CortexM3\ARM_GCC_493\Debug\HexImage.o
+ .debug_info    0x0000107f      0x13a .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+ .debug_info    0x000011b9      0x319 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .debug_info    0x000014d2      0x393 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyfitter_cfg.o)
+ .debug_info    0x00001865      0x3c8 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(LCD_Char.o)
+ .debug_info    0x00001c2d      0x11e .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(Pin_Start.o)
+ .debug_info    0x00001d4b      0xe4a .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .debug_info    0x00002b95      0x561 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyPm.o)
+ .debug_info    0x000030f6       0xc7 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyBootAsmGnu.o)
+ .debug_info    0x000031bd      0x36a .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyFlash.o)
+ .debug_info    0x00003527      0x453 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CySpc.o)
+
+.debug_abbrev   0x00000000     0x11ad
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000       0xa1 .\CortexM3\ARM_GCC_493\Debug\main.o
+ .debug_abbrev  0x000000a1       0x69 .\CortexM3\ARM_GCC_493\Debug\SWD_PhysicalLayer.o
+ .debug_abbrev  0x0000010a      0x174 .\CortexM3\ARM_GCC_493\Debug\SWD_PacketLayer.o
+ .debug_abbrev  0x0000027e      0x198 .\CortexM3\ARM_GCC_493\Debug\ProgrammingSteps.o
+ .debug_abbrev  0x00000416       0x90 .\CortexM3\ARM_GCC_493\Debug\SWD_UpperPacketLayer.o
+ .debug_abbrev  0x000004a6       0x48 .\CortexM3\ARM_GCC_493\Debug\Timeout.o
+ .debug_abbrev  0x000004ee       0xdd .\CortexM3\ARM_GCC_493\Debug\DataFetch.o
+ .debug_abbrev  0x000005cb       0x4e .\CortexM3\ARM_GCC_493\Debug\HexImage.o
+ .debug_abbrev  0x00000619       0x5d .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+ .debug_abbrev  0x00000676      0x1b6 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .debug_abbrev  0x0000082c      0x19d .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyfitter_cfg.o)
+ .debug_abbrev  0x000009c9      0x120 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(LCD_Char.o)
+ .debug_abbrev  0x00000ae9       0x90 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(Pin_Start.o)
+ .debug_abbrev  0x00000b79      0x217 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .debug_abbrev  0x00000d90      0x161 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyPm.o)
+ .debug_abbrev  0x00000ef1       0x14 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyBootAsmGnu.o)
+ .debug_abbrev  0x00000f05      0x13c .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyFlash.o)
+ .debug_abbrev  0x00001041      0x16c .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CySpc.o)
+
+.debug_line     0x00000000     0x240a
+ *(.debug_line)
+ .debug_line    0x00000000      0x19e .\CortexM3\ARM_GCC_493\Debug\main.o
+ .debug_line    0x0000019e      0x11e .\CortexM3\ARM_GCC_493\Debug\SWD_PhysicalLayer.o
+ .debug_line    0x000002bc      0x22a .\CortexM3\ARM_GCC_493\Debug\SWD_PacketLayer.o
+ .debug_line    0x000004e6      0x50f .\CortexM3\ARM_GCC_493\Debug\ProgrammingSteps.o
+ .debug_line    0x000009f5       0xac .\CortexM3\ARM_GCC_493\Debug\SWD_UpperPacketLayer.o
+ .debug_line    0x00000aa1       0x48 .\CortexM3\ARM_GCC_493\Debug\Timeout.o
+ .debug_line    0x00000ae9      0x1ee .\CortexM3\ARM_GCC_493\Debug\DataFetch.o
+ .debug_line    0x00000cd7       0x2b .\CortexM3\ARM_GCC_493\Debug\HexImage.o
+ .debug_line    0x00000d02       0x51 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+ .debug_line    0x00000d53      0x1d6 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .debug_line    0x00000f29      0x1e2 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyfitter_cfg.o)
+ .debug_line    0x0000110b      0x1e6 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(LCD_Char.o)
+ .debug_line    0x000012f1       0x98 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(Pin_Start.o)
+ .debug_line    0x00001389      0x882 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .debug_line    0x00001c0b      0x37f .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyPm.o)
+ .debug_line    0x00001f8a       0x66 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyBootAsmGnu.o)
+ .debug_line    0x00001ff0      0x205 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyFlash.o)
+ .debug_line    0x000021f5      0x215 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CySpc.o)
+
+.debug_frame    0x00000000     0x2128
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x4c .\CortexM3\ARM_GCC_493\Debug\main.o
+ .debug_frame   0x0000004c      0x1e4 .\CortexM3\ARM_GCC_493\Debug\SWD_PhysicalLayer.o
+ .debug_frame   0x00000230      0x204 .\CortexM3\ARM_GCC_493\Debug\SWD_PacketLayer.o
+ .debug_frame   0x00000434      0x2c0 .\CortexM3\ARM_GCC_493\Debug\ProgrammingSteps.o
+ .debug_frame   0x000006f4       0xb0 .\CortexM3\ARM_GCC_493\Debug\SWD_UpperPacketLayer.o
+ .debug_frame   0x000007a4       0x38 .\CortexM3\ARM_GCC_493\Debug\Timeout.o
+ .debug_frame   0x000007dc       0xfc .\CortexM3\ARM_GCC_493\Debug\DataFetch.o
+ .debug_frame   0x000008d8       0xd8 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .debug_frame   0x000009b0      0x16c .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyfitter_cfg.o)
+ .debug_frame   0x00000b1c      0x260 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(LCD_Char.o)
+ .debug_frame   0x00000d7c       0xa8 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(Pin_Start.o)
+ .debug_frame   0x00000e24      0xc0c .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .debug_frame   0x00001a30      0x234 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyPm.o)
+ .debug_frame   0x00001c64      0x210 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyFlash.o)
+ .debug_frame   0x00001e74      0x1f8 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CySpc.o)
+ .debug_frame   0x0000206c       0x20 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+ .debug_frame   0x0000208c       0x28 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+ .debug_frame   0x000020b4       0x2c c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+ .debug_frame   0x000020e0       0x28 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
+ .debug_frame   0x00002108       0x20 c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+
+.debug_str      0x00000000     0x1c14
+ *(.debug_str)
+ .debug_str     0x00000000      0x1d4 .\CortexM3\ARM_GCC_493\Debug\main.o
+                                0x215 (size before relaxing)
+ .debug_str     0x000001d4       0xd1 .\CortexM3\ARM_GCC_493\Debug\SWD_PhysicalLayer.o
+                                0x1e6 (size before relaxing)
+ .debug_str     0x000002a5      0x15f .\CortexM3\ARM_GCC_493\Debug\SWD_PacketLayer.o
+                                0x283 (size before relaxing)
+ .debug_str     0x00000404      0x36a .\CortexM3\ARM_GCC_493\Debug\ProgrammingSteps.o
+                                0x544 (size before relaxing)
+ .debug_str     0x0000076e       0x5c .\CortexM3\ARM_GCC_493\Debug\SWD_UpperPacketLayer.o
+                                0x1ba (size before relaxing)
+ .debug_str     0x000007ca       0x23 .\CortexM3\ARM_GCC_493\Debug\Timeout.o
+                                0x13d (size before relaxing)
+ .debug_str     0x000007ed      0x112 .\CortexM3\ARM_GCC_493\Debug\DataFetch.o
+                                0x332 (size before relaxing)
+ .debug_str     0x000008ff        0xb .\CortexM3\ARM_GCC_493\Debug\HexImage.o
+                                0x19f (size before relaxing)
+ .debug_str     0x0000090a       0x7b .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+                                0x221 (size before relaxing)
+ .debug_str     0x00000985      0x136 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                                0x302 (size before relaxing)
+ .debug_str     0x00000abb      0x15c .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyfitter_cfg.o)
+                                0x32e (size before relaxing)
+ .debug_str     0x00000c17      0x1d5 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(LCD_Char.o)
+                                0x3a8 (size before relaxing)
+ .debug_str     0x00000dec       0x7a .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(Pin_Start.o)
+                                0x22d (size before relaxing)
+ .debug_str     0x00000e66      0x7f8 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+                                0xa15 (size before relaxing)
+ .debug_str     0x0000165e      0x365 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyPm.o)
+                                0x562 (size before relaxing)
+ .debug_str     0x000019c3      0x132 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyFlash.o)
+                                0x321 (size before relaxing)
+ .debug_str     0x00001af5      0x11f .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CySpc.o)
+                                0x31e (size before relaxing)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_ranges   0x00000000      0x728
+ *(.debug_ranges)
+ .debug_ranges  0x00000000       0x18 .\CortexM3\ARM_GCC_493\Debug\main.o
+ .debug_ranges  0x00000018       0x70 .\CortexM3\ARM_GCC_493\Debug\SWD_PhysicalLayer.o
+ .debug_ranges  0x00000088       0x70 .\CortexM3\ARM_GCC_493\Debug\SWD_PacketLayer.o
+ .debug_ranges  0x000000f8       0x98 .\CortexM3\ARM_GCC_493\Debug\ProgrammingSteps.o
+ .debug_ranges  0x00000190       0x28 .\CortexM3\ARM_GCC_493\Debug\SWD_UpperPacketLayer.o
+ .debug_ranges  0x000001b8       0x10 .\CortexM3\ARM_GCC_493\Debug\Timeout.o
+ .debug_ranges  0x000001c8       0x38 .\CortexM3\ARM_GCC_493\Debug\DataFetch.o
+ .debug_ranges  0x00000200       0x38 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .debug_ranges  0x00000238       0x50 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyfitter_cfg.o)
+ .debug_ranges  0x00000288       0x88 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(LCD_Char.o)
+ .debug_ranges  0x00000310       0x28 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(Pin_Start.o)
+ .debug_ranges  0x00000338      0x290 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .debug_ranges  0x000005c8       0x88 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyPm.o)
+ .debug_ranges  0x00000650       0x70 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyFlash.o)
+ .debug_ranges  0x000006c0       0x68 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CySpc.o)
+
+.comment        0x00000000       0x70
+ .comment       0x00000000       0x70 .\CortexM3\ARM_GCC_493\Debug\main.o
+                                 0x71 (size before relaxing)
+ .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_493\Debug\SWD_PhysicalLayer.o
+ .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_493\Debug\SWD_PacketLayer.o
+ .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_493\Debug\ProgrammingSteps.o
+ .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_493\Debug\SWD_UpperPacketLayer.o
+ .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_493\Debug\Timeout.o
+ .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_493\Debug\DataFetch.o
+ .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_493\Debug\HexImage.o
+ .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+ .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyfitter_cfg.o)
+ .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(LCD_Char.o)
+ .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(Pin_Start.o)
+ .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyPm.o)
+ .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyFlash.o)
+ .comment       0x00000000       0x71 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CySpc.o)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.note.gnu.arm.ident
+ *(.note.gnu.arm.ident)
+
+.ARM.attributes
+                0x00000000       0x29
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x00000000       0x1d c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crti.o
+ .ARM.attributes
+                0x0000001d       0x2d c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+ .ARM.attributes
+                0x0000004a       0x1b c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m/crt0.o
+ .ARM.attributes
+                0x00000065       0x33 .\CortexM3\ARM_GCC_493\Debug\main.o
+ .ARM.attributes
+                0x00000098       0x33 .\CortexM3\ARM_GCC_493\Debug\SWD_PhysicalLayer.o
+ .ARM.attributes
+                0x000000cb       0x33 .\CortexM3\ARM_GCC_493\Debug\SWD_PacketLayer.o
+ .ARM.attributes
+                0x000000fe       0x33 .\CortexM3\ARM_GCC_493\Debug\ProgrammingSteps.o
+ .ARM.attributes
+                0x00000131       0x33 .\CortexM3\ARM_GCC_493\Debug\SWD_UpperPacketLayer.o
+ .ARM.attributes
+                0x00000164       0x33 .\CortexM3\ARM_GCC_493\Debug\Timeout.o
+ .ARM.attributes
+                0x00000197       0x33 .\CortexM3\ARM_GCC_493\Debug\DataFetch.o
+ .ARM.attributes
+                0x000001ca       0x33 .\CortexM3\ARM_GCC_493\Debug\HexImage.o
+ .ARM.attributes
+                0x000001fd       0x33 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+ .ARM.attributes
+                0x00000230       0x33 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .ARM.attributes
+                0x00000263       0x33 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyfitter_cfg.o)
+ .ARM.attributes
+                0x00000296       0x33 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(LCD_Char.o)
+ .ARM.attributes
+                0x000002c9       0x33 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(Pin_Start.o)
+ .ARM.attributes
+                0x000002fc       0x33 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyLib.o)
+ .ARM.attributes
+                0x0000032f       0x33 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(cyPm.o)
+ .ARM.attributes
+                0x00000362       0x21 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyBootAsmGnu.o)
+ .ARM.attributes
+                0x00000383       0x33 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CyFlash.o)
+ .ARM.attributes
+                0x000003b6       0x33 .\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.a(CySpc.o)
+ .ARM.attributes
+                0x000003e9       0x2d c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+ .ARM.attributes
+                0x00000416       0x2d c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+ .ARM.attributes
+                0x00000443       0x2d c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+ .ARM.attributes
+                0x00000470       0x2d c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+ .ARM.attributes
+                0x0000049d       0x2d c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
+ .ARM.attributes
+                0x000004ca       0x2d c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+ .ARM.attributes
+                0x000004f7       0x2d c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtend.o
+ .ARM.attributes
+                0x00000524       0x1d c:/program files/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtn.o
+
+/DISCARD/
+ *(.note.GNU-stack)
+OUTPUT(.\CortexM3\ARM_GCC_493\Debug\A_Hssp_Programmer.elf elf32-littlearm)

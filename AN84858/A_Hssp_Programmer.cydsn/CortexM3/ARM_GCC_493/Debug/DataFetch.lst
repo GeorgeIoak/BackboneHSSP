@@ -1,0 +1,1505 @@
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccskkMsQ.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"DataFetch.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.HEX_ReadSiliconId,"ax",%progbits
+  19              		.align	2
+  20              		.global	HEX_ReadSiliconId
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	HEX_ReadSiliconId, %function
+  24              	HEX_ReadSiliconId:
+  25              	.LFB63:
+  26              		.file 1 "DataFetch.c"
+   1:DataFetch.c   **** /******************************************************************************
+   2:DataFetch.c   **** * File Name: DataFetch.c
+   3:DataFetch.c   **** * Version 1.0
+   4:DataFetch.c   **** *
+   5:DataFetch.c   **** * Description:
+   6:DataFetch.c   **** *  This source file contains the functions to fetch data from the Hex image and 
+   7:DataFetch.c   **** *  load in to the arrays used for Programming.
+   8:DataFetch.c   **** *
+   9:DataFetch.c   **** * Owner:
+  10:DataFetch.c   **** *	Tushar Rastogi, Application Engineer (tusr@cypress.com)
+  11:DataFetch.c   **** *
+  12:DataFetch.c   **** * Related Document:
+  13:DataFetch.c   **** *	AN84858 - PSoC 4 Programming using an External Microcontroller (HSSP)
+  14:DataFetch.c   **** *
+  15:DataFetch.c   **** * Hardware Dependency:
+  16:DataFetch.c   **** *   PSoC 5LP Development Kit - CY8CKIT-050
+  17:DataFetch.c   **** *
+  18:DataFetch.c   **** * Code Tested With:
+  19:DataFetch.c   **** *	PSoC Creator 3.2
+  20:DataFetch.c   **** *	ARM GCC 4.8.4
+  21:DataFetch.c   **** *	CY8CKIT-050
+  22:DataFetch.c   **** *
+  23:DataFetch.c   **** * Note:
+  24:DataFetch.c   **** *  The definitions of the functions used in this file will change based on the
+  25:DataFetch.c   **** *  interface used to get Hex file data.
+  26:DataFetch.c   **** *******************************************************************************
+  27:DataFetch.c   **** * Copyright (2015), Cypress Semiconductor Corporation.
+  28:DataFetch.c   **** *******************************************************************************
+  29:DataFetch.c   **** * This software is owned by Cypress Semiconductor Corporation (Cypress) and is
+  30:DataFetch.c   **** * protected by and subject to worldwide patent protection (United States and
+  31:DataFetch.c   **** * foreign), United States copyright laws and international treaty provisions.
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccskkMsQ.s 			page 2
+
+
+  32:DataFetch.c   **** * Cypress hereby grants to licensee a personal, non-exclusive, non-transferable
+  33:DataFetch.c   **** * license to copy, use, modify, create derivative works of, and compile the
+  34:DataFetch.c   **** * Cypress Source Code and derivative works for the sole purpose of creating
+  35:DataFetch.c   **** * custom software in support of licensee product to be used only in conjunction
+  36:DataFetch.c   **** * with a Cypress integrated circuit as specified in the applicable agreement.
+  37:DataFetch.c   **** * Any reproduction, modification, translation, compilation, or representation of
+  38:DataFetch.c   **** * this software except as specified above is prohibited without the express
+  39:DataFetch.c   **** * written permission of Cypress.
+  40:DataFetch.c   **** *
+  41:DataFetch.c   **** * Disclaimer: CYPRESS MAKES NO WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, WITH
+  42:DataFetch.c   **** * REGARD TO THIS MATERIAL, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+  43:DataFetch.c   **** * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+  44:DataFetch.c   **** * Cypress reserves the right to make changes without further notice to the
+  45:DataFetch.c   **** * materials described herein. Cypress does not assume any liability arising out
+  46:DataFetch.c   **** * of the application or use of any product or circuit described herein. Cypress
+  47:DataFetch.c   **** * does not authorize its products for use as critical components in life-support
+  48:DataFetch.c   **** * systems where a malfunction or failure may reasonably be expected to result in
+  49:DataFetch.c   **** * significant injury to the user. The inclusion of Cypress' product in a life-
+  50:DataFetch.c   **** * support systems application implies that the manufacturer assumes all risk of
+  51:DataFetch.c   **** * such use and in doing so indemnifies Cypress against all charges. Use may be
+  52:DataFetch.c   **** * limited by and subject to the applicable Cypress software license agreement.
+  53:DataFetch.c   **** 
+  54:DataFetch.c   **** ******************************************************************************/
+  55:DataFetch.c   **** 
+  56:DataFetch.c   **** /******************************************************************************
+  57:DataFetch.c   **** *   Header file Inclusion
+  58:DataFetch.c   **** ******************************************************************************/
+  59:DataFetch.c   **** #include "DataFetch.h"
+  60:DataFetch.c   **** #include "HexImage.h"
+  61:DataFetch.c   **** #include <device.h>
+  62:DataFetch.c   **** 
+  63:DataFetch.c   **** /******************************************************************************
+  64:DataFetch.c   **** *   Global Constant declaration
+  65:DataFetch.c   **** ******************************************************************************/
+  66:DataFetch.c   **** 
+  67:DataFetch.c   **** /***************************** USER ATTENTION REQUIRED ************************
+  68:DataFetch.c   **** **************** DEPENDS ON INTERFACE USED TO GET HEX FILE DATA **************/
+  69:DataFetch.c   **** /* The below Global constants are from HexImage.h. The data from these array of
+  70:DataFetch.c   ****    constants are loaded in to the arrays passed a parameters to function.
+  71:DataFetch.c   ****    These should be modified if different interface is used to get hex file data */
+  72:DataFetch.c   **** 
+  73:DataFetch.c   **** extern unsigned char const deviceSiliconId_HexFile[SILICON_ID_BYTE_LENGTH]; 
+  74:DataFetch.c   **** extern unsigned char const checksumData_HexFile[CHECKSUM_BYTE_LENGTH]; 
+  75:DataFetch.c   **** extern unsigned char const flashData_HexFile[NUMBER_OF_FLASH_ROWS_HEX_FILE][FLASH_ROW_BYTE_SIZE_HEX
+  76:DataFetch.c   **** extern unsigned char const flashProtectionData_HexFile[FLASH_PROTECTION_BYTE_SIZE_HEX_FILE];
+  77:DataFetch.c   **** extern unsigned char const chipProtectionData_HexFile; 
+  78:DataFetch.c   **** 
+  79:DataFetch.c   **** /******************************************************************************
+  80:DataFetch.c   **** *   Function Definitions
+  81:DataFetch.c   **** ******************************************************************************/
+  82:DataFetch.c   **** 
+  83:DataFetch.c   **** /***************************** USER ATTENTION REQUIRED ************************
+  84:DataFetch.c   **** **************** DEPENDS ON INTERFACE USED TO GET HEX FILE DATA ***************
+  85:DataFetch.c   **** All the function definitions below should be modified based on the interface 
+  86:DataFetch.c   **** used to get Hex file data to be programmed. If a protocol like I2C, UART is 
+  87:DataFetch.c   **** used to get the hex file data, change the function definitions accordingly */
+  88:DataFetch.c   **** 
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccskkMsQ.s 			page 3
+
+
+  89:DataFetch.c   **** /******************************************************************************
+  90:DataFetch.c   **** * Function Name: HEX_ReadSiliconId
+  91:DataFetch.c   **** *******************************************************************************
+  92:DataFetch.c   **** *
+  93:DataFetch.c   **** * Summary:
+  94:DataFetch.c   **** *  Loads the Device Silicon ID data in to an array 
+  95:DataFetch.c   **** *
+  96:DataFetch.c   **** * Parameters:
+  97:DataFetch.c   **** *  unsigned long *hexSiliconId - Address of variable which will store the
+  98:DataFetch.c   **** *								 Silicon ID fetched
+  99:DataFetch.c   **** *
+ 100:DataFetch.c   **** * Return:
+ 101:DataFetch.c   **** *  None.
+ 102:DataFetch.c   **** *
+ 103:DataFetch.c   **** * Note:
+ 104:DataFetch.c   **** *  Modify definition based on method of getting programming data
+ 105:DataFetch.c   **** *
+ 106:DataFetch.c   **** ******************************************************************************/
+ 107:DataFetch.c   **** void HEX_ReadSiliconId(unsigned long *hexSiliconId)
+ 108:DataFetch.c   **** {
+  27              		.loc 1 108 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 16
+  30              		@ frame_needed = 1, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32 0000 80B4     		push	{r7}
+  33              		.cfi_def_cfa_offset 4
+  34              		.cfi_offset 7, -4
+  35 0002 85B0     		sub	sp, sp, #20
+  36              		.cfi_def_cfa_offset 24
+  37 0004 00AF     		add	r7, sp, #0
+  38              		.cfi_def_cfa_register 7
+  39 0006 7860     		str	r0, [r7, #4]
+ 109:DataFetch.c   ****     unsigned char i;
+ 110:DataFetch.c   ****     
+ 111:DataFetch.c   ****     for(i = 0; i < SILICON_ID_BYTE_LENGTH; i++)
+  40              		.loc 1 111 0
+  41 0008 0023     		movs	r3, #0
+  42 000a FB73     		strb	r3, [r7, #15]
+  43 000c 0FE0     		b	.L2
+  44              	.L3:
+ 112:DataFetch.c   ****     {
+ 113:DataFetch.c   ****         *hexSiliconId = *hexSiliconId | ((unsigned long)(deviceSiliconId_HexFile[i]) << (8*i));		
+  45              		.loc 1 113 0 discriminator 3
+  46 000e 7B68     		ldr	r3, [r7, #4]
+  47 0010 1A68     		ldr	r2, [r3]
+  48 0012 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+  49 0014 0A49     		ldr	r1, .L4
+  50 0016 CB5C     		ldrb	r3, [r1, r3]	@ zero_extendqisi2
+  51 0018 1946     		mov	r1, r3
+  52 001a FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+  53 001c DB00     		lsls	r3, r3, #3
+  54 001e 01FA03F3 		lsl	r3, r1, r3
+  55 0022 1A43     		orrs	r2, r2, r3
+  56 0024 7B68     		ldr	r3, [r7, #4]
+  57 0026 1A60     		str	r2, [r3]
+ 111:DataFetch.c   ****     {
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccskkMsQ.s 			page 4
+
+
+  58              		.loc 1 111 0 discriminator 3
+  59 0028 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+  60 002a 0133     		adds	r3, r3, #1
+  61 002c FB73     		strb	r3, [r7, #15]
+  62              	.L2:
+ 111:DataFetch.c   ****     {
+  63              		.loc 1 111 0 is_stmt 0 discriminator 1
+  64 002e FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+  65 0030 032B     		cmp	r3, #3
+  66 0032 ECD9     		bls	.L3
+ 114:DataFetch.c   ****     }
+ 115:DataFetch.c   **** }
+  67              		.loc 1 115 0 is_stmt 1
+  68 0034 1437     		adds	r7, r7, #20
+  69              		.cfi_def_cfa_offset 4
+  70 0036 BD46     		mov	sp, r7
+  71              		.cfi_def_cfa_register 13
+  72              		@ sp needed
+  73 0038 5DF8047B 		ldr	r7, [sp], #4
+  74              		.cfi_restore 7
+  75              		.cfi_def_cfa_offset 0
+  76 003c 7047     		bx	lr
+  77              	.L5:
+  78 003e 00BF     		.align	2
+  79              	.L4:
+  80 0040 00000000 		.word	deviceSiliconId_HexFile
+  81              		.cfi_endproc
+  82              	.LFE63:
+  83              		.size	HEX_ReadSiliconId, .-HEX_ReadSiliconId
+  84              		.section	.text.HEX_ReadRowData,"ax",%progbits
+  85              		.align	2
+  86              		.global	HEX_ReadRowData
+  87              		.thumb
+  88              		.thumb_func
+  89              		.type	HEX_ReadRowData, %function
+  90              	HEX_ReadRowData:
+  91              	.LFB64:
+ 116:DataFetch.c   **** 
+ 117:DataFetch.c   **** 
+ 118:DataFetch.c   **** /******************************************************************************
+ 119:DataFetch.c   **** * Function Name: HEX_ReadRowData
+ 120:DataFetch.c   **** *******************************************************************************
+ 121:DataFetch.c   **** *
+ 122:DataFetch.c   **** * Summary:
+ 123:DataFetch.c   **** *  Loads the row data from hex file in to an array 
+ 124:DataFetch.c   **** *
+ 125:DataFetch.c   **** * Parameters:
+ 126:DataFetch.c   **** *  unsigned short rowCount      - Flash row count for which the data has to be
+ 127:DataFetch.c   **** *								  fetched 
+ 128:DataFetch.c   **** *  unsigned char * rowData      - Base address of array which will store the
+ 129:DataFetch.c   **** *								  Flash row data fetched
+ 130:DataFetch.c   **** *
+ 131:DataFetch.c   **** * Return:
+ 132:DataFetch.c   **** *  None.
+ 133:DataFetch.c   **** *
+ 134:DataFetch.c   **** * Note:
+ 135:DataFetch.c   **** *  Modify definition based on the method of getting programming data
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccskkMsQ.s 			page 5
+
+
+ 136:DataFetch.c   **** *  
+ 137:DataFetch.c   **** *  REMOVE THIS LOGIC WHILE PORTING THE HSSP CODE TO OTHER HOST PROGRAMMER
+ 138:DataFetch.c   **** *
+ 139:DataFetch.c   **** ******************************************************************************/
+ 140:DataFetch.c   **** void HEX_ReadRowData(unsigned short rowCount, unsigned char * rowData)
+ 141:DataFetch.c   **** {
+  92              		.loc 1 141 0
+  93              		.cfi_startproc
+  94              		@ args = 0, pretend = 0, frame = 16
+  95              		@ frame_needed = 1, uses_anonymous_args = 0
+  96              		@ link register save eliminated.
+  97 0000 80B4     		push	{r7}
+  98              		.cfi_def_cfa_offset 4
+  99              		.cfi_offset 7, -4
+ 100 0002 85B0     		sub	sp, sp, #20
+ 101              		.cfi_def_cfa_offset 24
+ 102 0004 00AF     		add	r7, sp, #0
+ 103              		.cfi_def_cfa_register 7
+ 104 0006 0346     		mov	r3, r0
+ 105 0008 3960     		str	r1, [r7]
+ 106 000a FB80     		strh	r3, [r7, #6]	@ movhi
+ 142:DataFetch.c   ****     unsigned short i; /* Maximum value of 'i' can be 256 */
+ 143:DataFetch.c   ****     
+ 144:DataFetch.c   ****     for(i = 0; i < FLASH_ROW_BYTE_SIZE_HEX_FILE; i++)
+ 107              		.loc 1 144 0
+ 108 000c 0023     		movs	r3, #0
+ 109 000e FB81     		strh	r3, [r7, #14]	@ movhi
+ 110 0010 0DE0     		b	.L7
+ 111              	.L8:
+ 145:DataFetch.c   ****     {
+ 146:DataFetch.c   ****         rowData[i] = flashData_HexFile[rowCount][i];
+ 112              		.loc 1 146 0 discriminator 3
+ 113 0012 FB89     		ldrh	r3, [r7, #14]
+ 114 0014 3A68     		ldr	r2, [r7]
+ 115 0016 1344     		add	r3, r3, r2
+ 116 0018 F988     		ldrh	r1, [r7, #6]
+ 117 001a FA89     		ldrh	r2, [r7, #14]
+ 118 001c 0848     		ldr	r0, .L9
+ 119 001e C901     		lsls	r1, r1, #7
+ 120 0020 0A44     		add	r2, r2, r1
+ 121 0022 0244     		add	r2, r2, r0
+ 122 0024 1278     		ldrb	r2, [r2]	@ zero_extendqisi2
+ 123 0026 1A70     		strb	r2, [r3]
+ 144:DataFetch.c   ****     {
+ 124              		.loc 1 144 0 discriminator 3
+ 125 0028 FB89     		ldrh	r3, [r7, #14]
+ 126 002a 0133     		adds	r3, r3, #1
+ 127 002c FB81     		strh	r3, [r7, #14]	@ movhi
+ 128              	.L7:
+ 144:DataFetch.c   ****     {
+ 129              		.loc 1 144 0 is_stmt 0 discriminator 1
+ 130 002e FB89     		ldrh	r3, [r7, #14]
+ 131 0030 7F2B     		cmp	r3, #127
+ 132 0032 EED9     		bls	.L8
+ 147:DataFetch.c   ****     }
+ 148:DataFetch.c   **** }
+ 133              		.loc 1 148 0 is_stmt 1
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccskkMsQ.s 			page 6
+
+
+ 134 0034 1437     		adds	r7, r7, #20
+ 135              		.cfi_def_cfa_offset 4
+ 136 0036 BD46     		mov	sp, r7
+ 137              		.cfi_def_cfa_register 13
+ 138              		@ sp needed
+ 139 0038 5DF8047B 		ldr	r7, [sp], #4
+ 140              		.cfi_restore 7
+ 141              		.cfi_def_cfa_offset 0
+ 142 003c 7047     		bx	lr
+ 143              	.L10:
+ 144 003e 00BF     		.align	2
+ 145              	.L9:
+ 146 0040 00000000 		.word	flashData_HexFile
+ 147              		.cfi_endproc
+ 148              	.LFE64:
+ 149              		.size	HEX_ReadRowData, .-HEX_ReadRowData
+ 150              		.section	.text.HEX_ReadChipProtectionData,"ax",%progbits
+ 151              		.align	2
+ 152              		.global	HEX_ReadChipProtectionData
+ 153              		.thumb
+ 154              		.thumb_func
+ 155              		.type	HEX_ReadChipProtectionData, %function
+ 156              	HEX_ReadChipProtectionData:
+ 157              	.LFB65:
+ 149:DataFetch.c   **** 
+ 150:DataFetch.c   **** /******************************************************************************
+ 151:DataFetch.c   **** * Function Name: HEX_ReadChipProtectionData
+ 152:DataFetch.c   **** *******************************************************************************
+ 153:DataFetch.c   **** *
+ 154:DataFetch.c   **** * Summary:
+ 155:DataFetch.c   **** *  Loads the Chip Protection data in to an array 
+ 156:DataFetch.c   **** *
+ 157:DataFetch.c   **** * Parameters:
+ 158:DataFetch.c   **** *
+ 159:DataFetch.c   **** *  unsigned char * chipProtectionData - Address of variable which will store
+ 160:DataFetch.c   **** *										the Chip Protection data fetched
+ 161:DataFetch.c   **** *
+ 162:DataFetch.c   **** * Return:
+ 163:DataFetch.c   **** *  None.
+ 164:DataFetch.c   **** *
+ 165:DataFetch.c   **** * Note:
+ 166:DataFetch.c   **** *  Modify definition based on the method of getting programming data
+ 167:DataFetch.c   **** *
+ 168:DataFetch.c   **** ******************************************************************************/
+ 169:DataFetch.c   **** void HEX_ReadChipProtectionData(unsigned char * chipProtectionData)
+ 170:DataFetch.c   **** {
+ 158              		.loc 1 170 0
+ 159              		.cfi_startproc
+ 160              		@ args = 0, pretend = 0, frame = 8
+ 161              		@ frame_needed = 1, uses_anonymous_args = 0
+ 162              		@ link register save eliminated.
+ 163 0000 80B4     		push	{r7}
+ 164              		.cfi_def_cfa_offset 4
+ 165              		.cfi_offset 7, -4
+ 166 0002 83B0     		sub	sp, sp, #12
+ 167              		.cfi_def_cfa_offset 16
+ 168 0004 00AF     		add	r7, sp, #0
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccskkMsQ.s 			page 7
+
+
+ 169              		.cfi_def_cfa_register 7
+ 170 0006 7860     		str	r0, [r7, #4]
+ 171:DataFetch.c   ****     *chipProtectionData = chipProtectionData_HexFile;
+ 171              		.loc 1 171 0
+ 172 0008 044B     		ldr	r3, .L12
+ 173 000a 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 174 000c 7B68     		ldr	r3, [r7, #4]
+ 175 000e 1A70     		strb	r2, [r3]
+ 172:DataFetch.c   **** }
+ 176              		.loc 1 172 0
+ 177 0010 0C37     		adds	r7, r7, #12
+ 178              		.cfi_def_cfa_offset 4
+ 179 0012 BD46     		mov	sp, r7
+ 180              		.cfi_def_cfa_register 13
+ 181              		@ sp needed
+ 182 0014 5DF8047B 		ldr	r7, [sp], #4
+ 183              		.cfi_restore 7
+ 184              		.cfi_def_cfa_offset 0
+ 185 0018 7047     		bx	lr
+ 186              	.L13:
+ 187 001a 00BF     		.align	2
+ 188              	.L12:
+ 189 001c 00000000 		.word	chipProtectionData_HexFile
+ 190              		.cfi_endproc
+ 191              	.LFE65:
+ 192              		.size	HEX_ReadChipProtectionData, .-HEX_ReadChipProtectionData
+ 193              		.section	.text.HEX_ReadRowProtectionData,"ax",%progbits
+ 194              		.align	2
+ 195              		.global	HEX_ReadRowProtectionData
+ 196              		.thumb
+ 197              		.thumb_func
+ 198              		.type	HEX_ReadRowProtectionData, %function
+ 199              	HEX_ReadRowProtectionData:
+ 200              	.LFB66:
+ 173:DataFetch.c   **** 
+ 174:DataFetch.c   **** 
+ 175:DataFetch.c   **** /******************************************************************************
+ 176:DataFetch.c   **** * Function Name: HEX_ReadRowProtectionData
+ 177:DataFetch.c   **** *******************************************************************************
+ 178:DataFetch.c   **** *
+ 179:DataFetch.c   **** * Summary:
+ 180:DataFetch.c   **** *  Loads the Flash Row Protection data in to an array 
+ 181:DataFetch.c   **** *
+ 182:DataFetch.c   **** * Parameters:
+ 183:DataFetch.c   **** *
+ 184:DataFetch.c   **** *  unsigned char * rowProtectionData  - Base address of array which will store
+ 185:DataFetch.c   **** *									    the Flash Row Protection data fetched
+ 186:DataFetch.c   **** *  unsigned char rowProtectionByteSize - Size of flash row protection settings
+ 187:DataFetch.c   **** *										 in bytes
+ 188:DataFetch.c   **** *
+ 189:DataFetch.c   **** * Return:
+ 190:DataFetch.c   **** *  None.
+ 191:DataFetch.c   **** *
+ 192:DataFetch.c   **** * Note:
+ 193:DataFetch.c   **** *  Modify definition based on the method of getting programming data
+ 194:DataFetch.c   **** *
+ 195:DataFetch.c   **** ******************************************************************************/
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccskkMsQ.s 			page 8
+
+
+ 196:DataFetch.c   **** void HEX_ReadRowProtectionData(unsigned char rowProtectionByteSize, unsigned char * rowProtectionDa
+ 197:DataFetch.c   **** {
+ 201              		.loc 1 197 0
+ 202              		.cfi_startproc
+ 203              		@ args = 0, pretend = 0, frame = 16
+ 204              		@ frame_needed = 1, uses_anonymous_args = 0
+ 205              		@ link register save eliminated.
+ 206 0000 80B4     		push	{r7}
+ 207              		.cfi_def_cfa_offset 4
+ 208              		.cfi_offset 7, -4
+ 209 0002 85B0     		sub	sp, sp, #20
+ 210              		.cfi_def_cfa_offset 24
+ 211 0004 00AF     		add	r7, sp, #0
+ 212              		.cfi_def_cfa_register 7
+ 213 0006 0346     		mov	r3, r0
+ 214 0008 3960     		str	r1, [r7]
+ 215 000a FB71     		strb	r3, [r7, #7]
+ 216 000c 1346     		mov	r3, r2
+ 217 000e BB71     		strb	r3, [r7, #6]
+ 198:DataFetch.c   ****     unsigned short i;
+ 199:DataFetch.c   ****     
+ 200:DataFetch.c   ****     for(i = 0; i < rowProtectionByteSize; i++)
+ 218              		.loc 1 200 0
+ 219 0010 0023     		movs	r3, #0
+ 220 0012 FB81     		strh	r3, [r7, #14]	@ movhi
+ 221 0014 0EE0     		b	.L15
+ 222              	.L16:
+ 201:DataFetch.c   ****     {
+ 202:DataFetch.c   ****         rowProtectionData[i] = flashProtectionData_HexFile[i + (arrayID * rowProtectionByteSize)];
+ 223              		.loc 1 202 0 discriminator 3
+ 224 0016 FB89     		ldrh	r3, [r7, #14]
+ 225 0018 3A68     		ldr	r2, [r7]
+ 226 001a 1344     		add	r3, r3, r2
+ 227 001c F989     		ldrh	r1, [r7, #14]
+ 228 001e BA79     		ldrb	r2, [r7, #6]	@ zero_extendqisi2
+ 229 0020 F879     		ldrb	r0, [r7, #7]	@ zero_extendqisi2
+ 230 0022 00FB02F2 		mul	r2, r0, r2
+ 231 0026 0A44     		add	r2, r2, r1
+ 232 0028 0749     		ldr	r1, .L17
+ 233 002a 8A5C     		ldrb	r2, [r1, r2]	@ zero_extendqisi2
+ 234 002c 1A70     		strb	r2, [r3]
+ 200:DataFetch.c   ****     {
+ 235              		.loc 1 200 0 discriminator 3
+ 236 002e FB89     		ldrh	r3, [r7, #14]
+ 237 0030 0133     		adds	r3, r3, #1
+ 238 0032 FB81     		strh	r3, [r7, #14]	@ movhi
+ 239              	.L15:
+ 200:DataFetch.c   ****     {
+ 240              		.loc 1 200 0 is_stmt 0 discriminator 1
+ 241 0034 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 242 0036 9BB2     		uxth	r3, r3
+ 243 0038 FA89     		ldrh	r2, [r7, #14]
+ 244 003a 9A42     		cmp	r2, r3
+ 245 003c EBD3     		bcc	.L16
+ 203:DataFetch.c   ****     }    
+ 204:DataFetch.c   **** }
+ 246              		.loc 1 204 0 is_stmt 1
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccskkMsQ.s 			page 9
+
+
+ 247 003e 1437     		adds	r7, r7, #20
+ 248              		.cfi_def_cfa_offset 4
+ 249 0040 BD46     		mov	sp, r7
+ 250              		.cfi_def_cfa_register 13
+ 251              		@ sp needed
+ 252 0042 5DF8047B 		ldr	r7, [sp], #4
+ 253              		.cfi_restore 7
+ 254              		.cfi_def_cfa_offset 0
+ 255 0046 7047     		bx	lr
+ 256              	.L18:
+ 257              		.align	2
+ 258              	.L17:
+ 259 0048 00000000 		.word	flashProtectionData_HexFile
+ 260              		.cfi_endproc
+ 261              	.LFE66:
+ 262              		.size	HEX_ReadRowProtectionData, .-HEX_ReadRowProtectionData
+ 263              		.section	.text.HEX_ReadChecksumData,"ax",%progbits
+ 264              		.align	2
+ 265              		.global	HEX_ReadChecksumData
+ 266              		.thumb
+ 267              		.thumb_func
+ 268              		.type	HEX_ReadChecksumData, %function
+ 269              	HEX_ReadChecksumData:
+ 270              	.LFB67:
+ 205:DataFetch.c   **** 
+ 206:DataFetch.c   **** /******************************************************************************
+ 207:DataFetch.c   **** * Function Name: HEX_ReadChecksumData
+ 208:DataFetch.c   **** *******************************************************************************
+ 209:DataFetch.c   **** *
+ 210:DataFetch.c   **** * Summary:
+ 211:DataFetch.c   **** *  Loads the Checksum data in to an array 
+ 212:DataFetch.c   **** *
+ 213:DataFetch.c   **** * Parameters:
+ 214:DataFetch.c   **** *  unsigned short * checksumData - Base address of the array which will store
+ 215:DataFetch.c   **** *								   the Checksum data fetched
+ 216:DataFetch.c   **** *
+ 217:DataFetch.c   **** * Return:
+ 218:DataFetch.c   **** *  None.
+ 219:DataFetch.c   **** *
+ 220:DataFetch.c   **** * Note:
+ 221:DataFetch.c   **** *  Modify definition based on the method of getting programming data
+ 222:DataFetch.c   **** *
+ 223:DataFetch.c   **** ******************************************************************************/
+ 224:DataFetch.c   **** void HEX_ReadChecksumData(unsigned short * checksumData)
+ 225:DataFetch.c   **** {
+ 271              		.loc 1 225 0
+ 272              		.cfi_startproc
+ 273              		@ args = 0, pretend = 0, frame = 16
+ 274              		@ frame_needed = 1, uses_anonymous_args = 0
+ 275              		@ link register save eliminated.
+ 276 0000 80B4     		push	{r7}
+ 277              		.cfi_def_cfa_offset 4
+ 278              		.cfi_offset 7, -4
+ 279 0002 85B0     		sub	sp, sp, #20
+ 280              		.cfi_def_cfa_offset 24
+ 281 0004 00AF     		add	r7, sp, #0
+ 282              		.cfi_def_cfa_register 7
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccskkMsQ.s 			page 10
+
+
+ 283 0006 7860     		str	r0, [r7, #4]
+ 226:DataFetch.c   ****     unsigned char i;
+ 227:DataFetch.c   **** 
+ 228:DataFetch.c   ****     for(i = 0; i < CHECKSUM_BYTE_LENGTH; i++)
+ 284              		.loc 1 228 0
+ 285 0008 0023     		movs	r3, #0
+ 286 000a FB73     		strb	r3, [r7, #15]
+ 287 000c 14E0     		b	.L20
+ 288              	.L21:
+ 229:DataFetch.c   ****     {
+ 230:DataFetch.c   ****         *checksumData |= (checksumData_HexFile[i] << (8*i));
+ 289              		.loc 1 230 0 discriminator 3
+ 290 000e 7B68     		ldr	r3, [r7, #4]
+ 291 0010 1B88     		ldrh	r3, [r3]
+ 292 0012 99B2     		uxth	r1, r3
+ 293 0014 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 294 0016 0C4A     		ldr	r2, .L22
+ 295 0018 D35C     		ldrb	r3, [r2, r3]	@ zero_extendqisi2
+ 296 001a 1A46     		mov	r2, r3
+ 297 001c FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 298 001e DB00     		lsls	r3, r3, #3
+ 299 0020 02FA03F3 		lsl	r3, r2, r3
+ 300 0024 9BB2     		uxth	r3, r3
+ 301 0026 0A46     		mov	r2, r1	@ movhi
+ 302 0028 1343     		orrs	r3, r3, r2
+ 303 002a 9BB2     		uxth	r3, r3
+ 304 002c 9AB2     		uxth	r2, r3
+ 305 002e 7B68     		ldr	r3, [r7, #4]
+ 306 0030 1A80     		strh	r2, [r3]	@ movhi
+ 228:DataFetch.c   ****     {
+ 307              		.loc 1 228 0 discriminator 3
+ 308 0032 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 309 0034 0133     		adds	r3, r3, #1
+ 310 0036 FB73     		strb	r3, [r7, #15]
+ 311              	.L20:
+ 228:DataFetch.c   ****     {
+ 312              		.loc 1 228 0 is_stmt 0 discriminator 1
+ 313 0038 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 314 003a 012B     		cmp	r3, #1
+ 315 003c E7D9     		bls	.L21
+ 231:DataFetch.c   ****     }
+ 232:DataFetch.c   **** }
+ 316              		.loc 1 232 0 is_stmt 1
+ 317 003e 1437     		adds	r7, r7, #20
+ 318              		.cfi_def_cfa_offset 4
+ 319 0040 BD46     		mov	sp, r7
+ 320              		.cfi_def_cfa_register 13
+ 321              		@ sp needed
+ 322 0042 5DF8047B 		ldr	r7, [sp], #4
+ 323              		.cfi_restore 7
+ 324              		.cfi_def_cfa_offset 0
+ 325 0046 7047     		bx	lr
+ 326              	.L23:
+ 327              		.align	2
+ 328              	.L22:
+ 329 0048 00000000 		.word	checksumData_HexFile
+ 330              		.cfi_endproc
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccskkMsQ.s 			page 11
+
+
+ 331              	.LFE67:
+ 332              		.size	HEX_ReadChecksumData, .-HEX_ReadChecksumData
+ 333              		.section	.text.GetFlashRowCount,"ax",%progbits
+ 334              		.align	2
+ 335              		.global	GetFlashRowCount
+ 336              		.thumb
+ 337              		.thumb_func
+ 338              		.type	GetFlashRowCount, %function
+ 339              	GetFlashRowCount:
+ 340              	.LFB68:
+ 233:DataFetch.c   **** 
+ 234:DataFetch.c   **** /******************************************************************************
+ 235:DataFetch.c   **** * Function Name: GetFlashRowCount
+ 236:DataFetch.c   **** *******************************************************************************
+ 237:DataFetch.c   **** *
+ 238:DataFetch.c   **** * Summary:
+ 239:DataFetch.c   **** *  Returns the total number of Flash rows in the target PSoC 4 device
+ 240:DataFetch.c   **** *
+ 241:DataFetch.c   **** * Parameters:
+ 242:DataFetch.c   **** *  None
+ 243:DataFetch.c   **** *
+ 244:DataFetch.c   **** * Return:
+ 245:DataFetch.c   **** *  unsigned short
+ 246:DataFetch.c   **** *   Total number of Flash rows in target PSoC 4
+ 247:DataFetch.c   **** *
+ 248:DataFetch.c   **** * Note:
+ 249:DataFetch.c   **** *  The Flash row count is from the HexImage.h file. Modify the definition based
+ 250:DataFetch.c   **** *  on the method of getting programming data
+ 251:DataFetch.c   **** *
+ 252:DataFetch.c   **** ******************************************************************************/
+ 253:DataFetch.c   **** unsigned short GetFlashRowCount()
+ 254:DataFetch.c   **** {
+ 341              		.loc 1 254 0
+ 342              		.cfi_startproc
+ 343              		@ args = 0, pretend = 0, frame = 0
+ 344              		@ frame_needed = 1, uses_anonymous_args = 0
+ 345              		@ link register save eliminated.
+ 346 0000 80B4     		push	{r7}
+ 347              		.cfi_def_cfa_offset 4
+ 348              		.cfi_offset 7, -4
+ 349 0002 00AF     		add	r7, sp, #0
+ 350              		.cfi_def_cfa_register 7
+ 255:DataFetch.c   ****     return(NUMBER_OF_FLASH_ROWS_HEX_FILE);
+ 351              		.loc 1 255 0
+ 352 0004 4FF48063 		mov	r3, #1024
+ 256:DataFetch.c   **** }
+ 353              		.loc 1 256 0
+ 354 0008 1846     		mov	r0, r3
+ 355 000a BD46     		mov	sp, r7
+ 356              		.cfi_def_cfa_register 13
+ 357              		@ sp needed
+ 358 000c 5DF8047B 		ldr	r7, [sp], #4
+ 359              		.cfi_restore 7
+ 360              		.cfi_def_cfa_offset 0
+ 361 0010 7047     		bx	lr
+ 362              		.cfi_endproc
+ 363              	.LFE68:
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccskkMsQ.s 			page 12
+
+
+ 364              		.size	GetFlashRowCount, .-GetFlashRowCount
+ 365 0012 00BF     		.text
+ 366              	.Letext0:
+ 367              		.file 2 "c:\\program files\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.3\\arm
+ 368              		.file 3 "c:\\program files\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.3\\arm
+ 369              		.file 4 "Generated_Source\\PSoC5/core_cm3.h"
+ 370              		.section	.debug_info,"",%progbits
+ 371              	.Ldebug_info0:
+ 372 0000 77020000 		.4byte	0x277
+ 373 0004 0400     		.2byte	0x4
+ 374 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 375 000a 04       		.byte	0x4
+ 376 000b 01       		.uleb128 0x1
+ 377 000c 24000000 		.4byte	.LASF34
+ 378 0010 01       		.byte	0x1
+ 379 0011 D2020000 		.4byte	.LASF35
+ 380 0015 AC010000 		.4byte	.LASF36
+ 381 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 382 001d 00000000 		.4byte	0
+ 383 0021 00000000 		.4byte	.Ldebug_line0
+ 384 0025 02       		.uleb128 0x2
+ 385 0026 01       		.byte	0x1
+ 386 0027 06       		.byte	0x6
+ 387 0028 DE020000 		.4byte	.LASF0
+ 388 002c 02       		.uleb128 0x2
+ 389 002d 01       		.byte	0x1
+ 390 002e 08       		.byte	0x8
+ 391 002f 11010000 		.4byte	.LASF1
+ 392 0033 02       		.uleb128 0x2
+ 393 0034 02       		.byte	0x2
+ 394 0035 05       		.byte	0x5
+ 395 0036 A9020000 		.4byte	.LASF2
+ 396 003a 02       		.uleb128 0x2
+ 397 003b 02       		.byte	0x2
+ 398 003c 07       		.byte	0x7
+ 399 003d 4A010000 		.4byte	.LASF3
+ 400 0041 03       		.uleb128 0x3
+ 401 0042 00000000 		.4byte	.LASF9
+ 402 0046 02       		.byte	0x2
+ 403 0047 3F       		.byte	0x3f
+ 404 0048 4C000000 		.4byte	0x4c
+ 405 004c 02       		.uleb128 0x2
+ 406 004d 04       		.byte	0x4
+ 407 004e 05       		.byte	0x5
+ 408 004f C9020000 		.4byte	.LASF4
+ 409 0053 02       		.uleb128 0x2
+ 410 0054 04       		.byte	0x4
+ 411 0055 07       		.byte	0x7
+ 412 0056 38010000 		.4byte	.LASF5
+ 413 005a 02       		.uleb128 0x2
+ 414 005b 08       		.byte	0x8
+ 415 005c 05       		.byte	0x5
+ 416 005d 96020000 		.4byte	.LASF6
+ 417 0061 02       		.uleb128 0x2
+ 418 0062 08       		.byte	0x8
+ 419 0063 07       		.byte	0x7
+ 420 0064 4C020000 		.4byte	.LASF7
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccskkMsQ.s 			page 13
+
+
+ 421 0068 04       		.uleb128 0x4
+ 422 0069 04       		.byte	0x4
+ 423 006a 05       		.byte	0x5
+ 424 006b 696E7400 		.ascii	"int\000"
+ 425 006f 02       		.uleb128 0x2
+ 426 0070 04       		.byte	0x4
+ 427 0071 07       		.byte	0x7
+ 428 0072 3F020000 		.4byte	.LASF8
+ 429 0076 03       		.uleb128 0x3
+ 430 0077 78020000 		.4byte	.LASF10
+ 431 007b 03       		.byte	0x3
+ 432 007c 2C       		.byte	0x2c
+ 433 007d 41000000 		.4byte	0x41
+ 434 0081 02       		.uleb128 0x2
+ 435 0082 04       		.byte	0x4
+ 436 0083 04       		.byte	0x4
+ 437 0084 F3000000 		.4byte	.LASF11
+ 438 0088 02       		.uleb128 0x2
+ 439 0089 08       		.byte	0x8
+ 440 008a 04       		.byte	0x4
+ 441 008b 92010000 		.4byte	.LASF12
+ 442 008f 02       		.uleb128 0x2
+ 443 0090 01       		.byte	0x1
+ 444 0091 08       		.byte	0x8
+ 445 0092 A4020000 		.4byte	.LASF13
+ 446 0096 02       		.uleb128 0x2
+ 447 0097 04       		.byte	0x4
+ 448 0098 07       		.byte	0x7
+ 449 0099 80020000 		.4byte	.LASF14
+ 450 009d 05       		.uleb128 0x5
+ 451 009e 2C000000 		.4byte	0x2c
+ 452 00a2 AD000000 		.4byte	0xad
+ 453 00a6 06       		.uleb128 0x6
+ 454 00a7 96000000 		.4byte	0x96
+ 455 00ab 03       		.byte	0x3
+ 456 00ac 00       		.byte	0
+ 457 00ad 07       		.uleb128 0x7
+ 458 00ae 04       		.byte	0x4
+ 459 00af 2C000000 		.4byte	0x2c
+ 460 00b3 08       		.uleb128 0x8
+ 461 00b4 0A000000 		.4byte	.LASF15
+ 462 00b8 01       		.byte	0x1
+ 463 00b9 6B       		.byte	0x6b
+ 464 00ba 00000000 		.4byte	.LFB63
+ 465 00be 44000000 		.4byte	.LFE63-.LFB63
+ 466 00c2 01       		.uleb128 0x1
+ 467 00c3 9C       		.byte	0x9c
+ 468 00c4 E3000000 		.4byte	0xe3
+ 469 00c8 09       		.uleb128 0x9
+ 470 00c9 89020000 		.4byte	.LASF17
+ 471 00cd 01       		.byte	0x1
+ 472 00ce 6B       		.byte	0x6b
+ 473 00cf E3000000 		.4byte	0xe3
+ 474 00d3 02       		.uleb128 0x2
+ 475 00d4 91       		.byte	0x91
+ 476 00d5 6C       		.sleb128 -20
+ 477 00d6 0A       		.uleb128 0xa
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccskkMsQ.s 			page 14
+
+
+ 478 00d7 6900     		.ascii	"i\000"
+ 479 00d9 01       		.byte	0x1
+ 480 00da 6D       		.byte	0x6d
+ 481 00db 2C000000 		.4byte	0x2c
+ 482 00df 02       		.uleb128 0x2
+ 483 00e0 91       		.byte	0x91
+ 484 00e1 77       		.sleb128 -9
+ 485 00e2 00       		.byte	0
+ 486 00e3 07       		.uleb128 0x7
+ 487 00e4 04       		.byte	0x4
+ 488 00e5 53000000 		.4byte	0x53
+ 489 00e9 08       		.uleb128 0x8
+ 490 00ea C7000000 		.4byte	.LASF16
+ 491 00ee 01       		.byte	0x1
+ 492 00ef 8C       		.byte	0x8c
+ 493 00f0 00000000 		.4byte	.LFB64
+ 494 00f4 44000000 		.4byte	.LFE64-.LFB64
+ 495 00f8 01       		.uleb128 0x1
+ 496 00f9 9C       		.byte	0x9c
+ 497 00fa 27010000 		.4byte	0x127
+ 498 00fe 09       		.uleb128 0x9
+ 499 00ff B3020000 		.4byte	.LASF18
+ 500 0103 01       		.byte	0x1
+ 501 0104 8C       		.byte	0x8c
+ 502 0105 3A000000 		.4byte	0x3a
+ 503 0109 02       		.uleb128 0x2
+ 504 010a 91       		.byte	0x91
+ 505 010b 6E       		.sleb128 -18
+ 506 010c 09       		.uleb128 0x9
+ 507 010d 30010000 		.4byte	.LASF19
+ 508 0111 01       		.byte	0x1
+ 509 0112 8C       		.byte	0x8c
+ 510 0113 AD000000 		.4byte	0xad
+ 511 0117 02       		.uleb128 0x2
+ 512 0118 91       		.byte	0x91
+ 513 0119 68       		.sleb128 -24
+ 514 011a 0A       		.uleb128 0xa
+ 515 011b 6900     		.ascii	"i\000"
+ 516 011d 01       		.byte	0x1
+ 517 011e 8E       		.byte	0x8e
+ 518 011f 3A000000 		.4byte	0x3a
+ 519 0123 02       		.uleb128 0x2
+ 520 0124 91       		.byte	0x91
+ 521 0125 76       		.sleb128 -10
+ 522 0126 00       		.byte	0
+ 523 0127 08       		.uleb128 0x8
+ 524 0128 05030000 		.4byte	.LASF20
+ 525 012c 01       		.byte	0x1
+ 526 012d A9       		.byte	0xa9
+ 527 012e 00000000 		.4byte	.LFB65
+ 528 0132 20000000 		.4byte	.LFE65-.LFB65
+ 529 0136 01       		.uleb128 0x1
+ 530 0137 9C       		.byte	0x9c
+ 531 0138 4B010000 		.4byte	0x14b
+ 532 013c 09       		.uleb128 0x9
+ 533 013d 99010000 		.4byte	.LASF21
+ 534 0141 01       		.byte	0x1
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccskkMsQ.s 			page 15
+
+
+ 535 0142 A9       		.byte	0xa9
+ 536 0143 AD000000 		.4byte	0xad
+ 537 0147 02       		.uleb128 0x2
+ 538 0148 91       		.byte	0x91
+ 539 0149 74       		.sleb128 -12
+ 540 014a 00       		.byte	0
+ 541 014b 08       		.uleb128 0x8
+ 542 014c 25020000 		.4byte	.LASF22
+ 543 0150 01       		.byte	0x1
+ 544 0151 C4       		.byte	0xc4
+ 545 0152 00000000 		.4byte	.LFB66
+ 546 0156 4C000000 		.4byte	.LFE66-.LFB66
+ 547 015a 01       		.uleb128 0x1
+ 548 015b 9C       		.byte	0x9c
+ 549 015c 97010000 		.4byte	0x197
+ 550 0160 09       		.uleb128 0x9
+ 551 0161 6A010000 		.4byte	.LASF23
+ 552 0165 01       		.byte	0x1
+ 553 0166 C4       		.byte	0xc4
+ 554 0167 2C000000 		.4byte	0x2c
+ 555 016b 02       		.uleb128 0x2
+ 556 016c 91       		.byte	0x91
+ 557 016d 6F       		.sleb128 -17
+ 558 016e 09       		.uleb128 0x9
+ 559 016f 80010000 		.4byte	.LASF24
+ 560 0173 01       		.byte	0x1
+ 561 0174 C4       		.byte	0xc4
+ 562 0175 AD000000 		.4byte	0xad
+ 563 0179 02       		.uleb128 0x2
+ 564 017a 91       		.byte	0x91
+ 565 017b 68       		.sleb128 -24
+ 566 017c 09       		.uleb128 0x9
+ 567 017d 1C000000 		.4byte	.LASF25
+ 568 0181 01       		.byte	0x1
+ 569 0182 C4       		.byte	0xc4
+ 570 0183 2C000000 		.4byte	0x2c
+ 571 0187 02       		.uleb128 0x2
+ 572 0188 91       		.byte	0x91
+ 573 0189 6E       		.sleb128 -18
+ 574 018a 0A       		.uleb128 0xa
+ 575 018b 6900     		.ascii	"i\000"
+ 576 018d 01       		.byte	0x1
+ 577 018e C6       		.byte	0xc6
+ 578 018f 3A000000 		.4byte	0x3a
+ 579 0193 02       		.uleb128 0x2
+ 580 0194 91       		.byte	0x91
+ 581 0195 76       		.sleb128 -10
+ 582 0196 00       		.byte	0
+ 583 0197 08       		.uleb128 0x8
+ 584 0198 B2000000 		.4byte	.LASF26
+ 585 019c 01       		.byte	0x1
+ 586 019d E0       		.byte	0xe0
+ 587 019e 00000000 		.4byte	.LFB67
+ 588 01a2 4C000000 		.4byte	.LFE67-.LFB67
+ 589 01a6 01       		.uleb128 0x1
+ 590 01a7 9C       		.byte	0x9c
+ 591 01a8 C7010000 		.4byte	0x1c7
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccskkMsQ.s 			page 16
+
+
+ 592 01ac 09       		.uleb128 0x9
+ 593 01ad BC020000 		.4byte	.LASF27
+ 594 01b1 01       		.byte	0x1
+ 595 01b2 E0       		.byte	0xe0
+ 596 01b3 C7010000 		.4byte	0x1c7
+ 597 01b7 02       		.uleb128 0x2
+ 598 01b8 91       		.byte	0x91
+ 599 01b9 6C       		.sleb128 -20
+ 600 01ba 0A       		.uleb128 0xa
+ 601 01bb 6900     		.ascii	"i\000"
+ 602 01bd 01       		.byte	0x1
+ 603 01be E2       		.byte	0xe2
+ 604 01bf 2C000000 		.4byte	0x2c
+ 605 01c3 02       		.uleb128 0x2
+ 606 01c4 91       		.byte	0x91
+ 607 01c5 77       		.sleb128 -9
+ 608 01c6 00       		.byte	0
+ 609 01c7 07       		.uleb128 0x7
+ 610 01c8 04       		.byte	0x4
+ 611 01c9 3A000000 		.4byte	0x3a
+ 612 01cd 0B       		.uleb128 0xb
+ 613 01ce 1F010000 		.4byte	.LASF37
+ 614 01d2 01       		.byte	0x1
+ 615 01d3 FD       		.byte	0xfd
+ 616 01d4 3A000000 		.4byte	0x3a
+ 617 01d8 00000000 		.4byte	.LFB68
+ 618 01dc 12000000 		.4byte	.LFE68-.LFB68
+ 619 01e0 01       		.uleb128 0x1
+ 620 01e1 9C       		.byte	0x9c
+ 621 01e2 0C       		.uleb128 0xc
+ 622 01e3 F9000000 		.4byte	.LASF28
+ 623 01e7 01       		.byte	0x1
+ 624 01e8 49       		.byte	0x49
+ 625 01e9 ED010000 		.4byte	0x1ed
+ 626 01ed 0D       		.uleb128 0xd
+ 627 01ee 9D000000 		.4byte	0x9d
+ 628 01f2 05       		.uleb128 0x5
+ 629 01f3 2C000000 		.4byte	0x2c
+ 630 01f7 02020000 		.4byte	0x202
+ 631 01fb 06       		.uleb128 0x6
+ 632 01fc 96000000 		.4byte	0x96
+ 633 0200 01       		.byte	0x1
+ 634 0201 00       		.byte	0
+ 635 0202 0C       		.uleb128 0xc
+ 636 0203 63020000 		.4byte	.LASF29
+ 637 0207 01       		.byte	0x1
+ 638 0208 4A       		.byte	0x4a
+ 639 0209 0D020000 		.4byte	0x20d
+ 640 020d 0D       		.uleb128 0xd
+ 641 020e F2010000 		.4byte	0x1f2
+ 642 0212 05       		.uleb128 0x5
+ 643 0213 2C000000 		.4byte	0x2c
+ 644 0217 29020000 		.4byte	0x229
+ 645 021b 0E       		.uleb128 0xe
+ 646 021c 96000000 		.4byte	0x96
+ 647 0220 FF03     		.2byte	0x3ff
+ 648 0222 06       		.uleb128 0x6
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccskkMsQ.s 			page 17
+
+
+ 649 0223 96000000 		.4byte	0x96
+ 650 0227 7F       		.byte	0x7f
+ 651 0228 00       		.byte	0
+ 652 0229 0C       		.uleb128 0xc
+ 653 022a 20030000 		.4byte	.LASF30
+ 654 022e 01       		.byte	0x1
+ 655 022f 4B       		.byte	0x4b
+ 656 0230 34020000 		.4byte	0x234
+ 657 0234 0D       		.uleb128 0xd
+ 658 0235 12020000 		.4byte	0x212
+ 659 0239 05       		.uleb128 0x5
+ 660 023a 2C000000 		.4byte	0x2c
+ 661 023e 49020000 		.4byte	0x249
+ 662 0242 06       		.uleb128 0x6
+ 663 0243 96000000 		.4byte	0x96
+ 664 0247 7F       		.byte	0x7f
+ 665 0248 00       		.byte	0
+ 666 0249 0C       		.uleb128 0xc
+ 667 024a D7000000 		.4byte	.LASF31
+ 668 024e 01       		.byte	0x1
+ 669 024f 4C       		.byte	0x4c
+ 670 0250 54020000 		.4byte	0x254
+ 671 0254 0D       		.uleb128 0xd
+ 672 0255 39020000 		.4byte	0x239
+ 673 0259 0C       		.uleb128 0xc
+ 674 025a EA020000 		.4byte	.LASF32
+ 675 025e 01       		.byte	0x1
+ 676 025f 4D       		.byte	0x4d
+ 677 0260 64020000 		.4byte	0x264
+ 678 0264 0D       		.uleb128 0xd
+ 679 0265 2C000000 		.4byte	0x2c
+ 680 0269 0F       		.uleb128 0xf
+ 681 026a 5D010000 		.4byte	.LASF33
+ 682 026e 04       		.byte	0x4
+ 683 026f 9606     		.2byte	0x696
+ 684 0271 75020000 		.4byte	0x275
+ 685 0275 10       		.uleb128 0x10
+ 686 0276 76000000 		.4byte	0x76
+ 687 027a 00       		.byte	0
+ 688              		.section	.debug_abbrev,"",%progbits
+ 689              	.Ldebug_abbrev0:
+ 690 0000 01       		.uleb128 0x1
+ 691 0001 11       		.uleb128 0x11
+ 692 0002 01       		.byte	0x1
+ 693 0003 25       		.uleb128 0x25
+ 694 0004 0E       		.uleb128 0xe
+ 695 0005 13       		.uleb128 0x13
+ 696 0006 0B       		.uleb128 0xb
+ 697 0007 03       		.uleb128 0x3
+ 698 0008 0E       		.uleb128 0xe
+ 699 0009 1B       		.uleb128 0x1b
+ 700 000a 0E       		.uleb128 0xe
+ 701 000b 55       		.uleb128 0x55
+ 702 000c 17       		.uleb128 0x17
+ 703 000d 11       		.uleb128 0x11
+ 704 000e 01       		.uleb128 0x1
+ 705 000f 10       		.uleb128 0x10
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccskkMsQ.s 			page 18
+
+
+ 706 0010 17       		.uleb128 0x17
+ 707 0011 00       		.byte	0
+ 708 0012 00       		.byte	0
+ 709 0013 02       		.uleb128 0x2
+ 710 0014 24       		.uleb128 0x24
+ 711 0015 00       		.byte	0
+ 712 0016 0B       		.uleb128 0xb
+ 713 0017 0B       		.uleb128 0xb
+ 714 0018 3E       		.uleb128 0x3e
+ 715 0019 0B       		.uleb128 0xb
+ 716 001a 03       		.uleb128 0x3
+ 717 001b 0E       		.uleb128 0xe
+ 718 001c 00       		.byte	0
+ 719 001d 00       		.byte	0
+ 720 001e 03       		.uleb128 0x3
+ 721 001f 16       		.uleb128 0x16
+ 722 0020 00       		.byte	0
+ 723 0021 03       		.uleb128 0x3
+ 724 0022 0E       		.uleb128 0xe
+ 725 0023 3A       		.uleb128 0x3a
+ 726 0024 0B       		.uleb128 0xb
+ 727 0025 3B       		.uleb128 0x3b
+ 728 0026 0B       		.uleb128 0xb
+ 729 0027 49       		.uleb128 0x49
+ 730 0028 13       		.uleb128 0x13
+ 731 0029 00       		.byte	0
+ 732 002a 00       		.byte	0
+ 733 002b 04       		.uleb128 0x4
+ 734 002c 24       		.uleb128 0x24
+ 735 002d 00       		.byte	0
+ 736 002e 0B       		.uleb128 0xb
+ 737 002f 0B       		.uleb128 0xb
+ 738 0030 3E       		.uleb128 0x3e
+ 739 0031 0B       		.uleb128 0xb
+ 740 0032 03       		.uleb128 0x3
+ 741 0033 08       		.uleb128 0x8
+ 742 0034 00       		.byte	0
+ 743 0035 00       		.byte	0
+ 744 0036 05       		.uleb128 0x5
+ 745 0037 01       		.uleb128 0x1
+ 746 0038 01       		.byte	0x1
+ 747 0039 49       		.uleb128 0x49
+ 748 003a 13       		.uleb128 0x13
+ 749 003b 01       		.uleb128 0x1
+ 750 003c 13       		.uleb128 0x13
+ 751 003d 00       		.byte	0
+ 752 003e 00       		.byte	0
+ 753 003f 06       		.uleb128 0x6
+ 754 0040 21       		.uleb128 0x21
+ 755 0041 00       		.byte	0
+ 756 0042 49       		.uleb128 0x49
+ 757 0043 13       		.uleb128 0x13
+ 758 0044 2F       		.uleb128 0x2f
+ 759 0045 0B       		.uleb128 0xb
+ 760 0046 00       		.byte	0
+ 761 0047 00       		.byte	0
+ 762 0048 07       		.uleb128 0x7
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccskkMsQ.s 			page 19
+
+
+ 763 0049 0F       		.uleb128 0xf
+ 764 004a 00       		.byte	0
+ 765 004b 0B       		.uleb128 0xb
+ 766 004c 0B       		.uleb128 0xb
+ 767 004d 49       		.uleb128 0x49
+ 768 004e 13       		.uleb128 0x13
+ 769 004f 00       		.byte	0
+ 770 0050 00       		.byte	0
+ 771 0051 08       		.uleb128 0x8
+ 772 0052 2E       		.uleb128 0x2e
+ 773 0053 01       		.byte	0x1
+ 774 0054 3F       		.uleb128 0x3f
+ 775 0055 19       		.uleb128 0x19
+ 776 0056 03       		.uleb128 0x3
+ 777 0057 0E       		.uleb128 0xe
+ 778 0058 3A       		.uleb128 0x3a
+ 779 0059 0B       		.uleb128 0xb
+ 780 005a 3B       		.uleb128 0x3b
+ 781 005b 0B       		.uleb128 0xb
+ 782 005c 27       		.uleb128 0x27
+ 783 005d 19       		.uleb128 0x19
+ 784 005e 11       		.uleb128 0x11
+ 785 005f 01       		.uleb128 0x1
+ 786 0060 12       		.uleb128 0x12
+ 787 0061 06       		.uleb128 0x6
+ 788 0062 40       		.uleb128 0x40
+ 789 0063 18       		.uleb128 0x18
+ 790 0064 9742     		.uleb128 0x2117
+ 791 0066 19       		.uleb128 0x19
+ 792 0067 01       		.uleb128 0x1
+ 793 0068 13       		.uleb128 0x13
+ 794 0069 00       		.byte	0
+ 795 006a 00       		.byte	0
+ 796 006b 09       		.uleb128 0x9
+ 797 006c 05       		.uleb128 0x5
+ 798 006d 00       		.byte	0
+ 799 006e 03       		.uleb128 0x3
+ 800 006f 0E       		.uleb128 0xe
+ 801 0070 3A       		.uleb128 0x3a
+ 802 0071 0B       		.uleb128 0xb
+ 803 0072 3B       		.uleb128 0x3b
+ 804 0073 0B       		.uleb128 0xb
+ 805 0074 49       		.uleb128 0x49
+ 806 0075 13       		.uleb128 0x13
+ 807 0076 02       		.uleb128 0x2
+ 808 0077 18       		.uleb128 0x18
+ 809 0078 00       		.byte	0
+ 810 0079 00       		.byte	0
+ 811 007a 0A       		.uleb128 0xa
+ 812 007b 34       		.uleb128 0x34
+ 813 007c 00       		.byte	0
+ 814 007d 03       		.uleb128 0x3
+ 815 007e 08       		.uleb128 0x8
+ 816 007f 3A       		.uleb128 0x3a
+ 817 0080 0B       		.uleb128 0xb
+ 818 0081 3B       		.uleb128 0x3b
+ 819 0082 0B       		.uleb128 0xb
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccskkMsQ.s 			page 20
+
+
+ 820 0083 49       		.uleb128 0x49
+ 821 0084 13       		.uleb128 0x13
+ 822 0085 02       		.uleb128 0x2
+ 823 0086 18       		.uleb128 0x18
+ 824 0087 00       		.byte	0
+ 825 0088 00       		.byte	0
+ 826 0089 0B       		.uleb128 0xb
+ 827 008a 2E       		.uleb128 0x2e
+ 828 008b 00       		.byte	0
+ 829 008c 3F       		.uleb128 0x3f
+ 830 008d 19       		.uleb128 0x19
+ 831 008e 03       		.uleb128 0x3
+ 832 008f 0E       		.uleb128 0xe
+ 833 0090 3A       		.uleb128 0x3a
+ 834 0091 0B       		.uleb128 0xb
+ 835 0092 3B       		.uleb128 0x3b
+ 836 0093 0B       		.uleb128 0xb
+ 837 0094 27       		.uleb128 0x27
+ 838 0095 19       		.uleb128 0x19
+ 839 0096 49       		.uleb128 0x49
+ 840 0097 13       		.uleb128 0x13
+ 841 0098 11       		.uleb128 0x11
+ 842 0099 01       		.uleb128 0x1
+ 843 009a 12       		.uleb128 0x12
+ 844 009b 06       		.uleb128 0x6
+ 845 009c 40       		.uleb128 0x40
+ 846 009d 18       		.uleb128 0x18
+ 847 009e 9742     		.uleb128 0x2117
+ 848 00a0 19       		.uleb128 0x19
+ 849 00a1 00       		.byte	0
+ 850 00a2 00       		.byte	0
+ 851 00a3 0C       		.uleb128 0xc
+ 852 00a4 34       		.uleb128 0x34
+ 853 00a5 00       		.byte	0
+ 854 00a6 03       		.uleb128 0x3
+ 855 00a7 0E       		.uleb128 0xe
+ 856 00a8 3A       		.uleb128 0x3a
+ 857 00a9 0B       		.uleb128 0xb
+ 858 00aa 3B       		.uleb128 0x3b
+ 859 00ab 0B       		.uleb128 0xb
+ 860 00ac 49       		.uleb128 0x49
+ 861 00ad 13       		.uleb128 0x13
+ 862 00ae 3F       		.uleb128 0x3f
+ 863 00af 19       		.uleb128 0x19
+ 864 00b0 3C       		.uleb128 0x3c
+ 865 00b1 19       		.uleb128 0x19
+ 866 00b2 00       		.byte	0
+ 867 00b3 00       		.byte	0
+ 868 00b4 0D       		.uleb128 0xd
+ 869 00b5 26       		.uleb128 0x26
+ 870 00b6 00       		.byte	0
+ 871 00b7 49       		.uleb128 0x49
+ 872 00b8 13       		.uleb128 0x13
+ 873 00b9 00       		.byte	0
+ 874 00ba 00       		.byte	0
+ 875 00bb 0E       		.uleb128 0xe
+ 876 00bc 21       		.uleb128 0x21
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccskkMsQ.s 			page 21
+
+
+ 877 00bd 00       		.byte	0
+ 878 00be 49       		.uleb128 0x49
+ 879 00bf 13       		.uleb128 0x13
+ 880 00c0 2F       		.uleb128 0x2f
+ 881 00c1 05       		.uleb128 0x5
+ 882 00c2 00       		.byte	0
+ 883 00c3 00       		.byte	0
+ 884 00c4 0F       		.uleb128 0xf
+ 885 00c5 34       		.uleb128 0x34
+ 886 00c6 00       		.byte	0
+ 887 00c7 03       		.uleb128 0x3
+ 888 00c8 0E       		.uleb128 0xe
+ 889 00c9 3A       		.uleb128 0x3a
+ 890 00ca 0B       		.uleb128 0xb
+ 891 00cb 3B       		.uleb128 0x3b
+ 892 00cc 05       		.uleb128 0x5
+ 893 00cd 49       		.uleb128 0x49
+ 894 00ce 13       		.uleb128 0x13
+ 895 00cf 3F       		.uleb128 0x3f
+ 896 00d0 19       		.uleb128 0x19
+ 897 00d1 3C       		.uleb128 0x3c
+ 898 00d2 19       		.uleb128 0x19
+ 899 00d3 00       		.byte	0
+ 900 00d4 00       		.byte	0
+ 901 00d5 10       		.uleb128 0x10
+ 902 00d6 35       		.uleb128 0x35
+ 903 00d7 00       		.byte	0
+ 904 00d8 49       		.uleb128 0x49
+ 905 00d9 13       		.uleb128 0x13
+ 906 00da 00       		.byte	0
+ 907 00db 00       		.byte	0
+ 908 00dc 00       		.byte	0
+ 909              		.section	.debug_aranges,"",%progbits
+ 910 0000 44000000 		.4byte	0x44
+ 911 0004 0200     		.2byte	0x2
+ 912 0006 00000000 		.4byte	.Ldebug_info0
+ 913 000a 04       		.byte	0x4
+ 914 000b 00       		.byte	0
+ 915 000c 0000     		.2byte	0
+ 916 000e 0000     		.2byte	0
+ 917 0010 00000000 		.4byte	.LFB63
+ 918 0014 44000000 		.4byte	.LFE63-.LFB63
+ 919 0018 00000000 		.4byte	.LFB64
+ 920 001c 44000000 		.4byte	.LFE64-.LFB64
+ 921 0020 00000000 		.4byte	.LFB65
+ 922 0024 20000000 		.4byte	.LFE65-.LFB65
+ 923 0028 00000000 		.4byte	.LFB66
+ 924 002c 4C000000 		.4byte	.LFE66-.LFB66
+ 925 0030 00000000 		.4byte	.LFB67
+ 926 0034 4C000000 		.4byte	.LFE67-.LFB67
+ 927 0038 00000000 		.4byte	.LFB68
+ 928 003c 12000000 		.4byte	.LFE68-.LFB68
+ 929 0040 00000000 		.4byte	0
+ 930 0044 00000000 		.4byte	0
+ 931              		.section	.debug_ranges,"",%progbits
+ 932              	.Ldebug_ranges0:
+ 933 0000 00000000 		.4byte	.LFB63
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccskkMsQ.s 			page 22
+
+
+ 934 0004 44000000 		.4byte	.LFE63
+ 935 0008 00000000 		.4byte	.LFB64
+ 936 000c 44000000 		.4byte	.LFE64
+ 937 0010 00000000 		.4byte	.LFB65
+ 938 0014 20000000 		.4byte	.LFE65
+ 939 0018 00000000 		.4byte	.LFB66
+ 940 001c 4C000000 		.4byte	.LFE66
+ 941 0020 00000000 		.4byte	.LFB67
+ 942 0024 4C000000 		.4byte	.LFE67
+ 943 0028 00000000 		.4byte	.LFB68
+ 944 002c 12000000 		.4byte	.LFE68
+ 945 0030 00000000 		.4byte	0
+ 946 0034 00000000 		.4byte	0
+ 947              		.section	.debug_line,"",%progbits
+ 948              	.Ldebug_line0:
+ 949 0000 EA010000 		.section	.debug_str,"MS",%progbits,1
+ 949      02003301 
+ 949      00000201 
+ 949      FB0E0D00 
+ 949      01010101 
+ 950              	.LASF9:
+ 951 0000 5F5F696E 		.ascii	"__int32_t\000"
+ 951      7433325F 
+ 951      7400
+ 952              	.LASF15:
+ 953 000a 4845585F 		.ascii	"HEX_ReadSiliconId\000"
+ 953      52656164 
+ 953      53696C69 
+ 953      636F6E49 
+ 953      6400
+ 954              	.LASF25:
+ 955 001c 61727261 		.ascii	"arrayID\000"
+ 955      79494400 
+ 956              	.LASF34:
+ 957 0024 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 957      4320342E 
+ 957      392E3320 
+ 957      32303135 
+ 957      30333033 
+ 958 0057 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 958      20726576 
+ 958      6973696F 
+ 958      6E203232 
+ 958      31323230 
+ 959 008a 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 959      66756E63 
+ 959      74696F6E 
+ 959      2D736563 
+ 959      74696F6E 
+ 960              	.LASF26:
+ 961 00b2 4845585F 		.ascii	"HEX_ReadChecksumData\000"
+ 961      52656164 
+ 961      43686563 
+ 961      6B73756D 
+ 961      44617461 
+ 962              	.LASF16:
+ 963 00c7 4845585F 		.ascii	"HEX_ReadRowData\000"
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccskkMsQ.s 			page 23
+
+
+ 963      52656164 
+ 963      526F7744 
+ 963      61746100 
+ 964              	.LASF31:
+ 965 00d7 666C6173 		.ascii	"flashProtectionData_HexFile\000"
+ 965      6850726F 
+ 965      74656374 
+ 965      696F6E44 
+ 965      6174615F 
+ 966              	.LASF11:
+ 967 00f3 666C6F61 		.ascii	"float\000"
+ 967      7400
+ 968              	.LASF28:
+ 969 00f9 64657669 		.ascii	"deviceSiliconId_HexFile\000"
+ 969      63655369 
+ 969      6C69636F 
+ 969      6E49645F 
+ 969      48657846 
+ 970              	.LASF1:
+ 971 0111 756E7369 		.ascii	"unsigned char\000"
+ 971      676E6564 
+ 971      20636861 
+ 971      7200
+ 972              	.LASF37:
+ 973 011f 47657446 		.ascii	"GetFlashRowCount\000"
+ 973      6C617368 
+ 973      526F7743 
+ 973      6F756E74 
+ 973      00
+ 974              	.LASF19:
+ 975 0130 726F7744 		.ascii	"rowData\000"
+ 975      61746100 
+ 976              	.LASF5:
+ 977 0138 6C6F6E67 		.ascii	"long unsigned int\000"
+ 977      20756E73 
+ 977      69676E65 
+ 977      6420696E 
+ 977      7400
+ 978              	.LASF3:
+ 979 014a 73686F72 		.ascii	"short unsigned int\000"
+ 979      7420756E 
+ 979      7369676E 
+ 979      65642069 
+ 979      6E7400
+ 980              	.LASF33:
+ 981 015d 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 981      52784275 
+ 981      66666572 
+ 981      00
+ 982              	.LASF23:
+ 983 016a 726F7750 		.ascii	"rowProtectionByteSize\000"
+ 983      726F7465 
+ 983      6374696F 
+ 983      6E427974 
+ 983      6553697A 
+ 984              	.LASF24:
+ 985 0180 726F7750 		.ascii	"rowProtectionData\000"
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccskkMsQ.s 			page 24
+
+
+ 985      726F7465 
+ 985      6374696F 
+ 985      6E446174 
+ 985      6100
+ 986              	.LASF12:
+ 987 0192 646F7562 		.ascii	"double\000"
+ 987      6C6500
+ 988              	.LASF21:
+ 989 0199 63686970 		.ascii	"chipProtectionData\000"
+ 989      50726F74 
+ 989      65637469 
+ 989      6F6E4461 
+ 989      746100
+ 990              	.LASF36:
+ 991 01ac 5C5C4745 		.ascii	"\\\\GEORGE-OFFICE2\\Users\\George\\Box Sync\\Backbo"
+ 991      4F524745 
+ 991      2D4F4646 
+ 991      49434532 
+ 991      5C557365 
+ 992 01d9 6E655C44 		.ascii	"ne\\Design\\Testing\\TestStation\\Software\\HSSP\\A"
+ 992      65736967 
+ 992      6E5C5465 
+ 992      7374696E 
+ 992      675C5465 
+ 993 0206 4E383438 		.ascii	"N84858\\A_Hssp_Programmer.cydsn\000"
+ 993      35385C41 
+ 993      5F487373 
+ 993      705F5072 
+ 993      6F677261 
+ 994              	.LASF22:
+ 995 0225 4845585F 		.ascii	"HEX_ReadRowProtectionData\000"
+ 995      52656164 
+ 995      526F7750 
+ 995      726F7465 
+ 995      6374696F 
+ 996              	.LASF8:
+ 997 023f 756E7369 		.ascii	"unsigned int\000"
+ 997      676E6564 
+ 997      20696E74 
+ 997      00
+ 998              	.LASF7:
+ 999 024c 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 999      206C6F6E 
+ 999      6720756E 
+ 999      7369676E 
+ 999      65642069 
+ 1000              	.LASF29:
+ 1001 0263 63686563 		.ascii	"checksumData_HexFile\000"
+ 1001      6B73756D 
+ 1001      44617461 
+ 1001      5F486578 
+ 1001      46696C65 
+ 1002              	.LASF10:
+ 1003 0278 696E7433 		.ascii	"int32_t\000"
+ 1003      325F7400 
+ 1004              	.LASF14:
+ 1005 0280 73697A65 		.ascii	"sizetype\000"
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccskkMsQ.s 			page 25
+
+
+ 1005      74797065 
+ 1005      00
+ 1006              	.LASF17:
+ 1007 0289 68657853 		.ascii	"hexSiliconId\000"
+ 1007      696C6963 
+ 1007      6F6E4964 
+ 1007      00
+ 1008              	.LASF6:
+ 1009 0296 6C6F6E67 		.ascii	"long long int\000"
+ 1009      206C6F6E 
+ 1009      6720696E 
+ 1009      7400
+ 1010              	.LASF13:
+ 1011 02a4 63686172 		.ascii	"char\000"
+ 1011      00
+ 1012              	.LASF2:
+ 1013 02a9 73686F72 		.ascii	"short int\000"
+ 1013      7420696E 
+ 1013      7400
+ 1014              	.LASF18:
+ 1015 02b3 726F7743 		.ascii	"rowCount\000"
+ 1015      6F756E74 
+ 1015      00
+ 1016              	.LASF27:
+ 1017 02bc 63686563 		.ascii	"checksumData\000"
+ 1017      6B73756D 
+ 1017      44617461 
+ 1017      00
+ 1018              	.LASF4:
+ 1019 02c9 6C6F6E67 		.ascii	"long int\000"
+ 1019      20696E74 
+ 1019      00
+ 1020              	.LASF35:
+ 1021 02d2 44617461 		.ascii	"DataFetch.c\000"
+ 1021      46657463 
+ 1021      682E6300 
+ 1022              	.LASF0:
+ 1023 02de 7369676E 		.ascii	"signed char\000"
+ 1023      65642063 
+ 1023      68617200 
+ 1024              	.LASF32:
+ 1025 02ea 63686970 		.ascii	"chipProtectionData_HexFile\000"
+ 1025      50726F74 
+ 1025      65637469 
+ 1025      6F6E4461 
+ 1025      74615F48 
+ 1026              	.LASF20:
+ 1027 0305 4845585F 		.ascii	"HEX_ReadChipProtectionData\000"
+ 1027      52656164 
+ 1027      43686970 
+ 1027      50726F74 
+ 1027      65637469 
+ 1028              	.LASF30:
+ 1029 0320 666C6173 		.ascii	"flashData_HexFile\000"
+ 1029      68446174 
+ 1029      615F4865 
+ 1029      7846696C 
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccskkMsQ.s 			page 26
+
+
+ 1029      6500
+ 1030              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
