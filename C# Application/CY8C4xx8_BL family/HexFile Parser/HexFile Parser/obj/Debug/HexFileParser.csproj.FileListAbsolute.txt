@@ -18,3 +18,12 @@ C:\Users\vvsk\Documents\My Work\Q3 15\AN84858 Vault Fix\Fixed - To CDT\Rev 2 GUI
 C:\Users\vvsk\Documents\My Work\Q3 15\AN84858 Vault Fix\Fixed - To CDT\Rev 2 GUI\Common\HexFile Parser\HexFile Parser\obj\Debug\HexFile_Parser.Properties.Resources.resources
 C:\Users\vvsk\Documents\My Work\Q3 15\AN84858 Vault Fix\Fixed - To CDT\Rev 2 GUI\Common\HexFile Parser\HexFile Parser\obj\Debug\ResGen.read.1.tlog
 C:\Users\vvsk\Documents\My Work\Q3 15\AN84858 Vault Fix\Fixed - To CDT\Rev 2 GUI\Common\HexFile Parser\HexFile Parser\obj\Debug\ResGen.write.1.tlog
+C:\Users\George\Box Sync\Backbone\Design\Testing\TestStation\Software\HSSP\C# Application\CY8C4xx8_BL family\HexFile Parser\HexFile Parser\bin\Debug\HexFile Parser.exe.config
+C:\Users\George\Box Sync\Backbone\Design\Testing\TestStation\Software\HSSP\C# Application\CY8C4xx8_BL family\HexFile Parser\HexFile Parser\obj\Debug\HexFile Parser.exe
+C:\Users\George\Box Sync\Backbone\Design\Testing\TestStation\Software\HSSP\C# Application\CY8C4xx8_BL family\HexFile Parser\HexFile Parser\obj\Debug\HexFile Parser.pdb
+C:\Users\George\Box Sync\Backbone\Design\Testing\TestStation\Software\HSSP\C# Application\CY8C4xx8_BL family\HexFile Parser\HexFile Parser\bin\Debug\HexFile Parser.exe
+C:\Users\George\Box Sync\Backbone\Design\Testing\TestStation\Software\HSSP\C# Application\CY8C4xx8_BL family\HexFile Parser\HexFile Parser\bin\Debug\HexFile Parser.pdb
+C:\Users\George\Box Sync\Backbone\Design\Testing\TestStation\Software\HSSP\C# Application\CY8C4xx8_BL family\HexFile Parser\HexFile Parser\obj\Debug\HexFileParser.FormHexFileParser.resources
+C:\Users\George\Box Sync\Backbone\Design\Testing\TestStation\Software\HSSP\C# Application\CY8C4xx8_BL family\HexFile Parser\HexFile Parser\obj\Debug\HexFile_Parser.Properties.Resources.resources
+C:\Users\George\Box Sync\Backbone\Design\Testing\TestStation\Software\HSSP\C# Application\CY8C4xx8_BL family\HexFile Parser\HexFile Parser\obj\Debug\HexFileParser.csproj.GenerateResource.Cache
+C:\Users\George\Box Sync\Backbone\Design\Testing\TestStation\Software\HSSP\C# Application\CY8C4xx8_BL family\HexFile Parser\HexFile Parser\obj\Debug\HexFileParser.csprojResolveAssemblyReference.cache

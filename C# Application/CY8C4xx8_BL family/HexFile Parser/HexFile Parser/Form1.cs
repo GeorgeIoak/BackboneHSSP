@@ -59,6 +59,9 @@ namespace HexFileParser
         int m_numberOfFlashRows = 0; /* Total number of Flash rows in hex file */
         int m_bytesPerHexRow;           /* Bytes per row of hex file */
         int m_bytesPerFlashRow;      /* Bytes per row of flash */
+        int m_numZeroRows; /* Number of rows with no data  */
+        int m_LastZeroFlag = 0; /* Flag to set when we've gone through 1/2 the flash */
+        int m_numLastZeroRows; /* Checking for Rows in last half of the flash */
 
         /* Code generated automatically by Visual Studio */
         public FormHexFileParser()
@@ -131,6 +134,7 @@ namespace HexFileParser
                     ParseChecksum();                /* Add Hex File Checksum data from hex file to generated .c file */
 
                     m_numberOfFlashRows = CalculateFlashRowCount(); /* Get the number of Flash rows for the device from hex file */
+                    m_numLastZeroRows = FindEndofFlashData();      /* Find where the code ends */
 
                     ParseFlashProtectionData();     /* Add Flash Protection data from hex file to generated .c file */
                     ParseChipProtectionData();      /* Add chip Protection data from hex file to generated .c file */
@@ -304,7 +308,7 @@ namespace HexFileParser
             m_bytesPerHexRow = MAX_DATA_BYTES_PER_HEX_ROW;
             m_bytesPerFlashRow = BYTES_PER_FLASH_ROW;
 
-            String flashHeaderString = "unsigned char const flashData_HexFile[NUMBER_OF_FLASH_ROWS_HEX_FILE][FLASH_ROW_BYTE_SIZE_HEX_FILE]  = { ";
+            String flashHeaderString = "unsigned char const flashData_HexFile[NUMBER_OF_FLASH_ROWS_HEX_FILE-NUMBER_OF_FLASH_ROWS_NOT_INCLUDED][FLASH_ROW_BYTE_SIZE_HEX_FILE]  = { ";
 
             String dummyHeaderString = "";
 
@@ -320,7 +324,17 @@ namespace HexFileParser
             /* Extract the flash data for each row */
             for (rowNumber = 0; rowNumber < m_numberOfFlashRows; rowNumber++)
             {
-                m_swCfile.Write(dummyHeaderString + "{");
+                if ((rowNumber > m_numLastZeroRows + 1) && (rowNumber < m_numberOfFlashRows - 2))
+                {
+                    m_swCfile.Write(dummyHeaderString + "//{");
+                }
+                else
+                {
+                    m_swCfile.Write(dummyHeaderString + "{");
+                }
+
+                //if (rowNumber > (m_numberOfFlashRows / 2)) // Only looking for zero data at the 2nd half
+                //    m_LastZeroFlag = 1;
 
                 ParseFlashRowData();
 
@@ -334,6 +348,13 @@ namespace HexFileParser
                 else
                 {
                     m_swCfile.WriteLine("},");
+                }
+
+                if (rowNumber == (m_numberOfFlashRows - 3))
+                {
+                    dummyHeaderString = dummyHeaderString.Remove(0, 2);
+                    m_swCfile.WriteLine(dummyHeaderString + "};");
+                    m_swCfile.WriteLine("unsigned char const flashData_HexFile_RAM[8][FLASH_ROW_BYTE_SIZE_HEX_FILE]  = {");
                 }
 
             }
@@ -446,10 +467,11 @@ namespace HexFileParser
         {
             String readData = "";
             String hexRowData = "";
+            String zeroRowData = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
 
             /* Four lines of hex file have the data for one flash row */
 
-            for(int loop = 0; loop < HEX_FILE_LINES_PER_FLASH_ROW; loop++)
+            for (int loop = 0; loop < HEX_FILE_LINES_PER_FLASH_ROW; loop++)
             {
                 readData = "";
 
@@ -459,10 +481,21 @@ namespace HexFileParser
                 /* and read another line */
                 if (hexRowData.Length < MAX_DATA_CHARACTERS_PER_HEX_ROW)
                     hexRowData = m_srFlashMainData.ReadLine();
+                //Console.WriteLine("Substring: {0}", hexRowData.Substring(FLASH_DATA_HEADER_LENGTH + 1, MAX_DATA_CHARACTERS_PER_HEX_ROW-1));
                 hexRowData = hexRowData.Remove(0, FLASH_DATA_HEADER_LENGTH); /* Remove the meta data at the beginning of the line in the hex file */
                 hexRowData = hexRowData.Remove(MAX_DATA_CHARACTERS_PER_HEX_ROW, END_OF_LINE_CHECKSUM_BYTE_COUNT); /* Remove the meta data at the end of the line in the hex file */
                 readData = hexRowData; /* Append the data to form a flash row */
-
+                
+                //GCI, check for zero value rows
+               /* if (readData == zeroRowData)
+                { 
+                    m_numZeroRows++;
+                    if (m_LastZeroFlag == 1) m_numLastZeroRows++;
+                }
+                else
+                {
+                    m_numLastZeroRows = 0;
+                }*/
                 /* Write the 64 bytes flash row data (128 ASCII chars from hex file per row) to the .c file */
                 for (int i = 0; i < m_bytesPerHexRow; i++)
                 {
@@ -514,6 +547,63 @@ namespace HexFileParser
             return (lineNumber / HEX_FILE_LINES_PER_FLASH_ROW);
         }
 
+        /* Calculate the number of Flash rows from the hex file */
+        private int FindEndofFlashData()
+        {
+            int lineNumber = 0;
+            String readData;
+            String zeroRowData = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
+            int firstZeroRow = -1; // Will hold the location that starts the zero data
+            //int lastZeroRow = m_numberOfFlashRows - 2;  // We know where to stop looking from m_numberOfFlashRows
+            int lastZeroRow = -1;
+            bool groupEnded = true;
+            StreamReader srHexFile = File.OpenText(m_pathHexFile);
+
+            /* Loop till the main flash row data ends, which will be used to calculate the number of lines in hex file for
+             * flash rows.  Each line of hex file will have data for 1/2 th of a Flash row (64 bytes)*/
+            while (((readData = srHexFile.ReadLine()) != null) && (lineNumber < (m_numberOfFlashRows*4 - 4)))
+            {
+
+                if ((readData[HEX_FILE_RECORD_TYPE_CHAR_0_INDEX] == HEX_FILE_DATA_RECORD_CHAR_0) && (readData[HEX_FILE_RECORD_TYPE_CHAR_1_INDEX] == HEX_FILE_DATA_RECORD_CHAR_1))
+                {
+                    lineNumber++;
+
+                    if (readData.Substring(9, 128) == zeroRowData)
+                    {
+                        if(groupEnded)
+                        {
+                            firstZeroRow = lineNumber;
+                            groupEnded = false;
+                        }
+
+                        lastZeroRow = lineNumber;
+                    }
+                    else
+                    {
+                        groupEnded = true;
+                    }
+                }
+                else
+                {
+
+                    if ((readData[HEX_FILE_RECORD_TYPE_CHAR_0_INDEX] == HEX_FILE_EXTEND_LINEAR_RECORD_CHAR_0) &&
+                        (readData[HEX_FILE_RECORD_TYPE_CHAR_1_INDEX] == HEX_FILE_EXTEND_LINEAR_RECORD_CHAR_1))
+                    {
+                        if (readData[HEX_FILE_EXTENDED_ADDR_CHAR_1_INDEX] >= HEX_FILE_EXTENDED_ADDR_NON_FLASH_REGION)
+                        {
+                            break;
+                        }
+                    }
+                }
+
+            }
+            Console.WriteLine("First Zero Row is: {0}", firstZeroRow);
+            Console.WriteLine("Last Zero Row is: {0}", lastZeroRow);
+            Console.WriteLine("First Round up Row is: {0}", Math.Ceiling(firstZeroRow/4.0));
+
+            return ((int)Math.Ceiling(firstZeroRow / 4.0));
+        }
+
         /* Append Trailer data for source c file */
         private void AppendSourceFileTrailer()
         {
@@ -562,6 +652,7 @@ namespace HexFileParser
             m_swHfile.WriteLine("#define NUMBER_OF_FLASH_ROWS_HEX_FILE        " + Convert.ToString(m_numberOfFlashRows));
             m_swHfile.WriteLine("#define FLASH_ROW_BYTE_SIZE_HEX_FILE         " + Convert.ToString(m_bytesPerFlashRow));
             m_swHfile.WriteLine("#define FLASH_PROTECTION_BYTE_SIZE_HEX_FILE  " + Convert.ToString(m_numberOfFlashRows / 8));
+            m_swHfile.WriteLine("#define NUMBER_OF_FLASH_ROWS_NOT_INCLUDED    " + Convert.ToString((m_numberOfFlashRows-2) - m_numLastZeroRows)); //was 125
             m_swHfile.WriteLine();
 
             String HeaderFileTrailer = " /*****************************************************************************\n" +
@@ -569,9 +660,11 @@ namespace HexFileParser
                                        "  ****************************************************************************/\n \n" +
                                        "extern unsigned char const deviceSiliconId_HexFile[4]; \n" +
                                        "extern unsigned char const checksumData_HexFile[2]; \n" +
-                                       "extern unsigned char const flashData_HexFile[NUMBER_OF_FLASH_ROWS_HEX_FILE][FLASH_ROW_BYTE_SIZE_HEX_FILE]; \n" +
+                                       "extern unsigned char const flashData_HexFile[NUMBER_OF_FLASH_ROWS_HEX_FILE - NUMBER_OF_FLASH_ROWS_NOT_INCLUDED][FLASH_ROW_BYTE_SIZE_HEX_FILE]; \n" +
+                                       //"extern unsigned char const flashData_HexFile[NUMBER_OF_FLASH_ROWS_HEX_FILE][FLASH_ROW_BYTE_SIZE_HEX_FILE]; \n" +
                                        "extern unsigned char const flashProtectionData_HexFile[FLASH_PROTECTION_BYTE_SIZE_HEX_FILE]; \n" +
                                        "extern unsigned char const chipProtectionData_HexFile; \n \n" +
+                                       "extern unsigned char const flashData_HexFile_RAM[8][FLASH_ROW_BYTE_SIZE_HEX_FILE]; \n \n" +
                                        "#endif /* __HEXIMAGE_H */ \n \n" +
                                        "/* [] END OF FILE */ \n";
 

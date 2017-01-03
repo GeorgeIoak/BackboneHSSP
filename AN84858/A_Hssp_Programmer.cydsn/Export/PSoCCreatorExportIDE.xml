@@ -6,7 +6,7 @@
     <Toolchain Name="ARM GCC Generic" Selected="True">
       <Tool Name="prebuild" Command="" Options="" />
       <Tool Name="assembler" Command="arm-none-eabi-as.exe" Options="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -alh=${OutputDir}/${CompileFile}.lst -g" />
-      <Tool Name="compiler" Command="arm-none-eabi-gcc.exe" Options="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -Wall -ffunction-sections -O0 -ffat-lto-objects" />
+      <Tool Name="compiler" Command="arm-none-eabi-gcc.exe" Options="-mcpu=cortex-m3 -mthumb &quot;-I..\..\Generated Hex&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -Wall -ffunction-sections -O0 -ffat-lto-objects" />
       <Tool Name="linker" Command="arm-none-eabi-gcc.exe" Options="-mcpu=cortex-m3 -mthumb -g -ffunction-sections -O0 -ffat-lto-objects -L Generated_Source\PSoC5 -Wl,-Map,${OutputDir}/${ProjectShortName}.map -T &quot;\\GEORGE-OFFICE2\Users\George\Box Sync\Backbone\Design\Testing\TestStation\Software\HSSP\AN84858\A_Hssp_Programmer.cydsn\Generated_Source\PSoC5\cm3gcc.ld&quot; -specs=nano.specs -Wl,--gc-sections" />
       <Tool Name="postbuild" Command="" Options="" />
     </Toolchain>
@@ -43,7 +43,6 @@
           <File BuildType="BUILD" Toolchain="">SWD_UpperPacketLayer.c</File>
           <File BuildType="BUILD" Toolchain="">Timeout.c</File>
           <File BuildType="BUILD" Toolchain="">DataFetch.c</File>
-          <File BuildType="BUILD" Toolchain="">HexImage.c</File>
           <File BuildType="BUILD" Toolchain="">device.h</File>
           <File BuildType="BUILD" Toolchain="">SWD_PhysicalLayer.h</File>
           <File BuildType="BUILD" Toolchain="">SWD_PacketLayer.h</File>
@@ -52,7 +51,12 @@
           <File BuildType="BUILD" Toolchain="">SWD_UpperPacketLayer.h</File>
           <File BuildType="BUILD" Toolchain="">Timeout.h</File>
           <File BuildType="BUILD" Toolchain="">DataFetch.h</File>
-          <File BuildType="BUILD" Toolchain="">HexImage.h</File>
+        </Files>
+      </Folder>
+      <Folder BuildType="STRICT" Path="\\GEORGE-OFFICE2\Users\George\Box Sync\Backbone\Design\Testing\TestStation\Software\HSSP\Generated Hex">
+        <Files Root="\\GEORGE-OFFICE2\Users\George\Box Sync\Backbone\Design\Testing\TestStation\Software\HSSP\AN84858\A_Hssp_Programmer.cydsn">
+          <File BuildType="BUILD" Toolchain="">..\..\Generated Hex\HexImage.c</File>
+          <File BuildType="BUILD" Toolchain="">..\..\Generated Hex\HexImage.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="\\GEORGE-OFFICE2\Users\George\Box Sync\Backbone\Design\Testing\TestStation\Software\HSSP\AN84858\A_Hssp_Programmer.cydsn\Generated_Source\PSoC5">

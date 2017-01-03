@@ -50,7 +50,7 @@
 ***************************** Macros for the TESTPIN *************************/
 
 #define TESTPIN_PRT_NUM            0
-#define TESTPIN_PIN_NUM            3
+#define TESTPIN_PIN_NUM            5
 
 #define TESTPIN_PIN_MASK           (0x01 << TESTPIN_PIN_NUM)
 
@@ -91,7 +91,7 @@
 *	  used in the HSSP code.
 *
 ******************************************************************************/
-#define XRES_PULSE_100US  600
+#define XRES_PULSE_100US  607
 
 /*********************Calculating DEVICE_ACQUIRE_TIMEOUT **********************
 * 1.) Call ONLY the function TestModeTimeout(), defined in TimeoutCalc.c, in the
@@ -106,7 +106,7 @@
 * 5.) The value 1.5 ms is derived from the programming specifications document
 *
 ******************************************************************************/
-#define DEVICE_ACQUIRE_TIMEOUT 15
+#define DEVICE_ACQUIRE_TIMEOUT 16
 
 /*********************Calculating SROM_POLLING_TIMEOUT ************************
 * 1.) Call ONLY the function TestSromPollingTimeout(), defined in TimeoutCalc.c,

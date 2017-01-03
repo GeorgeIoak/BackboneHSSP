@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 1
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cc2PrKWy.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 1
   29:SWD_PhysicalLayer.c **** * Copyright (2015), Cypress Semiconductor Corporation.
   30:SWD_PhysicalLayer.c **** *******************************************************************************
   31:SWD_PhysicalLayer.c **** * This software is owned by Cypress Semiconductor Corporation (Cypress) and is
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 2
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cc2PrKWy.s 			page 2
 
 
   32:SWD_PhysicalLayer.c **** * protected by and subject to worldwide patent protection (United States and
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 1
   86:SWD_PhysicalLayer.c **** *  None.
   87:SWD_PhysicalLayer.c **** *
   88:SWD_PhysicalLayer.c **** * Note:
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 3
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cc2PrKWy.s 			page 3
 
 
   89:SWD_PhysicalLayer.c **** *  The function definition is the same as the macro definition
@@ -162,7 +162,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 1
   57              	.L3:
   58 0026 00BF     		.align	2
   59              	.L2:
-  60 0028 09500040 		.word	1073762313
+  60 0028 63500040 		.word	1073762403
   61              		.cfi_endproc
   62              	.LFE0:
   63              		.size	SetSwdckCmosOutput, .-SetSwdckCmosOutput
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 1
   98:SWD_PhysicalLayer.c **** /******************************************************************************
   99:SWD_PhysicalLayer.c **** * Function Name: SetSwdckHizInput
  100:SWD_PhysicalLayer.c **** *******************************************************************************
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 4
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cc2PrKWy.s 			page 4
 
 
  101:SWD_PhysicalLayer.c **** *
@@ -233,12 +233,12 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 1
  102              	.L6:
  103 0026 00BF     		.align	2
  104              	.L5:
- 105 0028 09500040 		.word	1073762313
+ 105 0028 63500040 		.word	1073762403
  106              		.cfi_endproc
  107              	.LFE1:
  108              		.size	SetSwdckHizInput, .-SetSwdckHizInput
  109              		.section	.text.SetSwdioCmosOutput,"ax",%progbits
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 5
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cc2PrKWy.s 			page 5
 
 
  110              		.align	2
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 1
  141              		.cfi_def_cfa_register 13
  142              		@ sp needed
  143 0020 5DF8047B 		ldr	r7, [sp], #4
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 6
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cc2PrKWy.s 			page 6
 
 
  144              		.cfi_restore 7
@@ -307,7 +307,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 1
  147              	.L9:
  148 0026 00BF     		.align	2
  149              	.L8:
- 150 0028 08500040 		.word	1073762312
+ 150 0028 62500040 		.word	1073762402
  151              		.cfi_endproc
  152              	.LFE2:
  153              		.size	SetSwdioCmosOutput, .-SetSwdioCmosOutput
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 1
  176 000a D2B2     		uxtb	r2, r2
  177 000c D2B2     		uxtb	r2, r2
  178 000e 22F00E02 		bic	r2, r2, #14
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 7
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cc2PrKWy.s 			page 7
 
 
  179 0012 D2B2     		uxtb	r2, r2
@@ -378,7 +378,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 1
  192              	.L12:
  193 0026 00BF     		.align	2
  194              	.L11:
- 195 0028 08500040 		.word	1073762312
+ 195 0028 62500040 		.word	1073762402
  196              		.cfi_endproc
  197              	.LFE3:
  198              		.size	SetSwdioHizInput, .-SetSwdioHizInput
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 1
  211              		@ link register save eliminated.
  212 0000 80B4     		push	{r7}
  213              		.cfi_def_cfa_offset 4
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 8
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cc2PrKWy.s 			page 8
 
 
  214              		.cfi_offset 7, -4
@@ -449,7 +449,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 1
  237              	.L15:
  238 0026 00BF     		.align	2
  239              	.L14:
- 240 0028 02500040 		.word	1073762306
+ 240 0028 1D500040 		.word	1073762333
  241              		.cfi_endproc
  242              	.LFE4:
  243              		.size	SetXresCmosOutput, .-SetXresCmosOutput
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 1
  203:SWD_PhysicalLayer.c **** * Note:
  204:SWD_PhysicalLayer.c **** *  The function definition is the same as the macro definition 
  205:SWD_PhysicalLayer.c **** *  XRES_DRIVEMODE_HIGHZIN in SWD_PhysicalLayer.h.
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 9
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cc2PrKWy.s 			page 9
 
 
  206:SWD_PhysicalLayer.c **** *
@@ -520,7 +520,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 1
  282              	.L18:
  283 0026 00BF     		.align	2
  284              	.L17:
- 285 0028 02500040 		.word	1073762306
+ 285 0028 1D500040 		.word	1073762333
  286              		.cfi_endproc
  287              	.LFE5:
  288              		.size	SetXresHizInput, .-SetXresHizInput
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 1
  215:SWD_PhysicalLayer.c **** *******************************************************************************
  216:SWD_PhysicalLayer.c **** *
  217:SWD_PhysicalLayer.c **** * Summary:
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 10
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cc2PrKWy.s 			page 10
 
 
  218:SWD_PhysicalLayer.c **** *  Sets the SWDCK pin high
@@ -572,7 +572,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 1
  309 0006 054B     		ldr	r3, .L20
  310 0008 1B78     		ldrb	r3, [r3]
  311 000a DBB2     		uxtb	r3, r3
- 312 000c 43F00203 		orr	r3, r3, #2
+ 312 000c 43F00803 		orr	r3, r3, #8
  313 0010 DBB2     		uxtb	r3, r3
  314 0012 1370     		strb	r3, [r2]
  234:SWD_PhysicalLayer.c **** }
@@ -587,7 +587,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 1
  323              	.L21:
  324              		.align	2
  325              	.L20:
- 326 001c 10510040 		.word	1073762576
+ 326 001c C0510040 		.word	1073762752
  327              		.cfi_endproc
  328              	.LFE6:
  329              		.size	SetSwdckHigh, .-SetSwdckHigh
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 1
  334              		.thumb_func
  335              		.type	SetSwdckLow, %function
  336              	SetSwdckLow:
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 11
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cc2PrKWy.s 			page 11
 
 
  337              	.LFB7:
@@ -639,7 +639,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 1
  350 0006 054B     		ldr	r3, .L23
  351 0008 1B78     		ldrb	r3, [r3]
  352 000a DBB2     		uxtb	r3, r3
- 353 000c 23F00203 		bic	r3, r3, #2
+ 353 000c 23F00803 		bic	r3, r3, #8
  354 0010 DBB2     		uxtb	r3, r3
  355 0012 1370     		strb	r3, [r2]
  257:SWD_PhysicalLayer.c **** }
@@ -654,11 +654,11 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 1
  364              	.L24:
  365              		.align	2
  366              	.L23:
- 367 001c 10510040 		.word	1073762576
+ 367 001c C0510040 		.word	1073762752
  368              		.cfi_endproc
  369              	.LFE7:
  370              		.size	SetSwdckLow, .-SetSwdckLow
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 12
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cc2PrKWy.s 			page 12
 
 
  371              		.section	.text.SetSwdioHigh,"ax",%progbits
@@ -706,7 +706,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 1
  391 0006 054B     		ldr	r3, .L26
  392 0008 1B78     		ldrb	r3, [r3]
  393 000a DBB2     		uxtb	r3, r3
- 394 000c 43F00103 		orr	r3, r3, #1
+ 394 000c 43F00403 		orr	r3, r3, #4
  395 0010 DBB2     		uxtb	r3, r3
  396 0012 1370     		strb	r3, [r2]
  280:SWD_PhysicalLayer.c **** }
@@ -718,13 +718,13 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 1
  402              		.cfi_restore 7
  403              		.cfi_def_cfa_offset 0
  404 001a 7047     		bx	lr
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 13
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cc2PrKWy.s 			page 13
 
 
  405              	.L27:
  406              		.align	2
  407              	.L26:
- 408 001c 10510040 		.word	1073762576
+ 408 001c C0510040 		.word	1073762752
  409              		.cfi_endproc
  410              	.LFE8:
  411              		.size	SetSwdioHigh, .-SetSwdioHigh
@@ -773,12 +773,12 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 1
  432 0006 054B     		ldr	r3, .L29
  433 0008 1B78     		ldrb	r3, [r3]
  434 000a DBB2     		uxtb	r3, r3
- 435 000c 23F00103 		bic	r3, r3, #1
+ 435 000c 23F00403 		bic	r3, r3, #4
  436 0010 DBB2     		uxtb	r3, r3
  437 0012 1370     		strb	r3, [r2]
  303:SWD_PhysicalLayer.c **** }
  438              		.loc 1 303 0
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 14
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cc2PrKWy.s 			page 14
 
 
  439 0014 BD46     		mov	sp, r7
@@ -791,7 +791,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 1
  446              	.L30:
  447              		.align	2
  448              	.L29:
- 449 001c 10510040 		.word	1073762576
+ 449 001c C0510040 		.word	1073762752
  450              		.cfi_endproc
  451              	.LFE9:
  452              		.size	SetSwdioLow, .-SetSwdioLow
@@ -838,12 +838,12 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 1
  471              		.loc 1 325 0
  472 0004 054A     		ldr	r2, .L32
  473 0006 054B     		ldr	r3, .L32
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 15
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cc2PrKWy.s 			page 15
 
 
  474 0008 1B78     		ldrb	r3, [r3]
  475 000a DBB2     		uxtb	r3, r3
- 476 000c 43F00403 		orr	r3, r3, #4
+ 476 000c 43F02003 		orr	r3, r3, #32
  477 0010 DBB2     		uxtb	r3, r3
  478 0012 1370     		strb	r3, [r2]
  326:SWD_PhysicalLayer.c **** }
@@ -858,7 +858,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 1
  487              	.L33:
  488              		.align	2
  489              	.L32:
- 490 001c 00510040 		.word	1073762560
+ 490 001c 30510040 		.word	1073762608
  491              		.cfi_endproc
  492              	.LFE10:
  493              		.size	SetXresHigh, .-SetXresHigh
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 1
  506              		@ link register save eliminated.
  507 0000 80B4     		push	{r7}
  508              		.cfi_def_cfa_offset 4
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 16
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cc2PrKWy.s 			page 16
 
 
  509              		.cfi_offset 7, -4
@@ -910,7 +910,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 1
  514 0006 054B     		ldr	r3, .L35
  515 0008 1B78     		ldrb	r3, [r3]
  516 000a DBB2     		uxtb	r3, r3
- 517 000c 23F00403 		bic	r3, r3, #4
+ 517 000c 23F02003 		bic	r3, r3, #32
  518 0010 DBB2     		uxtb	r3, r3
  519 0012 1370     		strb	r3, [r2]
  349:SWD_PhysicalLayer.c **** }
@@ -925,7 +925,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 1
  528              	.L36:
  529              		.align	2
  530              	.L35:
- 531 001c 00510040 		.word	1073762560
+ 531 001c 30510040 		.word	1073762608
  532              		.cfi_endproc
  533              	.LFE11:
  534              		.size	SetXresLow, .-SetXresLow
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 1
  368:SWD_PhysicalLayer.c **** *  in SWD_PhysicalLayer.h.
  369:SWD_PhysicalLayer.c **** *
  370:SWD_PhysicalLayer.c **** ******************************************************************************/
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 17
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cc2PrKWy.s 			page 17
 
 
  371:SWD_PhysicalLayer.c **** unsigned char ReadSwdio()
@@ -975,458 +975,460 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 1
  552              		.cfi_def_cfa_register 7
  373:SWD_PhysicalLayer.c ****     return((SWDIO_PRT_IN_REG >> SWDIO_PIN_NUM) & 0x01);
  553              		.loc 1 373 0
- 554 0004 054B     		ldr	r3, .L39
+ 554 0004 064B     		ldr	r3, .L39
  555 0006 1B78     		ldrb	r3, [r3]
  556 0008 DBB2     		uxtb	r3, r3
- 557 000a 03F00103 		and	r3, r3, #1
- 558 000e DBB2     		uxtb	r3, r3
+ 557 000a 9B08     		lsrs	r3, r3, #2
+ 558 000c DBB2     		uxtb	r3, r3
+ 559 000e 03F00103 		and	r3, r3, #1
+ 560 0012 DBB2     		uxtb	r3, r3
  374:SWD_PhysicalLayer.c **** }
- 559              		.loc 1 374 0
- 560 0010 1846     		mov	r0, r3
- 561 0012 BD46     		mov	sp, r7
- 562              		.cfi_def_cfa_register 13
- 563              		@ sp needed
- 564 0014 5DF8047B 		ldr	r7, [sp], #4
- 565              		.cfi_restore 7
- 566              		.cfi_def_cfa_offset 0
- 567 0018 7047     		bx	lr
- 568              	.L40:
- 569 001a 00BF     		.align	2
- 570              	.L39:
- 571 001c 11510040 		.word	1073762577
- 572              		.cfi_endproc
- 573              	.LFE12:
- 574              		.size	ReadSwdio, .-ReadSwdio
- 575              		.text
- 576              	.Letext0:
- 577              		.section	.debug_info,"",%progbits
- 578              	.Ldebug_info0:
- 579 0000 0F010000 		.4byte	0x10f
- 580 0004 0400     		.2byte	0x4
- 581 0006 00000000 		.4byte	.Ldebug_abbrev0
- 582 000a 04       		.byte	0x4
- 583 000b 01       		.uleb128 0x1
- 584 000c 91000000 		.4byte	.LASF12
- 585 0010 01       		.byte	0x1
- 586 0011 44000000 		.4byte	.LASF13
- 587 0015 6D010000 		.4byte	.LASF14
- 588 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 589 001d 00000000 		.4byte	0
- 590 0021 00000000 		.4byte	.Ldebug_line0
- 591 0025 02       		.uleb128 0x2
- 592 0026 23000000 		.4byte	.LASF0
- 593 002a 01       		.byte	0x1
- 594 002b 5D       		.byte	0x5d
- 595 002c 00000000 		.4byte	.LFB0
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 18
+ 561              		.loc 1 374 0
+ 562 0014 1846     		mov	r0, r3
+ 563 0016 BD46     		mov	sp, r7
+ 564              		.cfi_def_cfa_register 13
+ 565              		@ sp needed
+ 566 0018 5DF8047B 		ldr	r7, [sp], #4
+ 567              		.cfi_restore 7
+ 568              		.cfi_def_cfa_offset 0
+ 569 001c 7047     		bx	lr
+ 570              	.L40:
+ 571 001e 00BF     		.align	2
+ 572              	.L39:
+ 573 0020 C1510040 		.word	1073762753
+ 574              		.cfi_endproc
+ 575              	.LFE12:
+ 576              		.size	ReadSwdio, .-ReadSwdio
+ 577              		.text
+ 578              	.Letext0:
+ 579              		.section	.debug_info,"",%progbits
+ 580              	.Ldebug_info0:
+ 581 0000 0F010000 		.4byte	0x10f
+ 582 0004 0400     		.2byte	0x4
+ 583 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 584 000a 04       		.byte	0x4
+ 585 000b 01       		.uleb128 0x1
+ 586 000c 91000000 		.4byte	.LASF12
+ 587 0010 01       		.byte	0x1
+ 588 0011 44000000 		.4byte	.LASF13
+ 589 0015 6D010000 		.4byte	.LASF14
+ 590 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 591 001d 00000000 		.4byte	0
+ 592 0021 00000000 		.4byte	.Ldebug_line0
+ 593 0025 02       		.uleb128 0x2
+ 594 0026 23000000 		.4byte	.LASF0
+ 595 002a 01       		.byte	0x1
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cc2PrKWy.s 			page 18
 
 
- 596 0030 2C000000 		.4byte	.LFE0-.LFB0
- 597 0034 01       		.uleb128 0x1
- 598 0035 9C       		.byte	0x9c
- 599 0036 02       		.uleb128 0x2
- 600 0037 44010000 		.4byte	.LASF1
- 601 003b 01       		.byte	0x1
- 602 003c 74       		.byte	0x74
- 603 003d 00000000 		.4byte	.LFB1
- 604 0041 2C000000 		.4byte	.LFE1-.LFB1
- 605 0045 01       		.uleb128 0x1
- 606 0046 9C       		.byte	0x9c
- 607 0047 02       		.uleb128 0x2
- 608 0048 10000000 		.4byte	.LASF2
- 609 004c 01       		.byte	0x1
- 610 004d 8B       		.byte	0x8b
- 611 004e 00000000 		.4byte	.LFB2
- 612 0052 2C000000 		.4byte	.LFE2-.LFB2
- 613 0056 01       		.uleb128 0x1
- 614 0057 9C       		.byte	0x9c
- 615 0058 02       		.uleb128 0x2
- 616 0059 58000000 		.4byte	.LASF3
- 617 005d 01       		.byte	0x1
- 618 005e A2       		.byte	0xa2
- 619 005f 00000000 		.4byte	.LFB3
- 620 0063 2C000000 		.4byte	.LFE3-.LFB3
- 621 0067 01       		.uleb128 0x1
- 622 0068 9C       		.byte	0x9c
- 623 0069 02       		.uleb128 0x2
- 624 006a 7F000000 		.4byte	.LASF4
- 625 006e 01       		.byte	0x1
- 626 006f B9       		.byte	0xb9
- 627 0070 00000000 		.4byte	.LFB4
- 628 0074 2C000000 		.4byte	.LFE4-.LFB4
- 629 0078 01       		.uleb128 0x1
- 630 0079 9C       		.byte	0x9c
- 631 007a 02       		.uleb128 0x2
- 632 007b 00000000 		.4byte	.LASF5
- 633 007f 01       		.byte	0x1
- 634 0080 D0       		.byte	0xd0
- 635 0081 00000000 		.4byte	.LFB5
- 636 0085 2C000000 		.4byte	.LFE5-.LFB5
- 637 0089 01       		.uleb128 0x1
- 638 008a 9C       		.byte	0x9c
- 639 008b 02       		.uleb128 0x2
- 640 008c 55010000 		.4byte	.LASF6
- 641 0090 01       		.byte	0x1
- 642 0091 E7       		.byte	0xe7
- 643 0092 00000000 		.4byte	.LFB6
- 644 0096 20000000 		.4byte	.LFE6-.LFB6
- 645 009a 01       		.uleb128 0x1
- 646 009b 9C       		.byte	0x9c
- 647 009c 02       		.uleb128 0x2
- 648 009d 73000000 		.4byte	.LASF7
- 649 00a1 01       		.byte	0x1
- 650 00a2 FE       		.byte	0xfe
- 651 00a3 00000000 		.4byte	.LFB7
- 652 00a7 20000000 		.4byte	.LFE7-.LFB7
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 19
+ 596 002b 5D       		.byte	0x5d
+ 597 002c 00000000 		.4byte	.LFB0
+ 598 0030 2C000000 		.4byte	.LFE0-.LFB0
+ 599 0034 01       		.uleb128 0x1
+ 600 0035 9C       		.byte	0x9c
+ 601 0036 02       		.uleb128 0x2
+ 602 0037 44010000 		.4byte	.LASF1
+ 603 003b 01       		.byte	0x1
+ 604 003c 74       		.byte	0x74
+ 605 003d 00000000 		.4byte	.LFB1
+ 606 0041 2C000000 		.4byte	.LFE1-.LFB1
+ 607 0045 01       		.uleb128 0x1
+ 608 0046 9C       		.byte	0x9c
+ 609 0047 02       		.uleb128 0x2
+ 610 0048 10000000 		.4byte	.LASF2
+ 611 004c 01       		.byte	0x1
+ 612 004d 8B       		.byte	0x8b
+ 613 004e 00000000 		.4byte	.LFB2
+ 614 0052 2C000000 		.4byte	.LFE2-.LFB2
+ 615 0056 01       		.uleb128 0x1
+ 616 0057 9C       		.byte	0x9c
+ 617 0058 02       		.uleb128 0x2
+ 618 0059 58000000 		.4byte	.LASF3
+ 619 005d 01       		.byte	0x1
+ 620 005e A2       		.byte	0xa2
+ 621 005f 00000000 		.4byte	.LFB3
+ 622 0063 2C000000 		.4byte	.LFE3-.LFB3
+ 623 0067 01       		.uleb128 0x1
+ 624 0068 9C       		.byte	0x9c
+ 625 0069 02       		.uleb128 0x2
+ 626 006a 7F000000 		.4byte	.LASF4
+ 627 006e 01       		.byte	0x1
+ 628 006f B9       		.byte	0xb9
+ 629 0070 00000000 		.4byte	.LFB4
+ 630 0074 2C000000 		.4byte	.LFE4-.LFB4
+ 631 0078 01       		.uleb128 0x1
+ 632 0079 9C       		.byte	0x9c
+ 633 007a 02       		.uleb128 0x2
+ 634 007b 00000000 		.4byte	.LASF5
+ 635 007f 01       		.byte	0x1
+ 636 0080 D0       		.byte	0xd0
+ 637 0081 00000000 		.4byte	.LFB5
+ 638 0085 2C000000 		.4byte	.LFE5-.LFB5
+ 639 0089 01       		.uleb128 0x1
+ 640 008a 9C       		.byte	0x9c
+ 641 008b 02       		.uleb128 0x2
+ 642 008c 55010000 		.4byte	.LASF6
+ 643 0090 01       		.byte	0x1
+ 644 0091 E7       		.byte	0xe7
+ 645 0092 00000000 		.4byte	.LFB6
+ 646 0096 20000000 		.4byte	.LFE6-.LFB6
+ 647 009a 01       		.uleb128 0x1
+ 648 009b 9C       		.byte	0x9c
+ 649 009c 02       		.uleb128 0x2
+ 650 009d 73000000 		.4byte	.LASF7
+ 651 00a1 01       		.byte	0x1
+ 652 00a2 FE       		.byte	0xfe
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cc2PrKWy.s 			page 19
 
 
- 653 00ab 01       		.uleb128 0x1
- 654 00ac 9C       		.byte	0x9c
- 655 00ad 03       		.uleb128 0x3
- 656 00ae 1F010000 		.4byte	.LASF8
- 657 00b2 01       		.byte	0x1
- 658 00b3 1501     		.2byte	0x115
- 659 00b5 00000000 		.4byte	.LFB8
- 660 00b9 20000000 		.4byte	.LFE8-.LFB8
- 661 00bd 01       		.uleb128 0x1
- 662 00be 9C       		.byte	0x9c
- 663 00bf 03       		.uleb128 0x3
- 664 00c0 2C010000 		.4byte	.LASF9
- 665 00c4 01       		.byte	0x1
- 666 00c5 2C01     		.2byte	0x12c
- 667 00c7 00000000 		.4byte	.LFB9
- 668 00cb 20000000 		.4byte	.LFE9-.LFB9
- 669 00cf 01       		.uleb128 0x1
- 670 00d0 9C       		.byte	0x9c
- 671 00d1 03       		.uleb128 0x3
- 672 00d2 38010000 		.4byte	.LASF10
- 673 00d6 01       		.byte	0x1
- 674 00d7 4301     		.2byte	0x143
- 675 00d9 00000000 		.4byte	.LFB10
- 676 00dd 20000000 		.4byte	.LFE10-.LFB10
- 677 00e1 01       		.uleb128 0x1
- 678 00e2 9C       		.byte	0x9c
- 679 00e3 03       		.uleb128 0x3
- 680 00e4 62010000 		.4byte	.LASF11
- 681 00e8 01       		.byte	0x1
- 682 00e9 5A01     		.2byte	0x15a
- 683 00eb 00000000 		.4byte	.LFB11
- 684 00ef 20000000 		.4byte	.LFE11-.LFB11
- 685 00f3 01       		.uleb128 0x1
- 686 00f4 9C       		.byte	0x9c
- 687 00f5 04       		.uleb128 0x4
- 688 00f6 69000000 		.4byte	.LASF15
- 689 00fa 01       		.byte	0x1
- 690 00fb 7301     		.2byte	0x173
- 691 00fd 0B010000 		.4byte	0x10b
- 692 0101 00000000 		.4byte	.LFB12
- 693 0105 20000000 		.4byte	.LFE12-.LFB12
- 694 0109 01       		.uleb128 0x1
- 695 010a 9C       		.byte	0x9c
- 696 010b 05       		.uleb128 0x5
- 697 010c 01       		.byte	0x1
- 698 010d 08       		.byte	0x8
- 699 010e 36000000 		.4byte	.LASF16
- 700 0112 00       		.byte	0
- 701              		.section	.debug_abbrev,"",%progbits
- 702              	.Ldebug_abbrev0:
- 703 0000 01       		.uleb128 0x1
- 704 0001 11       		.uleb128 0x11
- 705 0002 01       		.byte	0x1
- 706 0003 25       		.uleb128 0x25
- 707 0004 0E       		.uleb128 0xe
- 708 0005 13       		.uleb128 0x13
- 709 0006 0B       		.uleb128 0xb
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 20
+ 653 00a3 00000000 		.4byte	.LFB7
+ 654 00a7 20000000 		.4byte	.LFE7-.LFB7
+ 655 00ab 01       		.uleb128 0x1
+ 656 00ac 9C       		.byte	0x9c
+ 657 00ad 03       		.uleb128 0x3
+ 658 00ae 1F010000 		.4byte	.LASF8
+ 659 00b2 01       		.byte	0x1
+ 660 00b3 1501     		.2byte	0x115
+ 661 00b5 00000000 		.4byte	.LFB8
+ 662 00b9 20000000 		.4byte	.LFE8-.LFB8
+ 663 00bd 01       		.uleb128 0x1
+ 664 00be 9C       		.byte	0x9c
+ 665 00bf 03       		.uleb128 0x3
+ 666 00c0 2C010000 		.4byte	.LASF9
+ 667 00c4 01       		.byte	0x1
+ 668 00c5 2C01     		.2byte	0x12c
+ 669 00c7 00000000 		.4byte	.LFB9
+ 670 00cb 20000000 		.4byte	.LFE9-.LFB9
+ 671 00cf 01       		.uleb128 0x1
+ 672 00d0 9C       		.byte	0x9c
+ 673 00d1 03       		.uleb128 0x3
+ 674 00d2 38010000 		.4byte	.LASF10
+ 675 00d6 01       		.byte	0x1
+ 676 00d7 4301     		.2byte	0x143
+ 677 00d9 00000000 		.4byte	.LFB10
+ 678 00dd 20000000 		.4byte	.LFE10-.LFB10
+ 679 00e1 01       		.uleb128 0x1
+ 680 00e2 9C       		.byte	0x9c
+ 681 00e3 03       		.uleb128 0x3
+ 682 00e4 62010000 		.4byte	.LASF11
+ 683 00e8 01       		.byte	0x1
+ 684 00e9 5A01     		.2byte	0x15a
+ 685 00eb 00000000 		.4byte	.LFB11
+ 686 00ef 20000000 		.4byte	.LFE11-.LFB11
+ 687 00f3 01       		.uleb128 0x1
+ 688 00f4 9C       		.byte	0x9c
+ 689 00f5 04       		.uleb128 0x4
+ 690 00f6 69000000 		.4byte	.LASF15
+ 691 00fa 01       		.byte	0x1
+ 692 00fb 7301     		.2byte	0x173
+ 693 00fd 0B010000 		.4byte	0x10b
+ 694 0101 00000000 		.4byte	.LFB12
+ 695 0105 24000000 		.4byte	.LFE12-.LFB12
+ 696 0109 01       		.uleb128 0x1
+ 697 010a 9C       		.byte	0x9c
+ 698 010b 05       		.uleb128 0x5
+ 699 010c 01       		.byte	0x1
+ 700 010d 08       		.byte	0x8
+ 701 010e 36000000 		.4byte	.LASF16
+ 702 0112 00       		.byte	0
+ 703              		.section	.debug_abbrev,"",%progbits
+ 704              	.Ldebug_abbrev0:
+ 705 0000 01       		.uleb128 0x1
+ 706 0001 11       		.uleb128 0x11
+ 707 0002 01       		.byte	0x1
+ 708 0003 25       		.uleb128 0x25
+ 709 0004 0E       		.uleb128 0xe
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cc2PrKWy.s 			page 20
 
 
- 710 0007 03       		.uleb128 0x3
- 711 0008 0E       		.uleb128 0xe
- 712 0009 1B       		.uleb128 0x1b
- 713 000a 0E       		.uleb128 0xe
- 714 000b 55       		.uleb128 0x55
- 715 000c 17       		.uleb128 0x17
- 716 000d 11       		.uleb128 0x11
- 717 000e 01       		.uleb128 0x1
- 718 000f 10       		.uleb128 0x10
- 719 0010 17       		.uleb128 0x17
- 720 0011 00       		.byte	0
- 721 0012 00       		.byte	0
- 722 0013 02       		.uleb128 0x2
- 723 0014 2E       		.uleb128 0x2e
- 724 0015 00       		.byte	0
- 725 0016 3F       		.uleb128 0x3f
- 726 0017 19       		.uleb128 0x19
- 727 0018 03       		.uleb128 0x3
- 728 0019 0E       		.uleb128 0xe
- 729 001a 3A       		.uleb128 0x3a
- 730 001b 0B       		.uleb128 0xb
- 731 001c 3B       		.uleb128 0x3b
- 732 001d 0B       		.uleb128 0xb
- 733 001e 27       		.uleb128 0x27
- 734 001f 19       		.uleb128 0x19
- 735 0020 11       		.uleb128 0x11
- 736 0021 01       		.uleb128 0x1
- 737 0022 12       		.uleb128 0x12
- 738 0023 06       		.uleb128 0x6
- 739 0024 40       		.uleb128 0x40
- 740 0025 18       		.uleb128 0x18
- 741 0026 9742     		.uleb128 0x2117
- 742 0028 19       		.uleb128 0x19
- 743 0029 00       		.byte	0
- 744 002a 00       		.byte	0
- 745 002b 03       		.uleb128 0x3
- 746 002c 2E       		.uleb128 0x2e
- 747 002d 00       		.byte	0
- 748 002e 3F       		.uleb128 0x3f
- 749 002f 19       		.uleb128 0x19
- 750 0030 03       		.uleb128 0x3
- 751 0031 0E       		.uleb128 0xe
- 752 0032 3A       		.uleb128 0x3a
- 753 0033 0B       		.uleb128 0xb
- 754 0034 3B       		.uleb128 0x3b
- 755 0035 05       		.uleb128 0x5
- 756 0036 27       		.uleb128 0x27
- 757 0037 19       		.uleb128 0x19
- 758 0038 11       		.uleb128 0x11
- 759 0039 01       		.uleb128 0x1
- 760 003a 12       		.uleb128 0x12
- 761 003b 06       		.uleb128 0x6
- 762 003c 40       		.uleb128 0x40
- 763 003d 18       		.uleb128 0x18
- 764 003e 9742     		.uleb128 0x2117
- 765 0040 19       		.uleb128 0x19
- 766 0041 00       		.byte	0
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 21
+ 710 0005 13       		.uleb128 0x13
+ 711 0006 0B       		.uleb128 0xb
+ 712 0007 03       		.uleb128 0x3
+ 713 0008 0E       		.uleb128 0xe
+ 714 0009 1B       		.uleb128 0x1b
+ 715 000a 0E       		.uleb128 0xe
+ 716 000b 55       		.uleb128 0x55
+ 717 000c 17       		.uleb128 0x17
+ 718 000d 11       		.uleb128 0x11
+ 719 000e 01       		.uleb128 0x1
+ 720 000f 10       		.uleb128 0x10
+ 721 0010 17       		.uleb128 0x17
+ 722 0011 00       		.byte	0
+ 723 0012 00       		.byte	0
+ 724 0013 02       		.uleb128 0x2
+ 725 0014 2E       		.uleb128 0x2e
+ 726 0015 00       		.byte	0
+ 727 0016 3F       		.uleb128 0x3f
+ 728 0017 19       		.uleb128 0x19
+ 729 0018 03       		.uleb128 0x3
+ 730 0019 0E       		.uleb128 0xe
+ 731 001a 3A       		.uleb128 0x3a
+ 732 001b 0B       		.uleb128 0xb
+ 733 001c 3B       		.uleb128 0x3b
+ 734 001d 0B       		.uleb128 0xb
+ 735 001e 27       		.uleb128 0x27
+ 736 001f 19       		.uleb128 0x19
+ 737 0020 11       		.uleb128 0x11
+ 738 0021 01       		.uleb128 0x1
+ 739 0022 12       		.uleb128 0x12
+ 740 0023 06       		.uleb128 0x6
+ 741 0024 40       		.uleb128 0x40
+ 742 0025 18       		.uleb128 0x18
+ 743 0026 9742     		.uleb128 0x2117
+ 744 0028 19       		.uleb128 0x19
+ 745 0029 00       		.byte	0
+ 746 002a 00       		.byte	0
+ 747 002b 03       		.uleb128 0x3
+ 748 002c 2E       		.uleb128 0x2e
+ 749 002d 00       		.byte	0
+ 750 002e 3F       		.uleb128 0x3f
+ 751 002f 19       		.uleb128 0x19
+ 752 0030 03       		.uleb128 0x3
+ 753 0031 0E       		.uleb128 0xe
+ 754 0032 3A       		.uleb128 0x3a
+ 755 0033 0B       		.uleb128 0xb
+ 756 0034 3B       		.uleb128 0x3b
+ 757 0035 05       		.uleb128 0x5
+ 758 0036 27       		.uleb128 0x27
+ 759 0037 19       		.uleb128 0x19
+ 760 0038 11       		.uleb128 0x11
+ 761 0039 01       		.uleb128 0x1
+ 762 003a 12       		.uleb128 0x12
+ 763 003b 06       		.uleb128 0x6
+ 764 003c 40       		.uleb128 0x40
+ 765 003d 18       		.uleb128 0x18
+ 766 003e 9742     		.uleb128 0x2117
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cc2PrKWy.s 			page 21
 
 
- 767 0042 00       		.byte	0
- 768 0043 04       		.uleb128 0x4
- 769 0044 2E       		.uleb128 0x2e
- 770 0045 00       		.byte	0
- 771 0046 3F       		.uleb128 0x3f
- 772 0047 19       		.uleb128 0x19
- 773 0048 03       		.uleb128 0x3
- 774 0049 0E       		.uleb128 0xe
- 775 004a 3A       		.uleb128 0x3a
- 776 004b 0B       		.uleb128 0xb
- 777 004c 3B       		.uleb128 0x3b
- 778 004d 05       		.uleb128 0x5
- 779 004e 27       		.uleb128 0x27
- 780 004f 19       		.uleb128 0x19
- 781 0050 49       		.uleb128 0x49
- 782 0051 13       		.uleb128 0x13
- 783 0052 11       		.uleb128 0x11
- 784 0053 01       		.uleb128 0x1
- 785 0054 12       		.uleb128 0x12
- 786 0055 06       		.uleb128 0x6
- 787 0056 40       		.uleb128 0x40
- 788 0057 18       		.uleb128 0x18
- 789 0058 9742     		.uleb128 0x2117
- 790 005a 19       		.uleb128 0x19
- 791 005b 00       		.byte	0
- 792 005c 00       		.byte	0
- 793 005d 05       		.uleb128 0x5
- 794 005e 24       		.uleb128 0x24
- 795 005f 00       		.byte	0
- 796 0060 0B       		.uleb128 0xb
- 797 0061 0B       		.uleb128 0xb
- 798 0062 3E       		.uleb128 0x3e
- 799 0063 0B       		.uleb128 0xb
- 800 0064 03       		.uleb128 0x3
- 801 0065 0E       		.uleb128 0xe
- 802 0066 00       		.byte	0
- 803 0067 00       		.byte	0
- 804 0068 00       		.byte	0
- 805              		.section	.debug_aranges,"",%progbits
- 806 0000 7C000000 		.4byte	0x7c
- 807 0004 0200     		.2byte	0x2
- 808 0006 00000000 		.4byte	.Ldebug_info0
- 809 000a 04       		.byte	0x4
- 810 000b 00       		.byte	0
- 811 000c 0000     		.2byte	0
- 812 000e 0000     		.2byte	0
- 813 0010 00000000 		.4byte	.LFB0
- 814 0014 2C000000 		.4byte	.LFE0-.LFB0
- 815 0018 00000000 		.4byte	.LFB1
- 816 001c 2C000000 		.4byte	.LFE1-.LFB1
- 817 0020 00000000 		.4byte	.LFB2
- 818 0024 2C000000 		.4byte	.LFE2-.LFB2
- 819 0028 00000000 		.4byte	.LFB3
- 820 002c 2C000000 		.4byte	.LFE3-.LFB3
- 821 0030 00000000 		.4byte	.LFB4
- 822 0034 2C000000 		.4byte	.LFE4-.LFB4
- 823 0038 00000000 		.4byte	.LFB5
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 22
+ 767 0040 19       		.uleb128 0x19
+ 768 0041 00       		.byte	0
+ 769 0042 00       		.byte	0
+ 770 0043 04       		.uleb128 0x4
+ 771 0044 2E       		.uleb128 0x2e
+ 772 0045 00       		.byte	0
+ 773 0046 3F       		.uleb128 0x3f
+ 774 0047 19       		.uleb128 0x19
+ 775 0048 03       		.uleb128 0x3
+ 776 0049 0E       		.uleb128 0xe
+ 777 004a 3A       		.uleb128 0x3a
+ 778 004b 0B       		.uleb128 0xb
+ 779 004c 3B       		.uleb128 0x3b
+ 780 004d 05       		.uleb128 0x5
+ 781 004e 27       		.uleb128 0x27
+ 782 004f 19       		.uleb128 0x19
+ 783 0050 49       		.uleb128 0x49
+ 784 0051 13       		.uleb128 0x13
+ 785 0052 11       		.uleb128 0x11
+ 786 0053 01       		.uleb128 0x1
+ 787 0054 12       		.uleb128 0x12
+ 788 0055 06       		.uleb128 0x6
+ 789 0056 40       		.uleb128 0x40
+ 790 0057 18       		.uleb128 0x18
+ 791 0058 9742     		.uleb128 0x2117
+ 792 005a 19       		.uleb128 0x19
+ 793 005b 00       		.byte	0
+ 794 005c 00       		.byte	0
+ 795 005d 05       		.uleb128 0x5
+ 796 005e 24       		.uleb128 0x24
+ 797 005f 00       		.byte	0
+ 798 0060 0B       		.uleb128 0xb
+ 799 0061 0B       		.uleb128 0xb
+ 800 0062 3E       		.uleb128 0x3e
+ 801 0063 0B       		.uleb128 0xb
+ 802 0064 03       		.uleb128 0x3
+ 803 0065 0E       		.uleb128 0xe
+ 804 0066 00       		.byte	0
+ 805 0067 00       		.byte	0
+ 806 0068 00       		.byte	0
+ 807              		.section	.debug_aranges,"",%progbits
+ 808 0000 7C000000 		.4byte	0x7c
+ 809 0004 0200     		.2byte	0x2
+ 810 0006 00000000 		.4byte	.Ldebug_info0
+ 811 000a 04       		.byte	0x4
+ 812 000b 00       		.byte	0
+ 813 000c 0000     		.2byte	0
+ 814 000e 0000     		.2byte	0
+ 815 0010 00000000 		.4byte	.LFB0
+ 816 0014 2C000000 		.4byte	.LFE0-.LFB0
+ 817 0018 00000000 		.4byte	.LFB1
+ 818 001c 2C000000 		.4byte	.LFE1-.LFB1
+ 819 0020 00000000 		.4byte	.LFB2
+ 820 0024 2C000000 		.4byte	.LFE2-.LFB2
+ 821 0028 00000000 		.4byte	.LFB3
+ 822 002c 2C000000 		.4byte	.LFE3-.LFB3
+ 823 0030 00000000 		.4byte	.LFB4
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cc2PrKWy.s 			page 22
 
 
- 824 003c 2C000000 		.4byte	.LFE5-.LFB5
- 825 0040 00000000 		.4byte	.LFB6
- 826 0044 20000000 		.4byte	.LFE6-.LFB6
- 827 0048 00000000 		.4byte	.LFB7
- 828 004c 20000000 		.4byte	.LFE7-.LFB7
- 829 0050 00000000 		.4byte	.LFB8
- 830 0054 20000000 		.4byte	.LFE8-.LFB8
- 831 0058 00000000 		.4byte	.LFB9
- 832 005c 20000000 		.4byte	.LFE9-.LFB9
- 833 0060 00000000 		.4byte	.LFB10
- 834 0064 20000000 		.4byte	.LFE10-.LFB10
- 835 0068 00000000 		.4byte	.LFB11
- 836 006c 20000000 		.4byte	.LFE11-.LFB11
- 837 0070 00000000 		.4byte	.LFB12
- 838 0074 20000000 		.4byte	.LFE12-.LFB12
- 839 0078 00000000 		.4byte	0
- 840 007c 00000000 		.4byte	0
- 841              		.section	.debug_ranges,"",%progbits
- 842              	.Ldebug_ranges0:
- 843 0000 00000000 		.4byte	.LFB0
- 844 0004 2C000000 		.4byte	.LFE0
- 845 0008 00000000 		.4byte	.LFB1
- 846 000c 2C000000 		.4byte	.LFE1
- 847 0010 00000000 		.4byte	.LFB2
- 848 0014 2C000000 		.4byte	.LFE2
- 849 0018 00000000 		.4byte	.LFB3
- 850 001c 2C000000 		.4byte	.LFE3
- 851 0020 00000000 		.4byte	.LFB4
- 852 0024 2C000000 		.4byte	.LFE4
- 853 0028 00000000 		.4byte	.LFB5
- 854 002c 2C000000 		.4byte	.LFE5
- 855 0030 00000000 		.4byte	.LFB6
- 856 0034 20000000 		.4byte	.LFE6
- 857 0038 00000000 		.4byte	.LFB7
- 858 003c 20000000 		.4byte	.LFE7
- 859 0040 00000000 		.4byte	.LFB8
- 860 0044 20000000 		.4byte	.LFE8
- 861 0048 00000000 		.4byte	.LFB9
- 862 004c 20000000 		.4byte	.LFE9
- 863 0050 00000000 		.4byte	.LFB10
- 864 0054 20000000 		.4byte	.LFE10
- 865 0058 00000000 		.4byte	.LFB11
- 866 005c 20000000 		.4byte	.LFE11
- 867 0060 00000000 		.4byte	.LFB12
- 868 0064 20000000 		.4byte	.LFE12
- 869 0068 00000000 		.4byte	0
- 870 006c 00000000 		.4byte	0
- 871              		.section	.debug_line,"",%progbits
- 872              	.Ldebug_line0:
- 873 0000 1A010000 		.section	.debug_str,"MS",%progbits,1
- 873      02002A00 
- 873      00000201 
- 873      FB0E0D00 
- 873      01010101 
- 874              	.LASF5:
- 875 0000 53657458 		.ascii	"SetXresHizInput\000"
- 875      72657348 
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 23
+ 824 0034 2C000000 		.4byte	.LFE4-.LFB4
+ 825 0038 00000000 		.4byte	.LFB5
+ 826 003c 2C000000 		.4byte	.LFE5-.LFB5
+ 827 0040 00000000 		.4byte	.LFB6
+ 828 0044 20000000 		.4byte	.LFE6-.LFB6
+ 829 0048 00000000 		.4byte	.LFB7
+ 830 004c 20000000 		.4byte	.LFE7-.LFB7
+ 831 0050 00000000 		.4byte	.LFB8
+ 832 0054 20000000 		.4byte	.LFE8-.LFB8
+ 833 0058 00000000 		.4byte	.LFB9
+ 834 005c 20000000 		.4byte	.LFE9-.LFB9
+ 835 0060 00000000 		.4byte	.LFB10
+ 836 0064 20000000 		.4byte	.LFE10-.LFB10
+ 837 0068 00000000 		.4byte	.LFB11
+ 838 006c 20000000 		.4byte	.LFE11-.LFB11
+ 839 0070 00000000 		.4byte	.LFB12
+ 840 0074 24000000 		.4byte	.LFE12-.LFB12
+ 841 0078 00000000 		.4byte	0
+ 842 007c 00000000 		.4byte	0
+ 843              		.section	.debug_ranges,"",%progbits
+ 844              	.Ldebug_ranges0:
+ 845 0000 00000000 		.4byte	.LFB0
+ 846 0004 2C000000 		.4byte	.LFE0
+ 847 0008 00000000 		.4byte	.LFB1
+ 848 000c 2C000000 		.4byte	.LFE1
+ 849 0010 00000000 		.4byte	.LFB2
+ 850 0014 2C000000 		.4byte	.LFE2
+ 851 0018 00000000 		.4byte	.LFB3
+ 852 001c 2C000000 		.4byte	.LFE3
+ 853 0020 00000000 		.4byte	.LFB4
+ 854 0024 2C000000 		.4byte	.LFE4
+ 855 0028 00000000 		.4byte	.LFB5
+ 856 002c 2C000000 		.4byte	.LFE5
+ 857 0030 00000000 		.4byte	.LFB6
+ 858 0034 20000000 		.4byte	.LFE6
+ 859 0038 00000000 		.4byte	.LFB7
+ 860 003c 20000000 		.4byte	.LFE7
+ 861 0040 00000000 		.4byte	.LFB8
+ 862 0044 20000000 		.4byte	.LFE8
+ 863 0048 00000000 		.4byte	.LFB9
+ 864 004c 20000000 		.4byte	.LFE9
+ 865 0050 00000000 		.4byte	.LFB10
+ 866 0054 20000000 		.4byte	.LFE10
+ 867 0058 00000000 		.4byte	.LFB11
+ 868 005c 20000000 		.4byte	.LFE11
+ 869 0060 00000000 		.4byte	.LFB12
+ 870 0064 24000000 		.4byte	.LFE12
+ 871 0068 00000000 		.4byte	0
+ 872 006c 00000000 		.4byte	0
+ 873              		.section	.debug_line,"",%progbits
+ 874              	.Ldebug_line0:
+ 875 0000 1A010000 		.section	.debug_str,"MS",%progbits,1
+ 875      02002A00 
+ 875      00000201 
+ 875      FB0E0D00 
+ 875      01010101 
+ 876              	.LASF5:
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cc2PrKWy.s 			page 23
 
 
- 875      697A496E 
- 875      70757400 
- 876              	.LASF2:
- 877 0010 53657453 		.ascii	"SetSwdioCmosOutput\000"
- 877      7764696F 
- 877      436D6F73 
- 877      4F757470 
- 877      757400
- 878              	.LASF0:
- 879 0023 53657453 		.ascii	"SetSwdckCmosOutput\000"
- 879      7764636B 
+ 877 0000 53657458 		.ascii	"SetXresHizInput\000"
+ 877      72657348 
+ 877      697A496E 
+ 877      70757400 
+ 878              	.LASF2:
+ 879 0010 53657453 		.ascii	"SetSwdioCmosOutput\000"
+ 879      7764696F 
  879      436D6F73 
  879      4F757470 
  879      757400
- 880              	.LASF16:
- 881 0036 756E7369 		.ascii	"unsigned char\000"
- 881      676E6564 
- 881      20636861 
- 881      7200
- 882              	.LASF13:
- 883 0044 5357445F 		.ascii	"SWD_PhysicalLayer.c\000"
- 883      50687973 
- 883      6963616C 
- 883      4C617965 
- 883      722E6300 
- 884              	.LASF3:
- 885 0058 53657453 		.ascii	"SetSwdioHizInput\000"
- 885      7764696F 
- 885      48697A49 
- 885      6E707574 
- 885      00
- 886              	.LASF15:
- 887 0069 52656164 		.ascii	"ReadSwdio\000"
- 887      53776469 
- 887      6F00
- 888              	.LASF7:
- 889 0073 53657453 		.ascii	"SetSwdckLow\000"
- 889      7764636B 
- 889      4C6F7700 
- 890              	.LASF4:
- 891 007f 53657458 		.ascii	"SetXresCmosOutput\000"
- 891      72657343 
- 891      6D6F734F 
- 891      75747075 
- 891      7400
- 892              	.LASF12:
- 893 0091 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 893      4320342E 
- 893      392E3320 
- 893      32303135 
- 893      30333033 
- 894 00c4 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
- 894      20726576 
- 894      6973696F 
- 894      6E203232 
- 894      31323230 
- 895 00f7 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrqIfUi.s 			page 24
+ 880              	.LASF0:
+ 881 0023 53657453 		.ascii	"SetSwdckCmosOutput\000"
+ 881      7764636B 
+ 881      436D6F73 
+ 881      4F757470 
+ 881      757400
+ 882              	.LASF16:
+ 883 0036 756E7369 		.ascii	"unsigned char\000"
+ 883      676E6564 
+ 883      20636861 
+ 883      7200
+ 884              	.LASF13:
+ 885 0044 5357445F 		.ascii	"SWD_PhysicalLayer.c\000"
+ 885      50687973 
+ 885      6963616C 
+ 885      4C617965 
+ 885      722E6300 
+ 886              	.LASF3:
+ 887 0058 53657453 		.ascii	"SetSwdioHizInput\000"
+ 887      7764696F 
+ 887      48697A49 
+ 887      6E707574 
+ 887      00
+ 888              	.LASF15:
+ 889 0069 52656164 		.ascii	"ReadSwdio\000"
+ 889      53776469 
+ 889      6F00
+ 890              	.LASF7:
+ 891 0073 53657453 		.ascii	"SetSwdckLow\000"
+ 891      7764636B 
+ 891      4C6F7700 
+ 892              	.LASF4:
+ 893 007f 53657458 		.ascii	"SetXresCmosOutput\000"
+ 893      72657343 
+ 893      6D6F734F 
+ 893      75747075 
+ 893      7400
+ 894              	.LASF12:
+ 895 0091 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 895      4320342E 
+ 895      392E3320 
+ 895      32303135 
+ 895      30333033 
+ 896 00c4 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 896      20726576 
+ 896      6973696F 
+ 896      6E203232 
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cc2PrKWy.s 			page 24
 
 
- 895      66756E63 
- 895      74696F6E 
- 895      2D736563 
- 895      74696F6E 
- 896              	.LASF8:
- 897 011f 53657453 		.ascii	"SetSwdioHigh\000"
- 897      7764696F 
- 897      48696768 
- 897      00
- 898              	.LASF9:
- 899 012c 53657453 		.ascii	"SetSwdioLow\000"
+ 896      31323230 
+ 897 00f7 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 897      66756E63 
+ 897      74696F6E 
+ 897      2D736563 
+ 897      74696F6E 
+ 898              	.LASF8:
+ 899 011f 53657453 		.ascii	"SetSwdioHigh\000"
  899      7764696F 
- 899      4C6F7700 
- 900              	.LASF10:
- 901 0138 53657458 		.ascii	"SetXresHigh\000"
- 901      72657348 
- 901      69676800 
- 902              	.LASF1:
- 903 0144 53657453 		.ascii	"SetSwdckHizInput\000"
- 903      7764636B 
- 903      48697A49 
- 903      6E707574 
- 903      00
- 904              	.LASF6:
- 905 0155 53657453 		.ascii	"SetSwdckHigh\000"
+ 899      48696768 
+ 899      00
+ 900              	.LASF9:
+ 901 012c 53657453 		.ascii	"SetSwdioLow\000"
+ 901      7764696F 
+ 901      4C6F7700 
+ 902              	.LASF10:
+ 903 0138 53657458 		.ascii	"SetXresHigh\000"
+ 903      72657348 
+ 903      69676800 
+ 904              	.LASF1:
+ 905 0144 53657453 		.ascii	"SetSwdckHizInput\000"
  905      7764636B 
- 905      48696768 
+ 905      48697A49 
+ 905      6E707574 
  905      00
- 906              	.LASF11:
- 907 0162 53657458 		.ascii	"SetXresLow\000"
- 907      7265734C 
- 907      6F7700
- 908              	.LASF14:
- 909 016d 5C5C4745 		.ascii	"\\\\GEORGE-OFFICE2\\Users\\George\\Box Sync\\Backbo"
- 909      4F524745 
- 909      2D4F4646 
- 909      49434532 
- 909      5C557365 
- 910 019a 6E655C44 		.ascii	"ne\\Design\\Testing\\TestStation\\Software\\HSSP\\A"
- 910      65736967 
- 910      6E5C5465 
- 910      7374696E 
- 910      675C5465 
- 911 01c7 4E383438 		.ascii	"N84858\\A_Hssp_Programmer.cydsn\000"
- 911      35385C41 
- 911      5F487373 
- 911      705F5072 
- 911      6F677261 
- 912              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
+ 906              	.LASF6:
+ 907 0155 53657453 		.ascii	"SetSwdckHigh\000"
+ 907      7764636B 
+ 907      48696768 
+ 907      00
+ 908              	.LASF11:
+ 909 0162 53657458 		.ascii	"SetXresLow\000"
+ 909      7265734C 
+ 909      6F7700
+ 910              	.LASF14:
+ 911 016d 5C5C4745 		.ascii	"\\\\GEORGE-OFFICE2\\Users\\George\\Box Sync\\Backbo"
+ 911      4F524745 
+ 911      2D4F4646 
+ 911      49434532 
+ 911      5C557365 
+ 912 019a 6E655C44 		.ascii	"ne\\Design\\Testing\\TestStation\\Software\\HSSP\\A"
+ 912      65736967 
+ 912      6E5C5465 
+ 912      7374696E 
+ 912      675C5465 
+ 913 01c7 4E383438 		.ascii	"N84858\\A_Hssp_Programmer.cydsn\000"
+ 913      35385C41 
+ 913      5F487373 
+ 913      705F5072 
+ 913      6F677261 
+ 914              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

@@ -98,7 +98,7 @@
 #define SROM_CMD_ERASE_ALL	        0x0A
 #define SROM_CMD_CHECKSUM	        0x0B
 #define SROM_CMD_WRITE_PROTECTION	0x0D
-#if defined (CY8C40xx_FAMILY) || defined (CY8C4xx7_BL_FAMILY)
+#if defined (CY8C40xx_FAMILY) || defined (CY8C4xx7_BL_FAMILY) || defined (CY8C4xx8_BL_FAMILY)
 	#define SROM_CMD_SET_IMO_48MHZ		0x15
 #endif
 

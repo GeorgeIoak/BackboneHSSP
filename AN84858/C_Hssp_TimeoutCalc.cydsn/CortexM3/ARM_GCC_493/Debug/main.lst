@@ -1,0 +1,527 @@
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccAYDqXA.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"main.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.main,"ax",%progbits
+  19              		.align	2
+  20              		.global	main
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	main, %function
+  24              	main:
+  25              	.LFB63:
+  26              		.file 1 "main.c"
+   1:main.c        **** /******************************************************************************
+   2:main.c        **** * Copyright (2015), Cypress Semiconductor Corporation.
+   3:main.c        **** *******************************************************************************
+   4:main.c        **** * This software is owned by Cypress Semiconductor Corporation (Cypress) and is
+   5:main.c        **** * protected by and subject to worldwide patent protection (United States and
+   6:main.c        **** * foreign), United States copyright laws and international treaty provisions.
+   7:main.c        **** * Cypress hereby grants to licensee a personal, non-exclusive, non-transferable
+   8:main.c        **** * license to copy, use, modify, create derivative works of, and compile the
+   9:main.c        **** * Cypress Source Code and derivative works for the sole purpose of creating
+  10:main.c        **** * custom software in support of licensee product to be used only in conjunction
+  11:main.c        **** * with a Cypress integrated circuit as specified in the applicable agreement.
+  12:main.c        **** * Any reproduction, modification, translation, compilation, or representation of
+  13:main.c        **** * this software except as specified above is prohibited without the express
+  14:main.c        **** * written permission of Cypress.
+  15:main.c        **** *
+  16:main.c        **** * Disclaimer: CYPRESS MAKES NO WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, WITH
+  17:main.c        **** * REGARD TO THIS MATERIAL, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+  18:main.c        **** * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+  19:main.c        **** * Cypress reserves the right to make changes without further notice to the
+  20:main.c        **** * materials described herein. Cypress does not assume any liability arising out
+  21:main.c        **** * of the application or use of any product or circuit described herein. Cypress
+  22:main.c        **** * does not authorize its products for use as critical components in life-support
+  23:main.c        **** * systems where a malfunction or failure may reasonably be expected to result in
+  24:main.c        **** * significant injury to the user. The inclusion of Cypress' product in a life-
+  25:main.c        **** * support systems application implies that the manufacturer assumes all risk of
+  26:main.c        **** * such use and in doing so indemnifies Cypress against all charges. Use may be
+  27:main.c        **** * limited by and subject to the applicable Cypress software license agreement.
+  28:main.c        **** *******************************************************************************
+  29:main.c        **** *  Project Name: C_Hssp_TimeoutCalc
+  30:main.c        **** *  Project Revision: 1.00
+  31:main.c        **** *  Software Version: PSoC Creator 3.2
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccAYDqXA.s 			page 2
+
+
+  32:main.c        **** *  Device Tested: CY8C5868AXI-LP035
+  33:main.c        **** *  Compilers Tested: ARM GCC 4.8.4
+  34:main.c        **** *  Related Hardware: CY8CKIT-050
+  35:main.c        **** *******************************************************************************
+  36:main.c        **** * 
+  37:main.c        **** * Project Description:
+  38:main.c        **** *  This project is used to calculate the timeout parameters used in the main
+  39:main.c        **** *  projects "A_Hssp_Programmer" and "B_Hssp_Pioneer". The project is tested 
+  40:main.c        **** *  using CY8CKIT-050 with PSoC 5LP chip.
+  41:main.c        **** *
+  42:main.c        **** * Connections Required:
+  43:main.c        **** *  Connect TestPin (P0[3]) to oscilloscope to calculate the timeout parameters
+  44:main.c        **** *  by measuring the time difference between consecutive pulses.
+  45:main.c        **** *
+  46:main.c        **** *  In this file, the main function calls the functions used to calculate the 
+  47:main.c        **** *  timeout parameters used in the HSSP application.
+  48:main.c        **** *
+  49:main.c        **** * Note:
+  50:main.c        **** *  To calculate each timeout parameter, the corresponding function needs to be 
+  51:main.c        **** *  uncommented in the for loop of the main function, and the procedure given
+  52:main.c        **** *  in the TimeoutCalc.h under each timeout parameter should be used to
+  53:main.c        **** *  calculate the timeout parameter.
+  54:main.c        **** *  The calculated values should then be used in the main HSSP project in the
+  55:main.c        **** *  file Timeout.h.
+  56:main.c        **** *
+  57:main.c        **** ******************************************************************************/
+  58:main.c        **** /******************************************************************************
+  59:main.c        **** *   Header file Inclusion
+  60:main.c        **** ******************************************************************************/
+  61:main.c        **** /* Remove this header file for non PSoC 5 host programmer */
+  62:main.c        **** #include <device.h>
+  63:main.c        **** 
+  64:main.c        **** /* This header file has the function declarations, macros used to arrive at the
+  65:main.c        ****    timeout parameter values */
+  66:main.c        **** #include "TimeoutCalc.h"
+  67:main.c        **** #include "SWD_PhysicalLayer.h"
+  68:main.c        **** 
+  69:main.c        **** /********************************************************************************
+  70:main.c        **** *   Function Definitions
+  71:main.c        **** ********************************************************************************/
+  72:main.c        **** void main()
+  73:main.c        **** {
+  27              		.loc 1 73 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 1, uses_anonymous_args = 0
+  31 0000 80B5     		push	{r7, lr}
+  32              		.cfi_def_cfa_offset 8
+  33              		.cfi_offset 7, -8
+  34              		.cfi_offset 14, -4
+  35 0002 00AF     		add	r7, sp, #0
+  36              		.cfi_def_cfa_register 7
+  74:main.c        **** 	/* Set TEST pin for Strong drive mode */
+  75:main.c        ****     TESTPIN_DRIVEMODE_CMOSOUT;
+  37              		.loc 1 75 0
+  38 0004 0B4B     		ldr	r3, .L3
+  39 0006 0B4A     		ldr	r2, .L3
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccAYDqXA.s 			page 3
+
+
+  40 0008 1278     		ldrb	r2, [r2]
+  41 000a D2B2     		uxtb	r2, r2
+  42 000c D2B2     		uxtb	r2, r2
+  43 000e 22F00E02 		bic	r2, r2, #14
+  44 0012 D2B2     		uxtb	r2, r2
+  45 0014 42F00C02 		orr	r2, r2, #12
+  46 0018 D2B2     		uxtb	r2, r2
+  47 001a D2B2     		uxtb	r2, r2
+  48 001c 1A70     		strb	r2, [r3]
+  76:main.c        **** 	
+  77:main.c        **** 	/* Drive the pin high */
+  78:main.c        ****     TESTPIN_OUTPUT_HIGH;       
+  49              		.loc 1 78 0
+  50 001e 064A     		ldr	r2, .L3+4
+  51 0020 054B     		ldr	r3, .L3+4
+  52 0022 1B78     		ldrb	r3, [r3]
+  53 0024 DBB2     		uxtb	r3, r3
+  54 0026 43F02003 		orr	r3, r3, #32
+  55 002a DBB2     		uxtb	r3, r3
+  56 002c 1370     		strb	r3, [r2]
+  57              	.L2:
+  79:main.c        ****     
+  80:main.c        ****     for(;;)
+  81:main.c        ****     {
+  82:main.c        ****         /* Uncomment ONLY ONE of the functions below at a time. Then, calculate the 
+  83:main.c        ****            corresponding timeout parameter using the explanation provided for the
+  84:main.c        ****            timeout parameter in the file TimeoutCalc.h */
+  85:main.c        ****     	
+  86:main.c        **** 		/* Uncomment this line to calculate the timeout parameter XRES_PULSE_100US */
+  87:main.c        **** //        TestDelayHundredUs();
+  88:main.c        **** 
+  89:main.c        **** 		/* Uncomment this line to calculate the timeout parameter DEVICE_ACQUIRE_TIMEOUT */
+  90:main.c        **** //		  TestModeTimeout();
+  91:main.c        **** 
+  92:main.c        **** 		/* Uncomment this line to calculate the timeout parameter SROM_POLLING_TIMEOUT */
+  93:main.c        **** 		  TestSromPollingTimeout();
+  58              		.loc 1 93 0 discriminator 1
+  59 002e FFF7FEFF 		bl	TestSromPollingTimeout
+  94:main.c        **** 	}
+  60              		.loc 1 94 0 discriminator 1
+  61 0032 FCE7     		b	.L2
+  62              	.L4:
+  63              		.align	2
+  64              	.L3:
+  65 0034 05500040 		.word	1073762309
+  66 0038 00510040 		.word	1073762560
+  67              		.cfi_endproc
+  68              	.LFE63:
+  69              		.size	main, .-main
+  70              		.text
+  71              	.Letext0:
+  72              		.file 2 "c:\\program files\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.3\\arm
+  73              		.file 3 "c:\\program files\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.3\\arm
+  74              		.file 4 "Generated_Source\\PSoC5/core_cm3.h"
+  75              		.section	.debug_info,"",%progbits
+  76              	.Ldebug_info0:
+  77 0000 BC000000 		.4byte	0xbc
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccAYDqXA.s 			page 4
+
+
+  78 0004 0400     		.2byte	0x4
+  79 0006 00000000 		.4byte	.Ldebug_abbrev0
+  80 000a 04       		.byte	0x4
+  81 000b 01       		.uleb128 0x1
+  82 000c F9000000 		.4byte	.LASF15
+  83 0010 01       		.byte	0x1
+  84 0011 2E000000 		.4byte	.LASF16
+  85 0015 63000000 		.4byte	.LASF17
+  86 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  87 001d 00000000 		.4byte	0
+  88 0021 00000000 		.4byte	.Ldebug_line0
+  89 0025 02       		.uleb128 0x2
+  90 0026 01       		.byte	0x1
+  91 0027 06       		.byte	0x6
+  92 0028 9B010000 		.4byte	.LASF0
+  93 002c 02       		.uleb128 0x2
+  94 002d 01       		.byte	0x1
+  95 002e 08       		.byte	0x8
+  96 002f DD000000 		.4byte	.LASF1
+  97 0033 02       		.uleb128 0x2
+  98 0034 02       		.byte	0x2
+  99 0035 05       		.byte	0x5
+ 100 0036 B7010000 		.4byte	.LASF2
+ 101 003a 02       		.uleb128 0x2
+ 102 003b 02       		.byte	0x2
+ 103 003c 07       		.byte	0x7
+ 104 003d 0E000000 		.4byte	.LASF3
+ 105 0041 03       		.uleb128 0x3
+ 106 0042 A7010000 		.4byte	.LASF9
+ 107 0046 02       		.byte	0x2
+ 108 0047 3F       		.byte	0x3f
+ 109 0048 4C000000 		.4byte	0x4c
+ 110 004c 02       		.uleb128 0x2
+ 111 004d 04       		.byte	0x4
+ 112 004e 05       		.byte	0x5
+ 113 004f F0000000 		.4byte	.LASF4
+ 114 0053 02       		.uleb128 0x2
+ 115 0054 04       		.byte	0x4
+ 116 0055 07       		.byte	0x7
+ 117 0056 3A000000 		.4byte	.LASF5
+ 118 005a 02       		.uleb128 0x2
+ 119 005b 08       		.byte	0x8
+ 120 005c 05       		.byte	0x5
+ 121 005d 00000000 		.4byte	.LASF6
+ 122 0061 02       		.uleb128 0x2
+ 123 0062 08       		.byte	0x8
+ 124 0063 07       		.byte	0x7
+ 125 0064 4C000000 		.4byte	.LASF7
+ 126 0068 04       		.uleb128 0x4
+ 127 0069 04       		.byte	0x4
+ 128 006a 05       		.byte	0x5
+ 129 006b 696E7400 		.ascii	"int\000"
+ 130 006f 02       		.uleb128 0x2
+ 131 0070 04       		.byte	0x4
+ 132 0071 07       		.byte	0x7
+ 133 0072 21000000 		.4byte	.LASF8
+ 134 0076 03       		.uleb128 0x3
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccAYDqXA.s 			page 5
+
+
+ 135 0077 C1010000 		.4byte	.LASF10
+ 136 007b 03       		.byte	0x3
+ 137 007c 2C       		.byte	0x2c
+ 138 007d 41000000 		.4byte	0x41
+ 139 0081 02       		.uleb128 0x2
+ 140 0082 04       		.byte	0x4
+ 141 0083 04       		.byte	0x4
+ 142 0084 B1010000 		.4byte	.LASF11
+ 143 0088 02       		.uleb128 0x2
+ 144 0089 08       		.byte	0x8
+ 145 008a 04       		.byte	0x4
+ 146 008b 87010000 		.4byte	.LASF12
+ 147 008f 02       		.uleb128 0x2
+ 148 0090 01       		.byte	0x1
+ 149 0091 08       		.byte	0x8
+ 150 0092 EB000000 		.4byte	.LASF13
+ 151 0096 02       		.uleb128 0x2
+ 152 0097 04       		.byte	0x4
+ 153 0098 07       		.byte	0x7
+ 154 0099 C9010000 		.4byte	.LASF14
+ 155 009d 05       		.uleb128 0x5
+ 156 009e 35000000 		.4byte	.LASF18
+ 157 00a2 01       		.byte	0x1
+ 158 00a3 48       		.byte	0x48
+ 159 00a4 00000000 		.4byte	.LFB63
+ 160 00a8 3C000000 		.4byte	.LFE63-.LFB63
+ 161 00ac 01       		.uleb128 0x1
+ 162 00ad 9C       		.byte	0x9c
+ 163 00ae 06       		.uleb128 0x6
+ 164 00af 8E010000 		.4byte	.LASF19
+ 165 00b3 04       		.byte	0x4
+ 166 00b4 9606     		.2byte	0x696
+ 167 00b6 BA000000 		.4byte	0xba
+ 168 00ba 07       		.uleb128 0x7
+ 169 00bb 76000000 		.4byte	0x76
+ 170 00bf 00       		.byte	0
+ 171              		.section	.debug_abbrev,"",%progbits
+ 172              	.Ldebug_abbrev0:
+ 173 0000 01       		.uleb128 0x1
+ 174 0001 11       		.uleb128 0x11
+ 175 0002 01       		.byte	0x1
+ 176 0003 25       		.uleb128 0x25
+ 177 0004 0E       		.uleb128 0xe
+ 178 0005 13       		.uleb128 0x13
+ 179 0006 0B       		.uleb128 0xb
+ 180 0007 03       		.uleb128 0x3
+ 181 0008 0E       		.uleb128 0xe
+ 182 0009 1B       		.uleb128 0x1b
+ 183 000a 0E       		.uleb128 0xe
+ 184 000b 55       		.uleb128 0x55
+ 185 000c 17       		.uleb128 0x17
+ 186 000d 11       		.uleb128 0x11
+ 187 000e 01       		.uleb128 0x1
+ 188 000f 10       		.uleb128 0x10
+ 189 0010 17       		.uleb128 0x17
+ 190 0011 00       		.byte	0
+ 191 0012 00       		.byte	0
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccAYDqXA.s 			page 6
+
+
+ 192 0013 02       		.uleb128 0x2
+ 193 0014 24       		.uleb128 0x24
+ 194 0015 00       		.byte	0
+ 195 0016 0B       		.uleb128 0xb
+ 196 0017 0B       		.uleb128 0xb
+ 197 0018 3E       		.uleb128 0x3e
+ 198 0019 0B       		.uleb128 0xb
+ 199 001a 03       		.uleb128 0x3
+ 200 001b 0E       		.uleb128 0xe
+ 201 001c 00       		.byte	0
+ 202 001d 00       		.byte	0
+ 203 001e 03       		.uleb128 0x3
+ 204 001f 16       		.uleb128 0x16
+ 205 0020 00       		.byte	0
+ 206 0021 03       		.uleb128 0x3
+ 207 0022 0E       		.uleb128 0xe
+ 208 0023 3A       		.uleb128 0x3a
+ 209 0024 0B       		.uleb128 0xb
+ 210 0025 3B       		.uleb128 0x3b
+ 211 0026 0B       		.uleb128 0xb
+ 212 0027 49       		.uleb128 0x49
+ 213 0028 13       		.uleb128 0x13
+ 214 0029 00       		.byte	0
+ 215 002a 00       		.byte	0
+ 216 002b 04       		.uleb128 0x4
+ 217 002c 24       		.uleb128 0x24
+ 218 002d 00       		.byte	0
+ 219 002e 0B       		.uleb128 0xb
+ 220 002f 0B       		.uleb128 0xb
+ 221 0030 3E       		.uleb128 0x3e
+ 222 0031 0B       		.uleb128 0xb
+ 223 0032 03       		.uleb128 0x3
+ 224 0033 08       		.uleb128 0x8
+ 225 0034 00       		.byte	0
+ 226 0035 00       		.byte	0
+ 227 0036 05       		.uleb128 0x5
+ 228 0037 2E       		.uleb128 0x2e
+ 229 0038 00       		.byte	0
+ 230 0039 3F       		.uleb128 0x3f
+ 231 003a 19       		.uleb128 0x19
+ 232 003b 03       		.uleb128 0x3
+ 233 003c 0E       		.uleb128 0xe
+ 234 003d 3A       		.uleb128 0x3a
+ 235 003e 0B       		.uleb128 0xb
+ 236 003f 3B       		.uleb128 0x3b
+ 237 0040 0B       		.uleb128 0xb
+ 238 0041 11       		.uleb128 0x11
+ 239 0042 01       		.uleb128 0x1
+ 240 0043 12       		.uleb128 0x12
+ 241 0044 06       		.uleb128 0x6
+ 242 0045 40       		.uleb128 0x40
+ 243 0046 18       		.uleb128 0x18
+ 244 0047 9642     		.uleb128 0x2116
+ 245 0049 19       		.uleb128 0x19
+ 246 004a 00       		.byte	0
+ 247 004b 00       		.byte	0
+ 248 004c 06       		.uleb128 0x6
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccAYDqXA.s 			page 7
+
+
+ 249 004d 34       		.uleb128 0x34
+ 250 004e 00       		.byte	0
+ 251 004f 03       		.uleb128 0x3
+ 252 0050 0E       		.uleb128 0xe
+ 253 0051 3A       		.uleb128 0x3a
+ 254 0052 0B       		.uleb128 0xb
+ 255 0053 3B       		.uleb128 0x3b
+ 256 0054 05       		.uleb128 0x5
+ 257 0055 49       		.uleb128 0x49
+ 258 0056 13       		.uleb128 0x13
+ 259 0057 3F       		.uleb128 0x3f
+ 260 0058 19       		.uleb128 0x19
+ 261 0059 3C       		.uleb128 0x3c
+ 262 005a 19       		.uleb128 0x19
+ 263 005b 00       		.byte	0
+ 264 005c 00       		.byte	0
+ 265 005d 07       		.uleb128 0x7
+ 266 005e 35       		.uleb128 0x35
+ 267 005f 00       		.byte	0
+ 268 0060 49       		.uleb128 0x49
+ 269 0061 13       		.uleb128 0x13
+ 270 0062 00       		.byte	0
+ 271 0063 00       		.byte	0
+ 272 0064 00       		.byte	0
+ 273              		.section	.debug_aranges,"",%progbits
+ 274 0000 1C000000 		.4byte	0x1c
+ 275 0004 0200     		.2byte	0x2
+ 276 0006 00000000 		.4byte	.Ldebug_info0
+ 277 000a 04       		.byte	0x4
+ 278 000b 00       		.byte	0
+ 279 000c 0000     		.2byte	0
+ 280 000e 0000     		.2byte	0
+ 281 0010 00000000 		.4byte	.LFB63
+ 282 0014 3C000000 		.4byte	.LFE63-.LFB63
+ 283 0018 00000000 		.4byte	0
+ 284 001c 00000000 		.4byte	0
+ 285              		.section	.debug_ranges,"",%progbits
+ 286              	.Ldebug_ranges0:
+ 287 0000 00000000 		.4byte	.LFB63
+ 288 0004 3C000000 		.4byte	.LFE63
+ 289 0008 00000000 		.4byte	0
+ 290 000c 00000000 		.4byte	0
+ 291              		.section	.debug_line,"",%progbits
+ 292              	.Ldebug_line0:
+ 293 0000 52010000 		.section	.debug_str,"MS",%progbits,1
+ 293      02002E01 
+ 293      00000201 
+ 293      FB0E0D00 
+ 293      01010101 
+ 294              	.LASF6:
+ 295 0000 6C6F6E67 		.ascii	"long long int\000"
+ 295      206C6F6E 
+ 295      6720696E 
+ 295      7400
+ 296              	.LASF3:
+ 297 000e 73686F72 		.ascii	"short unsigned int\000"
+ 297      7420756E 
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccAYDqXA.s 			page 8
+
+
+ 297      7369676E 
+ 297      65642069 
+ 297      6E7400
+ 298              	.LASF8:
+ 299 0021 756E7369 		.ascii	"unsigned int\000"
+ 299      676E6564 
+ 299      20696E74 
+ 299      00
+ 300              	.LASF16:
+ 301 002e 6D61696E 		.ascii	"main.c\000"
+ 301      2E6300
+ 302              	.LASF18:
+ 303 0035 6D61696E 		.ascii	"main\000"
+ 303      00
+ 304              	.LASF5:
+ 305 003a 6C6F6E67 		.ascii	"long unsigned int\000"
+ 305      20756E73 
+ 305      69676E65 
+ 305      6420696E 
+ 305      7400
+ 306              	.LASF7:
+ 307 004c 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 307      206C6F6E 
+ 307      6720756E 
+ 307      7369676E 
+ 307      65642069 
+ 308              	.LASF17:
+ 309 0063 5C5C4745 		.ascii	"\\\\GEORGE-OFFICE2\\Users\\George\\Box Sync\\Backbo"
+ 309      4F524745 
+ 309      2D4F4646 
+ 309      49434532 
+ 309      5C557365 
+ 310 0090 6E655C44 		.ascii	"ne\\Design\\Testing\\TestStation\\Software\\HSSP\\A"
+ 310      65736967 
+ 310      6E5C5465 
+ 310      7374696E 
+ 310      675C5465 
+ 311 00bd 4E383438 		.ascii	"N84858\\C_Hssp_TimeoutCalc.cydsn\000"
+ 311      35385C43 
+ 311      5F487373 
+ 311      705F5469 
+ 311      6D656F75 
+ 312              	.LASF1:
+ 313 00dd 756E7369 		.ascii	"unsigned char\000"
+ 313      676E6564 
+ 313      20636861 
+ 313      7200
+ 314              	.LASF13:
+ 315 00eb 63686172 		.ascii	"char\000"
+ 315      00
+ 316              	.LASF4:
+ 317 00f0 6C6F6E67 		.ascii	"long int\000"
+ 317      20696E74 
+ 317      00
+ 318              	.LASF15:
+ 319 00f9 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 319      4320342E 
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccAYDqXA.s 			page 9
+
+
+ 319      392E3320 
+ 319      32303135 
+ 319      30333033 
+ 320 012c 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 320      20726576 
+ 320      6973696F 
+ 320      6E203232 
+ 320      31323230 
+ 321 015f 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 321      66756E63 
+ 321      74696F6E 
+ 321      2D736563 
+ 321      74696F6E 
+ 322              	.LASF12:
+ 323 0187 646F7562 		.ascii	"double\000"
+ 323      6C6500
+ 324              	.LASF19:
+ 325 018e 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 325      52784275 
+ 325      66666572 
+ 325      00
+ 326              	.LASF0:
+ 327 019b 7369676E 		.ascii	"signed char\000"
+ 327      65642063 
+ 327      68617200 
+ 328              	.LASF9:
+ 329 01a7 5F5F696E 		.ascii	"__int32_t\000"
+ 329      7433325F 
+ 329      7400
+ 330              	.LASF11:
+ 331 01b1 666C6F61 		.ascii	"float\000"
+ 331      7400
+ 332              	.LASF2:
+ 333 01b7 73686F72 		.ascii	"short int\000"
+ 333      7420696E 
+ 333      7400
+ 334              	.LASF10:
+ 335 01c1 696E7433 		.ascii	"int32_t\000"
+ 335      325F7400 
+ 336              	.LASF14:
+ 337 01c9 73697A65 		.ascii	"sizetype\000"
+ 337      74797065 
+ 337      00
+ 338              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

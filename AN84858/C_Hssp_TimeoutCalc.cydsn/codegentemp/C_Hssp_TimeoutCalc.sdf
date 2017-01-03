@@ -1,0 +1,23 @@
+(DELAYFILE
+ (SDFVERSION "IEEE 1497 4.0")
+ (DATE "2016-11-29T02:24:24Z")
+ (DESIGN "C_Hssp_TimeoutCalc")
+ (VENDOR "Cypress Semiconductor")
+ (PROGRAM "PSoC Creator")
+ (VERSION " 4.0")
+ (DIVIDER .)
+ (TIMESCALE 1 ns)
+ (CELL
+  (CELLTYPE "C_Hssp_TimeoutCalc")
+  (INSTANCE *)
+  (DELAY
+   (ABSOLUTE
+    (INTERCONNECT ClockBlock.clk_bus_glb Pin_SWDIO\(0\).in_clock (0.000:0.000:0.000))
+    (INTERCONNECT Pin_SWDCK\(0\)_PAD Pin_SWDCK\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT Pin_XRES\(0\)_PAD Pin_XRES\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT Pin_SWDIO\(0\)_PAD Pin_SWDIO\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT Pin_Test\(0\)_PAD Pin_Test\(0\).pad_in (0.000:0.000:0.000))
+   )
+  )
+ )
+)

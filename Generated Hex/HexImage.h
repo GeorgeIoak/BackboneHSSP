@@ -29,10 +29,9 @@ Code Tested With:
 * MACRO Definitions 
 ******************************************************************************/ 
 
-#define CY8C4xx7_BL_FAMILY                    1
-#define NUMBER_OF_FLASH_ROWS_HEX_FILE        1024
+#define NUMBER_OF_FLASH_ROWS_HEX_FILE        256
 #define FLASH_ROW_BYTE_SIZE_HEX_FILE         128
-#define FLASH_PROTECTION_BYTE_SIZE_HEX_FILE  128
+#define FLASH_PROTECTION_BYTE_SIZE_HEX_FILE  32
 
  /*****************************************************************************
  * Global Constant Declarations 

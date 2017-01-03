@@ -1,0 +1,803 @@
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccKXlGRV.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"TimeoutCalc.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.TestDelayHundredUs,"ax",%progbits
+  19              		.align	2
+  20              		.global	TestDelayHundredUs
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	TestDelayHundredUs, %function
+  24              	TestDelayHundredUs:
+  25              	.LFB0:
+  26              		.file 1 "TimeoutCalc.c"
+   1:TimeoutCalc.c **** /******************************************************************************
+   2:TimeoutCalc.c **** * File Name: TimeoutCalc.c
+   3:TimeoutCalc.c **** * Version 1.0
+   4:TimeoutCalc.c **** *
+   5:TimeoutCalc.c **** * Description:
+   6:TimeoutCalc.c **** *  This file provides source code for the functions used to calculate the 
+   7:TimeoutCalc.c **** *  timeout parameters used in the HSSP application
+   8:TimeoutCalc.c **** *
+   9:TimeoutCalc.c **** * Owner:
+  10:TimeoutCalc.c **** *	Tushar Rastogi, Application Engineer (tusr@cypress.com)
+  11:TimeoutCalc.c **** *
+  12:TimeoutCalc.c **** * Related Document:
+  13:TimeoutCalc.c **** *	AN84858 - PSoC 4 Programming using an External Microcontroller (HSSP)
+  14:TimeoutCalc.c **** *
+  15:TimeoutCalc.c **** * Hardware Dependency:
+  16:TimeoutCalc.c **** *   PSoC 5LP Development Kit - CY8CKIT-050
+  17:TimeoutCalc.c **** *
+  18:TimeoutCalc.c **** * Code Tested With:
+  19:TimeoutCalc.c **** *	PSoC Creator 3.2
+  20:TimeoutCalc.c **** *	ARM GCC 4.8.4
+  21:TimeoutCalc.c **** *	CY8CKIT-050
+  22:TimeoutCalc.c **** *
+  23:TimeoutCalc.c **** * Note:
+  24:TimeoutCalc.c **** *  Refer to the header file TimeoutCalc.h for the procedure to calculate the 
+  25:TimeoutCalc.c **** *  timeout parameters
+  26:TimeoutCalc.c **** *******************************************************************************
+  27:TimeoutCalc.c **** * Copyright (2015), Cypress Semiconductor Corporation.
+  28:TimeoutCalc.c **** *******************************************************************************
+  29:TimeoutCalc.c **** * This software is owned by Cypress Semiconductor Corporation (Cypress) and is
+  30:TimeoutCalc.c **** * protected by and subject to worldwide patent protection (United States and
+  31:TimeoutCalc.c **** * foreign), United States copyright laws and international treaty provisions.
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccKXlGRV.s 			page 2
+
+
+  32:TimeoutCalc.c **** * Cypress hereby grants to licensee a personal, non-exclusive, non-transferable
+  33:TimeoutCalc.c **** * license to copy, use, modify, create derivative works of, and compile the
+  34:TimeoutCalc.c **** * Cypress Source Code and derivative works for the sole purpose of creating
+  35:TimeoutCalc.c **** * custom software in support of licensee product to be used only in conjunction
+  36:TimeoutCalc.c **** * with a Cypress integrated circuit as specified in the applicable agreement.
+  37:TimeoutCalc.c **** * Any reproduction, modification, translation, compilation, or representation of
+  38:TimeoutCalc.c **** * this software except as specified above is prohibited without the express
+  39:TimeoutCalc.c **** * written permission of Cypress.
+  40:TimeoutCalc.c **** *
+  41:TimeoutCalc.c **** * Disclaimer: CYPRESS MAKES NO WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, WITH
+  42:TimeoutCalc.c **** * REGARD TO THIS MATERIAL, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+  43:TimeoutCalc.c **** * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+  44:TimeoutCalc.c **** * Cypress reserves the right to make changes without further notice to the
+  45:TimeoutCalc.c **** * materials described herein. Cypress does not assume any liability arising out
+  46:TimeoutCalc.c **** * of the application or use of any product or circuit described herein. Cypress
+  47:TimeoutCalc.c **** * does not authorize its products for use as critical components in life-support
+  48:TimeoutCalc.c **** * systems where a malfunction or failure may reasonably be expected to result in
+  49:TimeoutCalc.c **** * significant injury to the user. The inclusion of Cypress' product in a life-
+  50:TimeoutCalc.c **** * support systems application implies that the manufacturer assumes all risk of
+  51:TimeoutCalc.c **** * such use and in doing so indemnifies Cypress against all charges. Use may be
+  52:TimeoutCalc.c **** * limited by and subject to the applicable Cypress software license agreement.
+  53:TimeoutCalc.c **** ******************************************************************************/
+  54:TimeoutCalc.c **** 
+  55:TimeoutCalc.c **** 
+  56:TimeoutCalc.c **** /******************************************************************************
+  57:TimeoutCalc.c **** *   Header file Inclusion
+  58:TimeoutCalc.c **** ******************************************************************************/
+  59:TimeoutCalc.c **** #include "TimeoutCalc.h"
+  60:TimeoutCalc.c **** #include "SWD_PacketLayer.h"
+  61:TimeoutCalc.c **** #include "SWD_UpperPacketLayer.h"
+  62:TimeoutCalc.c **** 
+  63:TimeoutCalc.c **** /******************************************************************************
+  64:TimeoutCalc.c **** *   Macro Definitions
+  65:TimeoutCalc.c **** ******************************************************************************/
+  66:TimeoutCalc.c **** #define CPUSS_SYSREQ	            0x40000004
+  67:TimeoutCalc.c **** #define SROM_SYSREQ_BIT	            0x80000000
+  68:TimeoutCalc.c **** #define SROM_PRIVILEGED_BIT	        0x10000000
+  69:TimeoutCalc.c **** #define DPACC_DP_IDCODE_READ   		0xA5
+  70:TimeoutCalc.c **** 
+  71:TimeoutCalc.c **** /******************************************************************************
+  72:TimeoutCalc.c **** *   Function Definitions
+  73:TimeoutCalc.c **** ******************************************************************************/
+  74:TimeoutCalc.c **** 
+  75:TimeoutCalc.c **** /******************************************************************************
+  76:TimeoutCalc.c **** * Function Name: TestDelayHundredUs
+  77:TimeoutCalc.c **** *******************************************************************************
+  78:TimeoutCalc.c **** *
+  79:TimeoutCalc.c **** * Summary:
+  80:TimeoutCalc.c **** *  This function is used to calculate the timing parameter XRES_PULSE_100US
+  81:TimeoutCalc.c **** *
+  82:TimeoutCalc.c **** * Parameters:
+  83:TimeoutCalc.c **** *  None
+  84:TimeoutCalc.c **** *
+  85:TimeoutCalc.c **** * Return:
+  86:TimeoutCalc.c **** *  None
+  87:TimeoutCalc.c **** *
+  88:TimeoutCalc.c **** * Note:
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccKXlGRV.s 			page 3
+
+
+  89:TimeoutCalc.c **** *  Refer to the explanation of the parameter XRES_PULSE_100US in the file
+  90:TimeoutCalc.c **** *  TimeoutCalc.h for details on using this function to calculate the parameter
+  91:TimeoutCalc.c **** *  XRES_PULSE_100US  
+  92:TimeoutCalc.c **** *
+  93:TimeoutCalc.c **** ******************************************************************************/
+  94:TimeoutCalc.c **** 
+  95:TimeoutCalc.c **** void TestDelayHundredUs(void)
+  96:TimeoutCalc.c **** {
+  27              		.loc 1 96 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 8
+  30              		@ frame_needed = 1, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32 0000 80B4     		push	{r7}
+  33              		.cfi_def_cfa_offset 4
+  34              		.cfi_offset 7, -4
+  35 0002 83B0     		sub	sp, sp, #12
+  36              		.cfi_def_cfa_offset 16
+  37 0004 00AF     		add	r7, sp, #0
+  38              		.cfi_def_cfa_register 7
+  97:TimeoutCalc.c ****     unsigned short timestamp;
+  98:TimeoutCalc.c ****     
+  99:TimeoutCalc.c **** 	/* Make the pin low before start of the delay */
+ 100:TimeoutCalc.c ****     TESTPIN_OUTPUT_LOW;
+  39              		.loc 1 100 0
+  40 0006 104A     		ldr	r2, .L4
+  41 0008 0F4B     		ldr	r3, .L4
+  42 000a 1B78     		ldrb	r3, [r3]
+  43 000c DBB2     		uxtb	r3, r3
+  44 000e 23F02003 		bic	r3, r3, #32
+  45 0012 DBB2     		uxtb	r3, r3
+  46 0014 1370     		strb	r3, [r2]
+ 101:TimeoutCalc.c ****     
+ 102:TimeoutCalc.c ****     /* For loop to introduce the 100 us delay */
+ 103:TimeoutCalc.c ****     for(timestamp = 0; timestamp < XRES_PULSE_100US; timestamp++)
+  47              		.loc 1 103 0
+  48 0016 0023     		movs	r3, #0
+  49 0018 FB80     		strh	r3, [r7, #6]	@ movhi
+  50 001a 02E0     		b	.L2
+  51              	.L3:
+  52              		.loc 1 103 0 is_stmt 0 discriminator 3
+  53 001c FB88     		ldrh	r3, [r7, #6]
+  54 001e 0133     		adds	r3, r3, #1
+  55 0020 FB80     		strh	r3, [r7, #6]	@ movhi
+  56              	.L2:
+  57              		.loc 1 103 0 discriminator 1
+  58 0022 FB88     		ldrh	r3, [r7, #6]
+  59 0024 40F25E22 		movw	r2, #606
+  60 0028 9342     		cmp	r3, r2
+  61 002a F7D9     		bls	.L3
+ 104:TimeoutCalc.c ****     {
+ 105:TimeoutCalc.c **** 		/* Do Nothing */
+ 106:TimeoutCalc.c ****     }
+ 107:TimeoutCalc.c ****     
+ 108:TimeoutCalc.c **** 	/* Make the pin high after end of the delay */
+ 109:TimeoutCalc.c ****     TESTPIN_OUTPUT_HIGH;
+  62              		.loc 1 109 0 is_stmt 1
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccKXlGRV.s 			page 4
+
+
+  63 002c 064A     		ldr	r2, .L4
+  64 002e 064B     		ldr	r3, .L4
+  65 0030 1B78     		ldrb	r3, [r3]
+  66 0032 DBB2     		uxtb	r3, r3
+  67 0034 43F02003 		orr	r3, r3, #32
+  68 0038 DBB2     		uxtb	r3, r3
+  69 003a 1370     		strb	r3, [r2]
+ 110:TimeoutCalc.c **** }
+  70              		.loc 1 110 0
+  71 003c 0C37     		adds	r7, r7, #12
+  72              		.cfi_def_cfa_offset 4
+  73 003e BD46     		mov	sp, r7
+  74              		.cfi_def_cfa_register 13
+  75              		@ sp needed
+  76 0040 5DF8047B 		ldr	r7, [sp], #4
+  77              		.cfi_restore 7
+  78              		.cfi_def_cfa_offset 0
+  79 0044 7047     		bx	lr
+  80              	.L5:
+  81 0046 00BF     		.align	2
+  82              	.L4:
+  83 0048 00510040 		.word	1073762560
+  84              		.cfi_endproc
+  85              	.LFE0:
+  86              		.size	TestDelayHundredUs, .-TestDelayHundredUs
+  87              		.section	.text.TestSromPollingTimeout,"ax",%progbits
+  88              		.align	2
+  89              		.global	TestSromPollingTimeout
+  90              		.thumb
+  91              		.thumb_func
+  92              		.type	TestSromPollingTimeout, %function
+  93              	TestSromPollingTimeout:
+  94              	.LFB1:
+ 111:TimeoutCalc.c **** 
+ 112:TimeoutCalc.c **** /******************************************************************************
+ 113:TimeoutCalc.c **** * Function Name: TestSromPollingTimeout
+ 114:TimeoutCalc.c **** *******************************************************************************
+ 115:TimeoutCalc.c **** *
+ 116:TimeoutCalc.c **** * Summary:
+ 117:TimeoutCalc.c **** *  This function is used to calculate the timing parameter SROM_POLLING_TIMEOUT
+ 118:TimeoutCalc.c **** *
+ 119:TimeoutCalc.c **** * Parameters:
+ 120:TimeoutCalc.c **** *  None
+ 121:TimeoutCalc.c **** *
+ 122:TimeoutCalc.c **** * Return:
+ 123:TimeoutCalc.c **** *  None
+ 124:TimeoutCalc.c **** *
+ 125:TimeoutCalc.c **** * Note:
+ 126:TimeoutCalc.c **** *  Refer to the explanation of the parameter SROM_POLLING_TIMEOUT in the file
+ 127:TimeoutCalc.c **** *  TimeoutCalc.h for details on using this function to calculate the parameter
+ 128:TimeoutCalc.c **** *  SROM_POLLING_TIMEOUT
+ 129:TimeoutCalc.c **** *
+ 130:TimeoutCalc.c **** ******************************************************************************/
+ 131:TimeoutCalc.c **** void TestSromPollingTimeout()
+ 132:TimeoutCalc.c **** {
+  95              		.loc 1 132 0
+  96              		.cfi_startproc
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccKXlGRV.s 			page 5
+
+
+  97              		@ args = 0, pretend = 0, frame = 8
+  98              		@ frame_needed = 1, uses_anonymous_args = 0
+  99 0000 80B5     		push	{r7, lr}
+ 100              		.cfi_def_cfa_offset 8
+ 101              		.cfi_offset 7, -8
+ 102              		.cfi_offset 14, -4
+ 103 0002 82B0     		sub	sp, sp, #8
+ 104              		.cfi_def_cfa_offset 16
+ 105 0004 00AF     		add	r7, sp, #0
+ 106              		.cfi_def_cfa_register 7
+ 133:TimeoutCalc.c **** 	unsigned short timestamp = 0;
+ 107              		.loc 1 133 0
+ 108 0006 0023     		movs	r3, #0
+ 109 0008 FB80     		strh	r3, [r7, #6]	@ movhi
+ 134:TimeoutCalc.c **** 	unsigned long statusCode = 0;
+ 110              		.loc 1 134 0
+ 111 000a 0023     		movs	r3, #0
+ 112 000c 3B60     		str	r3, [r7]
+ 135:TimeoutCalc.c **** 	
+ 136:TimeoutCalc.c **** 	/* Make the pin low before sending SWD clock train */
+ 137:TimeoutCalc.c **** 	TESTPIN_OUTPUT_LOW;
+ 113              		.loc 1 137 0
+ 114 000e 124A     		ldr	r2, .L9
+ 115 0010 114B     		ldr	r3, .L9
+ 116 0012 1B78     		ldrb	r3, [r3]
+ 117 0014 DBB2     		uxtb	r3, r3
+ 118 0016 23F02003 		bic	r3, r3, #32
+ 119 001a DBB2     		uxtb	r3, r3
+ 120 001c 1370     		strb	r3, [r2]
+ 138:TimeoutCalc.c **** 	
+ 139:TimeoutCalc.c **** 	for(timestamp = 0; timestamp < 10; timestamp++)
+ 121              		.loc 1 139 0
+ 122 001e 0023     		movs	r3, #0
+ 123 0020 FB80     		strh	r3, [r7, #6]	@ movhi
+ 124 0022 0BE0     		b	.L7
+ 125              	.L8:
+ 140:TimeoutCalc.c **** 	{
+ 141:TimeoutCalc.c **** 		Read_IO (CPUSS_SYSREQ, &statusCode);
+ 126              		.loc 1 141 0 discriminator 3
+ 127 0024 3B46     		mov	r3, r7
+ 128 0026 0D48     		ldr	r0, .L9+4
+ 129 0028 1946     		mov	r1, r3
+ 130 002a FFF7FEFF 		bl	Read_IO
+ 142:TimeoutCalc.c **** 		
+ 143:TimeoutCalc.c **** 		/*performing SROM_SYSREQ_BIT | SROM_PRIVILEGED_BIT */
+ 144:TimeoutCalc.c **** 		statusCode &= (SROM_SYSREQ_BIT | SROM_PRIVILEGED_BIT);
+ 131              		.loc 1 144 0 discriminator 3
+ 132 002e 3B68     		ldr	r3, [r7]
+ 133 0030 03F01043 		and	r3, r3, #-1879048192
+ 134 0034 3B60     		str	r3, [r7]
+ 139:TimeoutCalc.c **** 	{
+ 135              		.loc 1 139 0 discriminator 3
+ 136 0036 FB88     		ldrh	r3, [r7, #6]
+ 137 0038 0133     		adds	r3, r3, #1
+ 138 003a FB80     		strh	r3, [r7, #6]	@ movhi
+ 139              	.L7:
+ 139:TimeoutCalc.c **** 	{
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccKXlGRV.s 			page 6
+
+
+ 140              		.loc 1 139 0 is_stmt 0 discriminator 1
+ 141 003c FB88     		ldrh	r3, [r7, #6]
+ 142 003e 092B     		cmp	r3, #9
+ 143 0040 F0D9     		bls	.L8
+ 145:TimeoutCalc.c **** 	}
+ 146:TimeoutCalc.c **** 	
+ 147:TimeoutCalc.c **** 	/* Make the pin high after sending SWD clock train */
+ 148:TimeoutCalc.c **** 	TESTPIN_OUTPUT_HIGH;
+ 144              		.loc 1 148 0 is_stmt 1
+ 145 0042 054A     		ldr	r2, .L9
+ 146 0044 044B     		ldr	r3, .L9
+ 147 0046 1B78     		ldrb	r3, [r3]
+ 148 0048 DBB2     		uxtb	r3, r3
+ 149 004a 43F02003 		orr	r3, r3, #32
+ 150 004e DBB2     		uxtb	r3, r3
+ 151 0050 1370     		strb	r3, [r2]
+ 149:TimeoutCalc.c **** }
+ 152              		.loc 1 149 0
+ 153 0052 0837     		adds	r7, r7, #8
+ 154              		.cfi_def_cfa_offset 8
+ 155 0054 BD46     		mov	sp, r7
+ 156              		.cfi_def_cfa_register 13
+ 157              		@ sp needed
+ 158 0056 80BD     		pop	{r7, pc}
+ 159              	.L10:
+ 160              		.align	2
+ 161              	.L9:
+ 162 0058 00510040 		.word	1073762560
+ 163 005c 04000040 		.word	1073741828
+ 164              		.cfi_endproc
+ 165              	.LFE1:
+ 166              		.size	TestSromPollingTimeout, .-TestSromPollingTimeout
+ 167              		.section	.text.TestModeTimeout,"ax",%progbits
+ 168              		.align	2
+ 169              		.global	TestModeTimeout
+ 170              		.thumb
+ 171              		.thumb_func
+ 172              		.type	TestModeTimeout, %function
+ 173              	TestModeTimeout:
+ 174              	.LFB2:
+ 150:TimeoutCalc.c **** 
+ 151:TimeoutCalc.c **** /******************************************************************************
+ 152:TimeoutCalc.c **** * Function Name: TestModeTimeout
+ 153:TimeoutCalc.c **** *******************************************************************************
+ 154:TimeoutCalc.c **** *
+ 155:TimeoutCalc.c **** * Summary:
+ 156:TimeoutCalc.c **** *  This function is used to calculate the timing parameter
+ 157:TimeoutCalc.c **** *  DEVICE_ACQUIRE_TIMEOUT
+ 158:TimeoutCalc.c **** *
+ 159:TimeoutCalc.c **** * Parameters:
+ 160:TimeoutCalc.c **** *  None
+ 161:TimeoutCalc.c **** *
+ 162:TimeoutCalc.c **** * Return:
+ 163:TimeoutCalc.c **** *  None
+ 164:TimeoutCalc.c **** *
+ 165:TimeoutCalc.c **** * Note:
+ 166:TimeoutCalc.c **** *  Refer to the explanation of the parameter DEVICE_ACQUIRE_TIMEOUT in the file
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccKXlGRV.s 			page 7
+
+
+ 167:TimeoutCalc.c **** *  TimeoutCalc.h for details on using this function to calculate the parameter
+ 168:TimeoutCalc.c **** *  DEVICE_ACQUIRE_TIMEOUT  
+ 169:TimeoutCalc.c **** *
+ 170:TimeoutCalc.c **** ******************************************************************************/
+ 171:TimeoutCalc.c **** void TestModeTimeout()
+ 172:TimeoutCalc.c **** {
+ 175              		.loc 1 172 0
+ 176              		.cfi_startproc
+ 177              		@ args = 0, pretend = 0, frame = 8
+ 178              		@ frame_needed = 1, uses_anonymous_args = 0
+ 179 0000 80B5     		push	{r7, lr}
+ 180              		.cfi_def_cfa_offset 8
+ 181              		.cfi_offset 7, -8
+ 182              		.cfi_offset 14, -4
+ 183 0002 82B0     		sub	sp, sp, #8
+ 184              		.cfi_def_cfa_offset 16
+ 185 0004 00AF     		add	r7, sp, #0
+ 186              		.cfi_def_cfa_register 7
+ 173:TimeoutCalc.c **** 	unsigned short timestamp = 0;
+ 187              		.loc 1 173 0
+ 188 0006 0023     		movs	r3, #0
+ 189 0008 FB80     		strh	r3, [r7, #6]	@ movhi
+ 174:TimeoutCalc.c **** 	unsigned long chip_DAP_Id = 0;
+ 190              		.loc 1 174 0
+ 191 000a 0023     		movs	r3, #0
+ 192 000c 3B60     		str	r3, [r7]
+ 175:TimeoutCalc.c **** 	
+ 176:TimeoutCalc.c **** 	/* Make the pin low before sending SWD clock train */
+ 177:TimeoutCalc.c **** 	TESTPIN_OUTPUT_LOW; 
+ 193              		.loc 1 177 0
+ 194 000e 114A     		ldr	r2, .L14
+ 195 0010 104B     		ldr	r3, .L14
+ 196 0012 1B78     		ldrb	r3, [r3]
+ 197 0014 DBB2     		uxtb	r3, r3
+ 198 0016 23F02003 		bic	r3, r3, #32
+ 199 001a DBB2     		uxtb	r3, r3
+ 200 001c 1370     		strb	r3, [r2]
+ 178:TimeoutCalc.c **** 	
+ 179:TimeoutCalc.c **** 	for(timestamp = 0; timestamp < 1; timestamp++)
+ 201              		.loc 1 179 0
+ 202 001e 0023     		movs	r3, #0
+ 203 0020 FB80     		strh	r3, [r7, #6]	@ movhi
+ 204 0022 09E0     		b	.L12
+ 205              	.L13:
+ 180:TimeoutCalc.c ****     {
+ 181:TimeoutCalc.c **** 		Swd_LineReset();
+ 206              		.loc 1 181 0 discriminator 3
+ 207 0024 FFF7FEFF 		bl	Swd_LineReset
+ 182:TimeoutCalc.c **** 		Read_DAP(DPACC_DP_IDCODE_READ, &chip_DAP_Id);
+ 208              		.loc 1 182 0 discriminator 3
+ 209 0028 3B46     		mov	r3, r7
+ 210 002a A520     		movs	r0, #165
+ 211 002c 1946     		mov	r1, r3
+ 212 002e FFF7FEFF 		bl	Read_DAP
+ 179:TimeoutCalc.c ****     {
+ 213              		.loc 1 179 0 discriminator 3
+ 214 0032 FB88     		ldrh	r3, [r7, #6]
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccKXlGRV.s 			page 8
+
+
+ 215 0034 0133     		adds	r3, r3, #1
+ 216 0036 FB80     		strh	r3, [r7, #6]	@ movhi
+ 217              	.L12:
+ 179:TimeoutCalc.c ****     {
+ 218              		.loc 1 179 0 is_stmt 0 discriminator 1
+ 219 0038 FB88     		ldrh	r3, [r7, #6]
+ 220 003a 002B     		cmp	r3, #0
+ 221 003c F2D0     		beq	.L13
+ 183:TimeoutCalc.c **** 	}
+ 184:TimeoutCalc.c **** 	
+ 185:TimeoutCalc.c **** 	/* Make the pin high after sending SWD clock train */
+ 186:TimeoutCalc.c **** 	TESTPIN_OUTPUT_HIGH;
+ 222              		.loc 1 186 0 is_stmt 1
+ 223 003e 054A     		ldr	r2, .L14
+ 224 0040 044B     		ldr	r3, .L14
+ 225 0042 1B78     		ldrb	r3, [r3]
+ 226 0044 DBB2     		uxtb	r3, r3
+ 227 0046 43F02003 		orr	r3, r3, #32
+ 228 004a DBB2     		uxtb	r3, r3
+ 229 004c 1370     		strb	r3, [r2]
+ 187:TimeoutCalc.c **** }
+ 230              		.loc 1 187 0
+ 231 004e 0837     		adds	r7, r7, #8
+ 232              		.cfi_def_cfa_offset 8
+ 233 0050 BD46     		mov	sp, r7
+ 234              		.cfi_def_cfa_register 13
+ 235              		@ sp needed
+ 236 0052 80BD     		pop	{r7, pc}
+ 237              	.L15:
+ 238              		.align	2
+ 239              	.L14:
+ 240 0054 00510040 		.word	1073762560
+ 241              		.cfi_endproc
+ 242              	.LFE2:
+ 243              		.size	TestModeTimeout, .-TestModeTimeout
+ 244              		.text
+ 245              	.Letext0:
+ 246              		.section	.debug_info,"",%progbits
+ 247              	.Ldebug_info0:
+ 248 0000 B4000000 		.4byte	0xb4
+ 249 0004 0400     		.2byte	0x4
+ 250 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 251 000a 04       		.byte	0x4
+ 252 000b 01       		.uleb128 0x1
+ 253 000c 42000000 		.4byte	.LASF7
+ 254 0010 01       		.byte	0x1
+ 255 0011 29000000 		.4byte	.LASF8
+ 256 0015 E0000000 		.4byte	.LASF9
+ 257 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 258 001d 00000000 		.4byte	0
+ 259 0021 00000000 		.4byte	.Ldebug_line0
+ 260 0025 02       		.uleb128 0x2
+ 261 0026 5A010000 		.4byte	.LASF0
+ 262 002a 01       		.byte	0x1
+ 263 002b 5F       		.byte	0x5f
+ 264 002c 00000000 		.4byte	.LFB0
+ 265 0030 4C000000 		.4byte	.LFE0-.LFB0
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccKXlGRV.s 			page 9
+
+
+ 266 0034 01       		.uleb128 0x1
+ 267 0035 9C       		.byte	0x9c
+ 268 0036 49000000 		.4byte	0x49
+ 269 003a 03       		.uleb128 0x3
+ 270 003b 00000000 		.4byte	.LASF2
+ 271 003f 01       		.byte	0x1
+ 272 0040 61       		.byte	0x61
+ 273 0041 49000000 		.4byte	0x49
+ 274 0045 02       		.uleb128 0x2
+ 275 0046 91       		.byte	0x91
+ 276 0047 76       		.sleb128 -10
+ 277 0048 00       		.byte	0
+ 278 0049 04       		.uleb128 0x4
+ 279 004a 02       		.byte	0x2
+ 280 004b 07       		.byte	0x7
+ 281 004c 0A000000 		.4byte	.LASF4
+ 282 0050 05       		.uleb128 0x5
+ 283 0051 7F010000 		.4byte	.LASF1
+ 284 0055 01       		.byte	0x1
+ 285 0056 83       		.byte	0x83
+ 286 0057 00000000 		.4byte	.LFB1
+ 287 005b 60000000 		.4byte	.LFE1-.LFB1
+ 288 005f 01       		.uleb128 0x1
+ 289 0060 9C       		.byte	0x9c
+ 290 0061 82000000 		.4byte	0x82
+ 291 0065 03       		.uleb128 0x3
+ 292 0066 00000000 		.4byte	.LASF2
+ 293 006a 01       		.byte	0x1
+ 294 006b 85       		.byte	0x85
+ 295 006c 49000000 		.4byte	0x49
+ 296 0070 02       		.uleb128 0x2
+ 297 0071 91       		.byte	0x91
+ 298 0072 76       		.sleb128 -10
+ 299 0073 03       		.uleb128 0x3
+ 300 0074 37000000 		.4byte	.LASF3
+ 301 0078 01       		.byte	0x1
+ 302 0079 86       		.byte	0x86
+ 303 007a 82000000 		.4byte	0x82
+ 304 007e 02       		.uleb128 0x2
+ 305 007f 91       		.byte	0x91
+ 306 0080 70       		.sleb128 -16
+ 307 0081 00       		.byte	0
+ 308 0082 04       		.uleb128 0x4
+ 309 0083 04       		.byte	0x4
+ 310 0084 07       		.byte	0x7
+ 311 0085 6D010000 		.4byte	.LASF5
+ 312 0089 06       		.uleb128 0x6
+ 313 008a D0000000 		.4byte	.LASF10
+ 314 008e 01       		.byte	0x1
+ 315 008f AB       		.byte	0xab
+ 316 0090 00000000 		.4byte	.LFB2
+ 317 0094 58000000 		.4byte	.LFE2-.LFB2
+ 318 0098 01       		.uleb128 0x1
+ 319 0099 9C       		.byte	0x9c
+ 320 009a 03       		.uleb128 0x3
+ 321 009b 00000000 		.4byte	.LASF2
+ 322 009f 01       		.byte	0x1
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccKXlGRV.s 			page 10
+
+
+ 323 00a0 AD       		.byte	0xad
+ 324 00a1 49000000 		.4byte	0x49
+ 325 00a5 02       		.uleb128 0x2
+ 326 00a6 91       		.byte	0x91
+ 327 00a7 76       		.sleb128 -10
+ 328 00a8 03       		.uleb128 0x3
+ 329 00a9 1D000000 		.4byte	.LASF6
+ 330 00ad 01       		.byte	0x1
+ 331 00ae AE       		.byte	0xae
+ 332 00af 82000000 		.4byte	0x82
+ 333 00b3 02       		.uleb128 0x2
+ 334 00b4 91       		.byte	0x91
+ 335 00b5 70       		.sleb128 -16
+ 336 00b6 00       		.byte	0
+ 337 00b7 00       		.byte	0
+ 338              		.section	.debug_abbrev,"",%progbits
+ 339              	.Ldebug_abbrev0:
+ 340 0000 01       		.uleb128 0x1
+ 341 0001 11       		.uleb128 0x11
+ 342 0002 01       		.byte	0x1
+ 343 0003 25       		.uleb128 0x25
+ 344 0004 0E       		.uleb128 0xe
+ 345 0005 13       		.uleb128 0x13
+ 346 0006 0B       		.uleb128 0xb
+ 347 0007 03       		.uleb128 0x3
+ 348 0008 0E       		.uleb128 0xe
+ 349 0009 1B       		.uleb128 0x1b
+ 350 000a 0E       		.uleb128 0xe
+ 351 000b 55       		.uleb128 0x55
+ 352 000c 17       		.uleb128 0x17
+ 353 000d 11       		.uleb128 0x11
+ 354 000e 01       		.uleb128 0x1
+ 355 000f 10       		.uleb128 0x10
+ 356 0010 17       		.uleb128 0x17
+ 357 0011 00       		.byte	0
+ 358 0012 00       		.byte	0
+ 359 0013 02       		.uleb128 0x2
+ 360 0014 2E       		.uleb128 0x2e
+ 361 0015 01       		.byte	0x1
+ 362 0016 3F       		.uleb128 0x3f
+ 363 0017 19       		.uleb128 0x19
+ 364 0018 03       		.uleb128 0x3
+ 365 0019 0E       		.uleb128 0xe
+ 366 001a 3A       		.uleb128 0x3a
+ 367 001b 0B       		.uleb128 0xb
+ 368 001c 3B       		.uleb128 0x3b
+ 369 001d 0B       		.uleb128 0xb
+ 370 001e 27       		.uleb128 0x27
+ 371 001f 19       		.uleb128 0x19
+ 372 0020 11       		.uleb128 0x11
+ 373 0021 01       		.uleb128 0x1
+ 374 0022 12       		.uleb128 0x12
+ 375 0023 06       		.uleb128 0x6
+ 376 0024 40       		.uleb128 0x40
+ 377 0025 18       		.uleb128 0x18
+ 378 0026 9742     		.uleb128 0x2117
+ 379 0028 19       		.uleb128 0x19
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccKXlGRV.s 			page 11
+
+
+ 380 0029 01       		.uleb128 0x1
+ 381 002a 13       		.uleb128 0x13
+ 382 002b 00       		.byte	0
+ 383 002c 00       		.byte	0
+ 384 002d 03       		.uleb128 0x3
+ 385 002e 34       		.uleb128 0x34
+ 386 002f 00       		.byte	0
+ 387 0030 03       		.uleb128 0x3
+ 388 0031 0E       		.uleb128 0xe
+ 389 0032 3A       		.uleb128 0x3a
+ 390 0033 0B       		.uleb128 0xb
+ 391 0034 3B       		.uleb128 0x3b
+ 392 0035 0B       		.uleb128 0xb
+ 393 0036 49       		.uleb128 0x49
+ 394 0037 13       		.uleb128 0x13
+ 395 0038 02       		.uleb128 0x2
+ 396 0039 18       		.uleb128 0x18
+ 397 003a 00       		.byte	0
+ 398 003b 00       		.byte	0
+ 399 003c 04       		.uleb128 0x4
+ 400 003d 24       		.uleb128 0x24
+ 401 003e 00       		.byte	0
+ 402 003f 0B       		.uleb128 0xb
+ 403 0040 0B       		.uleb128 0xb
+ 404 0041 3E       		.uleb128 0x3e
+ 405 0042 0B       		.uleb128 0xb
+ 406 0043 03       		.uleb128 0x3
+ 407 0044 0E       		.uleb128 0xe
+ 408 0045 00       		.byte	0
+ 409 0046 00       		.byte	0
+ 410 0047 05       		.uleb128 0x5
+ 411 0048 2E       		.uleb128 0x2e
+ 412 0049 01       		.byte	0x1
+ 413 004a 3F       		.uleb128 0x3f
+ 414 004b 19       		.uleb128 0x19
+ 415 004c 03       		.uleb128 0x3
+ 416 004d 0E       		.uleb128 0xe
+ 417 004e 3A       		.uleb128 0x3a
+ 418 004f 0B       		.uleb128 0xb
+ 419 0050 3B       		.uleb128 0x3b
+ 420 0051 0B       		.uleb128 0xb
+ 421 0052 27       		.uleb128 0x27
+ 422 0053 19       		.uleb128 0x19
+ 423 0054 11       		.uleb128 0x11
+ 424 0055 01       		.uleb128 0x1
+ 425 0056 12       		.uleb128 0x12
+ 426 0057 06       		.uleb128 0x6
+ 427 0058 40       		.uleb128 0x40
+ 428 0059 18       		.uleb128 0x18
+ 429 005a 9642     		.uleb128 0x2116
+ 430 005c 19       		.uleb128 0x19
+ 431 005d 01       		.uleb128 0x1
+ 432 005e 13       		.uleb128 0x13
+ 433 005f 00       		.byte	0
+ 434 0060 00       		.byte	0
+ 435 0061 06       		.uleb128 0x6
+ 436 0062 2E       		.uleb128 0x2e
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccKXlGRV.s 			page 12
+
+
+ 437 0063 01       		.byte	0x1
+ 438 0064 3F       		.uleb128 0x3f
+ 439 0065 19       		.uleb128 0x19
+ 440 0066 03       		.uleb128 0x3
+ 441 0067 0E       		.uleb128 0xe
+ 442 0068 3A       		.uleb128 0x3a
+ 443 0069 0B       		.uleb128 0xb
+ 444 006a 3B       		.uleb128 0x3b
+ 445 006b 0B       		.uleb128 0xb
+ 446 006c 27       		.uleb128 0x27
+ 447 006d 19       		.uleb128 0x19
+ 448 006e 11       		.uleb128 0x11
+ 449 006f 01       		.uleb128 0x1
+ 450 0070 12       		.uleb128 0x12
+ 451 0071 06       		.uleb128 0x6
+ 452 0072 40       		.uleb128 0x40
+ 453 0073 18       		.uleb128 0x18
+ 454 0074 9642     		.uleb128 0x2116
+ 455 0076 19       		.uleb128 0x19
+ 456 0077 00       		.byte	0
+ 457 0078 00       		.byte	0
+ 458 0079 00       		.byte	0
+ 459              		.section	.debug_aranges,"",%progbits
+ 460 0000 2C000000 		.4byte	0x2c
+ 461 0004 0200     		.2byte	0x2
+ 462 0006 00000000 		.4byte	.Ldebug_info0
+ 463 000a 04       		.byte	0x4
+ 464 000b 00       		.byte	0
+ 465 000c 0000     		.2byte	0
+ 466 000e 0000     		.2byte	0
+ 467 0010 00000000 		.4byte	.LFB0
+ 468 0014 4C000000 		.4byte	.LFE0-.LFB0
+ 469 0018 00000000 		.4byte	.LFB1
+ 470 001c 60000000 		.4byte	.LFE1-.LFB1
+ 471 0020 00000000 		.4byte	.LFB2
+ 472 0024 58000000 		.4byte	.LFE2-.LFB2
+ 473 0028 00000000 		.4byte	0
+ 474 002c 00000000 		.4byte	0
+ 475              		.section	.debug_ranges,"",%progbits
+ 476              	.Ldebug_ranges0:
+ 477 0000 00000000 		.4byte	.LFB0
+ 478 0004 4C000000 		.4byte	.LFE0
+ 479 0008 00000000 		.4byte	.LFB1
+ 480 000c 60000000 		.4byte	.LFE1
+ 481 0010 00000000 		.4byte	.LFB2
+ 482 0014 58000000 		.4byte	.LFE2
+ 483 0018 00000000 		.4byte	0
+ 484 001c 00000000 		.4byte	0
+ 485              		.section	.debug_line,"",%progbits
+ 486              	.Ldebug_line0:
+ 487 0000 A4000000 		.section	.debug_str,"MS",%progbits,1
+ 487      02002400 
+ 487      00000201 
+ 487      FB0E0D00 
+ 487      01010101 
+ 488              	.LASF2:
+ 489 0000 74696D65 		.ascii	"timestamp\000"
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccKXlGRV.s 			page 13
+
+
+ 489      7374616D 
+ 489      7000
+ 490              	.LASF4:
+ 491 000a 73686F72 		.ascii	"short unsigned int\000"
+ 491      7420756E 
+ 491      7369676E 
+ 491      65642069 
+ 491      6E7400
+ 492              	.LASF6:
+ 493 001d 63686970 		.ascii	"chip_DAP_Id\000"
+ 493      5F444150 
+ 493      5F496400 
+ 494              	.LASF8:
+ 495 0029 54696D65 		.ascii	"TimeoutCalc.c\000"
+ 495      6F757443 
+ 495      616C632E 
+ 495      6300
+ 496              	.LASF3:
+ 497 0037 73746174 		.ascii	"statusCode\000"
+ 497      7573436F 
+ 497      646500
+ 498              	.LASF7:
+ 499 0042 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 499      4320342E 
+ 499      392E3320 
+ 499      32303135 
+ 499      30333033 
+ 500 0075 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 500      20726576 
+ 500      6973696F 
+ 500      6E203232 
+ 500      31323230 
+ 501 00a8 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 501      66756E63 
+ 501      74696F6E 
+ 501      2D736563 
+ 501      74696F6E 
+ 502              	.LASF10:
+ 503 00d0 54657374 		.ascii	"TestModeTimeout\000"
+ 503      4D6F6465 
+ 503      54696D65 
+ 503      6F757400 
+ 504              	.LASF9:
+ 505 00e0 5C5C4745 		.ascii	"\\\\GEORGE-OFFICE2\\Users\\George\\Box Sync\\Backbo"
+ 505      4F524745 
+ 505      2D4F4646 
+ 505      49434532 
+ 505      5C557365 
+ 506 010d 6E655C44 		.ascii	"ne\\Design\\Testing\\TestStation\\Software\\HSSP\\A"
+ 506      65736967 
+ 506      6E5C5465 
+ 506      7374696E 
+ 506      675C5465 
+ 507 013a 4E383438 		.ascii	"N84858\\C_Hssp_TimeoutCalc.cydsn\000"
+ 507      35385C43 
+ 507      5F487373 
+ 507      705F5469 
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccKXlGRV.s 			page 14
+
+
+ 507      6D656F75 
+ 508              	.LASF0:
+ 509 015a 54657374 		.ascii	"TestDelayHundredUs\000"
+ 509      44656C61 
+ 509      7948756E 
+ 509      64726564 
+ 509      557300
+ 510              	.LASF5:
+ 511 016d 6C6F6E67 		.ascii	"long unsigned int\000"
+ 511      20756E73 
+ 511      69676E65 
+ 511      6420696E 
+ 511      7400
+ 512              	.LASF1:
+ 513 017f 54657374 		.ascii	"TestSromPollingTimeout\000"
+ 513      53726F6D 
+ 513      506F6C6C 
+ 513      696E6754 
+ 513      696D656F 
+ 514              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
