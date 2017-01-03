@@ -324,7 +324,7 @@ namespace HexFileParser
             /* Extract the flash data for each row */
             for (rowNumber = 0; rowNumber < m_numberOfFlashRows; rowNumber++)
             {
-                if ((rowNumber > m_numLastZeroRows + 1) && (rowNumber < m_numberOfFlashRows - 2))
+                if ((rowNumber > m_numLastZeroRows + 1) && (rowNumber < m_numberOfFlashRows -8))  //was -2
                 {
                     m_swCfile.Write(dummyHeaderString + "//{");
                 }
@@ -350,7 +350,7 @@ namespace HexFileParser
                     m_swCfile.WriteLine("},");
                 }
 
-                if (rowNumber == (m_numberOfFlashRows - 3))
+                if (rowNumber == (m_numberOfFlashRows - 9)) //was 3, then 8
                 {
                     dummyHeaderString = dummyHeaderString.Remove(0, 2);
                     m_swCfile.WriteLine(dummyHeaderString + "};");

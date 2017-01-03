@@ -27,6 +27,3 @@ C:\Users\George\Box Sync\Backbone\Design\Testing\TestStation\Software\HSSP\C# Ap
 C:\Users\George\Box Sync\Backbone\Design\Testing\TestStation\Software\HSSP\C# Application\CY8C4xx8_BL family\HexFile Parser\HexFile Parser\obj\Release\HexFileParser.FormHexFileParser.resources
 C:\Users\George\Box Sync\Backbone\Design\Testing\TestStation\Software\HSSP\C# Application\CY8C4xx8_BL family\HexFile Parser\HexFile Parser\obj\Release\HexFile_Parser.Properties.Resources.resources
 C:\Users\George\Box Sync\Backbone\Design\Testing\TestStation\Software\HSSP\C# Application\CY8C4xx8_BL family\HexFile Parser\HexFile Parser\obj\Release\HexFileParser.csproj.GenerateResource.Cache
-C:\Users\George\Documents\Backbone\Software\HSSP\C# Application\CY8C4xx8_BL family\HexFile Parser\HexFile Parser\bin\Release\HexFile Parser.exe.config
-C:\Users\George\Documents\Backbone\Software\HSSP\C# Application\CY8C4xx8_BL family\HexFile Parser\HexFile Parser\obj\Release\HexFile Parser.exe
-C:\Users\George\Documents\Backbone\Software\HSSP\C# Application\CY8C4xx8_BL family\HexFile Parser\HexFile Parser\obj\Release\HexFile Parser.pdb
