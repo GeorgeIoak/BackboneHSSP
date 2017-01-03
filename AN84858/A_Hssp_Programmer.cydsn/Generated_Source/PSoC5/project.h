@@ -31,6 +31,7 @@
 #include "LCD_Char_LCDPort_aliases.h"
 #include "LCD_Char_LCDPort.h"
 #include "core_cm3_psoc5.h"
+#include "core_cm3.h"
 #include "CyDmac.h"
 #include "CyFlash.h"
 #include "CyLib.h"
@@ -38,6 +39,8 @@
 #include "cyPm.h"
 #include "CySpc.h"
 #include "cytypes.h"
+#include "core_cmFunc.h"
+#include "core_cmInstr.h"
 
 /*[]*/
 
