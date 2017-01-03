@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 1
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccnWJHg2.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 1
   29:SWD_UpperPacketLayer.c **** * Cypress hereby grants to licensee a personal, non-exclusive, non-transferable
   30:SWD_UpperPacketLayer.c **** * license to copy, use, modify, create derivative works of, and compile the
   31:SWD_UpperPacketLayer.c **** * Cypress Source Code and derivative works for the sole purpose of creating
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 2
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccnWJHg2.s 			page 2
 
 
   32:SWD_UpperPacketLayer.c **** * custom software in support of licensee product to be used only in conjunction
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 1
   33              		.cfi_offset 7, -8
   34              		.cfi_offset 14, -4
   35 0002 82B0     		sub	sp, sp, #8
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 3
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccnWJHg2.s 			page 3
 
 
   36              		.cfi_def_cfa_offset 16
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 1
   80 0044 80BD     		pop	{r7, pc}
   81              	.L5:
   82 0046 00BF     		.align	2
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 4
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccnWJHg2.s 			page 4
 
 
   83              	.L4:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 1
  110:SWD_UpperPacketLayer.c ****     swd_PacketData[3] = (unsigned char)(data_32 >> 24);
  117              		.loc 1 110 0
  118 0012 3B68     		ldr	r3, [r7]
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 5
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccnWJHg2.s 			page 5
 
 
  119 0014 1B0E     		lsrs	r3, r3, #24
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 1
  119:SWD_UpperPacketLayer.c **** * Function Name: Read_IO
  120:SWD_UpperPacketLayer.c **** *******************************************************************************
  121:SWD_UpperPacketLayer.c **** *
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 6
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccnWJHg2.s 			page 6
 
 
  122:SWD_UpperPacketLayer.c **** * Summary:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 1
  197              		.loc 1 143 0
  198 0028 0B4B     		ldr	r3, .L14
  199 002a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 7
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccnWJHg2.s 			page 7
 
 
  200 002c 012B     		cmp	r3, #1
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 1
  243              		.thumb
  244              		.thumb_func
  245              		.type	Write_IO, %function
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 8
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccnWJHg2.s 			page 8
 
 
  246              	Write_IO:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 1
  179:SWD_UpperPacketLayer.c ****     
  180:SWD_UpperPacketLayer.c ****     Write_DAP(DPACC_AP_DRW_WRITE, data_32);
  276              		.loc 1 180 0
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 9
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccnWJHg2.s 			page 9
 
 
  277 0020 BB20     		movs	r0, #187
@@ -530,18 +530,18 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 1
  316 0006 00000000 		.4byte	.Ldebug_abbrev0
  317 000a 04       		.byte	0x4
  318 000b 01       		.uleb128 0x1
- 319 000c 53000000 		.4byte	.LASF13
+ 319 000c A2000000 		.4byte	.LASF13
  320 0010 01       		.byte	0x1
  321 0011 19000000 		.4byte	.LASF14
- 322 0015 41010000 		.4byte	.LASF15
+ 322 0015 39000000 		.4byte	.LASF15
  323 0019 00000000 		.4byte	.Ldebug_ranges0+0
  324 001d 00000000 		.4byte	0
  325 0021 00000000 		.4byte	.Ldebug_line0
  326 0025 02       		.uleb128 0x2
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 10
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccnWJHg2.s 			page 10
 
 
- 327 0026 22010000 		.4byte	.LASF4
+ 327 0026 71010000 		.4byte	.LASF4
  328 002a 01       		.byte	0x1
  329 002b 4E       		.byte	0x4e
  330 002c 00000000 		.4byte	.LFB0
@@ -558,7 +558,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 1
  341 0046 91       		.byte	0x91
  342 0047 77       		.sleb128 -9
  343 0048 03       		.uleb128 0x3
- 344 0049 39010000 		.4byte	.LASF1
+ 344 0049 88010000 		.4byte	.LASF1
  345 004d 01       		.byte	0x1
  346 004e 4E       		.byte	0x4e
  347 004f 5E000000 		.4byte	0x5e
@@ -569,16 +569,16 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 1
  352 0057 04       		.uleb128 0x4
  353 0058 01       		.byte	0x1
  354 0059 08       		.byte	0x8
- 355 005a EB000000 		.4byte	.LASF2
+ 355 005a 3A010000 		.4byte	.LASF2
  356 005e 05       		.uleb128 0x5
  357 005f 04       		.byte	0x4
  358 0060 64000000 		.4byte	0x64
  359 0064 04       		.uleb128 0x4
  360 0065 04       		.byte	0x4
  361 0066 07       		.byte	0x7
- 362 0067 39000000 		.4byte	.LASF3
+ 362 0067 88000000 		.4byte	.LASF3
  363 006b 02       		.uleb128 0x2
- 364 006c E1000000 		.4byte	.LASF5
+ 364 006c 30010000 		.4byte	.LASF5
  365 0070 01       		.byte	0x1
  366 0071 6A       		.byte	0x6a
  367 0072 00000000 		.4byte	.LFB1
@@ -595,10 +595,10 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 1
  378 008c 91       		.byte	0x91
  379 008d 77       		.sleb128 -9
  380 008e 03       		.uleb128 0x3
- 381 008f 39010000 		.4byte	.LASF1
+ 381 008f 88010000 		.4byte	.LASF1
  382 0093 01       		.byte	0x1
  383 0094 6A       		.byte	0x6a
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 11
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccnWJHg2.s 			page 11
 
 
  384 0095 64000000 		.4byte	0x64
@@ -617,7 +617,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 1
  397 00b1 9C       		.byte	0x9c
  398 00b2 D3000000 		.4byte	0xd3
  399 00b6 03       		.uleb128 0x3
- 400 00b7 4B000000 		.4byte	.LASF6
+ 400 00b7 9A000000 		.4byte	.LASF6
  401 00bb 01       		.byte	0x1
  402 00bc 86       		.byte	0x86
  403 00bd 64000000 		.4byte	0x64
@@ -625,7 +625,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 1
  405 00c2 91       		.byte	0x91
  406 00c3 74       		.sleb128 -12
  407 00c4 03       		.uleb128 0x3
- 408 00c5 39010000 		.4byte	.LASF1
+ 408 00c5 88010000 		.4byte	.LASF1
  409 00c9 01       		.byte	0x1
  410 00ca 86       		.byte	0x86
  411 00cb 5E000000 		.4byte	0x5e
@@ -644,7 +644,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 1
  424 00e7 9C       		.byte	0x9c
  425 00e8 09010000 		.4byte	0x109
  426 00ec 03       		.uleb128 0x3
- 427 00ed 4B000000 		.4byte	.LASF6
+ 427 00ed 9A000000 		.4byte	.LASF6
  428 00f1 01       		.byte	0x1
  429 00f2 AC       		.byte	0xac
  430 00f3 64000000 		.4byte	0x64
@@ -652,24 +652,24 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 1
  432 00f8 91       		.byte	0x91
  433 00f9 74       		.sleb128 -12
  434 00fa 03       		.uleb128 0x3
- 435 00fb 39010000 		.4byte	.LASF1
+ 435 00fb 88010000 		.4byte	.LASF1
  436 00ff 01       		.byte	0x1
  437 0100 AC       		.byte	0xac
  438 0101 64000000 		.4byte	0x64
  439 0105 02       		.uleb128 0x2
  440 0106 91       		.byte	0x91
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 12
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccnWJHg2.s 			page 12
 
 
  441 0107 70       		.sleb128 -16
  442 0108 00       		.byte	0
  443 0109 07       		.uleb128 0x7
- 444 010a 11010000 		.4byte	.LASF9
+ 444 010a 60010000 		.4byte	.LASF9
  445 010e 02       		.byte	0x2
  446 010f 54       		.byte	0x54
  447 0110 57000000 		.4byte	0x57
  448 0114 07       		.uleb128 0x7
- 449 0115 2B010000 		.4byte	.LASF10
+ 449 0115 7A010000 		.4byte	.LASF10
  450 0119 02       		.byte	0x2
  451 011a 55       		.byte	0x55
  452 011b 57000000 		.4byte	0x57
@@ -683,9 +683,9 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 1
  460 012f 04       		.uleb128 0x4
  461 0130 04       		.byte	0x4
  462 0131 07       		.byte	0x7
- 463 0132 08010000 		.4byte	.LASF11
+ 463 0132 57010000 		.4byte	.LASF11
  464 0136 07       		.uleb128 0x7
- 465 0137 F9000000 		.4byte	.LASF12
+ 465 0137 48010000 		.4byte	.LASF12
  466 013b 02       		.byte	0x2
  467 013c 56       		.byte	0x56
  468 013d 1F010000 		.4byte	0x11f
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 1
  495 0017 19       		.uleb128 0x19
  496 0018 03       		.uleb128 0x3
  497 0019 0E       		.uleb128 0xe
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 13
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccnWJHg2.s 			page 13
 
 
  498 001a 3A       		.uleb128 0x3a
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 1
  552 0051 2E       		.uleb128 0x2e
  553 0052 01       		.byte	0x1
  554 0053 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 14
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccnWJHg2.s 			page 14
 
 
  555 0054 19       		.uleb128 0x19
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 1
  609 008b 2F       		.uleb128 0x2f
  610 008c 0B       		.uleb128 0xb
  611 008d 00       		.byte	0
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 15
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccnWJHg2.s 			page 15
 
 
  612 008e 00       		.byte	0
@@ -898,88 +898,83 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 1
  653              	.LASF8:
  654 0030 57726974 		.ascii	"Write_IO\000"
  654      655F494F 
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 16
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccnWJHg2.s 			page 16
 
 
  654      00
- 655              	.LASF3:
- 656 0039 6C6F6E67 		.ascii	"long unsigned int\000"
- 656      20756E73 
- 656      69676E65 
- 656      6420696E 
- 656      7400
- 657              	.LASF6:
- 658 004b 61646472 		.ascii	"addr_32\000"
- 658      5F333200 
- 659              	.LASF13:
- 660 0053 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 660      4320342E 
- 660      392E3320 
- 660      32303135 
- 660      30333033 
- 661 0086 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
- 661      20726576 
- 661      6973696F 
- 661      6E203232 
- 661      31323230 
- 662 00b9 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
- 662      66756E63 
- 662      74696F6E 
- 662      2D736563 
- 662      74696F6E 
- 663              	.LASF5:
- 664 00e1 57726974 		.ascii	"Write_DAP\000"
- 664      655F4441 
- 664      5000
- 665              	.LASF2:
- 666 00eb 756E7369 		.ascii	"unsigned char\000"
- 666      676E6564 
- 666      20636861 
- 666      7200
- 667              	.LASF12:
- 668 00f9 7377645F 		.ascii	"swd_PacketData\000"
- 668      5061636B 
- 668      65744461 
- 668      746100
- 669              	.LASF11:
- 670 0108 73697A65 		.ascii	"sizetype\000"
- 670      74797065 
- 670      00
- 671              	.LASF9:
- 672 0111 7377645F 		.ascii	"swd_PacketHeader\000"
- 672      5061636B 
- 672      65744865 
- 672      61646572 
- 672      00
- 673              	.LASF4:
- 674 0122 52656164 		.ascii	"Read_DAP\000"
- 674      5F444150 
- 674      00
- 675              	.LASF10:
- 676 012b 7377645F 		.ascii	"swd_PacketAck\000"
- 676      5061636B 
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cct1TtAR.s 			page 17
+ 655              	.LASF15:
+ 656 0039 443A5C55 		.ascii	"D:\\Users\\WorkBench\\Documents\\PSoC Creator\\HSSP"
+ 656      73657273 
+ 656      5C576F72 
+ 656      6B42656E 
+ 656      63685C44 
+ 657 0067 5C414E38 		.ascii	"\\AN84858\\A_Hssp_Programmer.cydsn\000"
+ 657      34383538 
+ 657      5C415F48 
+ 657      7373705F 
+ 657      50726F67 
+ 658              	.LASF3:
+ 659 0088 6C6F6E67 		.ascii	"long unsigned int\000"
+ 659      20756E73 
+ 659      69676E65 
+ 659      6420696E 
+ 659      7400
+ 660              	.LASF6:
+ 661 009a 61646472 		.ascii	"addr_32\000"
+ 661      5F333200 
+ 662              	.LASF13:
+ 663 00a2 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 663      4320342E 
+ 663      392E3320 
+ 663      32303135 
+ 663      30333033 
+ 664 00d5 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 664      20726576 
+ 664      6973696F 
+ 664      6E203232 
+ 664      31323230 
+ 665 0108 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 665      66756E63 
+ 665      74696F6E 
+ 665      2D736563 
+ 665      74696F6E 
+ 666              	.LASF5:
+ 667 0130 57726974 		.ascii	"Write_DAP\000"
+ 667      655F4441 
+ 667      5000
+ 668              	.LASF2:
+ 669 013a 756E7369 		.ascii	"unsigned char\000"
+ 669      676E6564 
+ 669      20636861 
+ 669      7200
+ 670              	.LASF12:
+ 671 0148 7377645F 		.ascii	"swd_PacketData\000"
+ 671      5061636B 
+ 671      65744461 
+ 671      746100
+ 672              	.LASF11:
+ 673 0157 73697A65 		.ascii	"sizetype\000"
+ 673      74797065 
+ 673      00
+ 674              	.LASF9:
+ 675 0160 7377645F 		.ascii	"swd_PacketHeader\000"
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccnWJHg2.s 			page 17
 
 
- 676      65744163 
- 676      6B00
- 677              	.LASF1:
- 678 0139 64617461 		.ascii	"data_32\000"
- 678      5F333200 
- 679              	.LASF15:
- 680 0141 5C5C4745 		.ascii	"\\\\GEORGE-OFFICE2\\Users\\George\\Box Sync\\Backbo"
- 680      4F524745 
- 680      2D4F4646 
- 680      49434532 
- 680      5C557365 
- 681 016e 6E655C44 		.ascii	"ne\\Design\\Testing\\TestStation\\Software\\HSSP\\A"
- 681      65736967 
- 681      6E5C5465 
- 681      7374696E 
- 681      675C5465 
- 682 019b 4E383438 		.ascii	"N84858\\A_Hssp_Programmer.cydsn\000"
- 682      35385C41 
- 682      5F487373 
- 682      705F5072 
- 682      6F677261 
- 683              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
+ 675      5061636B 
+ 675      65744865 
+ 675      61646572 
+ 675      00
+ 676              	.LASF4:
+ 677 0171 52656164 		.ascii	"Read_DAP\000"
+ 677      5F444150 
+ 677      00
+ 678              	.LASF10:
+ 679 017a 7377645F 		.ascii	"swd_PacketAck\000"
+ 679      5061636B 
+ 679      65744163 
+ 679      6B00
+ 680              	.LASF1:
+ 681 0188 64617461 		.ascii	"data_32\000"
+ 681      5F333200 
+ 682              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
