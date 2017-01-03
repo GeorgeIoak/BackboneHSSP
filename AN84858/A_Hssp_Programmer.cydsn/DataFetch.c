@@ -72,7 +72,18 @@
 
 extern unsigned char const deviceSiliconId_HexFile[SILICON_ID_BYTE_LENGTH]; 
 extern unsigned char const checksumData_HexFile[CHECKSUM_BYTE_LENGTH]; 
-extern unsigned char const flashData_HexFile[NUMBER_OF_FLASH_ROWS_HEX_FILE][FLASH_ROW_BYTE_SIZE_HEX_FILE];
+
+/* PSoC 5LP cannot hold 256 KB of target flash data. Logic to truncate 256 rows */
+#if defined (CY_PSOC5)
+	#if defined (CY8C4xxxL_FAMILY) || defined (CY8C4xx8_BL_FAMILY)
+		extern unsigned char const flashData_HexFile[NUMBER_OF_FLASH_ROWS_HEX_FILE-NUMBER_OF_FLASH_ROWS_NOT_INCLUDED][FLASH_ROW_BYTE_SIZE_HEX_FILE];
+	#else
+		extern unsigned char const flashData_HexFile[NUMBER_OF_FLASH_ROWS_HEX_FILE][FLASH_ROW_BYTE_SIZE_HEX_FILE];
+	#endif
+#else
+	extern unsigned char const flashData_HexFile[NUMBER_OF_FLASH_ROWS_HEX_FILE][FLASH_ROW_BYTE_SIZE_HEX_FILE];
+#endif
+
 extern unsigned char const flashProtectionData_HexFile[FLASH_PROTECTION_BYTE_SIZE_HEX_FILE];
 extern unsigned char const chipProtectionData_HexFile; 
 
@@ -104,9 +115,11 @@ used to get the hex file data, change the function definitions accordingly */
 *  Modify definition based on method of getting programming data
 *
 ******************************************************************************/
+
 void HEX_ReadSiliconId(unsigned long *hexSiliconId)
 {
     unsigned char i;
+    
     
     for(i = 0; i < SILICON_ID_BYTE_LENGTH; i++)
     {
@@ -140,11 +153,53 @@ void HEX_ReadSiliconId(unsigned long *hexSiliconId)
 void HEX_ReadRowData(unsigned short rowCount, unsigned char * rowData)
 {
     unsigned short i; /* Maximum value of 'i' can be 256 */
-    
-    for(i = 0; i < FLASH_ROW_BYTE_SIZE_HEX_FILE; i++)
-    {
-        rowData[i] = flashData_HexFile[rowCount][i];
-    }
+    unsigned short j=0;
+	#if defined (CY_PSOC5)
+		/* PSoC 5LP cannot hold 256 KB of target flash data. Logic to truncate 256 rows */
+		#if defined (CY8C4xxxL_FAMILY) || defined (CY8C4xx8_BL_FAMILY)
+			if(rowCount < (NUMBER_OF_FLASH_ROWS_HEX_FILE - NUMBER_OF_FLASH_ROWS_NOT_INCLUDED))
+			{
+			    for(i = 0; i < FLASH_ROW_BYTE_SIZE_HEX_FILE; i++)
+			    {
+			        rowData[i] = flashData_HexFile[rowCount][i];
+			    }
+			}
+			else
+			{
+                if(rowCount >= (NUMBER_OF_FLASH_ROWS_HEX_FILE-8))
+                {                   
+                    for(i = 0; i < FLASH_ROW_BYTE_SIZE_HEX_FILE; i++)
+    			    {
+    			        rowData[i] = flashData_HexFile_RAM[rowCount - (NUMBER_OF_FLASH_ROWS_HEX_FILE-8)][i];
+                    }
+                }
+                else
+                {
+                    for(i = 0; i < FLASH_ROW_BYTE_SIZE_HEX_FILE; i++)
+    			    {
+    			        rowData[i]=0;
+                    }
+                } 
+	        }
+
+        #else
+			if(rowCount < (NUMBER_OF_FLASH_ROWS_HEX_FILE))
+			{
+			    for(i = 0; i < FLASH_ROW_BYTE_SIZE_HEX_FILE; i++)
+			    {
+			        rowData[i] = flashData_HexFile[rowCount][i];
+			    }
+			}
+		#endif
+	#else
+		if(rowCount < (NUMBER_OF_FLASH_ROWS_HEX_FILE))
+			{
+			    for(i = 0; i < FLASH_ROW_BYTE_SIZE_HEX_FILE; i++)
+			    {
+			        rowData[i] = flashData_HexFile[rowCount][i];
+			    }
+			}
+	#endif		
 }
 
 /******************************************************************************

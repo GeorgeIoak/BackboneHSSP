@@ -142,7 +142,7 @@ unsigned char PollSromStatus(void)
 	    return (SUCCESS);
 
 }
-#if defined (CY8C40xx_FAMILY) || defined (CY8C4xx7_BL_FAMILY) || defined (CY8C4xx8_BL_FAMILY)
+#if defined (CY8C40xx_FAMILY) || defined (CY8C4xx7_BL_FAMILY)
 /******************************************************************************
 * Function Name: SetIMO48MHz
 *******************************************************************************

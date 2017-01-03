@@ -58,13 +58,13 @@
 * parameters for your specific host programmer.
 ******************************************************************************/
 
-#define XRES_PULSE_100US  607 //was 600
-#if defined (CY8C40xx_FAMILY) || defined (CY8C4xxxM_FAMILY) || defined (CY8C4xx7_BL_FAMILY) || defined (CY8C4xx8_BL_FAMILY)
-	#define DEVICE_ACQUIRE_TIMEOUT 16 //was 20
+#define XRES_PULSE_100US  600
+#if defined (CY8C40xx_FAMILY) || defined (CY8C4xxxM_FAMILY) || defined (CY8C4xx7_BL_FAMILY) || defined (CY8C4xx8_BL_FAMILY) || defined (CY8C4xxxL_FAMILY)
+	#define DEVICE_ACQUIRE_TIMEOUT 20
 #else
 	#define DEVICE_ACQUIRE_TIMEOUT 15
 #endif
-#define SROM_POLLING_TIMEOUT 190989 //was 10416, calculated 10989
+#define SROM_POLLING_TIMEOUT 10416
 
 /******************************************************************************
 *   Function Prototypes

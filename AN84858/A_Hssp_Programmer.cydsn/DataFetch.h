@@ -51,7 +51,7 @@
    constant */
 #define SILICON_ID_BYTE_LENGTH          4
 #define CHECKSUM_BYTE_LENGTH            2
-#if defined (CY8C4xxxM_FAMILY) || defined (CY8C4xx7_BL_FAMILY) || defined (CY8C4xx8_BL_FAMILY)
+#if defined (CY8C4xxxM_FAMILY) || defined (CY8C4xx7_BL_FAMILY) || defined (CY8C4xx8_BL_FAMILY) || defined (CY8C4xxxL_FAMILY)
     #define MAXIMUM_ROW_PROTECTION_BYTE_LENGTH 64
 #else
     #define MAXIMUM_ROW_PROTECTION_BYTE_LENGTH 32

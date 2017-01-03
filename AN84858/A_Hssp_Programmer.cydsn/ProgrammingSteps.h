@@ -71,7 +71,7 @@
 #define TRANSITION_ERROR			0x80
 
 /* Constants for Address Space of CPU */
-#if defined (CY8C40xx_FAMILY) || defined (CY8C4xxxM_FAMILY) || defined (CY8C4xx7_BL_FAMILY) || defined (CY8C4xx8_BL_FAMILY)
+#if defined (CY8C40xx_FAMILY) || defined (CY8C4xxxM_FAMILY) || defined (CY8C4xx7_BL_FAMILY) || defined (CY8C4xx8_BL_FAMILY) || defined (CY8C4xxxL_FAMILY)
 	#define CPUSS_SYSREQ	            0x40100004
 	#define CPUSS_SYSARG	            0x40100008
 #else
@@ -98,7 +98,7 @@
 #define SROM_CMD_ERASE_ALL	        0x0A
 #define SROM_CMD_CHECKSUM	        0x0B
 #define SROM_CMD_WRITE_PROTECTION	0x0D
-#if defined (CY8C40xx_FAMILY) || defined (CY8C4xx7_BL_FAMILY) || defined (CY8C4xx8_BL_FAMILY)
+#if defined (CY8C40xx_FAMILY) || defined (CY8C4xx7_BL_FAMILY)
 	#define SROM_CMD_SET_IMO_48MHZ		0x15
 #endif
 
@@ -118,13 +118,13 @@
 #define CM0_DAP_ID					0x0BB11477
 
 /* Constant maximum number of rows in PSoC 4 */
-#if defined (CY8C4xxxM_FAMILY) || defined (CY8C4xx7_BL_FAMILY) || defined (CY8C4xx8_BL_FAMILY)
+#if defined (CY8C4xxxM_FAMILY) || defined (CY8C4xx7_BL_FAMILY) || defined (CY8C4xx8_BL_FAMILY) || defined (CY8C4xxxL_FAMILY)
     #define ROWS_PER_ARRAY 				512
 #else
     #define ROWS_PER_ARRAY 				256
 #endif
 
-#if defined (CY8C4xx8_BL_FAMILY)
+#if defined (CY8C4xx8_BL_FAMILY) || defined (CY8C4xxxL_FAMILY)
     #define FLASH_PROTECTION_ADDRESS_INCREMENT      0x800
 #else
     #define FLASH_PROTECTION_ADDRESS_INCREMENT      0x400

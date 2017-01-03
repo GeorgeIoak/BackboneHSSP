@@ -29,9 +29,9 @@
 *******************************************************************************
 *  Project Name: A_Hssp_Programmer
 *  Project Revision: 1.00
-*  Software Version: PSoC Creator 3.2
+*  Software Version: PSoC Creator 3.3
 *  Device Tested: CY8C5868AXI-LP035
-*  Compilers Tested: ARM GCC 4.8.4
+*  Compilers Tested: ARM GCC 4.9-2015-q1-update
 *  Related Hardware: CY8CKIT-050
 ******************************************************************************/
 
