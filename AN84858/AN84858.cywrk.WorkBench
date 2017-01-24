@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="AN84858\A_Hssp_Programmer">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="AN84858\A_Hssp_Programmer\Generated_Source">
 <ExpandedNodeIds>
 <v>AN84858</v>
 <v>AN84858\A_Hssp_Programmer</v>
@@ -47,13 +47,27 @@
 <v>AN84858\A_Hssp_Programmer\Source Files\SWD_PhysicalLayer.c</v>
 <v>AN84858\A_Hssp_Programmer\Source Files\SWD_UpperPacketLayer.c</v>
 <v>AN84858\A_Hssp_Programmer\Source Files\Timeout.c</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source</v>
 <v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\ADC</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\ADC\ADC.c</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\ADC\ADC.h</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\ADC\ADC_INT.c</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\ADC\ADC_PM.c</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\ADC_Bypass</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\ADC_Bypass\ADC_Bypass.c</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\ADC_Bypass\ADC_Bypass.h</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\ADC_Bypass\ADC_Bypass_aliases.h</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\ADC_IRQ</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\ADC_IRQ\ADC_IRQ.c</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\ADC_IRQ\ADC_IRQ.h</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\ADC_theACLK</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\ADC_theACLK\ADC_theACLK.c</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\ADC_theACLK\ADC_theACLK.h</v>
 <v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\cy_boot\cm3gcc.ld</v>
 <v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\cy_boot\Cm3Iar.icf</v>
 <v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\cy_boot\Cm3RealView.scat</v>
 <v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\cy_boot\Cm3Start.c</v>
-<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\cy_boot\cmsis_armcc.h</v>
-<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\cy_boot\cmsis_gcc.h</v>
 <v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\cy_boot\core_cm3.h</v>
 <v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\cy_boot\core_cm3_psoc5.h</v>
 <v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\cy_boot\core_cmFunc.h</v>
@@ -74,12 +88,33 @@
 <v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\cy_boot\CySpc.h</v>
 <v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\cy_boot\cytypes.h</v>
 <v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\cy_boot\cyutils.c</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\I2C</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\I2C\I2C.c</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\I2C\I2C.h</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\I2C\I2C_BOOT.c</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\I2C\I2C_INT.c</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\I2C\I2C_MASTER.c</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\I2C\I2C_PM.c</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\I2C\I2C_PVT.h</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\I2C\I2C_SLAVE.c</v>
 <v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\LCD_Char\LCD_Char.c</v>
 <v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\LCD_Char\LCD_Char.h</v>
 <v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\LCD_Char\LCD_Char_PM.c</v>
 <v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\LCD_Char_LCDPort\LCD_Char_LCDPort.c</v>
 <v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\LCD_Char_LCDPort\LCD_Char_LCDPort.h</v>
 <v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\LCD_Char_LCDPort\LCD_Char_LCDPort_aliases.h</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\Pin_BatLevel</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\Pin_BatLevel\Pin_BatLevel.c</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\Pin_BatLevel\Pin_BatLevel.h</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\Pin_BatLevel\Pin_BatLevel_aliases.h</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\Pin_EN1</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\Pin_EN1\Pin_EN1.c</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\Pin_EN1\Pin_EN1.h</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\Pin_EN1\Pin_EN1_aliases.h</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\Pin_OC</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\Pin_OC\Pin_OC.c</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\Pin_OC\Pin_OC.h</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\Pin_OC\Pin_OC_aliases.h</v>
 <v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\Pin_Start\Pin_Start.c</v>
 <v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\Pin_Start\Pin_Start.h</v>
 <v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\Pin_Start\Pin_Start_aliases.h</v>
@@ -92,6 +127,14 @@
 <v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\Pin_XRES\Pin_XRES.c</v>
 <v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\Pin_XRES\Pin_XRES.h</v>
 <v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\Pin_XRES\Pin_XRES_aliases.h</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\SCL</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\SCL\SCL.c</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\SCL\SCL.h</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\SCL\SCL_aliases.h</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\SDA</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\SDA\SDA.c</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\SDA\SDA.h</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\SDA\SDA_aliases.h</v>
 <v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\cycodeshareexport.ld</v>
 <v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\cycodeshareimport.ld</v>
 <v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\cycodeshareimport.scat</v>
@@ -264,8 +307,15 @@
 <v>AN84858\A_Hssp_Programmer\Source Files\SWD_UpperPacketLayer.c</v>
 <v>AN84858\A_Hssp_Programmer\Source Files\Timeout.c</v>
 <v>AN84858\A_Hssp_Programmer\Generated_Source</v>
-<v>AN84858\B_Hssp_Pioneer</v>
-<v>AN84858\C_Hssp_TimeoutCalc</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\ADC</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\ADC\ADC.c</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\ADC\ADC.h</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\ADC\ADC_INT.c</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\ADC\ADC_PM.c</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\ADC_Bypass</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\ADC_Bypass\ADC_Bypass.c</v>
+<v>AN84858\A_Hssp_Programmer\Generated_Source\PSoC5\ADC_Bypass\ADC_Bypass.h</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -411,11 +461,6 @@
 <v>AN84858\B_Hssp_Pioneer\B_Hssp_Pioneer.rpt</v>
 <v>AN84858\B_Hssp_Pioneer\B_Hssp_Pioneer_timing.html</v>
 <v>AN84858\C_Hssp_TimeoutCalc</v>
-<v>AN84858\C_Hssp_TimeoutCalc\CortexM3</v>
-<v>AN84858\C_Hssp_TimeoutCalc\CortexM3\ARM_GCC_493</v>
-<v>AN84858\C_Hssp_TimeoutCalc\CortexM3\ARM_GCC_493\Debug</v>
-<v>AN84858\C_Hssp_TimeoutCalc\CortexM3\ARM_GCC_493\Debug\Listing Files</v>
-<v>AN84858\C_Hssp_TimeoutCalc\CortexM3\ARM_GCC_493\Debug\Listing Files\Cm3Start.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -430,14 +475,31 @@
 <v>AN84858\A_Hssp_Programmer\PSoC 5LP Architecture TRM</v>
 <v>AN84858\A_Hssp_Programmer\CY8C58LP Family Datasheet</v>
 <v>AN84858\A_Hssp_Programmer\System Reference Guides</v>
+<v>AN84858\A_Hssp_Programmer\System Reference Guides\cy_boot_v5_30</v>
+<v>AN84858\A_Hssp_Programmer\ADC_SAR_v3_0.pdf</v>
+<v>AN84858\A_Hssp_Programmer\CharLCD_v2_20.pdf</v>
+<v>AN84858\A_Hssp_Programmer\cy_pins_v2_20</v>
+<v>AN84858\A_Hssp_Programmer\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>AN84858\A_Hssp_Programmer\I2C_v3_50.pdf</v>
+<v>AN84858\A_Hssp_Programmer\Power_v1_0.pdf</v>
+<v>AN84858\A_Hssp_Programmer\Resistor_v1_0</v>
+<v>AN84858\A_Hssp_Programmer\Resistor_v1_0\Resistor_v1_0.pdf</v>
 <v>AN84858\B_Hssp_Pioneer</v>
 <v>AN84858\B_Hssp_Pioneer\PSoC 5LP Architecture TRM</v>
 <v>AN84858\B_Hssp_Pioneer\CY8C58LP Family Datasheet</v>
 <v>AN84858\B_Hssp_Pioneer\System Reference Guides</v>
+<v>AN84858\B_Hssp_Pioneer\System Reference Guides\cy_boot_v5_50</v>
+<v>AN84858\B_Hssp_Pioneer\Bootloadable_v1_50.pdf</v>
+<v>AN84858\B_Hssp_Pioneer\cy_pins_v2_20</v>
+<v>AN84858\B_Hssp_Pioneer\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>AN84858\B_Hssp_Pioneer\USBFS_v3_10.pdf</v>
 <v>AN84858\C_Hssp_TimeoutCalc</v>
 <v>AN84858\C_Hssp_TimeoutCalc\PSoC 5LP Architecture TRM</v>
 <v>AN84858\C_Hssp_TimeoutCalc\CY8C58LP Family Datasheet</v>
 <v>AN84858\C_Hssp_TimeoutCalc\System Reference Guides</v>
+<v>AN84858\C_Hssp_TimeoutCalc\System Reference Guides\cy_boot_v5_50</v>
+<v>AN84858\C_Hssp_TimeoutCalc\cy_pins_v2_20</v>
+<v>AN84858\C_Hssp_TimeoutCalc\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>AN84858</v>
@@ -445,14 +507,31 @@
 <v>AN84858\A_Hssp_Programmer\PSoC 5LP Architecture TRM</v>
 <v>AN84858\A_Hssp_Programmer\CY8C58LP Family Datasheet</v>
 <v>AN84858\A_Hssp_Programmer\System Reference Guides</v>
+<v>AN84858\A_Hssp_Programmer\System Reference Guides\cy_boot_v5_30</v>
+<v>AN84858\A_Hssp_Programmer\ADC_SAR_v3_0.pdf</v>
+<v>AN84858\A_Hssp_Programmer\CharLCD_v2_20.pdf</v>
+<v>AN84858\A_Hssp_Programmer\cy_pins_v2_20</v>
+<v>AN84858\A_Hssp_Programmer\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>AN84858\A_Hssp_Programmer\I2C_v3_50.pdf</v>
+<v>AN84858\A_Hssp_Programmer\Power_v1_0.pdf</v>
+<v>AN84858\A_Hssp_Programmer\Resistor_v1_0</v>
+<v>AN84858\A_Hssp_Programmer\Resistor_v1_0\Resistor_v1_0.pdf</v>
 <v>AN84858\B_Hssp_Pioneer</v>
 <v>AN84858\B_Hssp_Pioneer\PSoC 5LP Architecture TRM</v>
 <v>AN84858\B_Hssp_Pioneer\CY8C58LP Family Datasheet</v>
 <v>AN84858\B_Hssp_Pioneer\System Reference Guides</v>
+<v>AN84858\B_Hssp_Pioneer\System Reference Guides\cy_boot_v5_50</v>
+<v>AN84858\B_Hssp_Pioneer\Bootloadable_v1_50.pdf</v>
+<v>AN84858\B_Hssp_Pioneer\cy_pins_v2_20</v>
+<v>AN84858\B_Hssp_Pioneer\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>AN84858\B_Hssp_Pioneer\USBFS_v3_10.pdf</v>
 <v>AN84858\C_Hssp_TimeoutCalc</v>
 <v>AN84858\C_Hssp_TimeoutCalc\PSoC 5LP Architecture TRM</v>
 <v>AN84858\C_Hssp_TimeoutCalc\CY8C58LP Family Datasheet</v>
 <v>AN84858\C_Hssp_TimeoutCalc\System Reference Guides</v>
+<v>AN84858\C_Hssp_TimeoutCalc\System Reference Guides\cy_boot_v5_50</v>
+<v>AN84858\C_Hssp_TimeoutCalc\cy_pins_v2_20</v>
+<v>AN84858\C_Hssp_TimeoutCalc\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>
@@ -472,11 +551,6 @@
 <name v=".\A_Hssp_Programmer.cydsn\main.c" />
 <name v=".\A_Hssp_Programmer.cydsn\ProgrammingSteps.c" />
 <name v=".\A_Hssp_Programmer.cydsn\RegisterDefines.h" />
-<name v=".\A_Hssp_Programmer.cydsn\Timeout.h" />
-<name v=".\A_Hssp_Programmer.cydsn\ProgrammingSteps.h" />
-<name v=".\A_Hssp_Programmer.cydsn\SWD_PhysicalLayer.c" />
-<name v=".\A_Hssp_Programmer.cydsn\SWD_PacketLayer.c" />
-<name v=".\A_Hssp_Programmer.cydsn\SWD_UpperPacketLayer.c" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -484,7 +558,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1808, 679" SelectedTabbedMdiWindow="5356f48d-d1db-44a3-bdfa-5b968acc37a6"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="f6c3beda-3892-4cf1-9b24-1a43f96facd4" /><DocumentWindow Key="0912a0df-b9c0-45f7-a129-22b45eeb173d" Guid="b12ecc50-b15d-49c6-ad35-f1c84451997c" /><DocumentWindow Key="c2e6b0f0-eab9-48c6-8a59-5a30bab71c25" Guid="4f70e81a-0909-4242-8224-01572281f58d" /><DocumentWindow Key="c469fca7-573a-4464-868c-6b2d3aa5f713" Guid="b00ebc09-c650-4d12-b888-470f3e341942" /><DocumentWindow Key="1e8d203c-832a-4d87-9e85-2eca8b628e62" Guid="c6d3c2d6-6146-48c0-a8a5-2c7626fea122" /><DocumentWindow Key="16e05483-9c6b-4326-8362-452ec9f3ec40" Guid="f4a02643-8b1b-4329-b48a-079ff5a34682" /><DocumentWindow Key="80aab916-7ab9-4119-8909-6b7fe94736ff" Guid="4eb69455-26b8-41dc-bf47-f49b6bea95ee" /><DocumentWindow Key="28bfe756-f6bd-42aa-acd9-faf88a7f2a67" Guid="626f8a82-05a4-4d22-9b9d-04bac4edae63" /><DocumentWindow Key="2d673609-aea7-4e4f-94f3-fcc3fc2cbd9a" Guid="bd210389-b4dc-4aa8-9508-84064ca5638a" /><DocumentWindow Key="b2b551d5-65c4-4ec4-ac60-4dff4c9a4791" Guid="d10ed243-1db4-42b3-be00-d6b58a8bc12b" /><DocumentWindow Key="11fe3469-cc42-4104-9b1f-75a377517c61" Guid="5356f48d-d1db-44a3-bdfa-5b968acc37a6" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1505, 621" SelectedTabbedMdiWindow="f6c3beda-3892-4cf1-9b24-1a43f96facd4"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="f6c3beda-3892-4cf1-9b24-1a43f96facd4" /><DocumentWindow Key="122f34bb-521a-4010-b9d5-b006233fee07" Guid="25f8c8a1-a174-4268-883c-8f14aac2ca3c" /><DocumentWindow Key="12589d21-f20f-4ea0-a4f9-d0ced6ce4d86" Guid="ab4a46fc-f7c4-4c0e-aebd-90f5d5cf7c8b" /><DocumentWindow Key="f794afc7-b25c-4f58-94d5-a62b877a9459" Guid="ca850b9e-fc95-44a6-86c5-873c406ad4c0" /><DocumentWindow Key="a7ce6ca4-27b4-46e2-874b-f44b4833e3d6" Guid="5499bd3e-34bf-4893-8939-f470f99c3efb" /><DocumentWindow Key="3fcecdf4-8d54-4515-97e7-75c408982a32" Guid="8382966e-dd17-42f0-9444-7a0248380ccb" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

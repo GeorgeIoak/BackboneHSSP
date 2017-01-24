@@ -1,15 +1,16 @@
-/***************************************************************************//**
-* \file CyFlash.h
-* \version 5.50
+/*******************************************************************************
+* File Name: CyFlash.h
+* Version 5.30
 *
-* \brief Provides the function definitions for the FLASH/EEPROM.
+*  Description:
+*   Provides the function definitions for the FLASH/EEPROM.
 *
-* \note Documentation of the API's in this file is located in the System
-* Reference Guide provided with PSoC Creator.
+*  Note:
+*   Documentation of the API's in this file is located in the
+*   System Reference Guide provided with PSoC Creator.
 *
 ********************************************************************************
-* \copyright
-* Copyright 2008-2016, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2008-2015, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.

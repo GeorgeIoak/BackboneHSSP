@@ -1,7 +1,7 @@
 /*******************************************************************************
 * File Name: project.h
 * 
-* PSoC Creator  4.0
+* PSoC Creator  4.0 Update 1
 *
 * Description:
 * It contains references to all generated header files and should not be modified.
@@ -28,9 +28,27 @@
 #include "LCD_Char.h"
 #include "Pin_Start_aliases.h"
 #include "Pin_Start.h"
+#include "Pin_EN1_aliases.h"
+#include "Pin_EN1.h"
+#include "Pin_OC_aliases.h"
+#include "Pin_OC.h"
+#include "I2C.h"
+#include "I2C_PVT.h"
+#include "ADC.h"
+#include "Pin_BatLevel_aliases.h"
+#include "Pin_BatLevel.h"
+#include "SDA_aliases.h"
+#include "SDA.h"
+#include "SCL_aliases.h"
+#include "SCL.h"
 #include "LCD_Char_LCDPort_aliases.h"
 #include "LCD_Char_LCDPort.h"
+#include "ADC_IRQ.h"
+#include "ADC_theACLK.h"
+#include "ADC_Bypass_aliases.h"
+#include "ADC_Bypass.h"
 #include "core_cm3_psoc5.h"
+#include "core_cm3.h"
 #include "CyDmac.h"
 #include "CyFlash.h"
 #include "CyLib.h"
@@ -38,6 +56,8 @@
 #include "cyPm.h"
 #include "CySpc.h"
 #include "cytypes.h"
+#include "core_cmFunc.h"
+#include "core_cmInstr.h"
 
 /*[]*/
 
