@@ -1,0 +1,1429 @@
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccfFgWxb.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"SWD_PhysicalLayer.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.SetSwdckCmosOutput,"ax",%progbits
+  19              		.align	2
+  20              		.global	SetSwdckCmosOutput
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	SetSwdckCmosOutput, %function
+  24              	SetSwdckCmosOutput:
+  25              	.LFB0:
+  26              		.file 1 "SWD_PhysicalLayer.c"
+   1:SWD_PhysicalLayer.c **** /******************************************************************************
+   2:SWD_PhysicalLayer.c **** * File Name: SWD_PhysicalLayer.c
+   3:SWD_PhysicalLayer.c **** * Version 1.0
+   4:SWD_PhysicalLayer.c **** *
+   5:SWD_PhysicalLayer.c **** * Description:
+   6:SWD_PhysicalLayer.c **** *  This file provides the source code for the physical layer functions of the
+   7:SWD_PhysicalLayer.c **** *  SWD protocol. These function definitions are the same as the corresponding
+   8:SWD_PhysicalLayer.c **** *  macro definitions in SWD_PhysicalLayer.h
+   9:SWD_PhysicalLayer.c **** *
+  10:SWD_PhysicalLayer.c **** * Owner:
+  11:SWD_PhysicalLayer.c **** *	Tushar Rastogi, Application Engineer (tusr@cypress.com)
+  12:SWD_PhysicalLayer.c **** *
+  13:SWD_PhysicalLayer.c **** * Related Document:
+  14:SWD_PhysicalLayer.c **** *	AN84858 - PSoC 4 Programming using an External Microcontroller (HSSP)
+  15:SWD_PhysicalLayer.c **** *
+  16:SWD_PhysicalLayer.c **** * Hardware Dependency:
+  17:SWD_PhysicalLayer.c **** *   PSoC 5LP Development Kit - CY8CKIT-050
+  18:SWD_PhysicalLayer.c **** *
+  19:SWD_PhysicalLayer.c **** * Code Tested With:
+  20:SWD_PhysicalLayer.c **** *	PSoC Creator 3.2
+  21:SWD_PhysicalLayer.c **** *	ARM GCC 4.8.4
+  22:SWD_PhysicalLayer.c **** *	CY8CKIT-050
+  23:SWD_PhysicalLayer.c **** *
+  24:SWD_PhysicalLayer.c **** * Note:
+  25:SWD_PhysicalLayer.c **** *  The functions defined here are specific to PSoC 5LP Host Programmer.
+  26:SWD_PhysicalLayer.c **** *  Modify the definitions as applicable for your Host Programmer.
+  27:SWD_PhysicalLayer.c **** *
+  28:SWD_PhysicalLayer.c **** *******************************************************************************
+  29:SWD_PhysicalLayer.c **** * Copyright (2015), Cypress Semiconductor Corporation.
+  30:SWD_PhysicalLayer.c **** *******************************************************************************
+  31:SWD_PhysicalLayer.c **** * This software is owned by Cypress Semiconductor Corporation (Cypress) and is
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccfFgWxb.s 			page 2
+
+
+  32:SWD_PhysicalLayer.c **** * protected by and subject to worldwide patent protection (United States and
+  33:SWD_PhysicalLayer.c **** * foreign), United States copyright laws and international treaty provisions.
+  34:SWD_PhysicalLayer.c **** * Cypress hereby grants to licensee a personal, non-exclusive, non-transferable
+  35:SWD_PhysicalLayer.c **** * license to copy, use, modify, create derivative works of, and compile the
+  36:SWD_PhysicalLayer.c **** * Cypress Source Code and derivative works for the sole purpose of creating
+  37:SWD_PhysicalLayer.c **** * custom software in support of licensee product to be used only in conjunction
+  38:SWD_PhysicalLayer.c **** * with a Cypress integrated circuit as specified in the applicable agreement.
+  39:SWD_PhysicalLayer.c **** * Any reproduction, modification, translation, compilation, or representation of
+  40:SWD_PhysicalLayer.c **** * this software except as specified above is prohibited without the express
+  41:SWD_PhysicalLayer.c **** * written permission of Cypress.
+  42:SWD_PhysicalLayer.c **** *
+  43:SWD_PhysicalLayer.c **** * Disclaimer: CYPRESS MAKES NO WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, WITH
+  44:SWD_PhysicalLayer.c **** * REGARD TO THIS MATERIAL, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+  45:SWD_PhysicalLayer.c **** * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+  46:SWD_PhysicalLayer.c **** * Cypress reserves the right to make changes without further notice to the
+  47:SWD_PhysicalLayer.c **** * materials described herein. Cypress does not assume any liability arising out
+  48:SWD_PhysicalLayer.c **** * of the application or use of any product or circuit described herein. Cypress
+  49:SWD_PhysicalLayer.c **** * does not authorize its products for use as critical components in life-support
+  50:SWD_PhysicalLayer.c **** * systems where a malfunction or failure may reasonably be expected to result in
+  51:SWD_PhysicalLayer.c **** * significant injury to the user. The inclusion of Cypress' product in a life-
+  52:SWD_PhysicalLayer.c **** * support systems application implies that the manufacturer assumes all risk of
+  53:SWD_PhysicalLayer.c **** * such use and in doing so indemnifies Cypress against all charges. Use may be
+  54:SWD_PhysicalLayer.c **** * limited by and subject to the applicable Cypress software license agreement.
+  55:SWD_PhysicalLayer.c **** 
+  56:SWD_PhysicalLayer.c **** ******************************************************************************/
+  57:SWD_PhysicalLayer.c **** 
+  58:SWD_PhysicalLayer.c **** /******************************************************************************
+  59:SWD_PhysicalLayer.c **** *   Header file Inclusion
+  60:SWD_PhysicalLayer.c **** ******************************************************************************/
+  61:SWD_PhysicalLayer.c **** #include "SWD_PhysicalLayer.h"
+  62:SWD_PhysicalLayer.c **** 
+  63:SWD_PhysicalLayer.c **** /******************************************************************************
+  64:SWD_PhysicalLayer.c **** *   Function Definitions
+  65:SWD_PhysicalLayer.c **** ******************************************************************************/
+  66:SWD_PhysicalLayer.c **** 
+  67:SWD_PhysicalLayer.c **** /***************************** USER ATTENTION REQUIRED ************************
+  68:SWD_PhysicalLayer.c **** ***************************** HOST PROCESSOR SPECIFIC *************************
+  69:SWD_PhysicalLayer.c **** ******************* SWD Protocol Physical Layer functions *********************
+  70:SWD_PhysicalLayer.c **** *
+  71:SWD_PhysicalLayer.c **** * All of the function definitions below are for a PSoC 5LP host programmer.
+  72:SWD_PhysicalLayer.c **** * Modify the definitions as applicable for the specific host programmer.
+  73:SWD_PhysicalLayer.c **** ******************************************************************************/
+  74:SWD_PhysicalLayer.c **** 
+  75:SWD_PhysicalLayer.c **** /******************************************************************************
+  76:SWD_PhysicalLayer.c **** * Function Name: SetSwdckCmosOutput
+  77:SWD_PhysicalLayer.c **** *******************************************************************************
+  78:SWD_PhysicalLayer.c **** *
+  79:SWD_PhysicalLayer.c **** * Summary:
+  80:SWD_PhysicalLayer.c **** *  Sets the SWDCK pin drive mode as CMOS drive mode.
+  81:SWD_PhysicalLayer.c **** *
+  82:SWD_PhysicalLayer.c **** * Parameters:
+  83:SWD_PhysicalLayer.c **** *  None.
+  84:SWD_PhysicalLayer.c **** *
+  85:SWD_PhysicalLayer.c **** * Return:
+  86:SWD_PhysicalLayer.c **** *  None.
+  87:SWD_PhysicalLayer.c **** *
+  88:SWD_PhysicalLayer.c **** * Note:
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccfFgWxb.s 			page 3
+
+
+  89:SWD_PhysicalLayer.c **** *  The function definition is the same as the macro definition
+  90:SWD_PhysicalLayer.c **** *  SWDCK_DRIVEMODE_CMOSOUT in SWD_PhysicalLayer.h.
+  91:SWD_PhysicalLayer.c **** *
+  92:SWD_PhysicalLayer.c **** ******************************************************************************/
+  93:SWD_PhysicalLayer.c **** void SetSwdckCmosOutput()
+  94:SWD_PhysicalLayer.c **** {
+  27              		.loc 1 94 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 1, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32 0000 80B4     		push	{r7}
+  33              		.cfi_def_cfa_offset 4
+  34              		.cfi_offset 7, -4
+  35 0002 00AF     		add	r7, sp, #0
+  36              		.cfi_def_cfa_register 7
+  95:SWD_PhysicalLayer.c ****     SWDCK_PIN_DM_REG = (SWDCK_PIN_DM_REG & CMOSOUT_DM_ANDMASK) | CMOSOUT_DM_ORMASK;
+  37              		.loc 1 95 0
+  38 0004 084B     		ldr	r3, .L2
+  39 0006 084A     		ldr	r2, .L2
+  40 0008 1278     		ldrb	r2, [r2]
+  41 000a D2B2     		uxtb	r2, r2
+  42 000c D2B2     		uxtb	r2, r2
+  43 000e 22F00E02 		bic	r2, r2, #14
+  44 0012 D2B2     		uxtb	r2, r2
+  45 0014 42F00C02 		orr	r2, r2, #12
+  46 0018 D2B2     		uxtb	r2, r2
+  47 001a D2B2     		uxtb	r2, r2
+  48 001c 1A70     		strb	r2, [r3]
+  96:SWD_PhysicalLayer.c **** }
+  49              		.loc 1 96 0
+  50 001e BD46     		mov	sp, r7
+  51              		.cfi_def_cfa_register 13
+  52              		@ sp needed
+  53 0020 5DF8047B 		ldr	r7, [sp], #4
+  54              		.cfi_restore 7
+  55              		.cfi_def_cfa_offset 0
+  56 0024 7047     		bx	lr
+  57              	.L3:
+  58 0026 00BF     		.align	2
+  59              	.L2:
+  60 0028 63500040 		.word	1073762403
+  61              		.cfi_endproc
+  62              	.LFE0:
+  63              		.size	SetSwdckCmosOutput, .-SetSwdckCmosOutput
+  64              		.section	.text.SetSwdckHizInput,"ax",%progbits
+  65              		.align	2
+  66              		.global	SetSwdckHizInput
+  67              		.thumb
+  68              		.thumb_func
+  69              		.type	SetSwdckHizInput, %function
+  70              	SetSwdckHizInput:
+  71              	.LFB1:
+  97:SWD_PhysicalLayer.c **** 
+  98:SWD_PhysicalLayer.c **** /******************************************************************************
+  99:SWD_PhysicalLayer.c **** * Function Name: SetSwdckHizInput
+ 100:SWD_PhysicalLayer.c **** *******************************************************************************
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccfFgWxb.s 			page 4
+
+
+ 101:SWD_PhysicalLayer.c **** *
+ 102:SWD_PhysicalLayer.c **** * Summary:
+ 103:SWD_PhysicalLayer.c **** *  Sets the SWDCK pin drive mode as High impedance digital input.
+ 104:SWD_PhysicalLayer.c **** *
+ 105:SWD_PhysicalLayer.c **** * Parameters:
+ 106:SWD_PhysicalLayer.c **** *  None.
+ 107:SWD_PhysicalLayer.c **** *
+ 108:SWD_PhysicalLayer.c **** * Return:
+ 109:SWD_PhysicalLayer.c **** *  None.
+ 110:SWD_PhysicalLayer.c **** *
+ 111:SWD_PhysicalLayer.c **** * Note:
+ 112:SWD_PhysicalLayer.c **** *  The function definition is the same as the macro definition 
+ 113:SWD_PhysicalLayer.c **** *  SWDCK_DRIVEMODE_HIGHZIN in SWD_PhysicalLayer.h.
+ 114:SWD_PhysicalLayer.c **** *
+ 115:SWD_PhysicalLayer.c **** ******************************************************************************/
+ 116:SWD_PhysicalLayer.c **** void SetSwdckHizInput()
+ 117:SWD_PhysicalLayer.c **** {
+  72              		.loc 1 117 0
+  73              		.cfi_startproc
+  74              		@ args = 0, pretend = 0, frame = 0
+  75              		@ frame_needed = 1, uses_anonymous_args = 0
+  76              		@ link register save eliminated.
+  77 0000 80B4     		push	{r7}
+  78              		.cfi_def_cfa_offset 4
+  79              		.cfi_offset 7, -4
+  80 0002 00AF     		add	r7, sp, #0
+  81              		.cfi_def_cfa_register 7
+ 118:SWD_PhysicalLayer.c ****     SWDCK_PIN_DM_REG = (SWDCK_PIN_DM_REG & HIGHZIN_DM_ANDMASK) | HIGHZIN_DM_ORMASK;
+  82              		.loc 1 118 0
+  83 0004 084B     		ldr	r3, .L5
+  84 0006 084A     		ldr	r2, .L5
+  85 0008 1278     		ldrb	r2, [r2]
+  86 000a D2B2     		uxtb	r2, r2
+  87 000c D2B2     		uxtb	r2, r2
+  88 000e 22F00E02 		bic	r2, r2, #14
+  89 0012 D2B2     		uxtb	r2, r2
+  90 0014 42F00202 		orr	r2, r2, #2
+  91 0018 D2B2     		uxtb	r2, r2
+  92 001a D2B2     		uxtb	r2, r2
+  93 001c 1A70     		strb	r2, [r3]
+ 119:SWD_PhysicalLayer.c **** }
+  94              		.loc 1 119 0
+  95 001e BD46     		mov	sp, r7
+  96              		.cfi_def_cfa_register 13
+  97              		@ sp needed
+  98 0020 5DF8047B 		ldr	r7, [sp], #4
+  99              		.cfi_restore 7
+ 100              		.cfi_def_cfa_offset 0
+ 101 0024 7047     		bx	lr
+ 102              	.L6:
+ 103 0026 00BF     		.align	2
+ 104              	.L5:
+ 105 0028 63500040 		.word	1073762403
+ 106              		.cfi_endproc
+ 107              	.LFE1:
+ 108              		.size	SetSwdckHizInput, .-SetSwdckHizInput
+ 109              		.section	.text.SetSwdioCmosOutput,"ax",%progbits
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccfFgWxb.s 			page 5
+
+
+ 110              		.align	2
+ 111              		.global	SetSwdioCmosOutput
+ 112              		.thumb
+ 113              		.thumb_func
+ 114              		.type	SetSwdioCmosOutput, %function
+ 115              	SetSwdioCmosOutput:
+ 116              	.LFB2:
+ 120:SWD_PhysicalLayer.c **** 
+ 121:SWD_PhysicalLayer.c **** /******************************************************************************
+ 122:SWD_PhysicalLayer.c **** * Function Name: SetSwdioCmosOutput
+ 123:SWD_PhysicalLayer.c **** *******************************************************************************
+ 124:SWD_PhysicalLayer.c **** *
+ 125:SWD_PhysicalLayer.c **** * Summary:
+ 126:SWD_PhysicalLayer.c **** *  Sets the SWDIO pin drive mode as CMOS drive mode.
+ 127:SWD_PhysicalLayer.c **** *
+ 128:SWD_PhysicalLayer.c **** * Parameters:
+ 129:SWD_PhysicalLayer.c **** *  None.
+ 130:SWD_PhysicalLayer.c **** *
+ 131:SWD_PhysicalLayer.c **** * Return:
+ 132:SWD_PhysicalLayer.c **** *  None.
+ 133:SWD_PhysicalLayer.c **** *
+ 134:SWD_PhysicalLayer.c **** * Note:
+ 135:SWD_PhysicalLayer.c **** *  The function definition is the same as the macro definition 
+ 136:SWD_PhysicalLayer.c **** *  SWDIO_DRIVEMODE_CMOSOUT in SWD_PhysicalLayer.h.
+ 137:SWD_PhysicalLayer.c **** *
+ 138:SWD_PhysicalLayer.c **** ******************************************************************************/
+ 139:SWD_PhysicalLayer.c **** void SetSwdioCmosOutput()
+ 140:SWD_PhysicalLayer.c **** {
+ 117              		.loc 1 140 0
+ 118              		.cfi_startproc
+ 119              		@ args = 0, pretend = 0, frame = 0
+ 120              		@ frame_needed = 1, uses_anonymous_args = 0
+ 121              		@ link register save eliminated.
+ 122 0000 80B4     		push	{r7}
+ 123              		.cfi_def_cfa_offset 4
+ 124              		.cfi_offset 7, -4
+ 125 0002 00AF     		add	r7, sp, #0
+ 126              		.cfi_def_cfa_register 7
+ 141:SWD_PhysicalLayer.c ****     SWDIO_PIN_DM_REG = (SWDIO_PIN_DM_REG & CMOSOUT_DM_ANDMASK) | CMOSOUT_DM_ORMASK;
+ 127              		.loc 1 141 0
+ 128 0004 084B     		ldr	r3, .L8
+ 129 0006 084A     		ldr	r2, .L8
+ 130 0008 1278     		ldrb	r2, [r2]
+ 131 000a D2B2     		uxtb	r2, r2
+ 132 000c D2B2     		uxtb	r2, r2
+ 133 000e 22F00E02 		bic	r2, r2, #14
+ 134 0012 D2B2     		uxtb	r2, r2
+ 135 0014 42F00C02 		orr	r2, r2, #12
+ 136 0018 D2B2     		uxtb	r2, r2
+ 137 001a D2B2     		uxtb	r2, r2
+ 138 001c 1A70     		strb	r2, [r3]
+ 142:SWD_PhysicalLayer.c **** }
+ 139              		.loc 1 142 0
+ 140 001e BD46     		mov	sp, r7
+ 141              		.cfi_def_cfa_register 13
+ 142              		@ sp needed
+ 143 0020 5DF8047B 		ldr	r7, [sp], #4
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccfFgWxb.s 			page 6
+
+
+ 144              		.cfi_restore 7
+ 145              		.cfi_def_cfa_offset 0
+ 146 0024 7047     		bx	lr
+ 147              	.L9:
+ 148 0026 00BF     		.align	2
+ 149              	.L8:
+ 150 0028 62500040 		.word	1073762402
+ 151              		.cfi_endproc
+ 152              	.LFE2:
+ 153              		.size	SetSwdioCmosOutput, .-SetSwdioCmosOutput
+ 154              		.section	.text.SetSwdioHizInput,"ax",%progbits
+ 155              		.align	2
+ 156              		.global	SetSwdioHizInput
+ 157              		.thumb
+ 158              		.thumb_func
+ 159              		.type	SetSwdioHizInput, %function
+ 160              	SetSwdioHizInput:
+ 161              	.LFB3:
+ 143:SWD_PhysicalLayer.c **** 
+ 144:SWD_PhysicalLayer.c **** /******************************************************************************
+ 145:SWD_PhysicalLayer.c **** * Function Name: SetSwdioHizInput
+ 146:SWD_PhysicalLayer.c **** *******************************************************************************
+ 147:SWD_PhysicalLayer.c **** *
+ 148:SWD_PhysicalLayer.c **** * Summary:
+ 149:SWD_PhysicalLayer.c **** *  Sets the SWDIO pin drive mode as High impedance digital input.
+ 150:SWD_PhysicalLayer.c **** *
+ 151:SWD_PhysicalLayer.c **** * Parameters:
+ 152:SWD_PhysicalLayer.c **** *  None.
+ 153:SWD_PhysicalLayer.c **** *
+ 154:SWD_PhysicalLayer.c **** * Return:
+ 155:SWD_PhysicalLayer.c **** *  None.
+ 156:SWD_PhysicalLayer.c **** *
+ 157:SWD_PhysicalLayer.c **** * Note:
+ 158:SWD_PhysicalLayer.c **** *  The function definition is the same as the macro definition 
+ 159:SWD_PhysicalLayer.c **** *  SWDIO_DRIVEMODE_HIGHZIN in SWD_PhysicalLayer.h.
+ 160:SWD_PhysicalLayer.c **** *
+ 161:SWD_PhysicalLayer.c **** ******************************************************************************/
+ 162:SWD_PhysicalLayer.c **** void SetSwdioHizInput()
+ 163:SWD_PhysicalLayer.c **** {
+ 162              		.loc 1 163 0
+ 163              		.cfi_startproc
+ 164              		@ args = 0, pretend = 0, frame = 0
+ 165              		@ frame_needed = 1, uses_anonymous_args = 0
+ 166              		@ link register save eliminated.
+ 167 0000 80B4     		push	{r7}
+ 168              		.cfi_def_cfa_offset 4
+ 169              		.cfi_offset 7, -4
+ 170 0002 00AF     		add	r7, sp, #0
+ 171              		.cfi_def_cfa_register 7
+ 164:SWD_PhysicalLayer.c ****     SWDIO_PIN_DM_REG = (SWDIO_PIN_DM_REG & HIGHZIN_DM_ANDMASK) | HIGHZIN_DM_ORMASK;        
+ 172              		.loc 1 164 0
+ 173 0004 084B     		ldr	r3, .L11
+ 174 0006 084A     		ldr	r2, .L11
+ 175 0008 1278     		ldrb	r2, [r2]
+ 176 000a D2B2     		uxtb	r2, r2
+ 177 000c D2B2     		uxtb	r2, r2
+ 178 000e 22F00E02 		bic	r2, r2, #14
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccfFgWxb.s 			page 7
+
+
+ 179 0012 D2B2     		uxtb	r2, r2
+ 180 0014 42F00202 		orr	r2, r2, #2
+ 181 0018 D2B2     		uxtb	r2, r2
+ 182 001a D2B2     		uxtb	r2, r2
+ 183 001c 1A70     		strb	r2, [r3]
+ 165:SWD_PhysicalLayer.c **** }
+ 184              		.loc 1 165 0
+ 185 001e BD46     		mov	sp, r7
+ 186              		.cfi_def_cfa_register 13
+ 187              		@ sp needed
+ 188 0020 5DF8047B 		ldr	r7, [sp], #4
+ 189              		.cfi_restore 7
+ 190              		.cfi_def_cfa_offset 0
+ 191 0024 7047     		bx	lr
+ 192              	.L12:
+ 193 0026 00BF     		.align	2
+ 194              	.L11:
+ 195 0028 62500040 		.word	1073762402
+ 196              		.cfi_endproc
+ 197              	.LFE3:
+ 198              		.size	SetSwdioHizInput, .-SetSwdioHizInput
+ 199              		.section	.text.SetXresCmosOutput,"ax",%progbits
+ 200              		.align	2
+ 201              		.global	SetXresCmosOutput
+ 202              		.thumb
+ 203              		.thumb_func
+ 204              		.type	SetXresCmosOutput, %function
+ 205              	SetXresCmosOutput:
+ 206              	.LFB4:
+ 166:SWD_PhysicalLayer.c **** 
+ 167:SWD_PhysicalLayer.c **** /******************************************************************************
+ 168:SWD_PhysicalLayer.c **** * Function Name: SetXresCmosOutput
+ 169:SWD_PhysicalLayer.c **** *******************************************************************************
+ 170:SWD_PhysicalLayer.c **** *
+ 171:SWD_PhysicalLayer.c **** * Summary:
+ 172:SWD_PhysicalLayer.c **** *  Sets the XRES pin drive mode as CMOS drive mode.
+ 173:SWD_PhysicalLayer.c **** *
+ 174:SWD_PhysicalLayer.c **** * Parameters:
+ 175:SWD_PhysicalLayer.c **** *  None.
+ 176:SWD_PhysicalLayer.c **** *
+ 177:SWD_PhysicalLayer.c **** * Return:
+ 178:SWD_PhysicalLayer.c **** *  None.
+ 179:SWD_PhysicalLayer.c **** *
+ 180:SWD_PhysicalLayer.c **** * Note:
+ 181:SWD_PhysicalLayer.c **** *  The function definition is the same as the macro definition 
+ 182:SWD_PhysicalLayer.c **** *  XRES_DRIVEMODE_CMOSOUT in SWD_PhysicalLayer.h.
+ 183:SWD_PhysicalLayer.c **** *
+ 184:SWD_PhysicalLayer.c **** ******************************************************************************/
+ 185:SWD_PhysicalLayer.c **** void SetXresCmosOutput()
+ 186:SWD_PhysicalLayer.c **** {
+ 207              		.loc 1 186 0
+ 208              		.cfi_startproc
+ 209              		@ args = 0, pretend = 0, frame = 0
+ 210              		@ frame_needed = 1, uses_anonymous_args = 0
+ 211              		@ link register save eliminated.
+ 212 0000 80B4     		push	{r7}
+ 213              		.cfi_def_cfa_offset 4
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccfFgWxb.s 			page 8
+
+
+ 214              		.cfi_offset 7, -4
+ 215 0002 00AF     		add	r7, sp, #0
+ 216              		.cfi_def_cfa_register 7
+ 187:SWD_PhysicalLayer.c ****     XRES_PIN_DM_REG = (XRES_PIN_DM_REG & CMOSOUT_DM_ANDMASK) | CMOSOUT_DM_ORMASK;
+ 217              		.loc 1 187 0
+ 218 0004 084B     		ldr	r3, .L14
+ 219 0006 084A     		ldr	r2, .L14
+ 220 0008 1278     		ldrb	r2, [r2]
+ 221 000a D2B2     		uxtb	r2, r2
+ 222 000c D2B2     		uxtb	r2, r2
+ 223 000e 22F00E02 		bic	r2, r2, #14
+ 224 0012 D2B2     		uxtb	r2, r2
+ 225 0014 42F00C02 		orr	r2, r2, #12
+ 226 0018 D2B2     		uxtb	r2, r2
+ 227 001a D2B2     		uxtb	r2, r2
+ 228 001c 1A70     		strb	r2, [r3]
+ 188:SWD_PhysicalLayer.c **** }
+ 229              		.loc 1 188 0
+ 230 001e BD46     		mov	sp, r7
+ 231              		.cfi_def_cfa_register 13
+ 232              		@ sp needed
+ 233 0020 5DF8047B 		ldr	r7, [sp], #4
+ 234              		.cfi_restore 7
+ 235              		.cfi_def_cfa_offset 0
+ 236 0024 7047     		bx	lr
+ 237              	.L15:
+ 238 0026 00BF     		.align	2
+ 239              	.L14:
+ 240 0028 1D500040 		.word	1073762333
+ 241              		.cfi_endproc
+ 242              	.LFE4:
+ 243              		.size	SetXresCmosOutput, .-SetXresCmosOutput
+ 244              		.section	.text.SetXresHizInput,"ax",%progbits
+ 245              		.align	2
+ 246              		.global	SetXresHizInput
+ 247              		.thumb
+ 248              		.thumb_func
+ 249              		.type	SetXresHizInput, %function
+ 250              	SetXresHizInput:
+ 251              	.LFB5:
+ 189:SWD_PhysicalLayer.c **** 
+ 190:SWD_PhysicalLayer.c **** /******************************************************************************
+ 191:SWD_PhysicalLayer.c **** * Function Name: SetXresHizInput
+ 192:SWD_PhysicalLayer.c **** *******************************************************************************
+ 193:SWD_PhysicalLayer.c **** *
+ 194:SWD_PhysicalLayer.c **** * Summary:
+ 195:SWD_PhysicalLayer.c **** *  Sets the XRES pin drive mode as High impedance digital input.
+ 196:SWD_PhysicalLayer.c **** *
+ 197:SWD_PhysicalLayer.c **** * Parameters:
+ 198:SWD_PhysicalLayer.c **** *  None.
+ 199:SWD_PhysicalLayer.c **** *
+ 200:SWD_PhysicalLayer.c **** * Return:
+ 201:SWD_PhysicalLayer.c **** *  None.
+ 202:SWD_PhysicalLayer.c **** *
+ 203:SWD_PhysicalLayer.c **** * Note:
+ 204:SWD_PhysicalLayer.c **** *  The function definition is the same as the macro definition 
+ 205:SWD_PhysicalLayer.c **** *  XRES_DRIVEMODE_HIGHZIN in SWD_PhysicalLayer.h.
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccfFgWxb.s 			page 9
+
+
+ 206:SWD_PhysicalLayer.c **** *
+ 207:SWD_PhysicalLayer.c **** ******************************************************************************/
+ 208:SWD_PhysicalLayer.c **** void SetXresHizInput()
+ 209:SWD_PhysicalLayer.c **** {
+ 252              		.loc 1 209 0
+ 253              		.cfi_startproc
+ 254              		@ args = 0, pretend = 0, frame = 0
+ 255              		@ frame_needed = 1, uses_anonymous_args = 0
+ 256              		@ link register save eliminated.
+ 257 0000 80B4     		push	{r7}
+ 258              		.cfi_def_cfa_offset 4
+ 259              		.cfi_offset 7, -4
+ 260 0002 00AF     		add	r7, sp, #0
+ 261              		.cfi_def_cfa_register 7
+ 210:SWD_PhysicalLayer.c ****     XRES_PIN_DM_REG = (XRES_PIN_DM_REG & HIGHZIN_DM_ANDMASK) | HIGHZIN_DM_ORMASK;
+ 262              		.loc 1 210 0
+ 263 0004 084B     		ldr	r3, .L17
+ 264 0006 084A     		ldr	r2, .L17
+ 265 0008 1278     		ldrb	r2, [r2]
+ 266 000a D2B2     		uxtb	r2, r2
+ 267 000c D2B2     		uxtb	r2, r2
+ 268 000e 22F00E02 		bic	r2, r2, #14
+ 269 0012 D2B2     		uxtb	r2, r2
+ 270 0014 42F00202 		orr	r2, r2, #2
+ 271 0018 D2B2     		uxtb	r2, r2
+ 272 001a D2B2     		uxtb	r2, r2
+ 273 001c 1A70     		strb	r2, [r3]
+ 211:SWD_PhysicalLayer.c **** }
+ 274              		.loc 1 211 0
+ 275 001e BD46     		mov	sp, r7
+ 276              		.cfi_def_cfa_register 13
+ 277              		@ sp needed
+ 278 0020 5DF8047B 		ldr	r7, [sp], #4
+ 279              		.cfi_restore 7
+ 280              		.cfi_def_cfa_offset 0
+ 281 0024 7047     		bx	lr
+ 282              	.L18:
+ 283 0026 00BF     		.align	2
+ 284              	.L17:
+ 285 0028 1D500040 		.word	1073762333
+ 286              		.cfi_endproc
+ 287              	.LFE5:
+ 288              		.size	SetXresHizInput, .-SetXresHizInput
+ 289              		.section	.text.SetSwdckHigh,"ax",%progbits
+ 290              		.align	2
+ 291              		.global	SetSwdckHigh
+ 292              		.thumb
+ 293              		.thumb_func
+ 294              		.type	SetSwdckHigh, %function
+ 295              	SetSwdckHigh:
+ 296              	.LFB6:
+ 212:SWD_PhysicalLayer.c **** 
+ 213:SWD_PhysicalLayer.c **** /******************************************************************************
+ 214:SWD_PhysicalLayer.c **** * Function Name: SetSwdckHigh
+ 215:SWD_PhysicalLayer.c **** *******************************************************************************
+ 216:SWD_PhysicalLayer.c **** *
+ 217:SWD_PhysicalLayer.c **** * Summary:
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccfFgWxb.s 			page 10
+
+
+ 218:SWD_PhysicalLayer.c **** *  Sets the SWDCK pin high
+ 219:SWD_PhysicalLayer.c **** *
+ 220:SWD_PhysicalLayer.c **** * Parameters:
+ 221:SWD_PhysicalLayer.c **** *  None.
+ 222:SWD_PhysicalLayer.c **** *
+ 223:SWD_PhysicalLayer.c **** * Return:
+ 224:SWD_PhysicalLayer.c **** *  None.
+ 225:SWD_PhysicalLayer.c **** *
+ 226:SWD_PhysicalLayer.c **** * Note:
+ 227:SWD_PhysicalLayer.c **** *  The function definition is the same as the macro definition 
+ 228:SWD_PhysicalLayer.c **** *  SWDCK_OUTPUT_HIGH in SWD_PhysicalLayer.h.
+ 229:SWD_PhysicalLayer.c **** *
+ 230:SWD_PhysicalLayer.c **** ******************************************************************************/
+ 231:SWD_PhysicalLayer.c **** void SetSwdckHigh()
+ 232:SWD_PhysicalLayer.c **** {
+ 297              		.loc 1 232 0
+ 298              		.cfi_startproc
+ 299              		@ args = 0, pretend = 0, frame = 0
+ 300              		@ frame_needed = 1, uses_anonymous_args = 0
+ 301              		@ link register save eliminated.
+ 302 0000 80B4     		push	{r7}
+ 303              		.cfi_def_cfa_offset 4
+ 304              		.cfi_offset 7, -4
+ 305 0002 00AF     		add	r7, sp, #0
+ 306              		.cfi_def_cfa_register 7
+ 233:SWD_PhysicalLayer.c ****     SWDCK_PRT_OUT_REG = SWDCK_PRT_OUT_REG | SWDCK_PIN_MASK;    
+ 307              		.loc 1 233 0
+ 308 0004 054A     		ldr	r2, .L20
+ 309 0006 054B     		ldr	r3, .L20
+ 310 0008 1B78     		ldrb	r3, [r3]
+ 311 000a DBB2     		uxtb	r3, r3
+ 312 000c 43F00803 		orr	r3, r3, #8
+ 313 0010 DBB2     		uxtb	r3, r3
+ 314 0012 1370     		strb	r3, [r2]
+ 234:SWD_PhysicalLayer.c **** }
+ 315              		.loc 1 234 0
+ 316 0014 BD46     		mov	sp, r7
+ 317              		.cfi_def_cfa_register 13
+ 318              		@ sp needed
+ 319 0016 5DF8047B 		ldr	r7, [sp], #4
+ 320              		.cfi_restore 7
+ 321              		.cfi_def_cfa_offset 0
+ 322 001a 7047     		bx	lr
+ 323              	.L21:
+ 324              		.align	2
+ 325              	.L20:
+ 326 001c C0510040 		.word	1073762752
+ 327              		.cfi_endproc
+ 328              	.LFE6:
+ 329              		.size	SetSwdckHigh, .-SetSwdckHigh
+ 330              		.section	.text.SetSwdckLow,"ax",%progbits
+ 331              		.align	2
+ 332              		.global	SetSwdckLow
+ 333              		.thumb
+ 334              		.thumb_func
+ 335              		.type	SetSwdckLow, %function
+ 336              	SetSwdckLow:
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccfFgWxb.s 			page 11
+
+
+ 337              	.LFB7:
+ 235:SWD_PhysicalLayer.c **** 
+ 236:SWD_PhysicalLayer.c **** /******************************************************************************
+ 237:SWD_PhysicalLayer.c **** * Function Name: SetSwdckLow
+ 238:SWD_PhysicalLayer.c **** *******************************************************************************
+ 239:SWD_PhysicalLayer.c **** *
+ 240:SWD_PhysicalLayer.c **** * Summary:
+ 241:SWD_PhysicalLayer.c **** *  Sets the SWDCK pin low
+ 242:SWD_PhysicalLayer.c **** *
+ 243:SWD_PhysicalLayer.c **** * Parameters:
+ 244:SWD_PhysicalLayer.c **** *  None.
+ 245:SWD_PhysicalLayer.c **** *
+ 246:SWD_PhysicalLayer.c **** * Return:
+ 247:SWD_PhysicalLayer.c **** *  None.
+ 248:SWD_PhysicalLayer.c **** *
+ 249:SWD_PhysicalLayer.c **** * Note:
+ 250:SWD_PhysicalLayer.c **** *  The function definition is the same as the macro definition 
+ 251:SWD_PhysicalLayer.c **** *  SWDCK_OUTPUT_LOW in SWD_PhysicalLayer.h.
+ 252:SWD_PhysicalLayer.c **** *
+ 253:SWD_PhysicalLayer.c **** ******************************************************************************/
+ 254:SWD_PhysicalLayer.c **** void SetSwdckLow()
+ 255:SWD_PhysicalLayer.c **** {
+ 338              		.loc 1 255 0
+ 339              		.cfi_startproc
+ 340              		@ args = 0, pretend = 0, frame = 0
+ 341              		@ frame_needed = 1, uses_anonymous_args = 0
+ 342              		@ link register save eliminated.
+ 343 0000 80B4     		push	{r7}
+ 344              		.cfi_def_cfa_offset 4
+ 345              		.cfi_offset 7, -4
+ 346 0002 00AF     		add	r7, sp, #0
+ 347              		.cfi_def_cfa_register 7
+ 256:SWD_PhysicalLayer.c ****     SWDCK_PRT_OUT_REG = SWDCK_PRT_OUT_REG & (~SWDCK_PIN_MASK);
+ 348              		.loc 1 256 0
+ 349 0004 054A     		ldr	r2, .L23
+ 350 0006 054B     		ldr	r3, .L23
+ 351 0008 1B78     		ldrb	r3, [r3]
+ 352 000a DBB2     		uxtb	r3, r3
+ 353 000c 23F00803 		bic	r3, r3, #8
+ 354 0010 DBB2     		uxtb	r3, r3
+ 355 0012 1370     		strb	r3, [r2]
+ 257:SWD_PhysicalLayer.c **** }
+ 356              		.loc 1 257 0
+ 357 0014 BD46     		mov	sp, r7
+ 358              		.cfi_def_cfa_register 13
+ 359              		@ sp needed
+ 360 0016 5DF8047B 		ldr	r7, [sp], #4
+ 361              		.cfi_restore 7
+ 362              		.cfi_def_cfa_offset 0
+ 363 001a 7047     		bx	lr
+ 364              	.L24:
+ 365              		.align	2
+ 366              	.L23:
+ 367 001c C0510040 		.word	1073762752
+ 368              		.cfi_endproc
+ 369              	.LFE7:
+ 370              		.size	SetSwdckLow, .-SetSwdckLow
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccfFgWxb.s 			page 12
+
+
+ 371              		.section	.text.SetSwdioHigh,"ax",%progbits
+ 372              		.align	2
+ 373              		.global	SetSwdioHigh
+ 374              		.thumb
+ 375              		.thumb_func
+ 376              		.type	SetSwdioHigh, %function
+ 377              	SetSwdioHigh:
+ 378              	.LFB8:
+ 258:SWD_PhysicalLayer.c **** 
+ 259:SWD_PhysicalLayer.c **** /******************************************************************************
+ 260:SWD_PhysicalLayer.c **** * Function Name: SetSwdioHigh
+ 261:SWD_PhysicalLayer.c **** *******************************************************************************
+ 262:SWD_PhysicalLayer.c **** *
+ 263:SWD_PhysicalLayer.c **** * Summary:
+ 264:SWD_PhysicalLayer.c **** *  Sets the SWDIO pin high
+ 265:SWD_PhysicalLayer.c **** *
+ 266:SWD_PhysicalLayer.c **** * Parameters:
+ 267:SWD_PhysicalLayer.c **** *  None.
+ 268:SWD_PhysicalLayer.c **** *
+ 269:SWD_PhysicalLayer.c **** * Return:
+ 270:SWD_PhysicalLayer.c **** *  None.
+ 271:SWD_PhysicalLayer.c **** *
+ 272:SWD_PhysicalLayer.c **** * Note:
+ 273:SWD_PhysicalLayer.c **** *  The function definition is the same as the macro definition 
+ 274:SWD_PhysicalLayer.c **** *  SWDIO_OUTPUT_HIGH in SWD_PhysicalLayer.h.
+ 275:SWD_PhysicalLayer.c **** *
+ 276:SWD_PhysicalLayer.c **** ******************************************************************************/
+ 277:SWD_PhysicalLayer.c **** void SetSwdioHigh()
+ 278:SWD_PhysicalLayer.c **** {
+ 379              		.loc 1 278 0
+ 380              		.cfi_startproc
+ 381              		@ args = 0, pretend = 0, frame = 0
+ 382              		@ frame_needed = 1, uses_anonymous_args = 0
+ 383              		@ link register save eliminated.
+ 384 0000 80B4     		push	{r7}
+ 385              		.cfi_def_cfa_offset 4
+ 386              		.cfi_offset 7, -4
+ 387 0002 00AF     		add	r7, sp, #0
+ 388              		.cfi_def_cfa_register 7
+ 279:SWD_PhysicalLayer.c ****     SWDIO_PRT_OUT_REG = SWDIO_PRT_OUT_REG | SWDIO_PIN_MASK;
+ 389              		.loc 1 279 0
+ 390 0004 054A     		ldr	r2, .L26
+ 391 0006 054B     		ldr	r3, .L26
+ 392 0008 1B78     		ldrb	r3, [r3]
+ 393 000a DBB2     		uxtb	r3, r3
+ 394 000c 43F00403 		orr	r3, r3, #4
+ 395 0010 DBB2     		uxtb	r3, r3
+ 396 0012 1370     		strb	r3, [r2]
+ 280:SWD_PhysicalLayer.c **** }
+ 397              		.loc 1 280 0
+ 398 0014 BD46     		mov	sp, r7
+ 399              		.cfi_def_cfa_register 13
+ 400              		@ sp needed
+ 401 0016 5DF8047B 		ldr	r7, [sp], #4
+ 402              		.cfi_restore 7
+ 403              		.cfi_def_cfa_offset 0
+ 404 001a 7047     		bx	lr
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccfFgWxb.s 			page 13
+
+
+ 405              	.L27:
+ 406              		.align	2
+ 407              	.L26:
+ 408 001c C0510040 		.word	1073762752
+ 409              		.cfi_endproc
+ 410              	.LFE8:
+ 411              		.size	SetSwdioHigh, .-SetSwdioHigh
+ 412              		.section	.text.SetSwdioLow,"ax",%progbits
+ 413              		.align	2
+ 414              		.global	SetSwdioLow
+ 415              		.thumb
+ 416              		.thumb_func
+ 417              		.type	SetSwdioLow, %function
+ 418              	SetSwdioLow:
+ 419              	.LFB9:
+ 281:SWD_PhysicalLayer.c **** 
+ 282:SWD_PhysicalLayer.c **** /******************************************************************************
+ 283:SWD_PhysicalLayer.c **** * Function Name: SetSwdioLow
+ 284:SWD_PhysicalLayer.c **** *******************************************************************************
+ 285:SWD_PhysicalLayer.c **** *
+ 286:SWD_PhysicalLayer.c **** * Summary:
+ 287:SWD_PhysicalLayer.c **** *  Sets the SWDIO pin low
+ 288:SWD_PhysicalLayer.c **** *
+ 289:SWD_PhysicalLayer.c **** * Parameters:
+ 290:SWD_PhysicalLayer.c **** *  None.
+ 291:SWD_PhysicalLayer.c **** *
+ 292:SWD_PhysicalLayer.c **** * Return:
+ 293:SWD_PhysicalLayer.c **** *  None.
+ 294:SWD_PhysicalLayer.c **** *
+ 295:SWD_PhysicalLayer.c **** * Note:
+ 296:SWD_PhysicalLayer.c **** *  The function definition is the same as the macro definition SWDIO_OUTPUT_LOW
+ 297:SWD_PhysicalLayer.c **** *  in SWD_PhysicalLayer.h.
+ 298:SWD_PhysicalLayer.c **** *
+ 299:SWD_PhysicalLayer.c **** ******************************************************************************/
+ 300:SWD_PhysicalLayer.c **** void SetSwdioLow()
+ 301:SWD_PhysicalLayer.c **** {
+ 420              		.loc 1 301 0
+ 421              		.cfi_startproc
+ 422              		@ args = 0, pretend = 0, frame = 0
+ 423              		@ frame_needed = 1, uses_anonymous_args = 0
+ 424              		@ link register save eliminated.
+ 425 0000 80B4     		push	{r7}
+ 426              		.cfi_def_cfa_offset 4
+ 427              		.cfi_offset 7, -4
+ 428 0002 00AF     		add	r7, sp, #0
+ 429              		.cfi_def_cfa_register 7
+ 302:SWD_PhysicalLayer.c ****     SWDIO_PRT_OUT_REG = SWDIO_PRT_OUT_REG & (~SWDIO_PIN_MASK);
+ 430              		.loc 1 302 0
+ 431 0004 054A     		ldr	r2, .L29
+ 432 0006 054B     		ldr	r3, .L29
+ 433 0008 1B78     		ldrb	r3, [r3]
+ 434 000a DBB2     		uxtb	r3, r3
+ 435 000c 23F00403 		bic	r3, r3, #4
+ 436 0010 DBB2     		uxtb	r3, r3
+ 437 0012 1370     		strb	r3, [r2]
+ 303:SWD_PhysicalLayer.c **** }
+ 438              		.loc 1 303 0
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccfFgWxb.s 			page 14
+
+
+ 439 0014 BD46     		mov	sp, r7
+ 440              		.cfi_def_cfa_register 13
+ 441              		@ sp needed
+ 442 0016 5DF8047B 		ldr	r7, [sp], #4
+ 443              		.cfi_restore 7
+ 444              		.cfi_def_cfa_offset 0
+ 445 001a 7047     		bx	lr
+ 446              	.L30:
+ 447              		.align	2
+ 448              	.L29:
+ 449 001c C0510040 		.word	1073762752
+ 450              		.cfi_endproc
+ 451              	.LFE9:
+ 452              		.size	SetSwdioLow, .-SetSwdioLow
+ 453              		.section	.text.SetXresHigh,"ax",%progbits
+ 454              		.align	2
+ 455              		.global	SetXresHigh
+ 456              		.thumb
+ 457              		.thumb_func
+ 458              		.type	SetXresHigh, %function
+ 459              	SetXresHigh:
+ 460              	.LFB10:
+ 304:SWD_PhysicalLayer.c **** 
+ 305:SWD_PhysicalLayer.c **** /******************************************************************************
+ 306:SWD_PhysicalLayer.c **** * Function Name: SetXresHigh
+ 307:SWD_PhysicalLayer.c **** *******************************************************************************
+ 308:SWD_PhysicalLayer.c **** *
+ 309:SWD_PhysicalLayer.c **** * Summary:
+ 310:SWD_PhysicalLayer.c **** *  Sets the XRES pin high
+ 311:SWD_PhysicalLayer.c **** *
+ 312:SWD_PhysicalLayer.c **** * Parameters:
+ 313:SWD_PhysicalLayer.c **** *  None.
+ 314:SWD_PhysicalLayer.c **** *
+ 315:SWD_PhysicalLayer.c **** * Return:
+ 316:SWD_PhysicalLayer.c **** *  None.
+ 317:SWD_PhysicalLayer.c **** *
+ 318:SWD_PhysicalLayer.c **** * Note:
+ 319:SWD_PhysicalLayer.c **** *  The function definition is the same as the macro definition XRES_OUTPUT_HIGH
+ 320:SWD_PhysicalLayer.c **** *  in SWD_PhysicalLayer.h.
+ 321:SWD_PhysicalLayer.c **** *
+ 322:SWD_PhysicalLayer.c **** ******************************************************************************/
+ 323:SWD_PhysicalLayer.c **** void SetXresHigh()
+ 324:SWD_PhysicalLayer.c **** {
+ 461              		.loc 1 324 0
+ 462              		.cfi_startproc
+ 463              		@ args = 0, pretend = 0, frame = 0
+ 464              		@ frame_needed = 1, uses_anonymous_args = 0
+ 465              		@ link register save eliminated.
+ 466 0000 80B4     		push	{r7}
+ 467              		.cfi_def_cfa_offset 4
+ 468              		.cfi_offset 7, -4
+ 469 0002 00AF     		add	r7, sp, #0
+ 470              		.cfi_def_cfa_register 7
+ 325:SWD_PhysicalLayer.c ****     XRES_PRT_OUT_REG = XRES_PRT_OUT_REG | XRES_PIN_MASK;
+ 471              		.loc 1 325 0
+ 472 0004 054A     		ldr	r2, .L32
+ 473 0006 054B     		ldr	r3, .L32
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccfFgWxb.s 			page 15
+
+
+ 474 0008 1B78     		ldrb	r3, [r3]
+ 475 000a DBB2     		uxtb	r3, r3
+ 476 000c 43F02003 		orr	r3, r3, #32
+ 477 0010 DBB2     		uxtb	r3, r3
+ 478 0012 1370     		strb	r3, [r2]
+ 326:SWD_PhysicalLayer.c **** }
+ 479              		.loc 1 326 0
+ 480 0014 BD46     		mov	sp, r7
+ 481              		.cfi_def_cfa_register 13
+ 482              		@ sp needed
+ 483 0016 5DF8047B 		ldr	r7, [sp], #4
+ 484              		.cfi_restore 7
+ 485              		.cfi_def_cfa_offset 0
+ 486 001a 7047     		bx	lr
+ 487              	.L33:
+ 488              		.align	2
+ 489              	.L32:
+ 490 001c 30510040 		.word	1073762608
+ 491              		.cfi_endproc
+ 492              	.LFE10:
+ 493              		.size	SetXresHigh, .-SetXresHigh
+ 494              		.section	.text.SetXresLow,"ax",%progbits
+ 495              		.align	2
+ 496              		.global	SetXresLow
+ 497              		.thumb
+ 498              		.thumb_func
+ 499              		.type	SetXresLow, %function
+ 500              	SetXresLow:
+ 501              	.LFB11:
+ 327:SWD_PhysicalLayer.c **** 
+ 328:SWD_PhysicalLayer.c **** /******************************************************************************
+ 329:SWD_PhysicalLayer.c **** * Function Name: SetXresLow
+ 330:SWD_PhysicalLayer.c **** *******************************************************************************
+ 331:SWD_PhysicalLayer.c **** *
+ 332:SWD_PhysicalLayer.c **** * Summary:
+ 333:SWD_PhysicalLayer.c **** *  Sets the XRES pin low
+ 334:SWD_PhysicalLayer.c **** *
+ 335:SWD_PhysicalLayer.c **** * Parameters:
+ 336:SWD_PhysicalLayer.c **** *  None.
+ 337:SWD_PhysicalLayer.c **** *
+ 338:SWD_PhysicalLayer.c **** * Return:
+ 339:SWD_PhysicalLayer.c **** *  None.
+ 340:SWD_PhysicalLayer.c **** *
+ 341:SWD_PhysicalLayer.c **** * Note:
+ 342:SWD_PhysicalLayer.c **** *  The function definition is the same as the macro definition XRES_OUTPUT_LOW 
+ 343:SWD_PhysicalLayer.c **** *  in SWD_PhysicalLayer.h.
+ 344:SWD_PhysicalLayer.c **** *
+ 345:SWD_PhysicalLayer.c **** ******************************************************************************/
+ 346:SWD_PhysicalLayer.c **** void SetXresLow()
+ 347:SWD_PhysicalLayer.c **** {
+ 502              		.loc 1 347 0
+ 503              		.cfi_startproc
+ 504              		@ args = 0, pretend = 0, frame = 0
+ 505              		@ frame_needed = 1, uses_anonymous_args = 0
+ 506              		@ link register save eliminated.
+ 507 0000 80B4     		push	{r7}
+ 508              		.cfi_def_cfa_offset 4
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccfFgWxb.s 			page 16
+
+
+ 509              		.cfi_offset 7, -4
+ 510 0002 00AF     		add	r7, sp, #0
+ 511              		.cfi_def_cfa_register 7
+ 348:SWD_PhysicalLayer.c ****     XRES_PRT_OUT_REG = XRES_PRT_OUT_REG & (~XRES_PIN_MASK);
+ 512              		.loc 1 348 0
+ 513 0004 054A     		ldr	r2, .L35
+ 514 0006 054B     		ldr	r3, .L35
+ 515 0008 1B78     		ldrb	r3, [r3]
+ 516 000a DBB2     		uxtb	r3, r3
+ 517 000c 23F02003 		bic	r3, r3, #32
+ 518 0010 DBB2     		uxtb	r3, r3
+ 519 0012 1370     		strb	r3, [r2]
+ 349:SWD_PhysicalLayer.c **** }
+ 520              		.loc 1 349 0
+ 521 0014 BD46     		mov	sp, r7
+ 522              		.cfi_def_cfa_register 13
+ 523              		@ sp needed
+ 524 0016 5DF8047B 		ldr	r7, [sp], #4
+ 525              		.cfi_restore 7
+ 526              		.cfi_def_cfa_offset 0
+ 527 001a 7047     		bx	lr
+ 528              	.L36:
+ 529              		.align	2
+ 530              	.L35:
+ 531 001c 30510040 		.word	1073762608
+ 532              		.cfi_endproc
+ 533              	.LFE11:
+ 534              		.size	SetXresLow, .-SetXresLow
+ 535              		.section	.text.ReadSwdio,"ax",%progbits
+ 536              		.align	2
+ 537              		.global	ReadSwdio
+ 538              		.thumb
+ 539              		.thumb_func
+ 540              		.type	ReadSwdio, %function
+ 541              	ReadSwdio:
+ 542              	.LFB12:
+ 350:SWD_PhysicalLayer.c **** 
+ 351:SWD_PhysicalLayer.c **** /******************************************************************************
+ 352:SWD_PhysicalLayer.c **** * Function Name: ReadSwdio
+ 353:SWD_PhysicalLayer.c **** *******************************************************************************
+ 354:SWD_PhysicalLayer.c **** *
+ 355:SWD_PhysicalLayer.c **** * Summary:
+ 356:SWD_PhysicalLayer.c **** *  Returns the state of the SWDIO input pin
+ 357:SWD_PhysicalLayer.c **** *
+ 358:SWD_PhysicalLayer.c **** * Parameters:
+ 359:SWD_PhysicalLayer.c **** *  None.
+ 360:SWD_PhysicalLayer.c **** *
+ 361:SWD_PhysicalLayer.c **** * Return:
+ 362:SWD_PhysicalLayer.c **** *  unsigned char (only one of the two values as given below)
+ 363:SWD_PhysicalLayer.c **** *   0x00 - If the SWDIO pin state is low
+ 364:SWD_PhysicalLayer.c **** *   0x01 - If the SWDIO pin state is high
+ 365:SWD_PhysicalLayer.c **** *
+ 366:SWD_PhysicalLayer.c **** * Note:
+ 367:SWD_PhysicalLayer.c **** *  The function definition is the same as the macro definition SWDIO_INPUT_READ
+ 368:SWD_PhysicalLayer.c **** *  in SWD_PhysicalLayer.h.
+ 369:SWD_PhysicalLayer.c **** *
+ 370:SWD_PhysicalLayer.c **** ******************************************************************************/
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccfFgWxb.s 			page 17
+
+
+ 371:SWD_PhysicalLayer.c **** unsigned char ReadSwdio()
+ 372:SWD_PhysicalLayer.c **** {
+ 543              		.loc 1 372 0
+ 544              		.cfi_startproc
+ 545              		@ args = 0, pretend = 0, frame = 0
+ 546              		@ frame_needed = 1, uses_anonymous_args = 0
+ 547              		@ link register save eliminated.
+ 548 0000 80B4     		push	{r7}
+ 549              		.cfi_def_cfa_offset 4
+ 550              		.cfi_offset 7, -4
+ 551 0002 00AF     		add	r7, sp, #0
+ 552              		.cfi_def_cfa_register 7
+ 373:SWD_PhysicalLayer.c ****     return((SWDIO_PRT_IN_REG >> SWDIO_PIN_NUM) & 0x01);
+ 553              		.loc 1 373 0
+ 554 0004 064B     		ldr	r3, .L39
+ 555 0006 1B78     		ldrb	r3, [r3]
+ 556 0008 DBB2     		uxtb	r3, r3
+ 557 000a 9B08     		lsrs	r3, r3, #2
+ 558 000c DBB2     		uxtb	r3, r3
+ 559 000e 03F00103 		and	r3, r3, #1
+ 560 0012 DBB2     		uxtb	r3, r3
+ 374:SWD_PhysicalLayer.c **** }
+ 561              		.loc 1 374 0
+ 562 0014 1846     		mov	r0, r3
+ 563 0016 BD46     		mov	sp, r7
+ 564              		.cfi_def_cfa_register 13
+ 565              		@ sp needed
+ 566 0018 5DF8047B 		ldr	r7, [sp], #4
+ 567              		.cfi_restore 7
+ 568              		.cfi_def_cfa_offset 0
+ 569 001c 7047     		bx	lr
+ 570              	.L40:
+ 571 001e 00BF     		.align	2
+ 572              	.L39:
+ 573 0020 C1510040 		.word	1073762753
+ 574              		.cfi_endproc
+ 575              	.LFE12:
+ 576              		.size	ReadSwdio, .-ReadSwdio
+ 577              		.text
+ 578              	.Letext0:
+ 579              		.section	.debug_info,"",%progbits
+ 580              	.Ldebug_info0:
+ 581 0000 0F010000 		.4byte	0x10f
+ 582 0004 0400     		.2byte	0x4
+ 583 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 584 000a 04       		.byte	0x4
+ 585 000b 01       		.uleb128 0x1
+ 586 000c CF000000 		.4byte	.LASF12
+ 587 0010 01       		.byte	0x1
+ 588 0011 44000000 		.4byte	.LASF13
+ 589 0015 58000000 		.4byte	.LASF14
+ 590 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 591 001d 00000000 		.4byte	0
+ 592 0021 00000000 		.4byte	.Ldebug_line0
+ 593 0025 02       		.uleb128 0x2
+ 594 0026 23000000 		.4byte	.LASF0
+ 595 002a 01       		.byte	0x1
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccfFgWxb.s 			page 18
+
+
+ 596 002b 5D       		.byte	0x5d
+ 597 002c 00000000 		.4byte	.LFB0
+ 598 0030 2C000000 		.4byte	.LFE0-.LFB0
+ 599 0034 01       		.uleb128 0x1
+ 600 0035 9C       		.byte	0x9c
+ 601 0036 02       		.uleb128 0x2
+ 602 0037 82010000 		.4byte	.LASF1
+ 603 003b 01       		.byte	0x1
+ 604 003c 74       		.byte	0x74
+ 605 003d 00000000 		.4byte	.LFB1
+ 606 0041 2C000000 		.4byte	.LFE1-.LFB1
+ 607 0045 01       		.uleb128 0x1
+ 608 0046 9C       		.byte	0x9c
+ 609 0047 02       		.uleb128 0x2
+ 610 0048 10000000 		.4byte	.LASF2
+ 611 004c 01       		.byte	0x1
+ 612 004d 8B       		.byte	0x8b
+ 613 004e 00000000 		.4byte	.LFB2
+ 614 0052 2C000000 		.4byte	.LFE2-.LFB2
+ 615 0056 01       		.uleb128 0x1
+ 616 0057 9C       		.byte	0x9c
+ 617 0058 02       		.uleb128 0x2
+ 618 0059 A2000000 		.4byte	.LASF3
+ 619 005d 01       		.byte	0x1
+ 620 005e A2       		.byte	0xa2
+ 621 005f 00000000 		.4byte	.LFB3
+ 622 0063 2C000000 		.4byte	.LFE3-.LFB3
+ 623 0067 01       		.uleb128 0x1
+ 624 0068 9C       		.byte	0x9c
+ 625 0069 02       		.uleb128 0x2
+ 626 006a BD000000 		.4byte	.LASF4
+ 627 006e 01       		.byte	0x1
+ 628 006f B9       		.byte	0xb9
+ 629 0070 00000000 		.4byte	.LFB4
+ 630 0074 2C000000 		.4byte	.LFE4-.LFB4
+ 631 0078 01       		.uleb128 0x1
+ 632 0079 9C       		.byte	0x9c
+ 633 007a 02       		.uleb128 0x2
+ 634 007b 00000000 		.4byte	.LASF5
+ 635 007f 01       		.byte	0x1
+ 636 0080 D0       		.byte	0xd0
+ 637 0081 00000000 		.4byte	.LFB5
+ 638 0085 2C000000 		.4byte	.LFE5-.LFB5
+ 639 0089 01       		.uleb128 0x1
+ 640 008a 9C       		.byte	0x9c
+ 641 008b 02       		.uleb128 0x2
+ 642 008c 93010000 		.4byte	.LASF6
+ 643 0090 01       		.byte	0x1
+ 644 0091 E7       		.byte	0xe7
+ 645 0092 00000000 		.4byte	.LFB6
+ 646 0096 20000000 		.4byte	.LFE6-.LFB6
+ 647 009a 01       		.uleb128 0x1
+ 648 009b 9C       		.byte	0x9c
+ 649 009c 02       		.uleb128 0x2
+ 650 009d AB010000 		.4byte	.LASF7
+ 651 00a1 01       		.byte	0x1
+ 652 00a2 FE       		.byte	0xfe
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccfFgWxb.s 			page 19
+
+
+ 653 00a3 00000000 		.4byte	.LFB7
+ 654 00a7 20000000 		.4byte	.LFE7-.LFB7
+ 655 00ab 01       		.uleb128 0x1
+ 656 00ac 9C       		.byte	0x9c
+ 657 00ad 03       		.uleb128 0x3
+ 658 00ae 5D010000 		.4byte	.LASF8
+ 659 00b2 01       		.byte	0x1
+ 660 00b3 1501     		.2byte	0x115
+ 661 00b5 00000000 		.4byte	.LFB8
+ 662 00b9 20000000 		.4byte	.LFE8-.LFB8
+ 663 00bd 01       		.uleb128 0x1
+ 664 00be 9C       		.byte	0x9c
+ 665 00bf 03       		.uleb128 0x3
+ 666 00c0 6A010000 		.4byte	.LASF9
+ 667 00c4 01       		.byte	0x1
+ 668 00c5 2C01     		.2byte	0x12c
+ 669 00c7 00000000 		.4byte	.LFB9
+ 670 00cb 20000000 		.4byte	.LFE9-.LFB9
+ 671 00cf 01       		.uleb128 0x1
+ 672 00d0 9C       		.byte	0x9c
+ 673 00d1 03       		.uleb128 0x3
+ 674 00d2 76010000 		.4byte	.LASF10
+ 675 00d6 01       		.byte	0x1
+ 676 00d7 4301     		.2byte	0x143
+ 677 00d9 00000000 		.4byte	.LFB10
+ 678 00dd 20000000 		.4byte	.LFE10-.LFB10
+ 679 00e1 01       		.uleb128 0x1
+ 680 00e2 9C       		.byte	0x9c
+ 681 00e3 03       		.uleb128 0x3
+ 682 00e4 A0010000 		.4byte	.LASF11
+ 683 00e8 01       		.byte	0x1
+ 684 00e9 5A01     		.2byte	0x15a
+ 685 00eb 00000000 		.4byte	.LFB11
+ 686 00ef 20000000 		.4byte	.LFE11-.LFB11
+ 687 00f3 01       		.uleb128 0x1
+ 688 00f4 9C       		.byte	0x9c
+ 689 00f5 04       		.uleb128 0x4
+ 690 00f6 B3000000 		.4byte	.LASF15
+ 691 00fa 01       		.byte	0x1
+ 692 00fb 7301     		.2byte	0x173
+ 693 00fd 0B010000 		.4byte	0x10b
+ 694 0101 00000000 		.4byte	.LFB12
+ 695 0105 24000000 		.4byte	.LFE12-.LFB12
+ 696 0109 01       		.uleb128 0x1
+ 697 010a 9C       		.byte	0x9c
+ 698 010b 05       		.uleb128 0x5
+ 699 010c 01       		.byte	0x1
+ 700 010d 08       		.byte	0x8
+ 701 010e 36000000 		.4byte	.LASF16
+ 702 0112 00       		.byte	0
+ 703              		.section	.debug_abbrev,"",%progbits
+ 704              	.Ldebug_abbrev0:
+ 705 0000 01       		.uleb128 0x1
+ 706 0001 11       		.uleb128 0x11
+ 707 0002 01       		.byte	0x1
+ 708 0003 25       		.uleb128 0x25
+ 709 0004 0E       		.uleb128 0xe
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccfFgWxb.s 			page 20
+
+
+ 710 0005 13       		.uleb128 0x13
+ 711 0006 0B       		.uleb128 0xb
+ 712 0007 03       		.uleb128 0x3
+ 713 0008 0E       		.uleb128 0xe
+ 714 0009 1B       		.uleb128 0x1b
+ 715 000a 0E       		.uleb128 0xe
+ 716 000b 55       		.uleb128 0x55
+ 717 000c 17       		.uleb128 0x17
+ 718 000d 11       		.uleb128 0x11
+ 719 000e 01       		.uleb128 0x1
+ 720 000f 10       		.uleb128 0x10
+ 721 0010 17       		.uleb128 0x17
+ 722 0011 00       		.byte	0
+ 723 0012 00       		.byte	0
+ 724 0013 02       		.uleb128 0x2
+ 725 0014 2E       		.uleb128 0x2e
+ 726 0015 00       		.byte	0
+ 727 0016 3F       		.uleb128 0x3f
+ 728 0017 19       		.uleb128 0x19
+ 729 0018 03       		.uleb128 0x3
+ 730 0019 0E       		.uleb128 0xe
+ 731 001a 3A       		.uleb128 0x3a
+ 732 001b 0B       		.uleb128 0xb
+ 733 001c 3B       		.uleb128 0x3b
+ 734 001d 0B       		.uleb128 0xb
+ 735 001e 27       		.uleb128 0x27
+ 736 001f 19       		.uleb128 0x19
+ 737 0020 11       		.uleb128 0x11
+ 738 0021 01       		.uleb128 0x1
+ 739 0022 12       		.uleb128 0x12
+ 740 0023 06       		.uleb128 0x6
+ 741 0024 40       		.uleb128 0x40
+ 742 0025 18       		.uleb128 0x18
+ 743 0026 9742     		.uleb128 0x2117
+ 744 0028 19       		.uleb128 0x19
+ 745 0029 00       		.byte	0
+ 746 002a 00       		.byte	0
+ 747 002b 03       		.uleb128 0x3
+ 748 002c 2E       		.uleb128 0x2e
+ 749 002d 00       		.byte	0
+ 750 002e 3F       		.uleb128 0x3f
+ 751 002f 19       		.uleb128 0x19
+ 752 0030 03       		.uleb128 0x3
+ 753 0031 0E       		.uleb128 0xe
+ 754 0032 3A       		.uleb128 0x3a
+ 755 0033 0B       		.uleb128 0xb
+ 756 0034 3B       		.uleb128 0x3b
+ 757 0035 05       		.uleb128 0x5
+ 758 0036 27       		.uleb128 0x27
+ 759 0037 19       		.uleb128 0x19
+ 760 0038 11       		.uleb128 0x11
+ 761 0039 01       		.uleb128 0x1
+ 762 003a 12       		.uleb128 0x12
+ 763 003b 06       		.uleb128 0x6
+ 764 003c 40       		.uleb128 0x40
+ 765 003d 18       		.uleb128 0x18
+ 766 003e 9742     		.uleb128 0x2117
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccfFgWxb.s 			page 21
+
+
+ 767 0040 19       		.uleb128 0x19
+ 768 0041 00       		.byte	0
+ 769 0042 00       		.byte	0
+ 770 0043 04       		.uleb128 0x4
+ 771 0044 2E       		.uleb128 0x2e
+ 772 0045 00       		.byte	0
+ 773 0046 3F       		.uleb128 0x3f
+ 774 0047 19       		.uleb128 0x19
+ 775 0048 03       		.uleb128 0x3
+ 776 0049 0E       		.uleb128 0xe
+ 777 004a 3A       		.uleb128 0x3a
+ 778 004b 0B       		.uleb128 0xb
+ 779 004c 3B       		.uleb128 0x3b
+ 780 004d 05       		.uleb128 0x5
+ 781 004e 27       		.uleb128 0x27
+ 782 004f 19       		.uleb128 0x19
+ 783 0050 49       		.uleb128 0x49
+ 784 0051 13       		.uleb128 0x13
+ 785 0052 11       		.uleb128 0x11
+ 786 0053 01       		.uleb128 0x1
+ 787 0054 12       		.uleb128 0x12
+ 788 0055 06       		.uleb128 0x6
+ 789 0056 40       		.uleb128 0x40
+ 790 0057 18       		.uleb128 0x18
+ 791 0058 9742     		.uleb128 0x2117
+ 792 005a 19       		.uleb128 0x19
+ 793 005b 00       		.byte	0
+ 794 005c 00       		.byte	0
+ 795 005d 05       		.uleb128 0x5
+ 796 005e 24       		.uleb128 0x24
+ 797 005f 00       		.byte	0
+ 798 0060 0B       		.uleb128 0xb
+ 799 0061 0B       		.uleb128 0xb
+ 800 0062 3E       		.uleb128 0x3e
+ 801 0063 0B       		.uleb128 0xb
+ 802 0064 03       		.uleb128 0x3
+ 803 0065 0E       		.uleb128 0xe
+ 804 0066 00       		.byte	0
+ 805 0067 00       		.byte	0
+ 806 0068 00       		.byte	0
+ 807              		.section	.debug_aranges,"",%progbits
+ 808 0000 7C000000 		.4byte	0x7c
+ 809 0004 0200     		.2byte	0x2
+ 810 0006 00000000 		.4byte	.Ldebug_info0
+ 811 000a 04       		.byte	0x4
+ 812 000b 00       		.byte	0
+ 813 000c 0000     		.2byte	0
+ 814 000e 0000     		.2byte	0
+ 815 0010 00000000 		.4byte	.LFB0
+ 816 0014 2C000000 		.4byte	.LFE0-.LFB0
+ 817 0018 00000000 		.4byte	.LFB1
+ 818 001c 2C000000 		.4byte	.LFE1-.LFB1
+ 819 0020 00000000 		.4byte	.LFB2
+ 820 0024 2C000000 		.4byte	.LFE2-.LFB2
+ 821 0028 00000000 		.4byte	.LFB3
+ 822 002c 2C000000 		.4byte	.LFE3-.LFB3
+ 823 0030 00000000 		.4byte	.LFB4
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccfFgWxb.s 			page 22
+
+
+ 824 0034 2C000000 		.4byte	.LFE4-.LFB4
+ 825 0038 00000000 		.4byte	.LFB5
+ 826 003c 2C000000 		.4byte	.LFE5-.LFB5
+ 827 0040 00000000 		.4byte	.LFB6
+ 828 0044 20000000 		.4byte	.LFE6-.LFB6
+ 829 0048 00000000 		.4byte	.LFB7
+ 830 004c 20000000 		.4byte	.LFE7-.LFB7
+ 831 0050 00000000 		.4byte	.LFB8
+ 832 0054 20000000 		.4byte	.LFE8-.LFB8
+ 833 0058 00000000 		.4byte	.LFB9
+ 834 005c 20000000 		.4byte	.LFE9-.LFB9
+ 835 0060 00000000 		.4byte	.LFB10
+ 836 0064 20000000 		.4byte	.LFE10-.LFB10
+ 837 0068 00000000 		.4byte	.LFB11
+ 838 006c 20000000 		.4byte	.LFE11-.LFB11
+ 839 0070 00000000 		.4byte	.LFB12
+ 840 0074 24000000 		.4byte	.LFE12-.LFB12
+ 841 0078 00000000 		.4byte	0
+ 842 007c 00000000 		.4byte	0
+ 843              		.section	.debug_ranges,"",%progbits
+ 844              	.Ldebug_ranges0:
+ 845 0000 00000000 		.4byte	.LFB0
+ 846 0004 2C000000 		.4byte	.LFE0
+ 847 0008 00000000 		.4byte	.LFB1
+ 848 000c 2C000000 		.4byte	.LFE1
+ 849 0010 00000000 		.4byte	.LFB2
+ 850 0014 2C000000 		.4byte	.LFE2
+ 851 0018 00000000 		.4byte	.LFB3
+ 852 001c 2C000000 		.4byte	.LFE3
+ 853 0020 00000000 		.4byte	.LFB4
+ 854 0024 2C000000 		.4byte	.LFE4
+ 855 0028 00000000 		.4byte	.LFB5
+ 856 002c 2C000000 		.4byte	.LFE5
+ 857 0030 00000000 		.4byte	.LFB6
+ 858 0034 20000000 		.4byte	.LFE6
+ 859 0038 00000000 		.4byte	.LFB7
+ 860 003c 20000000 		.4byte	.LFE7
+ 861 0040 00000000 		.4byte	.LFB8
+ 862 0044 20000000 		.4byte	.LFE8
+ 863 0048 00000000 		.4byte	.LFB9
+ 864 004c 20000000 		.4byte	.LFE9
+ 865 0050 00000000 		.4byte	.LFB10
+ 866 0054 20000000 		.4byte	.LFE10
+ 867 0058 00000000 		.4byte	.LFB11
+ 868 005c 20000000 		.4byte	.LFE11
+ 869 0060 00000000 		.4byte	.LFB12
+ 870 0064 24000000 		.4byte	.LFE12
+ 871 0068 00000000 		.4byte	0
+ 872 006c 00000000 		.4byte	0
+ 873              		.section	.debug_line,"",%progbits
+ 874              	.Ldebug_line0:
+ 875 0000 1A010000 		.section	.debug_str,"MS",%progbits,1
+ 875      02002A00 
+ 875      00000201 
+ 875      FB0E0D00 
+ 875      01010101 
+ 876              	.LASF5:
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccfFgWxb.s 			page 23
+
+
+ 877 0000 53657458 		.ascii	"SetXresHizInput\000"
+ 877      72657348 
+ 877      697A496E 
+ 877      70757400 
+ 878              	.LASF2:
+ 879 0010 53657453 		.ascii	"SetSwdioCmosOutput\000"
+ 879      7764696F 
+ 879      436D6F73 
+ 879      4F757470 
+ 879      757400
+ 880              	.LASF0:
+ 881 0023 53657453 		.ascii	"SetSwdckCmosOutput\000"
+ 881      7764636B 
+ 881      436D6F73 
+ 881      4F757470 
+ 881      757400
+ 882              	.LASF16:
+ 883 0036 756E7369 		.ascii	"unsigned char\000"
+ 883      676E6564 
+ 883      20636861 
+ 883      7200
+ 884              	.LASF13:
+ 885 0044 5357445F 		.ascii	"SWD_PhysicalLayer.c\000"
+ 885      50687973 
+ 885      6963616C 
+ 885      4C617965 
+ 885      722E6300 
+ 886              	.LASF14:
+ 887 0058 443A5C55 		.ascii	"D:\\Users\\WorkBench\\Documents\\GitHub\\BackboneHS"
+ 887      73657273 
+ 887      5C576F72 
+ 887      6B42656E 
+ 887      63685C44 
+ 888 0086 53505C41 		.ascii	"SP\\AN84858\\Programmer.cydsn\000"
+ 888      4E383438 
+ 888      35385C50 
+ 888      726F6772 
+ 888      616D6D65 
+ 889              	.LASF3:
+ 890 00a2 53657453 		.ascii	"SetSwdioHizInput\000"
+ 890      7764696F 
+ 890      48697A49 
+ 890      6E707574 
+ 890      00
+ 891              	.LASF15:
+ 892 00b3 52656164 		.ascii	"ReadSwdio\000"
+ 892      53776469 
+ 892      6F00
+ 893              	.LASF4:
+ 894 00bd 53657458 		.ascii	"SetXresCmosOutput\000"
+ 894      72657343 
+ 894      6D6F734F 
+ 894      75747075 
+ 894      7400
+ 895              	.LASF12:
+ 896 00cf 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 896      4320342E 
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccfFgWxb.s 			page 24
+
+
+ 896      392E3320 
+ 896      32303135 
+ 896      30333033 
+ 897 0102 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 897      20726576 
+ 897      6973696F 
+ 897      6E203232 
+ 897      31323230 
+ 898 0135 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 898      66756E63 
+ 898      74696F6E 
+ 898      2D736563 
+ 898      74696F6E 
+ 899              	.LASF8:
+ 900 015d 53657453 		.ascii	"SetSwdioHigh\000"
+ 900      7764696F 
+ 900      48696768 
+ 900      00
+ 901              	.LASF9:
+ 902 016a 53657453 		.ascii	"SetSwdioLow\000"
+ 902      7764696F 
+ 902      4C6F7700 
+ 903              	.LASF10:
+ 904 0176 53657458 		.ascii	"SetXresHigh\000"
+ 904      72657348 
+ 904      69676800 
+ 905              	.LASF1:
+ 906 0182 53657453 		.ascii	"SetSwdckHizInput\000"
+ 906      7764636B 
+ 906      48697A49 
+ 906      6E707574 
+ 906      00
+ 907              	.LASF6:
+ 908 0193 53657453 		.ascii	"SetSwdckHigh\000"
+ 908      7764636B 
+ 908      48696768 
+ 908      00
+ 909              	.LASF11:
+ 910 01a0 53657458 		.ascii	"SetXresLow\000"
+ 910      7265734C 
+ 910      6F7700
+ 911              	.LASF7:
+ 912 01ab 53657453 		.ascii	"SetSwdckLow\000"
+ 912      7764636B 
+ 912      4C6F7700 
+ 913              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

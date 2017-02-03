@@ -1,0 +1,1210 @@
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccC3bekF.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"main.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.comm	currentStep,1,1
+  19              		.comm	ezi2cBuffer,4,4
+  20              		.comm	i2cBufferRead,4,4
+  21              		.comm	i2cBufferWrite,5,4
+  22              		.global	actionSelect
+  23              		.bss
+  24              		.type	actionSelect, %object
+  25              		.size	actionSelect, 1
+  26              	actionSelect:
+  27 0000 00       		.space	1
+  28              		.section	.text.main,"ax",%progbits
+  29              		.align	2
+  30              		.global	main
+  31              		.thumb
+  32              		.thumb_func
+  33              		.type	main, %function
+  34              	main:
+  35              	.LFB63:
+  36              		.file 1 "main.c"
+   1:main.c        **** /******************************************************************************
+   2:main.c        **** 
+   3:main.c        **** 
+   4:main.c        **** *******************************************************************************
+   5:main.c        **** *  Project Name: A_Hssp_Programmer
+   6:main.c        **** *  Project Revision: 1.00
+   7:main.c        **** *  Software Version: PSoC Creator 3.3
+   8:main.c        **** *  Device Tested: CY8C5868AXI-LP035
+   9:main.c        **** *  Compilers Tested: ARM GCC 4.9-2015-q1-update
+  10:main.c        **** *  Related Hardware: CY8CKIT-050
+  11:main.c        **** ******************************************************************************/
+  12:main.c        **** 
+  13:main.c        **** /******************************************************************************
+  14:main.c        **** * Project Description:
+  15:main.c        **** * This is a sample HSSP implmentation demonstrating a PSoC 5LP programming
+  16:main.c        **** * PSoC 4. The project is tested using CY8CKIT-050 with PSoC 5LP chip and 
+  17:main.c        **** * CY8CKIT-001 with PSoC 4 processor module.
+  18:main.c        **** *
+  19:main.c        **** * Connections Required
+  20:main.c        **** * CY8CKIT-050 (PSoC 5LP DVK) :
+  21:main.c        **** *  Pin_SWDIO (P0[0])- This pin is connected to SWDIO (Debug pin) of PSoC 4 kit.
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccC3bekF.s 			page 2
+
+
+  22:main.c        **** *  Pin_SWDCK (P0[1])- This pin is connected to SWDCK (Debug pin) of PSoC 4 kit.
+  23:main.c        **** *  Pin_XRES  (P0[2])- This pin is connected to XRES input of PSoC kit.
+  24:main.c        **** *  Pin_Start (P6[1])- This pin is internally connected to switch SW2.
+  25:main.c        **** *
+  26:main.c        **** * Note that the GNDs of both DVKs should be connected together and Power should
+  27:main.c        **** * be supplied from a single source.
+  28:main.c        **** *
+  29:main.c        **** * The hex file included in this project toggles pin P1[6] of PSoC 4 at 1Hz
+  30:main.c        **** * frequency and displays “PSoC Programmed” on the character LCD mounted on
+  31:main.c        **** * CY8CKIT-001 DVK.
+  32:main.c        **** * 
+  33:main.c        **** * Connections required on the CY8CKIT-001 with PSoC 4 Processor Module :
+  34:main.c        **** * 	1. Connect P1[6] to LED1
+  35:main.c        **** *	2. Mount character LCD on the kit
+  36:main.c        **** *
+  37:main.c        **** * Press SW2 on the PSoC 5LP DVK to start the programming operation.
+  38:main.c        **** * ProgramDevice() function in main.c calls all the programming steps
+  39:main.c        **** * sequentially to program PSoC 4.
+  40:main.c        **** *
+  41:main.c        **** * main.c checks the result of ProgramDevice() function and if it returns 
+  42:main.c        **** * SUCCESS, "HSSP Success" is displayed on the character LCD mounted on the
+  43:main.c        **** * PSoC 5LP kit. If ProgramDevice() returns failure, Step of failure, Reason
+  44:main.c        **** * of failure is displayed on the LCD. If the error is because of SROM, It
+  45:main.c        **** * displays the SROM error code.
+  46:main.c        **** *
+  47:main.c        **** * On the PSoC 4 Side, LED connected to P1[6] starts to toggle at 1 Hz
+  48:main.c        **** * frequency and character LCD displays the message after successful 
+  49:main.c        **** * programming.
+  50:main.c        **** *
+  51:main.c        **** * Note:
+  52:main.c        **** *  The Character LCD functions and the Pin_Start APIs in the main() function
+  53:main.c        **** *  are for PSoC 5LP host programmer. If you are using any other microcontroller,
+  54:main.c        **** *  replace the functions with the APIs supported by the host or change the macro
+  55:main.c        **** *  USE_LCD and USE_START_PIN to 0 to remove all LCD and Pin_Start functions.
+  56:main.c        **** ******************************************************************************/
+  57:main.c        **** 
+  58:main.c        **** /* This file is included for calling Character LCD and Pin_Start APIs in
+  59:main.c        ****    PSoC 5LP. Remove this header file while porting to non PSoC 5LP host
+  60:main.c        ****    programmer */
+  61:main.c        **** #include <device.h>
+  62:main.c        **** 
+  63:main.c        **** #include <project.h>
+  64:main.c        **** 
+  65:main.c        **** /* These macros are used to remove all LCD and Pin_Start functions while
+  66:main.c        ****    porting this code to non PSoC 5LP host programmer */
+  67:main.c        **** #define USE_LCD 		0
+  68:main.c        **** #define USE_START_PIN 	0
+  69:main.c        **** 
+  70:main.c        **** /* This file has the top level HSSP routines that should be called from main
+  71:main.c        ****    application code */
+  72:main.c        **** #include "ProgrammingSteps.h"
+  73:main.c        **** 
+  74:main.c        **** /* Function which sequentially calls all the programming steps */
+  75:main.c        **** unsigned char ProgramDevice(void);
+  76:main.c        **** 
+  77:main.c        **** /* Global variable which stores the current programming step under execution */
+  78:main.c        **** unsigned char currentStep;
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccC3bekF.s 			page 3
+
+
+  79:main.c        **** 
+  80:main.c        **** /* Slave address of the EZI2C */
+  81:main.c        **** #define EZI2C_SLAVE_ADDR        (0x08u)
+  82:main.c        **** #define BUFFER_SIZE             (0x04u)
+  83:main.c        **** #define BUFFER_RW_AREA_SIZE     (0x02u)
+  84:main.c        **** 
+  85:main.c        **** /* Denotes the offset inside the EZI2C buffer */
+  86:main.c        **** #define SLAVE_ADDR_SIZE         (0x01u)
+  87:main.c        **** 
+  88:main.c        **** #define ACTION_SELECT_NONE      (0x00u)     /* Do nothing       */
+  89:main.c        **** #define ACTION_SELECT_WRITE     (0x01u)     /* Write to EZI2C   */
+  90:main.c        **** #define ACTION_SELECT_READ      (0x02u)     /* Read from EZI2C  */
+  91:main.c        **** 
+  92:main.c        **** /* Desing interrupt handlers for SW1 and SW2 event */
+  93:main.c        **** CY_ISR_PROTO(ISR_WriteSW1_Interrupt);
+  94:main.c        **** CY_ISR_PROTO(ISR_ReadSW2_Interrupt);
+  95:main.c        **** 
+  96:main.c        **** /* EZI2C buffer */
+  97:main.c        **** uint8   ezi2cBuffer[BUFFER_SIZE];
+  98:main.c        **** 
+  99:main.c        **** /* I2C buffer with the data read from EZI2C */
+ 100:main.c        **** uint8   i2cBufferRead[BUFFER_SIZE];
+ 101:main.c        **** 
+ 102:main.c        **** /* I2C buffer with the data to be written to EZI2C */
+ 103:main.c        **** uint8   i2cBufferWrite[SLAVE_ADDR_SIZE + BUFFER_SIZE];
+ 104:main.c        **** 
+ 105:main.c        **** /* Initialize action variable */
+ 106:main.c        **** volatile uint8 actionSelect = ACTION_SELECT_NONE;
+ 107:main.c        **** 
+ 108:main.c        **** int main()
+ 109:main.c        **** {
+  37              		.loc 1 109 0
+  38              		.cfi_startproc
+  39              		@ args = 0, pretend = 0, frame = 8
+  40              		@ frame_needed = 1, uses_anonymous_args = 0
+  41 0000 80B5     		push	{r7, lr}
+  42              		.cfi_def_cfa_offset 8
+  43              		.cfi_offset 7, -8
+  44              		.cfi_offset 14, -4
+  45 0002 82B0     		sub	sp, sp, #8
+  46              		.cfi_def_cfa_offset 16
+  47 0004 00AF     		add	r7, sp, #0
+  48              		.cfi_def_cfa_register 7
+ 110:main.c        ****     /* Variable to store the result of HSSP operation */
+ 111:main.c        ****     unsigned char programResult;   
+ 112:main.c        **** 	
+ 113:main.c        **** 	/* Variable to store the HSSP Error status in case of failure */
+ 114:main.c        ****     unsigned char errorStatus; 
+ 115:main.c        **** 	
+ 116:main.c        **** 	/* Variable to store the SROM Error status if errorStatus contains
+ 117:main.c        **** 	   SROM_TIMEOUT_ERROR error */
+ 118:main.c        ****     unsigned char sromErrorStatus;
+ 119:main.c        **** 	
+ 120:main.c        **** 	/* Set USE_LCD macro to 0 if PSoC 5LP is not used as host microcontroller */
+ 121:main.c        **** 	if(USE_LCD)
+ 122:main.c        **** 	{
+ 123:main.c        **** 		/* Initialize Character LCD  */
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccC3bekF.s 			page 4
+
+
+ 124:main.c        **** 	    LCD_Char_Start();
+ 125:main.c        **** 		
+ 126:main.c        **** 		/* Display the message */
+ 127:main.c        **** 		LCD_Char_Position(0,0);
+ 128:main.c        **** 		LCD_Char_PrintString("Press SWITCH SW2");
+ 129:main.c        **** 	}
+ 130:main.c        ****     
+ 131:main.c        **** 	/* Set USE_START_PIN macro to 0 if PSoC 5LP is not used as host
+ 132:main.c        **** 	   microcontroller */
+ 133:main.c        **** 	if(USE_START_PIN)
+ 134:main.c        **** 	{
+ 135:main.c        **** 		while (Pin_Start_Read() == 1);
+ 136:main.c        **** 	}
+ 137:main.c        **** 	
+ 138:main.c        **** 	/* Set USE_LCD macro to 0 if PSoC 5LP is not used as host microcontroller */
+ 139:main.c        **** 	if(USE_LCD)
+ 140:main.c        **** 	{
+ 141:main.c        **** 		/* Clear Character LCD  */
+ 142:main.c        **** 		LCD_Char_ClearDisplay();
+ 143:main.c        **** 		
+ 144:main.c        **** 		/* Display the message */
+ 145:main.c        **** 	    LCD_Char_Position(0,0);
+ 146:main.c        **** 	    LCD_Char_PrintString("Programming PSoC4");
+ 147:main.c        **** 	}
+ 148:main.c        ****        
+ 149:main.c        ****     /* Start EZI2C */
+ 150:main.c        ****     EZI2C_Start();
+  49              		.loc 1 150 0
+  50 0006 FFF7FEFF 		bl	EZI2C_Start
+ 151:main.c        ****     
+ 152:main.c        ****     /* Enable global interrupts */
+ 153:main.c        ****     CyGlobalIntEnable;
+  51              		.loc 1 153 0
+  52              	@ 153 "main.c" 1
+  53 000a 62B6     		CPSIE   i
+  54              	@ 0 "" 2
+ 154:main.c        ****     
+ 155:main.c        ****     /* Initialize EZI2C buffer's read only data */
+ 156:main.c        ****     ezi2cBuffer[BUFFER_RW_AREA_SIZE     ] = 0xAAu;
+  55              		.loc 1 156 0
+  56              		.thumb
+  57 000c 0F4B     		ldr	r3, .L3
+  58 000e AA22     		movs	r2, #170
+  59 0010 9A70     		strb	r2, [r3, #2]
+ 157:main.c        ****     ezi2cBuffer[BUFFER_RW_AREA_SIZE + 1u] = 0xBBu;
+  60              		.loc 1 157 0
+  61 0012 0E4B     		ldr	r3, .L3
+  62 0014 BB22     		movs	r2, #187
+  63 0016 DA70     		strb	r2, [r3, #3]
+ 158:main.c        **** 
+ 159:main.c        ****     /***************************************************************************
+ 160:main.c        ****     * The first parameter sets the size of the exposed memory to the I2C
+ 161:main.c        ****     * interface. In this case, it is the entire array. The second parameter sets
+ 162:main.c        ****     * the boundary between the read/write and read only areas by setting the
+ 163:main.c        ****     * number of bytes in the read/write area. The read/write area is first,
+ 164:main.c        ****     * followed by the read only area. In this case, only the first
+ 165:main.c        ****     * BUFFER_RW_AREA_SIZE bytes may be written, but all bytes may be read by the
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccC3bekF.s 			page 5
+
+
+ 166:main.c        ****     * I2C master. The third parameter is a pointer to the data.
+ 167:main.c        ****     ***************************************************************************/
+ 168:main.c        ****     EZI2C_SetBuffer1(BUFFER_SIZE, BUFFER_RW_AREA_SIZE, (void *) ezi2cBuffer);
+  64              		.loc 1 168 0
+  65 0018 0420     		movs	r0, #4
+  66 001a 0221     		movs	r1, #2
+  67 001c 0B4A     		ldr	r2, .L3
+  68 001e FFF7FEFF 		bl	EZI2C_SetBuffer1
+ 169:main.c        **** 
+ 170:main.c        **** 
+ 171:main.c        ****     /* Start the HSSP Programming and store the status */
+ 172:main.c        ****     programResult = ProgramDevice();
+  69              		.loc 1 172 0
+  70 0022 FFF7FEFF 		bl	ProgramDevice
+  71 0026 0346     		mov	r3, r0
+  72 0028 FB71     		strb	r3, [r7, #7]
+ 173:main.c        ****     
+ 174:main.c        **** 	/* Set USE_LCD macro to 0 if PSoC 5LP is not used as host microcontroller */
+ 175:main.c        **** 	if(USE_LCD)
+ 176:main.c        **** 	{
+ 177:main.c        **** 	    /* Character LCD will display the status of HSSP Programming  */
+ 178:main.c        **** 	    LCD_Char_ClearDisplay();
+ 179:main.c        **** 	}
+ 180:main.c        ****     
+ 181:main.c        **** 	/* HSSP completed successfully */
+ 182:main.c        ****     if(programResult == SUCCESS) 
+  73              		.loc 1 182 0
+  74 002a FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+  75 002c 012B     		cmp	r3, #1
+  76 002e 0CD0     		beq	.L2
+ 183:main.c        ****     {
+ 184:main.c        **** 		/* Set USE_LCD macro to 0 if PSoC 5LP is not used as host microcontroller */
+ 185:main.c        ****         if(USE_LCD)
+ 186:main.c        **** 		{
+ 187:main.c        **** 			LCD_Char_Position(0,0);
+ 188:main.c        ****         	LCD_Char_PrintString("HSSP Success");
+ 189:main.c        ****     	}
+ 190:main.c        **** 	}
+ 191:main.c        **** 	
+ 192:main.c        **** 	/* HSSP Failure */
+ 193:main.c        ****     else
+ 194:main.c        ****     {
+ 195:main.c        **** 		/* Set USE_LCD macro to 0 if PSoC 5LP is not used as host microcontroller */
+ 196:main.c        ****         if(USE_LCD)
+ 197:main.c        **** 		{
+ 198:main.c        **** 			/* Display the step number where the HSSP failed */
+ 199:main.c        **** 	        LCD_Char_Position(0,0);
+ 200:main.c        **** 	        LCD_Char_PrintString("HSSP Fail Step");
+ 201:main.c        **** 	        LCD_Char_PrintInt8(currentStep);
+ 202:main.c        **** 		}
+ 203:main.c        ****         		
+ 204:main.c        ****         /* Get the HSSP error status and display on THE LCD */
+ 205:main.c        ****         errorStatus = ReadHsspErrorStatus();
+  77              		.loc 1 205 0
+  78 0030 FFF7FEFF 		bl	ReadHsspErrorStatus
+  79 0034 0346     		mov	r3, r0
+  80 0036 BB71     		strb	r3, [r7, #6]
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccC3bekF.s 			page 6
+
+
+ 206:main.c        ****         
+ 207:main.c        **** 		/* Set USE_LCD macro to 0 if PSoC 5LP is not used as host microcontroller */
+ 208:main.c        **** 		if(USE_LCD)
+ 209:main.c        **** 		{
+ 210:main.c        **** 	        LCD_Char_Position(1,0);
+ 211:main.c        **** 	        LCD_Char_PrintString("Err ");
+ 212:main.c        **** 	        LCD_Char_PrintInt8(errorStatus);
+ 213:main.c        **** 		}
+ 214:main.c        ****         
+ 215:main.c        ****         /* If the errorStatus contains THE SROM_TIMEOUT_ERROR error condition,
+ 216:main.c        ****            read the Status Code returned by CPUSS_SYSARG register and display
+ 217:main.c        **** 		   on THE LCD */
+ 218:main.c        ****         if(errorStatus & SROM_TIMEOUT_ERROR)
+  81              		.loc 1 218 0
+  82 0038 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+  83 003a 03F02003 		and	r3, r3, #32
+  84 003e 002B     		cmp	r3, #0
+  85 0040 03D0     		beq	.L2
+ 219:main.c        ****         {
+ 220:main.c        ****             sromErrorStatus = ReadSromStatus();
+  86              		.loc 1 220 0
+  87 0042 FFF7FEFF 		bl	ReadSromStatus
+  88 0046 0346     		mov	r3, r0
+  89 0048 7B71     		strb	r3, [r7, #5]
+  90              	.L2:
+ 221:main.c        ****             
+ 222:main.c        **** 			/* Set USE_LCD macro to 0 if PSoC 5LP is not used as host microcontroller */
+ 223:main.c        **** 			if(USE_LCD)
+ 224:main.c        **** 			{
+ 225:main.c        **** 				LCD_Char_PrintString(" SROM ");
+ 226:main.c        **** 				LCD_Char_PrintInt8(sromErrorStatus);
+ 227:main.c        **** 			}
+ 228:main.c        ****         }
+ 229:main.c        ****     }
+ 230:main.c        **** 
+ 231:main.c        ****     for( ; ; )
+ 232:main.c        ****     {
+ 233:main.c        ****         /* Do Nothing */
+ 234:main.c        ****     }
+  91              		.loc 1 234 0 discriminator 2
+  92 004a FEE7     		b	.L2
+  93              	.L4:
+  94              		.align	2
+  95              	.L3:
+  96 004c 00000000 		.word	ezi2cBuffer
+  97              		.cfi_endproc
+  98              	.LFE63:
+  99              		.size	main, .-main
+ 100              		.section	.text.ProgramDevice,"ax",%progbits
+ 101              		.align	2
+ 102              		.global	ProgramDevice
+ 103              		.thumb
+ 104              		.thumb_func
+ 105              		.type	ProgramDevice, %function
+ 106              	ProgramDevice:
+ 107              	.LFB64:
+ 235:main.c        **** }
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccC3bekF.s 			page 7
+
+
+ 236:main.c        **** 
+ 237:main.c        **** /******************************************************************************
+ 238:main.c        **** * Function Name: unsigned char ProgramDevice(void)
+ 239:main.c        **** *******************************************************************************
+ 240:main.c        **** * Summary:
+ 241:main.c        **** *  This function sequentially calls all the functions required to program a
+ 242:main.c        **** *  PSoC 4. These functions are defined in ProgrammingSteps.h.
+ 243:main.c        **** *
+ 244:main.c        **** * Parameters:
+ 245:main.c        **** *  None.
+ 246:main.c        **** *
+ 247:main.c        **** * Return:
+ 248:main.c        **** *  SUCCESS - All the programming steps executed successfully
+ 249:main.c        **** *  FAILURE - HSSP programming fails in any one of the programming step
+ 250:main.c        **** *
+ 251:main.c        **** ******************************************************************************/
+ 252:main.c        **** unsigned char ProgramDevice()
+ 253:main.c        **** {
+ 108              		.loc 1 253 0
+ 109              		.cfi_startproc
+ 110              		@ args = 0, pretend = 0, frame = 0
+ 111              		@ frame_needed = 1, uses_anonymous_args = 0
+ 112 0000 80B5     		push	{r7, lr}
+ 113              		.cfi_def_cfa_offset 8
+ 114              		.cfi_offset 7, -8
+ 115              		.cfi_offset 14, -4
+ 116 0002 00AF     		add	r7, sp, #0
+ 117              		.cfi_def_cfa_register 7
+ 254:main.c        ****     currentStep = 0;
+ 118              		.loc 1 254 0
+ 119 0004 3E4B     		ldr	r3, .L16
+ 120 0006 0022     		movs	r2, #0
+ 121 0008 1A70     		strb	r2, [r3]
+ 255:main.c        ****     
+ 256:main.c        ****     currentStep++;    
+ 122              		.loc 1 256 0
+ 123 000a 3D4B     		ldr	r3, .L16
+ 124 000c 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 125 000e 0133     		adds	r3, r3, #1
+ 126 0010 DAB2     		uxtb	r2, r3
+ 127 0012 3B4B     		ldr	r3, .L16
+ 128 0014 1A70     		strb	r2, [r3]
+ 257:main.c        ****     if(DeviceAcquire() == FAILURE)     
+ 129              		.loc 1 257 0
+ 130 0016 FFF7FEFF 		bl	DeviceAcquire
+ 131 001a 0346     		mov	r3, r0
+ 132 001c 002B     		cmp	r3, #0
+ 133 001e 01D1     		bne	.L6
+ 258:main.c        ****         return(FAILURE);
+ 134              		.loc 1 258 0
+ 135 0020 0023     		movs	r3, #0
+ 136 0022 6AE0     		b	.L7
+ 137              	.L6:
+ 259:main.c        ****     
+ 260:main.c        ****     currentStep++;
+ 138              		.loc 1 260 0
+ 139 0024 364B     		ldr	r3, .L16
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccC3bekF.s 			page 8
+
+
+ 140 0026 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 141 0028 0133     		adds	r3, r3, #1
+ 142 002a DAB2     		uxtb	r2, r3
+ 143 002c 344B     		ldr	r3, .L16
+ 144 002e 1A70     		strb	r2, [r3]
+ 261:main.c        ****     if(VerifySiliconId() == FAILURE)    
+ 145              		.loc 1 261 0
+ 146 0030 FFF7FEFF 		bl	VerifySiliconId
+ 147 0034 0346     		mov	r3, r0
+ 148 0036 002B     		cmp	r3, #0
+ 149 0038 01D1     		bne	.L8
+ 262:main.c        ****         return(FAILURE);
+ 150              		.loc 1 262 0
+ 151 003a 0023     		movs	r3, #0
+ 152 003c 5DE0     		b	.L7
+ 153              	.L8:
+ 263:main.c        **** 
+ 264:main.c        ****     currentStep++;
+ 154              		.loc 1 264 0
+ 155 003e 304B     		ldr	r3, .L16
+ 156 0040 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 157 0042 0133     		adds	r3, r3, #1
+ 158 0044 DAB2     		uxtb	r2, r3
+ 159 0046 2E4B     		ldr	r3, .L16
+ 160 0048 1A70     		strb	r2, [r3]
+ 265:main.c        ****     if(EraseAllFlash() == FAILURE)             
+ 161              		.loc 1 265 0
+ 162 004a FFF7FEFF 		bl	EraseAllFlash
+ 163 004e 0346     		mov	r3, r0
+ 164 0050 002B     		cmp	r3, #0
+ 165 0052 01D1     		bne	.L9
+ 266:main.c        ****         return(FAILURE);
+ 166              		.loc 1 266 0
+ 167 0054 0023     		movs	r3, #0
+ 168 0056 50E0     		b	.L7
+ 169              	.L9:
+ 267:main.c        **** 
+ 268:main.c        ****     currentStep++;
+ 170              		.loc 1 268 0
+ 171 0058 294B     		ldr	r3, .L16
+ 172 005a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 173 005c 0133     		adds	r3, r3, #1
+ 174 005e DAB2     		uxtb	r2, r3
+ 175 0060 274B     		ldr	r3, .L16
+ 176 0062 1A70     		strb	r2, [r3]
+ 269:main.c        ****     if(ChecksumPrivileged() == FAILURE)                    
+ 177              		.loc 1 269 0
+ 178 0064 FFF7FEFF 		bl	ChecksumPrivileged
+ 179 0068 0346     		mov	r3, r0
+ 180 006a 002B     		cmp	r3, #0
+ 181 006c 01D1     		bne	.L10
+ 270:main.c        ****         return(FAILURE);
+ 182              		.loc 1 270 0
+ 183 006e 0023     		movs	r3, #0
+ 184 0070 43E0     		b	.L7
+ 185              	.L10:
+ 271:main.c        **** 
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccC3bekF.s 			page 9
+
+
+ 272:main.c        ****     currentStep++;
+ 186              		.loc 1 272 0
+ 187 0072 234B     		ldr	r3, .L16
+ 188 0074 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 189 0076 0133     		adds	r3, r3, #1
+ 190 0078 DAB2     		uxtb	r2, r3
+ 191 007a 214B     		ldr	r3, .L16
+ 192 007c 1A70     		strb	r2, [r3]
+ 273:main.c        ****     if(ProgramFlash() == FAILURE)          
+ 193              		.loc 1 273 0
+ 194 007e FFF7FEFF 		bl	ProgramFlash
+ 195 0082 0346     		mov	r3, r0
+ 196 0084 002B     		cmp	r3, #0
+ 197 0086 01D1     		bne	.L11
+ 274:main.c        ****         return(FAILURE);
+ 198              		.loc 1 274 0
+ 199 0088 0023     		movs	r3, #0
+ 200 008a 36E0     		b	.L7
+ 201              	.L11:
+ 275:main.c        **** 
+ 276:main.c        ****     currentStep++;
+ 202              		.loc 1 276 0
+ 203 008c 1C4B     		ldr	r3, .L16
+ 204 008e 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 205 0090 0133     		adds	r3, r3, #1
+ 206 0092 DAB2     		uxtb	r2, r3
+ 207 0094 1A4B     		ldr	r3, .L16
+ 208 0096 1A70     		strb	r2, [r3]
+ 277:main.c        ****     if(VerifyFlash() == FAILURE)       
+ 209              		.loc 1 277 0
+ 210 0098 FFF7FEFF 		bl	VerifyFlash
+ 211 009c 0346     		mov	r3, r0
+ 212 009e 002B     		cmp	r3, #0
+ 213 00a0 01D1     		bne	.L12
+ 278:main.c        ****         return(FAILURE);
+ 214              		.loc 1 278 0
+ 215 00a2 0023     		movs	r3, #0
+ 216 00a4 29E0     		b	.L7
+ 217              	.L12:
+ 279:main.c        **** 
+ 280:main.c        ****     currentStep++;
+ 218              		.loc 1 280 0
+ 219 00a6 164B     		ldr	r3, .L16
+ 220 00a8 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 221 00aa 0133     		adds	r3, r3, #1
+ 222 00ac DAB2     		uxtb	r2, r3
+ 223 00ae 144B     		ldr	r3, .L16
+ 224 00b0 1A70     		strb	r2, [r3]
+ 281:main.c        ****     if(ProgramProtectionSettings() == FAILURE) 
+ 225              		.loc 1 281 0
+ 226 00b2 FFF7FEFF 		bl	ProgramProtectionSettings
+ 227 00b6 0346     		mov	r3, r0
+ 228 00b8 002B     		cmp	r3, #0
+ 229 00ba 01D1     		bne	.L13
+ 282:main.c        ****         return(FAILURE);
+ 230              		.loc 1 282 0
+ 231 00bc 0023     		movs	r3, #0
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccC3bekF.s 			page 10
+
+
+ 232 00be 1CE0     		b	.L7
+ 233              	.L13:
+ 283:main.c        **** 
+ 284:main.c        ****     currentStep++;
+ 234              		.loc 1 284 0
+ 235 00c0 0F4B     		ldr	r3, .L16
+ 236 00c2 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 237 00c4 0133     		adds	r3, r3, #1
+ 238 00c6 DAB2     		uxtb	r2, r3
+ 239 00c8 0D4B     		ldr	r3, .L16
+ 240 00ca 1A70     		strb	r2, [r3]
+ 285:main.c        ****     if(VerifyProtectionSettings() == FAILURE)
+ 241              		.loc 1 285 0
+ 242 00cc FFF7FEFF 		bl	VerifyProtectionSettings
+ 243 00d0 0346     		mov	r3, r0
+ 244 00d2 002B     		cmp	r3, #0
+ 245 00d4 01D1     		bne	.L14
+ 286:main.c        ****         return(FAILURE);
+ 246              		.loc 1 286 0
+ 247 00d6 0023     		movs	r3, #0
+ 248 00d8 0FE0     		b	.L7
+ 249              	.L14:
+ 287:main.c        **** 
+ 288:main.c        ****     currentStep++;
+ 250              		.loc 1 288 0
+ 251 00da 094B     		ldr	r3, .L16
+ 252 00dc 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 253 00de 0133     		adds	r3, r3, #1
+ 254 00e0 DAB2     		uxtb	r2, r3
+ 255 00e2 074B     		ldr	r3, .L16
+ 256 00e4 1A70     		strb	r2, [r3]
+ 289:main.c        ****     if(VerifyChecksum() == FAILURE) 
+ 257              		.loc 1 289 0
+ 258 00e6 FFF7FEFF 		bl	VerifyChecksum
+ 259 00ea 0346     		mov	r3, r0
+ 260 00ec 002B     		cmp	r3, #0
+ 261 00ee 01D1     		bne	.L15
+ 290:main.c        ****         return(FAILURE);
+ 262              		.loc 1 290 0
+ 263 00f0 0023     		movs	r3, #0
+ 264 00f2 02E0     		b	.L7
+ 265              	.L15:
+ 291:main.c        **** 
+ 292:main.c        ****     ExitProgrammingMode();
+ 266              		.loc 1 292 0
+ 267 00f4 FFF7FEFF 		bl	ExitProgrammingMode
+ 293:main.c        ****     
+ 294:main.c        **** 	/* All the steps were completed successfully */
+ 295:main.c        ****     return(SUCCESS);
+ 268              		.loc 1 295 0
+ 269 00f8 0123     		movs	r3, #1
+ 270              	.L7:
+ 296:main.c        **** }
+ 271              		.loc 1 296 0
+ 272 00fa 1846     		mov	r0, r3
+ 273 00fc 80BD     		pop	{r7, pc}
+ 274              	.L17:
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccC3bekF.s 			page 11
+
+
+ 275 00fe 00BF     		.align	2
+ 276              	.L16:
+ 277 0100 00000000 		.word	currentStep
+ 278              		.cfi_endproc
+ 279              	.LFE64:
+ 280              		.size	ProgramDevice, .-ProgramDevice
+ 281              		.text
+ 282              	.Letext0:
+ 283              		.file 2 "c:\\program files\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.3\\arm
+ 284              		.file 3 "c:\\program files\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.3\\arm
+ 285              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 286              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 287              		.section	.debug_info,"",%progbits
+ 288              	.Ldebug_info0:
+ 289 0000 8A010000 		.4byte	0x18a
+ 290 0004 0400     		.2byte	0x4
+ 291 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 292 000a 04       		.byte	0x4
+ 293 000b 01       		.uleb128 0x1
+ 294 000c 16000000 		.4byte	.LASF25
+ 295 0010 01       		.byte	0x1
+ 296 0011 CB010000 		.4byte	.LASF26
+ 297 0015 43010000 		.4byte	.LASF27
+ 298 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 299 001d 00000000 		.4byte	0
+ 300 0021 00000000 		.4byte	.Ldebug_line0
+ 301 0025 02       		.uleb128 0x2
+ 302 0026 01       		.byte	0x1
+ 303 0027 06       		.byte	0x6
+ 304 0028 90010000 		.4byte	.LASF0
+ 305 002c 02       		.uleb128 0x2
+ 306 002d 01       		.byte	0x1
+ 307 002e 08       		.byte	0x8
+ 308 002f B9000000 		.4byte	.LASF1
+ 309 0033 02       		.uleb128 0x2
+ 310 0034 02       		.byte	0x2
+ 311 0035 05       		.byte	0x5
+ 312 0036 E3010000 		.4byte	.LASF2
+ 313 003a 02       		.uleb128 0x2
+ 314 003b 02       		.byte	0x2
+ 315 003c 07       		.byte	0x7
+ 316 003d D9000000 		.4byte	.LASF3
+ 317 0041 03       		.uleb128 0x3
+ 318 0042 0C000000 		.4byte	.LASF9
+ 319 0046 02       		.byte	0x2
+ 320 0047 3F       		.byte	0x3f
+ 321 0048 4C000000 		.4byte	0x4c
+ 322 004c 02       		.uleb128 0x2
+ 323 004d 04       		.byte	0x4
+ 324 004e 05       		.byte	0x5
+ 325 004f F3010000 		.4byte	.LASF4
+ 326 0053 02       		.uleb128 0x2
+ 327 0054 04       		.byte	0x4
+ 328 0055 07       		.byte	0x7
+ 329 0056 C7000000 		.4byte	.LASF5
+ 330 005a 02       		.uleb128 0x2
+ 331 005b 08       		.byte	0x8
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccC3bekF.s 			page 12
+
+
+ 332 005c 05       		.byte	0x5
+ 333 005d AD010000 		.4byte	.LASF6
+ 334 0061 02       		.uleb128 0x2
+ 335 0062 08       		.byte	0x8
+ 336 0063 07       		.byte	0x7
+ 337 0064 2C010000 		.4byte	.LASF7
+ 338 0068 04       		.uleb128 0x4
+ 339 0069 04       		.byte	0x4
+ 340 006a 05       		.byte	0x5
+ 341 006b 696E7400 		.ascii	"int\000"
+ 342 006f 02       		.uleb128 0x2
+ 343 0070 04       		.byte	0x4
+ 344 0071 07       		.byte	0x7
+ 345 0072 1F010000 		.4byte	.LASF8
+ 346 0076 03       		.uleb128 0x3
+ 347 0077 9C010000 		.4byte	.LASF10
+ 348 007b 03       		.byte	0x3
+ 349 007c 2C       		.byte	0x2c
+ 350 007d 41000000 		.4byte	0x41
+ 351 0081 05       		.uleb128 0x5
+ 352 0082 ED010000 		.4byte	.LASF11
+ 353 0086 04       		.byte	0x4
+ 354 0087 3801     		.2byte	0x138
+ 355 0089 2C000000 		.4byte	0x2c
+ 356 008d 02       		.uleb128 0x2
+ 357 008e 04       		.byte	0x4
+ 358 008f 04       		.byte	0x4
+ 359 0090 A4000000 		.4byte	.LASF12
+ 360 0094 02       		.uleb128 0x2
+ 361 0095 08       		.byte	0x8
+ 362 0096 04       		.byte	0x4
+ 363 0097 07010000 		.4byte	.LASF13
+ 364 009b 02       		.uleb128 0x2
+ 365 009c 01       		.byte	0x1
+ 366 009d 08       		.byte	0x8
+ 367 009e D2010000 		.4byte	.LASF14
+ 368 00a2 06       		.uleb128 0x6
+ 369 00a3 81000000 		.4byte	0x81
+ 370 00a7 02       		.uleb128 0x2
+ 371 00a8 04       		.byte	0x4
+ 372 00a9 07       		.byte	0x7
+ 373 00aa A4010000 		.4byte	.LASF15
+ 374 00ae 07       		.uleb128 0x7
+ 375 00af 81000000 		.4byte	0x81
+ 376 00b3 BE000000 		.4byte	0xbe
+ 377 00b7 08       		.uleb128 0x8
+ 378 00b8 A7000000 		.4byte	0xa7
+ 379 00bc 03       		.byte	0x3
+ 380 00bd 00       		.byte	0
+ 381 00be 09       		.uleb128 0x9
+ 382 00bf 0E010000 		.4byte	.LASF28
+ 383 00c3 01       		.byte	0x1
+ 384 00c4 6C       		.byte	0x6c
+ 385 00c5 68000000 		.4byte	0x68
+ 386 00c9 00000000 		.4byte	.LFB63
+ 387 00cd 50000000 		.4byte	.LFE63-.LFB63
+ 388 00d1 01       		.uleb128 0x1
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccC3bekF.s 			page 13
+
+
+ 389 00d2 9C       		.byte	0x9c
+ 390 00d3 02010000 		.4byte	0x102
+ 391 00d7 0A       		.uleb128 0xa
+ 392 00d8 F9000000 		.4byte	.LASF16
+ 393 00dc 01       		.byte	0x1
+ 394 00dd 6F       		.byte	0x6f
+ 395 00de 2C000000 		.4byte	0x2c
+ 396 00e2 02       		.uleb128 0x2
+ 397 00e3 91       		.byte	0x91
+ 398 00e4 77       		.sleb128 -9
+ 399 00e5 0A       		.uleb128 0xa
+ 400 00e6 13010000 		.4byte	.LASF17
+ 401 00ea 01       		.byte	0x1
+ 402 00eb 72       		.byte	0x72
+ 403 00ec 2C000000 		.4byte	0x2c
+ 404 00f0 02       		.uleb128 0x2
+ 405 00f1 91       		.byte	0x91
+ 406 00f2 76       		.sleb128 -10
+ 407 00f3 0A       		.uleb128 0xa
+ 408 00f4 BB010000 		.4byte	.LASF18
+ 409 00f8 01       		.byte	0x1
+ 410 00f9 76       		.byte	0x76
+ 411 00fa 2C000000 		.4byte	0x2c
+ 412 00fe 02       		.uleb128 0x2
+ 413 00ff 91       		.byte	0x91
+ 414 0100 75       		.sleb128 -11
+ 415 0101 00       		.byte	0
+ 416 0102 0B       		.uleb128 0xb
+ 417 0103 FC010000 		.4byte	.LASF29
+ 418 0107 01       		.byte	0x1
+ 419 0108 FC       		.byte	0xfc
+ 420 0109 2C000000 		.4byte	0x2c
+ 421 010d 00000000 		.4byte	.LFB64
+ 422 0111 04010000 		.4byte	.LFE64-.LFB64
+ 423 0115 01       		.uleb128 0x1
+ 424 0116 9C       		.byte	0x9c
+ 425 0117 0C       		.uleb128 0xc
+ 426 0118 EC000000 		.4byte	.LASF19
+ 427 011c 05       		.byte	0x5
+ 428 011d 5506     		.2byte	0x655
+ 429 011f 23010000 		.4byte	0x123
+ 430 0123 06       		.uleb128 0x6
+ 431 0124 76000000 		.4byte	0x76
+ 432 0128 0D       		.uleb128 0xd
+ 433 0129 00000000 		.4byte	.LASF20
+ 434 012d 01       		.byte	0x1
+ 435 012e 4E       		.byte	0x4e
+ 436 012f 2C000000 		.4byte	0x2c
+ 437 0133 05       		.uleb128 0x5
+ 438 0134 03       		.byte	0x3
+ 439 0135 00000000 		.4byte	currentStep
+ 440 0139 0D       		.uleb128 0xd
+ 441 013a D7010000 		.4byte	.LASF21
+ 442 013e 01       		.byte	0x1
+ 443 013f 61       		.byte	0x61
+ 444 0140 AE000000 		.4byte	0xae
+ 445 0144 05       		.uleb128 0x5
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccC3bekF.s 			page 14
+
+
+ 446 0145 03       		.byte	0x3
+ 447 0146 00000000 		.4byte	ezi2cBuffer
+ 448 014a 0D       		.uleb128 0xd
+ 449 014b 17020000 		.4byte	.LASF22
+ 450 014f 01       		.byte	0x1
+ 451 0150 64       		.byte	0x64
+ 452 0151 AE000000 		.4byte	0xae
+ 453 0155 05       		.uleb128 0x5
+ 454 0156 03       		.byte	0x3
+ 455 0157 00000000 		.4byte	i2cBufferRead
+ 456 015b 07       		.uleb128 0x7
+ 457 015c 81000000 		.4byte	0x81
+ 458 0160 6B010000 		.4byte	0x16b
+ 459 0164 08       		.uleb128 0x8
+ 460 0165 A7000000 		.4byte	0xa7
+ 461 0169 04       		.byte	0x4
+ 462 016a 00       		.byte	0
+ 463 016b 0D       		.uleb128 0xd
+ 464 016c AA000000 		.4byte	.LASF23
+ 465 0170 01       		.byte	0x1
+ 466 0171 67       		.byte	0x67
+ 467 0172 5B010000 		.4byte	0x15b
+ 468 0176 05       		.uleb128 0x5
+ 469 0177 03       		.byte	0x3
+ 470 0178 00000000 		.4byte	i2cBufferWrite
+ 471 017c 0D       		.uleb128 0xd
+ 472 017d 0A020000 		.4byte	.LASF24
+ 473 0181 01       		.byte	0x1
+ 474 0182 6A       		.byte	0x6a
+ 475 0183 A2000000 		.4byte	0xa2
+ 476 0187 05       		.uleb128 0x5
+ 477 0188 03       		.byte	0x3
+ 478 0189 00000000 		.4byte	actionSelect
+ 479 018d 00       		.byte	0
+ 480              		.section	.debug_abbrev,"",%progbits
+ 481              	.Ldebug_abbrev0:
+ 482 0000 01       		.uleb128 0x1
+ 483 0001 11       		.uleb128 0x11
+ 484 0002 01       		.byte	0x1
+ 485 0003 25       		.uleb128 0x25
+ 486 0004 0E       		.uleb128 0xe
+ 487 0005 13       		.uleb128 0x13
+ 488 0006 0B       		.uleb128 0xb
+ 489 0007 03       		.uleb128 0x3
+ 490 0008 0E       		.uleb128 0xe
+ 491 0009 1B       		.uleb128 0x1b
+ 492 000a 0E       		.uleb128 0xe
+ 493 000b 55       		.uleb128 0x55
+ 494 000c 17       		.uleb128 0x17
+ 495 000d 11       		.uleb128 0x11
+ 496 000e 01       		.uleb128 0x1
+ 497 000f 10       		.uleb128 0x10
+ 498 0010 17       		.uleb128 0x17
+ 499 0011 00       		.byte	0
+ 500 0012 00       		.byte	0
+ 501 0013 02       		.uleb128 0x2
+ 502 0014 24       		.uleb128 0x24
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccC3bekF.s 			page 15
+
+
+ 503 0015 00       		.byte	0
+ 504 0016 0B       		.uleb128 0xb
+ 505 0017 0B       		.uleb128 0xb
+ 506 0018 3E       		.uleb128 0x3e
+ 507 0019 0B       		.uleb128 0xb
+ 508 001a 03       		.uleb128 0x3
+ 509 001b 0E       		.uleb128 0xe
+ 510 001c 00       		.byte	0
+ 511 001d 00       		.byte	0
+ 512 001e 03       		.uleb128 0x3
+ 513 001f 16       		.uleb128 0x16
+ 514 0020 00       		.byte	0
+ 515 0021 03       		.uleb128 0x3
+ 516 0022 0E       		.uleb128 0xe
+ 517 0023 3A       		.uleb128 0x3a
+ 518 0024 0B       		.uleb128 0xb
+ 519 0025 3B       		.uleb128 0x3b
+ 520 0026 0B       		.uleb128 0xb
+ 521 0027 49       		.uleb128 0x49
+ 522 0028 13       		.uleb128 0x13
+ 523 0029 00       		.byte	0
+ 524 002a 00       		.byte	0
+ 525 002b 04       		.uleb128 0x4
+ 526 002c 24       		.uleb128 0x24
+ 527 002d 00       		.byte	0
+ 528 002e 0B       		.uleb128 0xb
+ 529 002f 0B       		.uleb128 0xb
+ 530 0030 3E       		.uleb128 0x3e
+ 531 0031 0B       		.uleb128 0xb
+ 532 0032 03       		.uleb128 0x3
+ 533 0033 08       		.uleb128 0x8
+ 534 0034 00       		.byte	0
+ 535 0035 00       		.byte	0
+ 536 0036 05       		.uleb128 0x5
+ 537 0037 16       		.uleb128 0x16
+ 538 0038 00       		.byte	0
+ 539 0039 03       		.uleb128 0x3
+ 540 003a 0E       		.uleb128 0xe
+ 541 003b 3A       		.uleb128 0x3a
+ 542 003c 0B       		.uleb128 0xb
+ 543 003d 3B       		.uleb128 0x3b
+ 544 003e 05       		.uleb128 0x5
+ 545 003f 49       		.uleb128 0x49
+ 546 0040 13       		.uleb128 0x13
+ 547 0041 00       		.byte	0
+ 548 0042 00       		.byte	0
+ 549 0043 06       		.uleb128 0x6
+ 550 0044 35       		.uleb128 0x35
+ 551 0045 00       		.byte	0
+ 552 0046 49       		.uleb128 0x49
+ 553 0047 13       		.uleb128 0x13
+ 554 0048 00       		.byte	0
+ 555 0049 00       		.byte	0
+ 556 004a 07       		.uleb128 0x7
+ 557 004b 01       		.uleb128 0x1
+ 558 004c 01       		.byte	0x1
+ 559 004d 49       		.uleb128 0x49
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccC3bekF.s 			page 16
+
+
+ 560 004e 13       		.uleb128 0x13
+ 561 004f 01       		.uleb128 0x1
+ 562 0050 13       		.uleb128 0x13
+ 563 0051 00       		.byte	0
+ 564 0052 00       		.byte	0
+ 565 0053 08       		.uleb128 0x8
+ 566 0054 21       		.uleb128 0x21
+ 567 0055 00       		.byte	0
+ 568 0056 49       		.uleb128 0x49
+ 569 0057 13       		.uleb128 0x13
+ 570 0058 2F       		.uleb128 0x2f
+ 571 0059 0B       		.uleb128 0xb
+ 572 005a 00       		.byte	0
+ 573 005b 00       		.byte	0
+ 574 005c 09       		.uleb128 0x9
+ 575 005d 2E       		.uleb128 0x2e
+ 576 005e 01       		.byte	0x1
+ 577 005f 3F       		.uleb128 0x3f
+ 578 0060 19       		.uleb128 0x19
+ 579 0061 03       		.uleb128 0x3
+ 580 0062 0E       		.uleb128 0xe
+ 581 0063 3A       		.uleb128 0x3a
+ 582 0064 0B       		.uleb128 0xb
+ 583 0065 3B       		.uleb128 0x3b
+ 584 0066 0B       		.uleb128 0xb
+ 585 0067 49       		.uleb128 0x49
+ 586 0068 13       		.uleb128 0x13
+ 587 0069 11       		.uleb128 0x11
+ 588 006a 01       		.uleb128 0x1
+ 589 006b 12       		.uleb128 0x12
+ 590 006c 06       		.uleb128 0x6
+ 591 006d 40       		.uleb128 0x40
+ 592 006e 18       		.uleb128 0x18
+ 593 006f 9642     		.uleb128 0x2116
+ 594 0071 19       		.uleb128 0x19
+ 595 0072 01       		.uleb128 0x1
+ 596 0073 13       		.uleb128 0x13
+ 597 0074 00       		.byte	0
+ 598 0075 00       		.byte	0
+ 599 0076 0A       		.uleb128 0xa
+ 600 0077 34       		.uleb128 0x34
+ 601 0078 00       		.byte	0
+ 602 0079 03       		.uleb128 0x3
+ 603 007a 0E       		.uleb128 0xe
+ 604 007b 3A       		.uleb128 0x3a
+ 605 007c 0B       		.uleb128 0xb
+ 606 007d 3B       		.uleb128 0x3b
+ 607 007e 0B       		.uleb128 0xb
+ 608 007f 49       		.uleb128 0x49
+ 609 0080 13       		.uleb128 0x13
+ 610 0081 02       		.uleb128 0x2
+ 611 0082 18       		.uleb128 0x18
+ 612 0083 00       		.byte	0
+ 613 0084 00       		.byte	0
+ 614 0085 0B       		.uleb128 0xb
+ 615 0086 2E       		.uleb128 0x2e
+ 616 0087 00       		.byte	0
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccC3bekF.s 			page 17
+
+
+ 617 0088 3F       		.uleb128 0x3f
+ 618 0089 19       		.uleb128 0x19
+ 619 008a 03       		.uleb128 0x3
+ 620 008b 0E       		.uleb128 0xe
+ 621 008c 3A       		.uleb128 0x3a
+ 622 008d 0B       		.uleb128 0xb
+ 623 008e 3B       		.uleb128 0x3b
+ 624 008f 0B       		.uleb128 0xb
+ 625 0090 27       		.uleb128 0x27
+ 626 0091 19       		.uleb128 0x19
+ 627 0092 49       		.uleb128 0x49
+ 628 0093 13       		.uleb128 0x13
+ 629 0094 11       		.uleb128 0x11
+ 630 0095 01       		.uleb128 0x1
+ 631 0096 12       		.uleb128 0x12
+ 632 0097 06       		.uleb128 0x6
+ 633 0098 40       		.uleb128 0x40
+ 634 0099 18       		.uleb128 0x18
+ 635 009a 9642     		.uleb128 0x2116
+ 636 009c 19       		.uleb128 0x19
+ 637 009d 00       		.byte	0
+ 638 009e 00       		.byte	0
+ 639 009f 0C       		.uleb128 0xc
+ 640 00a0 34       		.uleb128 0x34
+ 641 00a1 00       		.byte	0
+ 642 00a2 03       		.uleb128 0x3
+ 643 00a3 0E       		.uleb128 0xe
+ 644 00a4 3A       		.uleb128 0x3a
+ 645 00a5 0B       		.uleb128 0xb
+ 646 00a6 3B       		.uleb128 0x3b
+ 647 00a7 05       		.uleb128 0x5
+ 648 00a8 49       		.uleb128 0x49
+ 649 00a9 13       		.uleb128 0x13
+ 650 00aa 3F       		.uleb128 0x3f
+ 651 00ab 19       		.uleb128 0x19
+ 652 00ac 3C       		.uleb128 0x3c
+ 653 00ad 19       		.uleb128 0x19
+ 654 00ae 00       		.byte	0
+ 655 00af 00       		.byte	0
+ 656 00b0 0D       		.uleb128 0xd
+ 657 00b1 34       		.uleb128 0x34
+ 658 00b2 00       		.byte	0
+ 659 00b3 03       		.uleb128 0x3
+ 660 00b4 0E       		.uleb128 0xe
+ 661 00b5 3A       		.uleb128 0x3a
+ 662 00b6 0B       		.uleb128 0xb
+ 663 00b7 3B       		.uleb128 0x3b
+ 664 00b8 0B       		.uleb128 0xb
+ 665 00b9 49       		.uleb128 0x49
+ 666 00ba 13       		.uleb128 0x13
+ 667 00bb 3F       		.uleb128 0x3f
+ 668 00bc 19       		.uleb128 0x19
+ 669 00bd 02       		.uleb128 0x2
+ 670 00be 18       		.uleb128 0x18
+ 671 00bf 00       		.byte	0
+ 672 00c0 00       		.byte	0
+ 673 00c1 00       		.byte	0
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccC3bekF.s 			page 18
+
+
+ 674              		.section	.debug_aranges,"",%progbits
+ 675 0000 24000000 		.4byte	0x24
+ 676 0004 0200     		.2byte	0x2
+ 677 0006 00000000 		.4byte	.Ldebug_info0
+ 678 000a 04       		.byte	0x4
+ 679 000b 00       		.byte	0
+ 680 000c 0000     		.2byte	0
+ 681 000e 0000     		.2byte	0
+ 682 0010 00000000 		.4byte	.LFB63
+ 683 0014 50000000 		.4byte	.LFE63-.LFB63
+ 684 0018 00000000 		.4byte	.LFB64
+ 685 001c 04010000 		.4byte	.LFE64-.LFB64
+ 686 0020 00000000 		.4byte	0
+ 687 0024 00000000 		.4byte	0
+ 688              		.section	.debug_ranges,"",%progbits
+ 689              	.Ldebug_ranges0:
+ 690 0000 00000000 		.4byte	.LFB63
+ 691 0004 50000000 		.4byte	.LFE63
+ 692 0008 00000000 		.4byte	.LFB64
+ 693 000c 04010000 		.4byte	.LFE64
+ 694 0010 00000000 		.4byte	0
+ 695 0014 00000000 		.4byte	0
+ 696              		.section	.debug_line,"",%progbits
+ 697              	.Ldebug_line0:
+ 698 0000 9B010000 		.section	.debug_str,"MS",%progbits,1
+ 698      02003B01 
+ 698      00000201 
+ 698      FB0E0D00 
+ 698      01010101 
+ 699              	.LASF20:
+ 700 0000 63757272 		.ascii	"currentStep\000"
+ 700      656E7453 
+ 700      74657000 
+ 701              	.LASF9:
+ 702 000c 5F5F696E 		.ascii	"__int32_t\000"
+ 702      7433325F 
+ 702      7400
+ 703              	.LASF25:
+ 704 0016 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 704      4320342E 
+ 704      392E3320 
+ 704      32303135 
+ 704      30333033 
+ 705 0049 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 705      20726576 
+ 705      6973696F 
+ 705      6E203232 
+ 705      31323230 
+ 706 007c 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 706      66756E63 
+ 706      74696F6E 
+ 706      2D736563 
+ 706      74696F6E 
+ 707              	.LASF12:
+ 708 00a4 666C6F61 		.ascii	"float\000"
+ 708      7400
+ 709              	.LASF23:
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccC3bekF.s 			page 19
+
+
+ 710 00aa 69326342 		.ascii	"i2cBufferWrite\000"
+ 710      75666665 
+ 710      72577269 
+ 710      746500
+ 711              	.LASF1:
+ 712 00b9 756E7369 		.ascii	"unsigned char\000"
+ 712      676E6564 
+ 712      20636861 
+ 712      7200
+ 713              	.LASF5:
+ 714 00c7 6C6F6E67 		.ascii	"long unsigned int\000"
+ 714      20756E73 
+ 714      69676E65 
+ 714      6420696E 
+ 714      7400
+ 715              	.LASF3:
+ 716 00d9 73686F72 		.ascii	"short unsigned int\000"
+ 716      7420756E 
+ 716      7369676E 
+ 716      65642069 
+ 716      6E7400
+ 717              	.LASF19:
+ 718 00ec 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 718      52784275 
+ 718      66666572 
+ 718      00
+ 719              	.LASF16:
+ 720 00f9 70726F67 		.ascii	"programResult\000"
+ 720      72616D52 
+ 720      6573756C 
+ 720      7400
+ 721              	.LASF13:
+ 722 0107 646F7562 		.ascii	"double\000"
+ 722      6C6500
+ 723              	.LASF28:
+ 724 010e 6D61696E 		.ascii	"main\000"
+ 724      00
+ 725              	.LASF17:
+ 726 0113 6572726F 		.ascii	"errorStatus\000"
+ 726      72537461 
+ 726      74757300 
+ 727              	.LASF8:
+ 728 011f 756E7369 		.ascii	"unsigned int\000"
+ 728      676E6564 
+ 728      20696E74 
+ 728      00
+ 729              	.LASF7:
+ 730 012c 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 730      206C6F6E 
+ 730      6720756E 
+ 730      7369676E 
+ 730      65642069 
+ 731              	.LASF27:
+ 732 0143 443A5C55 		.ascii	"D:\\Users\\WorkBench\\Documents\\GitHub\\BackboneHS"
+ 732      73657273 
+ 732      5C576F72 
+ 732      6B42656E 
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccC3bekF.s 			page 20
+
+
+ 732      63685C44 
+ 733 0171 53505C50 		.ascii	"SP\\Programmer\\Programmer.cydsn\000"
+ 733      726F6772 
+ 733      616D6D65 
+ 733      725C5072 
+ 733      6F677261 
+ 734              	.LASF0:
+ 735 0190 7369676E 		.ascii	"signed char\000"
+ 735      65642063 
+ 735      68617200 
+ 736              	.LASF10:
+ 737 019c 696E7433 		.ascii	"int32_t\000"
+ 737      325F7400 
+ 738              	.LASF15:
+ 739 01a4 73697A65 		.ascii	"sizetype\000"
+ 739      74797065 
+ 739      00
+ 740              	.LASF6:
+ 741 01ad 6C6F6E67 		.ascii	"long long int\000"
+ 741      206C6F6E 
+ 741      6720696E 
+ 741      7400
+ 742              	.LASF18:
+ 743 01bb 73726F6D 		.ascii	"sromErrorStatus\000"
+ 743      4572726F 
+ 743      72537461 
+ 743      74757300 
+ 744              	.LASF26:
+ 745 01cb 6D61696E 		.ascii	"main.c\000"
+ 745      2E6300
+ 746              	.LASF14:
+ 747 01d2 63686172 		.ascii	"char\000"
+ 747      00
+ 748              	.LASF21:
+ 749 01d7 657A6932 		.ascii	"ezi2cBuffer\000"
+ 749      63427566 
+ 749      66657200 
+ 750              	.LASF2:
+ 751 01e3 73686F72 		.ascii	"short int\000"
+ 751      7420696E 
+ 751      7400
+ 752              	.LASF11:
+ 753 01ed 75696E74 		.ascii	"uint8\000"
+ 753      3800
+ 754              	.LASF4:
+ 755 01f3 6C6F6E67 		.ascii	"long int\000"
+ 755      20696E74 
+ 755      00
+ 756              	.LASF29:
+ 757 01fc 50726F67 		.ascii	"ProgramDevice\000"
+ 757      72616D44 
+ 757      65766963 
+ 757      6500
+ 758              	.LASF24:
+ 759 020a 61637469 		.ascii	"actionSelect\000"
+ 759      6F6E5365 
+ 759      6C656374 
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccC3bekF.s 			page 21
+
+
+ 759      00
+ 760              	.LASF22:
+ 761 0217 69326342 		.ascii	"i2cBufferRead\000"
+ 761      75666665 
+ 761      72526561 
+ 761      6400
+ 762              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

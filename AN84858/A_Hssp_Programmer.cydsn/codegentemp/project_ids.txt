@@ -1,8 +1,0 @@
-D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\AN84858\A_Hssp_Programmer.cydsn\A_Hssp_Programmer.cyprj|38f78e9f-f217-48e2-b2a7-10bb66c679e1
-C:\Program Files\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|413ac00c-57fd-41b8-b9de-2735334bc13f
-C:\Program Files\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|f4cd78d4-a558-4744-90ac-bfea2b346bde
-C:\Program Files\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|afa6c64c-48a4-4b75-93dd-e23ba461e141
-C:\Program Files\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|83b52d33-3a8d-46c9-bb36-f9df981c2ad8
-C:\Program Files\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|bfa32ffd-0f78-4daa-936a-6c6f065338f5
-D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\AN84858\C_Hssp_TimeoutCalc.cydsn\C_Hssp_TimeoutCalc.cyprj|15872a9f-faa6-43e4-b7bb-e40237099987
-D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\AN84858\B_Hssp_Pioneer.cydsn\B_Hssp_Pioneer.cyprj|1dee49cb-20a5-4097-97aa-13abeca12c39
