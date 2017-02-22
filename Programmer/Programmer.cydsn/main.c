@@ -65,7 +65,7 @@
 /* These macros are used to remove all LCD and Pin_Start functions while
    porting this code to non PSoC 5LP host programmer */
 #define USE_LCD 		0
-#define USE_START_PIN 	0
+#define USE_START_PIN 	1
 
 /* This file has the top level HSSP routines that should be called from main
    application code */
@@ -78,35 +78,37 @@ unsigned char ProgramDevice(void);
 unsigned char currentStep;
 
 /* Slave address of the EZI2C */
-#define EZI2C_SLAVE_ADDR        (0x08u)
-#define BUFFER_SIZE             (0x04u)
-#define BUFFER_RW_AREA_SIZE     (0x02u)
+//#define EZI2C_SLAVE_ADDR        (0x08u)
+//#define BUFFER_SIZE             (0x04u)
+//#define BUFFER_RW_AREA_SIZE     (0x02u)
 
 /* Denotes the offset inside the EZI2C buffer */
-#define SLAVE_ADDR_SIZE         (0x01u)
+//#define SLAVE_ADDR_SIZE         (0x01u)
 
-#define ACTION_SELECT_NONE      (0x00u)     /* Do nothing       */
-#define ACTION_SELECT_WRITE     (0x01u)     /* Write to EZI2C   */
-#define ACTION_SELECT_READ      (0x02u)     /* Read from EZI2C  */
+//#define ACTION_SELECT_NONE      (0x00u)     /* Do nothing       */
+//#define ACTION_SELECT_WRITE     (0x01u)     /* Write to EZI2C   */
+//#define ACTION_SELECT_READ      (0x02u)     /* Read from EZI2C  */
 
 /* Desing interrupt handlers for SW1 and SW2 event */
 CY_ISR_PROTO(ISR_WriteSW1_Interrupt);
 CY_ISR_PROTO(ISR_ReadSW2_Interrupt);
 
 /* EZI2C buffer */
-uint8   ezi2cBuffer[BUFFER_SIZE];
+//uint8   ezi2cBuffer[BUFFER_SIZE];
 
 /* I2C buffer with the data read from EZI2C */
-uint8   i2cBufferRead[BUFFER_SIZE];
+//uint8   i2cBufferRead[BUFFER_SIZE];
 
 /* I2C buffer with the data to be written to EZI2C */
-uint8   i2cBufferWrite[SLAVE_ADDR_SIZE + BUFFER_SIZE];
+//uint8   i2cBufferWrite[SLAVE_ADDR_SIZE + BUFFER_SIZE];
 
 /* Initialize action variable */
-volatile uint8 actionSelect = ACTION_SELECT_NONE;
+//volatile uint8 actionSelect = ACTION_SELECT_NONE;
 
 int main()
 {
+    for( ; ; )
+    {
     /* Variable to store the result of HSSP operation */
     unsigned char programResult;   
 	
@@ -145,16 +147,22 @@ int main()
 	    LCD_Char_Position(0,0);
 	    LCD_Char_PrintString("Programming PSoC4");
 	}
+    
+    LED_R_Write(0);
+    LED_G_Write(0);
+    LED_B_Write(0);
+    LED_R_GND_Write(0);
+    PWM_Start();
        
     /* Start EZI2C */
-    EZI2C_Start();
+   // EZI2C_Start();
     
     /* Enable global interrupts */
     CyGlobalIntEnable;
     
     /* Initialize EZI2C buffer's read only data */
-    ezi2cBuffer[BUFFER_RW_AREA_SIZE     ] = 0xAAu;
-    ezi2cBuffer[BUFFER_RW_AREA_SIZE + 1u] = 0xBBu;
+    //ezi2cBuffer[BUFFER_RW_AREA_SIZE     ] = 0xAAu;
+    //ezi2cBuffer[BUFFER_RW_AREA_SIZE + 1u] = 0xBBu;
 
     /***************************************************************************
     * The first parameter sets the size of the exposed memory to the I2C
@@ -165,7 +173,7 @@ int main()
     * BUFFER_RW_AREA_SIZE bytes may be written, but all bytes may be read by the
     * I2C master. The third parameter is a pointer to the data.
     ***************************************************************************/
-    EZI2C_SetBuffer1(BUFFER_SIZE, BUFFER_RW_AREA_SIZE, (void *) ezi2cBuffer);
+    //EZI2C_SetBuffer1(BUFFER_SIZE, BUFFER_RW_AREA_SIZE, (void *) ezi2cBuffer);
 
 
     /* Start the HSSP Programming and store the status */
@@ -177,10 +185,15 @@ int main()
 	    /* Character LCD will display the status of HSSP Programming  */
 	    LCD_Char_ClearDisplay();
 	}
+    PWM_Stop();
+    LED_B_Write(0);
     
 	/* HSSP completed successfully */
     if(programResult == SUCCESS) 
     {
+
+        LED_G_Write(1);
+        
 		/* Set USE_LCD macro to 0 if PSoC 5LP is not used as host microcontroller */
         if(USE_LCD)
 		{
@@ -192,6 +205,9 @@ int main()
 	/* HSSP Failure */
     else
     {
+        LED_R_Write(1);
+        LED_R_GND_Write(0);
+
 		/* Set USE_LCD macro to 0 if PSoC 5LP is not used as host microcontroller */
         if(USE_LCD)
 		{
@@ -228,8 +244,7 @@ int main()
         }
     }
 
-    for( ; ; )
-    {
+
         /* Do Nothing */
     }
 }
@@ -254,40 +269,68 @@ unsigned char ProgramDevice()
     currentStep = 0;
     
     currentStep++;    
+    //LED_B_Write(!LED_B_Read());
     if(DeviceAcquire() == FAILURE)     
         return(FAILURE);
+        LCD_Char_Position(0,0);
+        LCD_Char_PrintString("Dev Acquire   OK");
     
     currentStep++;
+        //LED_B_Write(!LED_B_Read());
     if(VerifySiliconId() == FAILURE)    
         return(FAILURE);
+    LCD_Char_Position(0,0);
+    LCD_Char_PrintString("Verify Sil    OK");
 
     currentStep++;
+        //LED_B_Write(!LED_B_Read());
     if(EraseAllFlash() == FAILURE)             
         return(FAILURE);
+    LCD_Char_Position(0,0);
+    LCD_Char_PrintString("Erase All     OK");
 
     currentStep++;
+       // LED_B_Write(!LED_B_Read());
     if(ChecksumPrivileged() == FAILURE)                    
         return(FAILURE);
+    LCD_Char_Position(0,0);
+    LCD_Char_PrintString("ChkSumPrv     OK");
 
     currentStep++;
+       // LED_B_Write(!LED_B_Read());
     if(ProgramFlash() == FAILURE)          
         return(FAILURE);
+    LCD_Char_Position(0,0);
+    LCD_Char_PrintString("Program Flash OK");
 
     currentStep++;
+       // LED_B_Write(!LED_B_Read());
     if(VerifyFlash() == FAILURE)       
         return(FAILURE);
+    LCD_Char_Position(0,0);
+    LCD_Char_PrintString("Verify Flash  OK");
 
     currentStep++;
+       // LED_B_Write(!LED_B_Read());
     if(ProgramProtectionSettings() == FAILURE) 
         return(FAILURE);
+    LCD_Char_Position(0,0);
+    LCD_Char_PrintString("Prg Protect   OK");
 
     currentStep++;
+       // LED_B_Write(!LED_B_Read());
+    /* Disable for now since this fails    
     if(VerifyProtectionSettings() == FAILURE)
         return(FAILURE);
-
+    LCD_Char_Position(0,0);
+    LCD_Char_PrintString("Verify Prot   OK");
+*/
     currentStep++;
+       // LED_B_Write(!LED_B_Read());
     if(VerifyChecksum() == FAILURE) 
         return(FAILURE);
+        LCD_Char_Position(0,0);
+    LCD_Char_PrintString("Verify ChkSum OK");
 
     ExitProgrammingMode();
     

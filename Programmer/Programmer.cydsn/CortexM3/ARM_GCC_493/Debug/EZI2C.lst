@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrHEYxP.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
   16:Generated_Source\PSoC5/EZI2C.c **** 
   17:Generated_Source\PSoC5/EZI2C.c **** #include "EZI2C_PVT.h"
   18:Generated_Source\PSoC5/EZI2C.c **** 
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 2
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrHEYxP.s 			page 2
 
 
   19:Generated_Source\PSoC5/EZI2C.c **** /**********************************
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
   73:Generated_Source\PSoC5/EZI2C.c **** *  EZI2C_curState- Stores the current state of an I2C state machine.
   74:Generated_Source\PSoC5/EZI2C.c **** *
   75:Generated_Source\PSoC5/EZI2C.c **** *  EZI2C_rwOffsetS1 - The global variable which stores an offset for read
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 3
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrHEYxP.s 			page 3
 
 
   76:Generated_Source\PSoC5/EZI2C.c **** *  and write operations, is set at each write sequence of the first slave
@@ -176,9 +176,9 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  110:Generated_Source\PSoC5/EZI2C.c ****     EZI2C_ADDR_REG = EZI2C_DEFAULT_ADDR;
   58              		.loc 1 110 0
   59 0010 144B     		ldr	r3, .L2+8
-  60 0012 0722     		movs	r2, #7
+  60 0012 0822     		movs	r2, #8
   61 0014 1A70     		strb	r2, [r3]
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 4
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrHEYxP.s 			page 4
 
 
  111:Generated_Source\PSoC5/EZI2C.c ****     EZI2C_CLKDIV1_REG = EZI2C_DEFAULT_CLKDIV1;
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
   95 004c 0D4B     		ldr	r3, .L2+40
   96 004e 0022     		movs	r2, #0
   97 0050 1A70     		strb	r2, [r3]
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 5
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrHEYxP.s 			page 5
 
 
  132:Generated_Source\PSoC5/EZI2C.c ****     EZI2C_wrProtectS1 = 0u;
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  154:Generated_Source\PSoC5/EZI2C.c **** *  None.
  155:Generated_Source\PSoC5/EZI2C.c **** *
  156:Generated_Source\PSoC5/EZI2C.c **** * Return:
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 6
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrHEYxP.s 			page 6
 
 
  157:Generated_Source\PSoC5/EZI2C.c **** *  None.
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  169 003c 1A60     		str	r2, [r3]
  172:Generated_Source\PSoC5/EZI2C.c **** }
  170              		.loc 1 172 0
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 7
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrHEYxP.s 			page 7
 
 
  171 003e 0837     		adds	r7, r7, #8
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  200              		.cfi_offset 7, -8
  201              		.cfi_offset 14, -4
  202 0002 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 8
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrHEYxP.s 			page 8
 
 
  203              		.cfi_def_cfa_register 7
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  220:Generated_Source\PSoC5/EZI2C.c **** *  None.
  221:Generated_Source\PSoC5/EZI2C.c **** *
  222:Generated_Source\PSoC5/EZI2C.c **** *******************************************************************************/
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 9
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrHEYxP.s 			page 9
 
 
  223:Generated_Source\PSoC5/EZI2C.c **** void EZI2C_Stop(void) 
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  275 0036 9AB2     		uxth	r2, r3
  276 0038 2B4B     		ldr	r3, .L12+12
  277 003a 1B78     		ldrb	r3, [r3]
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 10
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrHEYxP.s 			page 10
 
 
  278 003c DBB2     		uxtb	r3, r3
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  249:Generated_Source\PSoC5/EZI2C.c ****     /* Enable block */
  250:Generated_Source\PSoC5/EZI2C.c ****     EZI2C_CFG_REG |= (uint8) EZI2C_CFG_EN_SLAVE;
  320              		.loc 1 250 0
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 11
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrHEYxP.s 			page 11
 
 
  321 0090 174A     		ldr	r2, .L12+20
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  362              		.cfi_def_cfa_offset 8
  363 00d6 BD46     		mov	sp, r7
  364              		.cfi_def_cfa_register 13
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 12
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrHEYxP.s 			page 12
 
 
  365              		@ sp needed
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  291:Generated_Source\PSoC5/EZI2C.c **** void EZI2C_SetAddress1(uint8 address) 
  292:Generated_Source\PSoC5/EZI2C.c **** {
  392              		.loc 1 292 0
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 13
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrHEYxP.s 			page 13
 
 
  393              		.cfi_startproc
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  303:Generated_Source\PSoC5/EZI2C.c **** ********************************************************************************
  304:Generated_Source\PSoC5/EZI2C.c **** *
  305:Generated_Source\PSoC5/EZI2C.c **** * Summary:
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 14
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrHEYxP.s 			page 14
 
 
  306:Generated_Source\PSoC5/EZI2C.c **** *  Returns the primary I2C slave address.
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  464              		.cfi_endproc
  465              	.LFE5:
  466              		.size	EZI2C_GetAddress1, .-EZI2C_GetAddress1
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 15
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrHEYxP.s 			page 15
 
 
  467              		.section	.text.EZI2C_GetActivity,"ax",%progbits
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  379:Generated_Source\PSoC5/EZI2C.c **** *
  380:Generated_Source\PSoC5/EZI2C.c **** * Reentrant:
  381:Generated_Source\PSoC5/EZI2C.c **** *  No.
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 16
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrHEYxP.s 			page 16
 
 
  382:Generated_Source\PSoC5/EZI2C.c **** *
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  513 0032 BD46     		mov	sp, r7
  514              		.cfi_def_cfa_register 13
  515              		@ sp needed
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 17
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrHEYxP.s 			page 17
 
 
  516 0034 5DF8047B 		ldr	r7, [sp], #4
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  431:Generated_Source\PSoC5/EZI2C.c **** *  No.
  432:Generated_Source\PSoC5/EZI2C.c **** *
  433:Generated_Source\PSoC5/EZI2C.c **** *******************************************************************************/
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 18
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrHEYxP.s 			page 18
 
 
  434:Generated_Source\PSoC5/EZI2C.c **** void EZI2C_SetBuffer1(uint16 bufSize, uint16 rwBoundary, volatile uint8 * dataPtr) 
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  577 0032 0022     		movs	r2, #0
  578 0034 1A70     		strb	r2, [r3]
  448:Generated_Source\PSoC5/EZI2C.c ****     EZI2C_rwIndexS1  = 0u;
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 19
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrHEYxP.s 			page 19
 
 
  579              		.loc 1 448 0
@@ -1130,15 +1130,15 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  622 000c 27010000 		.4byte	.LASF45
  623 0010 01       		.byte	0x1
  624 0011 B0000000 		.4byte	.LASF46
- 625 0015 A7020000 		.4byte	.LASF47
+ 625 0015 3B020000 		.4byte	.LASF47
  626 0019 00000000 		.4byte	.Ldebug_ranges0+0
  627 001d 00000000 		.4byte	0
  628 0021 00000000 		.4byte	.Ldebug_line0
  629 0025 02       		.uleb128 0x2
  630 0026 01       		.byte	0x1
  631 0027 06       		.byte	0x6
- 632 0028 18030000 		.4byte	.LASF0
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 20
+ 632 0028 1B030000 		.4byte	.LASF0
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrHEYxP.s 			page 20
 
 
  633 002c 02       		.uleb128 0x2
@@ -1148,7 +1148,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  637 0033 02       		.uleb128 0x2
  638 0034 02       		.byte	0x2
  639 0035 05       		.byte	0x5
- 640 0036 9D020000 		.4byte	.LASF2
+ 640 0036 EA020000 		.4byte	.LASF2
  641 003a 02       		.uleb128 0x2
  642 003b 02       		.byte	0x2
  643 003c 07       		.byte	0x7
@@ -1156,7 +1156,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  645 0041 02       		.uleb128 0x2
  646 0042 04       		.byte	0x4
  647 0043 05       		.byte	0x5
- 648 0044 05030000 		.4byte	.LASF4
+ 648 0044 08030000 		.4byte	.LASF4
  649 0048 02       		.uleb128 0x2
  650 0049 04       		.byte	0x4
  651 004a 07       		.byte	0x7
@@ -1164,7 +1164,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  653 004f 02       		.uleb128 0x2
  654 0050 08       		.byte	0x8
  655 0051 05       		.byte	0x5
- 656 0052 68020000 		.4byte	.LASF6
+ 656 0052 B5020000 		.4byte	.LASF6
  657 0056 02       		.uleb128 0x2
  658 0057 08       		.byte	0x8
  659 0058 07       		.byte	0x7
@@ -1180,17 +1180,17 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  669 006b 04       		.uleb128 0x4
  670 006c 0F010000 		.4byte	.LASF9
  671 0070 02       		.byte	0x2
- 672 0071 3801     		.2byte	0x138
+ 672 0071 9201     		.2byte	0x192
  673 0073 2C000000 		.4byte	0x2c
  674 0077 04       		.uleb128 0x4
  675 0078 CD010000 		.4byte	.LASF10
  676 007c 02       		.byte	0x2
- 677 007d 3901     		.2byte	0x139
+ 677 007d 9301     		.2byte	0x193
  678 007f 3A000000 		.4byte	0x3a
  679 0083 04       		.uleb128 0x4
  680 0084 D4010000 		.4byte	.LASF11
  681 0088 02       		.byte	0x2
- 682 0089 3A01     		.2byte	0x13a
+ 682 0089 9401     		.2byte	0x194
  683 008b 48000000 		.4byte	0x48
  684 008f 02       		.uleb128 0x2
  685 0090 04       		.byte	0x4
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  687 0092 9C000000 		.4byte	.LASF12
  688 0096 02       		.uleb128 0x2
  689 0097 08       		.byte	0x8
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 21
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrHEYxP.s 			page 21
 
 
  690 0098 04       		.byte	0x4
@@ -1206,11 +1206,11 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  692 009d 02       		.uleb128 0x2
  693 009e 01       		.byte	0x1
  694 009f 08       		.byte	0x8
- 695 00a0 76020000 		.4byte	.LASF14
+ 695 00a0 C3020000 		.4byte	.LASF14
  696 00a4 04       		.uleb128 0x4
  697 00a5 DF000000 		.4byte	.LASF15
  698 00a9 02       		.byte	0x2
- 699 00aa E201     		.2byte	0x1e2
+ 699 00aa 3C02     		.2byte	0x23c
  700 00ac B0000000 		.4byte	0xb0
  701 00b0 05       		.uleb128 0x5
  702 00b1 6B000000 		.4byte	0x6b
@@ -1219,14 +1219,14 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  705 00ba 04       		.uleb128 0x4
  706 00bb 12000000 		.4byte	.LASF16
  707 00bf 02       		.byte	0x2
- 708 00c0 E401     		.2byte	0x1e4
+ 708 00c0 3E02     		.2byte	0x23e
  709 00c2 C6000000 		.4byte	0xc6
  710 00c6 05       		.uleb128 0x5
  711 00c7 83000000 		.4byte	0x83
  712 00cb 02       		.uleb128 0x2
  713 00cc 04       		.byte	0x4
  714 00cd 07       		.byte	0x7
- 715 00ce 5F020000 		.4byte	.LASF17
+ 715 00ce AC020000 		.4byte	.LASF17
  716 00d2 06       		.uleb128 0x6
  717 00d3 06       		.byte	0x6
  718 00d4 03       		.byte	0x3
@@ -1239,7 +1239,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  725 00e1 6B000000 		.4byte	0x6b
  726 00e5 00       		.byte	0
  727 00e6 07       		.uleb128 0x7
- 728 00e7 7B020000 		.4byte	.LASF19
+ 728 00e7 C8020000 		.4byte	.LASF19
  729 00eb 03       		.byte	0x3
  730 00ec 45       		.byte	0x45
  731 00ed 6B000000 		.4byte	0x6b
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  744 0109 03       		.byte	0x3
  745 010a 07       		.uleb128 0x7
  746 010b 2B020000 		.4byte	.LASF20
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 22
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrHEYxP.s 			page 22
 
 
  747 010f 03       		.byte	0x3
@@ -1273,12 +1273,12 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  756 0121 05       		.byte	0x5
  757 0122 00       		.byte	0
  758 0123 09       		.uleb128 0x9
- 759 0124 4B020000 		.4byte	.LASF22
+ 759 0124 98020000 		.4byte	.LASF22
  760 0128 03       		.byte	0x3
  761 0129 4B       		.byte	0x4b
  762 012a D2000000 		.4byte	0xd2
  763 012e 0A       		.uleb128 0xa
- 764 012f 92020000 		.4byte	.LASF23
+ 764 012f DF020000 		.4byte	.LASF23
  765 0133 01       		.byte	0x1
  766 0134 69       		.byte	0x69
  767 0135 00000000 		.4byte	.LFB0
@@ -1304,7 +1304,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  787 0161 77       		.sleb128 -9
  788 0162 00       		.byte	0
  789 0163 0A       		.uleb128 0xa
- 790 0164 F9020000 		.4byte	.LASF24
+ 790 0164 FC020000 		.4byte	.LASF24
  791 0168 01       		.byte	0x1
  792 0169 C4       		.byte	0xc4
  793 016a 00000000 		.4byte	.LFB2
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  801 017b 00000000 		.4byte	.LFB3
  802 017f 08010000 		.4byte	.LFE3-.LFB3
  803 0183 01       		.uleb128 0x1
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 23
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrHEYxP.s 			page 23
 
 
  804 0184 9C       		.byte	0x9c
@@ -1359,7 +1359,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  839 01ca 77       		.sleb128 -9
  840 01cb 00       		.byte	0
  841 01cc 0F       		.uleb128 0xf
- 842 01cd 80020000 		.4byte	.LASF48
+ 842 01cd CD020000 		.4byte	.LASF48
  843 01d1 01       		.byte	0x1
  844 01d2 4501     		.2byte	0x145
  845 01d4 6B000000 		.4byte	0x6b
@@ -1378,10 +1378,10 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  858 01f7 9C       		.byte	0x9c
  859 01f8 0C020000 		.4byte	0x20c
  860 01fc 11       		.uleb128 0x11
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 24
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrHEYxP.s 			page 24
 
 
- 861 01fd 0E030000 		.4byte	.LASF30
+ 861 01fd 11030000 		.4byte	.LASF30
  862 0201 01       		.byte	0x1
  863 0202 8201     		.2byte	0x182
  864 0204 6B000000 		.4byte	0x6b
@@ -1399,7 +1399,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  876 021d 9C       		.byte	0x9c
  877 021e 50020000 		.4byte	0x250
  878 0222 0E       		.uleb128 0xe
- 879 0223 F1020000 		.4byte	.LASF33
+ 879 0223 F4020000 		.4byte	.LASF33
  880 0227 01       		.byte	0x1
  881 0228 B201     		.2byte	0x1b2
  882 022a 77000000 		.4byte	0x77
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  915 0268 2A000000 		.4byte	.LASF37
  916 026c 04       		.byte	0x4
  917 026d 1A       		.byte	0x1a
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 25
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrHEYxP.s 			page 25
 
 
  918 026e 23010000 		.4byte	0x123
@@ -1459,7 +1459,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  933 028f 03       		.byte	0x3
  934 0290 00000000 		.4byte	EZI2C_curState
  935 0294 13       		.uleb128 0x13
- 936 0295 24030000 		.4byte	.LASF40
+ 936 0295 27030000 		.4byte	.LASF40
  937 0299 01       		.byte	0x1
  938 029a 1E       		.byte	0x1e
  939 029b 50020000 		.4byte	0x250
@@ -1467,7 +1467,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  941 02a0 03       		.byte	0x3
  942 02a1 00000000 		.4byte	EZI2C_dataPtrS1
  943 02a5 13       		.uleb128 0x13
- 944 02a6 3B020000 		.4byte	.LASF41
+ 944 02a6 88020000 		.4byte	.LASF41
  945 02aa 01       		.byte	0x1
  946 02ab 1F       		.byte	0x1f
  947 02ac B5000000 		.4byte	0xb5
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  972 02e3 05       		.uleb128 0x5
  973 02e4 03       		.byte	0x3
  974 02e5 00000000 		.4byte	EZI2C_rwIndexS1
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 26
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrHEYxP.s 			page 26
 
 
  975 02e9 00       		.byte	0
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  1029 0033 13       		.uleb128 0x13
  1030 0034 00       		.byte	0
  1031 0035 00       		.byte	0
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 27
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrHEYxP.s 			page 27
 
 
  1032 0036 05       		.uleb128 0x5
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  1086 006c 0E       		.uleb128 0xe
  1087 006d 3A       		.uleb128 0x3a
  1088 006e 0B       		.uleb128 0xb
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 28
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrHEYxP.s 			page 28
 
 
  1089 006f 3B       		.uleb128 0x3b
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  1143 00a7 0C       		.uleb128 0xc
  1144 00a8 34       		.uleb128 0x34
  1145 00a9 00       		.byte	0
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 29
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrHEYxP.s 			page 29
 
 
  1146 00aa 03       		.uleb128 0x3
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  1200 00e1 00       		.byte	0
  1201 00e2 3F       		.uleb128 0x3f
  1202 00e3 19       		.uleb128 0x19
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 30
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrHEYxP.s 			page 30
 
 
  1203 00e4 03       		.uleb128 0x3
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  1257 011c 3B       		.uleb128 0x3b
  1258 011d 05       		.uleb128 0x5
  1259 011e 49       		.uleb128 0x49
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 31
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrHEYxP.s 			page 31
 
 
  1260 011f 13       		.uleb128 0x13
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  1314 000b 00       		.byte	0
  1315 000c 0000     		.2byte	0
  1316 000e 0000     		.2byte	0
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 32
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrHEYxP.s 			page 32
 
 
  1317 0010 00000000 		.4byte	.LFB0
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  1362              	.LASF29:
  1363 0018 455A4932 		.ascii	"EZI2C_SetAddress1\000"
  1363      435F5365 
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 33
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrHEYxP.s 			page 33
 
 
  1363      74416464 
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  1385      645F536F 
  1385      75726365 
  1385      5C50536F 
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 34
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrHEYxP.s 			page 34
 
 
  1386              	.LASF44:
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  1407      74427566 
  1407      66657231 
  1407      00
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 35
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrHEYxP.s 			page 35
 
 
  1408              	.LASF10:
@@ -2080,85 +2080,85 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 1
  1426              	.LASF21:
  1427 0233 636C6B44 		.ascii	"clkDiv2\000"
  1427      69763200 
- 1428              	.LASF41:
- 1429 023b 455A4932 		.ascii	"EZI2C_bufSizeS1\000"
- 1429      435F6275 
- 1429      6653697A 
- 1429      65533100 
- 1430              	.LASF22:
- 1431 024b 455A4932 		.ascii	"EZI2C_BACKUP_STRUCT\000"
- 1431      435F4241 
- 1431      434B5550 
- 1431      5F535452 
- 1431      55435400 
- 1432              	.LASF17:
- 1433 025f 73697A65 		.ascii	"sizetype\000"
- 1433      74797065 
- 1433      00
- 1434              	.LASF6:
- 1435 0268 6C6F6E67 		.ascii	"long long int\000"
- 1435      206C6F6E 
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 36
+ 1428              	.LASF47:
+ 1429 023b 443A5C55 		.ascii	"D:\\Users\\WorkBench\\Documents\\GitHub\\BackboneHS"
+ 1429      73657273 
+ 1429      5C576F72 
+ 1429      6B42656E 
+ 1429      63685C44 
+ 1430 0269 53505C50 		.ascii	"SP\\Programmer\\Programmer.cydsn\000"
+ 1430      726F6772 
+ 1430      616D6D65 
+ 1430      725C5072 
+ 1430      6F677261 
+ 1431              	.LASF41:
+ 1432 0288 455A4932 		.ascii	"EZI2C_bufSizeS1\000"
+ 1432      435F6275 
+ 1432      6653697A 
+ 1432      65533100 
+ 1433              	.LASF22:
+ 1434 0298 455A4932 		.ascii	"EZI2C_BACKUP_STRUCT\000"
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrHEYxP.s 			page 36
 
 
- 1435      6720696E 
- 1435      7400
- 1436              	.LASF14:
- 1437 0276 63686172 		.ascii	"char\000"
- 1437      00
- 1438              	.LASF19:
- 1439 027b 78636667 		.ascii	"xcfg\000"
- 1439      00
- 1440              	.LASF48:
- 1441 0280 455A4932 		.ascii	"EZI2C_GetAddress1\000"
- 1441      435F4765 
- 1441      74416464 
- 1441      72657373 
- 1441      3100
- 1442              	.LASF23:
- 1443 0292 455A4932 		.ascii	"EZI2C_Init\000"
- 1443      435F496E 
- 1443      697400
- 1444              	.LASF2:
- 1445 029d 73686F72 		.ascii	"short int\000"
- 1445      7420696E 
- 1445      7400
- 1446              	.LASF47:
- 1447 02a7 443A5C55 		.ascii	"D:\\Users\\WorkBench\\Documents\\GitHub\\BackboneHS"
- 1447      73657273 
- 1447      5C576F72 
- 1447      6B42656E 
- 1447      63685C44 
- 1448 02d5 53505C41 		.ascii	"SP\\AN84858\\Programmer.cydsn\000"
- 1448      4E383438 
- 1448      35385C50 
- 1448      726F6772 
- 1448      616D6D65 
+ 1434      435F4241 
+ 1434      434B5550 
+ 1434      5F535452 
+ 1434      55435400 
+ 1435              	.LASF17:
+ 1436 02ac 73697A65 		.ascii	"sizetype\000"
+ 1436      74797065 
+ 1436      00
+ 1437              	.LASF6:
+ 1438 02b5 6C6F6E67 		.ascii	"long long int\000"
+ 1438      206C6F6E 
+ 1438      6720696E 
+ 1438      7400
+ 1439              	.LASF14:
+ 1440 02c3 63686172 		.ascii	"char\000"
+ 1440      00
+ 1441              	.LASF19:
+ 1442 02c8 78636667 		.ascii	"xcfg\000"
+ 1442      00
+ 1443              	.LASF48:
+ 1444 02cd 455A4932 		.ascii	"EZI2C_GetAddress1\000"
+ 1444      435F4765 
+ 1444      74416464 
+ 1444      72657373 
+ 1444      3100
+ 1445              	.LASF23:
+ 1446 02df 455A4932 		.ascii	"EZI2C_Init\000"
+ 1446      435F496E 
+ 1446      697400
+ 1447              	.LASF2:
+ 1448 02ea 73686F72 		.ascii	"short int\000"
+ 1448      7420696E 
+ 1448      7400
  1449              	.LASF33:
- 1450 02f1 62756653 		.ascii	"bufSize\000"
+ 1450 02f4 62756653 		.ascii	"bufSize\000"
  1450      697A6500 
  1451              	.LASF24:
- 1452 02f9 455A4932 		.ascii	"EZI2C_Start\000"
+ 1452 02fc 455A4932 		.ascii	"EZI2C_Start\000"
  1452      435F5374 
  1452      61727400 
  1453              	.LASF4:
- 1454 0305 6C6F6E67 		.ascii	"long int\000"
+ 1454 0308 6C6F6E67 		.ascii	"long int\000"
  1454      20696E74 
  1454      00
  1455              	.LASF30:
- 1456 030e 746D7053 		.ascii	"tmpStatus\000"
+ 1456 0311 746D7053 		.ascii	"tmpStatus\000"
  1456      74617475 
  1456      7300
  1457              	.LASF0:
- 1458 0318 7369676E 		.ascii	"signed char\000"
+ 1458 031b 7369676E 		.ascii	"signed char\000"
  1458      65642063 
  1458      68617200 
  1459              	.LASF40:
- 1460 0324 455A4932 		.ascii	"EZI2C_dataPtrS1\000"
+ 1460 0327 455A4932 		.ascii	"EZI2C_dataPtrS1\000"
  1460      435F6461 
  1460      74615074 
  1460      72533100 
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccaEdMAc.s 			page 37
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccrHEYxP.s 			page 37
 
 
  1461              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

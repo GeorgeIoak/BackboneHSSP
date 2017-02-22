@@ -56,14 +56,14 @@
 * pin selection
 ******************************************************************************/
 
-#define SWDIO_PRT_NUM   12 // Was 0
-#define SWDIO_PIN_NUM   2 // Was 0
+#define SWDIO_PRT_NUM   1 // Was 0
+#define SWDIO_PIN_NUM   5 // Was 0
 
-#define SWDCK_PRT_NUM   12 // Was 0
-#define SWDCK_PIN_NUM   3 // Was 1
+#define SWDCK_PRT_NUM   1 // Was 0
+#define SWDCK_PIN_NUM   6 // Was 1
 
-#define XRES_PRT_NUM    3 // Was 0
-#define XRES_PIN_NUM    5 // Was 2
+#define XRES_PRT_NUM    1 // Was 0
+#define XRES_PIN_NUM    7 // Was 2
 
 /***************************** USER ATTENTION REQUIRED ************************
 ***************************** HOST PROCESSOR SPECIFIC *************************

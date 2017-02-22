@@ -1261,7 +1261,8 @@ unsigned char VerifyProtectionSettings(void)
 	}
 	
 	/* Compare hex’s and silicon’s chip protection data */
-	if (chipProtectionData_Chip != chipProtectionData_Hex)
+	//Temporary Override GI
+    if (chipProtectionData_Chip != chipProtectionData_Hex)
 	{
         /* Set the verification error bit for Flash protection data
 		   mismatch and return failure */

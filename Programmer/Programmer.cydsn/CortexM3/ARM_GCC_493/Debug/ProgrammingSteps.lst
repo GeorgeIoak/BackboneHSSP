@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
    5:ProgrammingSteps.c **** * Description:
    6:ProgrammingSteps.c **** *  This file provides the source code for the high level Programming functions 
    7:ProgrammingSteps.c **** *  used by the main code to program target PSoC 4
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 2
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 2
 
 
    8:ProgrammingSteps.c **** *
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
   62:ProgrammingSteps.c **** 
   63:ProgrammingSteps.c **** /******************************************************************************
   64:ProgrammingSteps.c **** *   Global Variable definitions
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 3
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 3
 
 
   65:ProgrammingSteps.c **** ******************************************************************************/
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
   63              		.loc 1 106 0
   64 0006 0023     		movs	r3, #0
   65 0008 7B60     		str	r3, [r7, #4]
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 4
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 4
 
 
   66              	.L3:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  102 004a 124B     		ldr	r3, .L7+8
  103 004c 1A70     		strb	r2, [r3]
  125:ProgrammingSteps.c **** 		
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 5
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 5
 
 
  126:ProgrammingSteps.c **** 		Read_IO (CPUSS_SYSARG, &statusCode);
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  139              		.cfi_def_cfa_offset 8
  140 0088 BD46     		mov	sp, r7
  141              		.cfi_def_cfa_register 13
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 6
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 6
 
 
  142              		@ sp needed
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  179:ProgrammingSteps.c **** *******************************************************************************
  180:ProgrammingSteps.c **** *
  181:ProgrammingSteps.c **** * Summary:
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 7
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 7
 
 
  182:ProgrammingSteps.c **** *  It reads the StatusCode global variable and returns LSB of this long variable
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  197              		.type	GetChipProtectionVal, %function
  198              	GetChipProtectionVal:
  199              	.LFB65:
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 8
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 8
 
 
  201:ProgrammingSteps.c **** 
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  221              		.loc 1 233 0
  222 0014 1A48     		ldr	r0, .L20
  223 0016 7968     		ldr	r1, [r7, #4]
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 9
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 9
 
 
  224 0018 FFF7FEFF 		bl	Write_IO
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  258              		.loc 1 253 0
  259 0052 0023     		movs	r3, #0
  260 0054 10E0     		b	.L19
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 10
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 10
 
 
  261              	.L17:
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  300 0090 00000000 		.word	chipProtectionData_Chip
  301              		.cfi_endproc
  302              	.LFE65:
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 11
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 11
 
 
  303              		.size	GetChipProtectionVal, .-GetChipProtectionVal
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  326 0008 1846     		mov	r0, r3
  327 000a FFF7FEFF 		bl	HEX_ReadChipProtectionData
  300:ProgrammingSteps.c **** 	
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 12
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 12
 
 
  301:ProgrammingSteps.c **** 	/* enum variable flow stores the transition (current protection setting to 
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  319:ProgrammingSteps.c ****                 flow = WRONG_TRANSITION;
  363              		.loc 1 319 0
  364 0040 154B     		ldr	r3, .L39
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 13
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 13
 
 
  365 0042 0322     		movs	r2, #3
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  402 006e 0322     		movs	r2, #3
  403 0070 1A70     		strb	r2, [r3]
  335:ProgrammingSteps.c ****             break;
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 14
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 14
 
 
  404              		.loc 1 335 0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  447              		.thumb_func
  448              		.type	LoadLatch, %function
  449              	LoadLatch:
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 15
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 15
 
 
  450              	.LFB67:
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  377:ProgrammingSteps.c **** 		unsigned short i = 0;
  474              		.loc 1 377 0
  475 0018 0023     		movs	r3, #0
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 16
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 16
 
 
  476 001a FB82     		strh	r3, [r7, #22]	@ movhi
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  507 004c 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  508 004e 012B     		cmp	r3, #1
  509 0050 01D0     		beq	.L44
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 17
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 17
 
 
  400:ProgrammingSteps.c **** 	    {
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  553 00a0 FFF7FEFF 		bl	Write_IO
  411:ProgrammingSteps.c **** 			
  412:ProgrammingSteps.c **** 			if( swd_PacketAck != SWD_OK_ACK )
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 18
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 18
 
 
  554              		.loc 1 412 0
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  430:ProgrammingSteps.c **** 		
  431:ProgrammingSteps.c **** 		if( swd_PacketAck != SWD_OK_ACK )
  589              		.loc 1 431 0
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 19
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 19
 
 
  590 00d8 0C4B     		ldr	r3, .L51+4
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  630 0114 08001040 		.word	1074790408
  631 0118 04001040 		.word	1074790404
  632 011c 04000080 		.word	-2147483644
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 20
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 20
 
 
  633 0120 00000000 		.word	result
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  654              		.cfi_def_cfa_offset 24
  655 0004 00AF     		add	r7, sp, #0
  656              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 21
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 21
 
 
  657 0006 0346     		mov	r3, r0
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  495:ProgrammingSteps.c **** 	
  496:ProgrammingSteps.c **** 	/* Request SROM operation */
  497:ProgrammingSteps.c **** 	Write_IO (CPUSS_SYSREQ, SROM_SYSREQ_BIT | SROM_CMD_CHECKSUM);
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 22
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 22
 
 
  693              		.loc 1 497 0
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  729 007c 012B     		cmp	r3, #1
  730 007e 01D0     		beq	.L58
  516:ProgrammingSteps.c ****     {
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 23
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 23
 
 
  517:ProgrammingSteps.c ****         return(FAILURE);
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  532:ProgrammingSteps.c **** *  This is Step 1 of the programming sequence. In this Step, target PSoC 4 is 
  533:ProgrammingSteps.c **** *  acquired by the host microcontroller by sending specific Port Acquiring 
  534:ProgrammingSteps.c **** *  Sequence in a 1.5 ms time-window. After acquiring SWD port, debug port is 
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 24
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 24
 
 
  535:ProgrammingSteps.c **** *  configured and bit 31 in TEST_MODE control register is set.
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  796 001a FFF7FEFF 		bl	SetSwdckCmosOutput
  563:ProgrammingSteps.c **** 	SetSwdckLow();
  797              		.loc 1 563 0
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 25
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 25
 
 
  798 001e FFF7FEFF 		bl	SetSwdckLow
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  585:ProgrammingSteps.c **** 	
  586:ProgrammingSteps.c **** 	/* Set PORT_ACQUIRE_TIMEOUT_ERROR bit in swd_PacketAck if time
  587:ProgrammingSteps.c **** 	   exceeds 1.5 ms */
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 26
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 26
 
 
  588:ProgrammingSteps.c **** 	if (total_packet_count == DEVICE_ACQUIRE_TIMEOUT)
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  866              		.loc 1 606 0
  867 0096 234B     		ldr	r3, .L76
  868 0098 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 27
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 27
 
 
  869 009a 012B     		cmp	r3, #1
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  903 00cc 4FF00041 		mov	r1, #-2147483648
  904 00d0 FFF7FEFF 		bl	Write_IO
  627:ProgrammingSteps.c **** 	
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 28
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 28
 
 
  628:ProgrammingSteps.c **** 	if( swd_PacketAck != SWD_OK_ACK )
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  940 0108 094B     		ldr	r3, .L76+12
  941 010a 1A70     		strb	r2, [r3]
  647:ProgrammingSteps.c **** 	
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 29
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 29
 
 
  648:ProgrammingSteps.c **** 	if (result != SROM_SUCCESS)
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  975              		.thumb
  976              		.thumb_func
  977              		.type	VerifySiliconId, %function
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 30
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 30
 
 
  978              	VerifySiliconId:
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  1001              		.loc 1 699 0
  1002 0012 0023     		movs	r3, #0
  1003 0014 3B60     		str	r3, [r7]
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 31
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 31
 
 
  700:ProgrammingSteps.c **** 	
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  721:ProgrammingSteps.c ****     }
  722:ProgrammingSteps.c **** 	
  723:ProgrammingSteps.c **** 	/* Read status of the operation */
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 32
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 32
 
 
  724:ProgrammingSteps.c ****     result = PollSromStatus();
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  739:ProgrammingSteps.c ****     {
  740:ProgrammingSteps.c ****         return(FAILURE);
  1076              		.loc 1 740 0
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 33
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 33
 
 
  1077 0090 0023     		movs	r3, #0
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  1111              		.loc 1 758 0
  1112 00c6 0B4B     		ldr	r3, .L89+4
  1113 00c8 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 34
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 34
 
 
  1114 00ca 43F04003 		orr	r3, r3, #64
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  765:ProgrammingSteps.c **** /******************************************************************************
  766:ProgrammingSteps.c **** * Function Name: EraseAllFlash
  767:ProgrammingSteps.c **** *******************************************************************************
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 35
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 35
 
 
  768:ProgrammingSteps.c **** *
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  1185 001c 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  1186 001e 012B     		cmp	r3, #1
  1187 0020 01D0     		beq	.L92
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 36
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 36
 
 
  797:ProgrammingSteps.c **** 	{
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  1222 0054 FFF7FEFF 		bl	Write_IO
  817:ProgrammingSteps.c ****     	if( swd_PacketAck != SWD_OK_ACK )
  1223              		.loc 1 817 0
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 37
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 37
 
 
  1224 0058 2C4B     		ldr	r3, .L104+12
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  1261 0090 31E0     		b	.L100
  1262              	.L95:
  834:ProgrammingSteps.c **** 		}
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 38
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 38
 
 
  835:ProgrammingSteps.c ****     }
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  1293              		.loc 1 858 0
  1294 00c2 0023     		movs	r3, #0
  1295 00c4 18E0     		b	.L93
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 39
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 39
 
 
  1296              	.L102:
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  1331 00f8 1846     		mov	r0, r3
  1332 00fa 0837     		adds	r7, r7, #8
  1333              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 40
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 40
 
 
  1334 00fc BD46     		mov	sp, r7
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  1362              		.cfi_startproc
  1363              		@ args = 0, pretend = 0, frame = 0
  1364              		@ frame_needed = 1, uses_anonymous_args = 0
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 41
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 41
 
 
  1365 0000 80B5     		push	{r7, lr}
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  913:ProgrammingSteps.c **** * Function Name: ProgramFlash
  914:ProgrammingSteps.c **** *******************************************************************************
  915:ProgrammingSteps.c **** *
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 42
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 42
 
 
  916:ProgrammingSteps.c **** * Summary:
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  946:ProgrammingSteps.c ****     numOfFlashRows   = GetFlashRowCount();
  1434              		.loc 1 946 0
  1435 001e FFF7FEFF 		bl	GetFlashRowCount
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 43
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 43
 
 
  1436 0022 0346     		mov	r3, r0
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  963:ProgrammingSteps.c **** 					(((unsigned long)SROM_KEY2 + (unsigned long)SROM_CMD_PROGRAM_ROW) << 8) + //
  964:ProgrammingSteps.c **** 					(((unsigned long)rowCount & 0x000000FF) <<  16) +	//
  1474              		.loc 1 964 0
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 44
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 44
 
 
  1475 0070 B7F80E31 		ldrh	r3, [r7, #270]
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  980:ProgrammingSteps.c **** 	    
  981:ProgrammingSteps.c **** 		/* Request SROM operation */
  982:ProgrammingSteps.c **** 		Write_IO(CPUSS_SYSREQ, SROM_SYSREQ_BIT | SROM_CMD_PROGRAM_ROW);
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 45
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 45
 
 
  1513              		.loc 1 982 0
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  1551              		.loc 1 996 0 is_stmt 1
  1552 00fa 0123     		movs	r3, #1
  1553              	.L120:
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 46
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 46
 
 
  997:ProgrammingSteps.c **** }
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  1582              		.loc 1 1022 0
  1583              		.cfi_startproc
  1584              		@ args = 0, pretend = 0, frame = 528
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 47
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 47
 
 
  1585              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  1617 0036 B7F80E22 		ldrh	r2, [r7, #526]
  1618 003a 07F58073 		add	r3, r7, #256
  1619 003e 1046     		mov	r0, r2
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 48
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 48
 
 
  1620 0040 1946     		mov	r1, r3
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  1660 0094 0233     		adds	r3, r3, #2
  1661 0096 D7F80022 		ldr	r2, [r7, #512]
  1662 009a 120C     		lsrs	r2, r2, #16
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 49
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 49
 
 
  1663 009c D1B2     		uxtb	r1, r2
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  1705 00f2 0023     		movs	r3, #0
  1706 00f4 14E0     		b	.L133
  1707              	.L130:
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 50
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 50
 
 
 1063:ProgrammingSteps.c ****     	{
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
 1074:ProgrammingSteps.c **** 
 1075:ProgrammingSteps.c **** /******************************************************************************
 1076:ProgrammingSteps.c **** * Function Name: ProgramProtectionSettings
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 51
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 51
 
 
 1077:ProgrammingSteps.c **** *******************************************************************************
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  1777              		.loc 1 1106 0
  1778 001e 0023     		movs	r3, #0
  1779 0020 7B64     		str	r3, [r7, #68]
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 52
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 52
 
 
 1107:ProgrammingSteps.c **** 	
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  1815 0074 97F84F10 		ldrb	r1, [r7, #79]	@ zero_extendqisi2
  1816 0078 3A1D     		adds	r2, r7, #4
  1817 007a 0846     		mov	r0, r1
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 53
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 53
 
 
  1818 007c 1146     		mov	r1, r2
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  1854 00bc 0023     		movs	r3, #0
  1855 00be 21E0     		b	.L144
  1856              	.L140:
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 54
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 54
 
 
 1143:ProgrammingSteps.c ****         }
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  1893 00fe 9A42     		cmp	r2, r3
  1894 0100 ABD3     		bcc	.L143
 1159:ProgrammingSteps.c ****         }
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 55
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 55
 
 
 1160:ProgrammingSteps.c ****     
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
 1184:ProgrammingSteps.c **** * Note:
 1185:ProgrammingSteps.c **** *
 1186:ProgrammingSteps.c **** ******************************************************************************/
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 56
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 56
 
 
 1187:ProgrammingSteps.c **** unsigned char VerifyProtectionSettings(void)
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  1963 003a B7F89030 		ldrh	r3, [r7, #144]
  1964 003e 5B0A     		lsrs	r3, r3, #9
  1965 0040 9BB2     		uxth	r3, r3
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 57
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 57
 
 
  1966 0042 87F88E30 		strb	r3, [r7, #142]
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2004 009c 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  2005 009e 012B     		cmp	r3, #1
  2006 00a0 01D0     		beq	.L150
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 58
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 58
 
 
 1219:ProgrammingSteps.c ****     	    {
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2051 010c 97F89320 		ldrb	r2, [r7, #147]	@ zero_extendqisi2
  2052 0110 97F88F30 		ldrb	r3, [r7, #143]	@ zero_extendqisi2
  2053 0114 9A42     		cmp	r2, r3
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 59
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 59
 
 
  2054 0116 B5D3     		bcc	.L152
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2094 016c 0133     		adds	r3, r3, #1
  2095 016e 87F89230 		strb	r3, [r7, #146]
  2096 0172 D7F89430 		ldr	r3, [r7, #148]
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 60
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 60
 
 
  2097 0176 03F50063 		add	r3, r3, #2048
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2133 01c2 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  2134 01c4 002B     		cmp	r3, #0
  2135 01c6 03D1     		bne	.L158
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 61
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 61
 
 
 1255:ProgrammingSteps.c **** 	{
@@ -3626,41 +3626,42 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
 1261:ProgrammingSteps.c **** 	}
 1262:ProgrammingSteps.c **** 	
 1263:ProgrammingSteps.c **** 	/* Compare hex’s and silicon’s chip protection data */
-1264:ProgrammingSteps.c **** 	if (chipProtectionData_Chip != chipProtectionData_Hex)
- 2152              		.loc 1 1264 0
+1264:ProgrammingSteps.c **** 	//Temporary Override GI
+1265:ProgrammingSteps.c ****     if (chipProtectionData_Chip != chipProtectionData_Hex)
+ 2152              		.loc 1 1265 0
  2153 01de 0D4B     		ldr	r3, .L162+12
  2154 01e0 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
  2155 01e2 97F88730 		ldrb	r3, [r7, #135]	@ zero_extendqisi2
  2156 01e6 9A42     		cmp	r2, r3
  2157 01e8 08D0     		beq	.L160
-1265:ProgrammingSteps.c **** 	{
-1266:ProgrammingSteps.c ****         /* Set the verification error bit for Flash protection data
-1267:ProgrammingSteps.c **** 		   mismatch and return failure */
-1268:ProgrammingSteps.c ****         swd_PacketAck = swd_PacketAck | VERIFICATION_ERROR; 
- 2158              		.loc 1 1268 0
+1266:ProgrammingSteps.c **** 	{
+1267:ProgrammingSteps.c ****         /* Set the verification error bit for Flash protection data
+1268:ProgrammingSteps.c **** 		   mismatch and return failure */
+1269:ProgrammingSteps.c ****         swd_PacketAck = swd_PacketAck | VERIFICATION_ERROR; 
+ 2158              		.loc 1 1269 0
  2159 01ea 084B     		ldr	r3, .L162+4
  2160 01ec 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  2161 01ee 43F04003 		orr	r3, r3, #64
  2162 01f2 DAB2     		uxtb	r2, r3
  2163 01f4 054B     		ldr	r3, .L162+4
  2164 01f6 1A70     		strb	r2, [r3]
-1269:ProgrammingSteps.c ****         return(FAILURE);
- 2165              		.loc 1 1269 0
+1270:ProgrammingSteps.c ****         return(FAILURE);
+ 2165              		.loc 1 1270 0
  2166 01f8 0023     		movs	r3, #0
  2167 01fa 00E0     		b	.L161
  2168              	.L160:
-1270:ProgrammingSteps.c ****     }
-1271:ProgrammingSteps.c **** 
-1272:ProgrammingSteps.c **** 	return (SUCCESS);
- 2169              		.loc 1 1272 0
+1271:ProgrammingSteps.c ****     }
+1272:ProgrammingSteps.c **** 
+1273:ProgrammingSteps.c **** 	return (SUCCESS);
+ 2169              		.loc 1 1273 0
  2170 01fc 0123     		movs	r3, #1
  2171              	.L161:
-1273:ProgrammingSteps.c **** }
- 2172              		.loc 1 1273 0 discriminator 1
+1274:ProgrammingSteps.c **** }
+ 2172              		.loc 1 1274 0 discriminator 1
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 62
+
+
  2173 01fe 1846     		mov	r0, r3
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 62
-
-
  2174 0200 9837     		adds	r7, r7, #152
  2175              		.cfi_def_cfa_offset 8
  2176 0202 BD46     		mov	sp, r7
@@ -3685,31 +3686,31 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2195              		.type	VerifyChecksum, %function
  2196              	VerifyChecksum:
  2197              	.LFB77:
-1274:ProgrammingSteps.c **** 
-1275:ProgrammingSteps.c **** /******************************************************************************
-1276:ProgrammingSteps.c **** * Function Name: VerifyChecksum
-1277:ProgrammingSteps.c **** *******************************************************************************
-1278:ProgrammingSteps.c **** *
-1279:ProgrammingSteps.c **** * Summary:
-1280:ProgrammingSteps.c **** *  This is Step 9 of the programming sequence. In this step, Checksum of user
-1281:ProgrammingSteps.c **** *  data in flash is verified with the Checksum stored in the HEX File. This step
-1282:ProgrammingSteps.c **** *  uses the Checksum of privileged rows calculated in Step 4 get the checksum
-1283:ProgrammingSteps.c **** *  of user data in flash.
-1284:ProgrammingSteps.c **** *
-1285:ProgrammingSteps.c **** * Parameters:
-1286:ProgrammingSteps.c **** *  None
-1287:ProgrammingSteps.c **** *
-1288:ProgrammingSteps.c **** * Return:
-1289:ProgrammingSteps.c **** *  SUCCESS - Returns SUCCESS if function successfully verifies the checksum.
-1290:ProgrammingSteps.c **** *  FAILURE - Returns Failure if any of the intermediate step returns a fail
-1291:ProgrammingSteps.c **** *			 message.
-1292:ProgrammingSteps.c **** *
-1293:ProgrammingSteps.c **** * Note:
-1294:ProgrammingSteps.c **** *
-1295:ProgrammingSteps.c **** ******************************************************************************/
-1296:ProgrammingSteps.c **** unsigned char VerifyChecksum(void)
-1297:ProgrammingSteps.c **** {
- 2198              		.loc 1 1297 0
+1275:ProgrammingSteps.c **** 
+1276:ProgrammingSteps.c **** /******************************************************************************
+1277:ProgrammingSteps.c **** * Function Name: VerifyChecksum
+1278:ProgrammingSteps.c **** *******************************************************************************
+1279:ProgrammingSteps.c **** *
+1280:ProgrammingSteps.c **** * Summary:
+1281:ProgrammingSteps.c **** *  This is Step 9 of the programming sequence. In this step, Checksum of user
+1282:ProgrammingSteps.c **** *  data in flash is verified with the Checksum stored in the HEX File. This step
+1283:ProgrammingSteps.c **** *  uses the Checksum of privileged rows calculated in Step 4 get the checksum
+1284:ProgrammingSteps.c **** *  of user data in flash.
+1285:ProgrammingSteps.c **** *
+1286:ProgrammingSteps.c **** * Parameters:
+1287:ProgrammingSteps.c **** *  None
+1288:ProgrammingSteps.c **** *
+1289:ProgrammingSteps.c **** * Return:
+1290:ProgrammingSteps.c **** *  SUCCESS - Returns SUCCESS if function successfully verifies the checksum.
+1291:ProgrammingSteps.c **** *  FAILURE - Returns Failure if any of the intermediate step returns a fail
+1292:ProgrammingSteps.c **** *			 message.
+1293:ProgrammingSteps.c **** *
+1294:ProgrammingSteps.c **** * Note:
+1295:ProgrammingSteps.c **** *
+1296:ProgrammingSteps.c **** ******************************************************************************/
+1297:ProgrammingSteps.c **** unsigned char VerifyChecksum(void)
+1298:ProgrammingSteps.c **** {
+ 2198              		.loc 1 1298 0
  2199              		.cfi_startproc
  2200              		@ args = 0, pretend = 0, frame = 16
  2201              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -3717,29 +3718,29 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2203              		.cfi_def_cfa_offset 8
  2204              		.cfi_offset 7, -8
  2205              		.cfi_offset 14, -4
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 63
+
+
  2206 0002 84B0     		sub	sp, sp, #16
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 63
-
-
  2207              		.cfi_def_cfa_offset 24
  2208 0004 00AF     		add	r7, sp, #0
  2209              		.cfi_def_cfa_register 7
-1298:ProgrammingSteps.c **** 	unsigned long checksum_All 	 = 0;
- 2210              		.loc 1 1298 0
+1299:ProgrammingSteps.c **** 	unsigned long checksum_All 	 = 0;
+ 2210              		.loc 1 1299 0
  2211 0006 0023     		movs	r3, #0
  2212 0008 BB60     		str	r3, [r7, #8]
-1299:ProgrammingSteps.c **** 	unsigned short chip_Checksum = 0;
- 2213              		.loc 1 1299 0
+1300:ProgrammingSteps.c **** 	unsigned short chip_Checksum = 0;
+ 2213              		.loc 1 1300 0
  2214 000a 0023     		movs	r3, #0
  2215 000c FB81     		strh	r3, [r7, #14]	@ movhi
-1300:ProgrammingSteps.c **** 	unsigned short checksumData  = 0;
- 2216              		.loc 1 1300 0
+1301:ProgrammingSteps.c **** 	unsigned short checksumData  = 0;
+ 2216              		.loc 1 1301 0
  2217 000e 0023     		movs	r3, #0
  2218 0010 FB80     		strh	r3, [r7, #6]	@ movhi
-1301:ProgrammingSteps.c ****     
-1302:ProgrammingSteps.c **** 	/* Read the checksum of entire flash */
-1303:ProgrammingSteps.c **** 	result = ChecksumAPI(CHECKSUM_ENTIRE_FLASH, &checksum_All);
- 2219              		.loc 1 1303 0
+1302:ProgrammingSteps.c ****     
+1303:ProgrammingSteps.c **** 	/* Read the checksum of entire flash */
+1304:ProgrammingSteps.c **** 	result = ChecksumAPI(CHECKSUM_ENTIRE_FLASH, &checksum_All);
+ 2219              		.loc 1 1304 0
  2220 0012 07F10803 		add	r3, r7, #8
  2221 0016 4FF40040 		mov	r0, #32768
  2222 001a 1946     		mov	r1, r3
@@ -3748,24 +3749,24 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2225 0022 1A46     		mov	r2, r3
  2226 0024 124B     		ldr	r3, .L169
  2227 0026 1A70     		strb	r2, [r3]
-1304:ProgrammingSteps.c **** 	
-1305:ProgrammingSteps.c **** 	if (result != SUCCESS)
- 2228              		.loc 1 1305 0
+1305:ProgrammingSteps.c **** 	
+1306:ProgrammingSteps.c **** 	if (result != SUCCESS)
+ 2228              		.loc 1 1306 0
  2229 0028 114B     		ldr	r3, .L169
  2230 002a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  2231 002c 012B     		cmp	r3, #1
  2232 002e 01D0     		beq	.L165
-1306:ProgrammingSteps.c **** 	{
-1307:ProgrammingSteps.c **** 		return (FAILURE);
- 2233              		.loc 1 1307 0
+1307:ProgrammingSteps.c **** 	{
+1308:ProgrammingSteps.c **** 		return (FAILURE);
+ 2233              		.loc 1 1308 0
  2234 0030 0023     		movs	r3, #0
  2235 0032 18E0     		b	.L168
  2236              	.L165:
-1308:ProgrammingSteps.c **** 	}
-1309:ProgrammingSteps.c **** 	
-1310:ProgrammingSteps.c **** 	/* Calculate checksum of user flash */
-1311:ProgrammingSteps.c ****     chip_Checksum = (unsigned short)checksum_All - (unsigned short)checksum_Privileged;
- 2237              		.loc 1 1311 0
+1309:ProgrammingSteps.c **** 	}
+1310:ProgrammingSteps.c **** 	
+1311:ProgrammingSteps.c **** 	/* Calculate checksum of user flash */
+1312:ProgrammingSteps.c ****     chip_Checksum = (unsigned short)checksum_All - (unsigned short)checksum_Privileged;
+ 2237              		.loc 1 1312 0
  2238 0034 BB68     		ldr	r3, [r7, #8]
  2239 0036 9AB2     		uxth	r2, r3
  2240 0038 0E4B     		ldr	r3, .L169+4
@@ -3773,46 +3774,46 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2242 003c 9BB2     		uxth	r3, r3
  2243 003e D31A     		subs	r3, r2, r3
  2244 0040 FB81     		strh	r3, [r7, #14]	@ movhi
-1312:ProgrammingSteps.c **** 	
-1313:ProgrammingSteps.c **** 	/* Read checksum from hex file */
-1314:ProgrammingSteps.c **** 	HEX_ReadChecksumData(&checksumData);
- 2245              		.loc 1 1314 0
+1313:ProgrammingSteps.c **** 	
+1314:ProgrammingSteps.c **** 	/* Read checksum from hex file */
+1315:ProgrammingSteps.c **** 	HEX_ReadChecksumData(&checksumData);
+ 2245              		.loc 1 1315 0
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 64
+
+
  2246 0042 BB1D     		adds	r3, r7, #6
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 64
-
-
  2247 0044 1846     		mov	r0, r3
  2248 0046 FFF7FEFF 		bl	HEX_ReadChecksumData
-1315:ProgrammingSteps.c **** 	
-1316:ProgrammingSteps.c **** 	/* Compare the checksum data of silicon and hex file */
-1317:ProgrammingSteps.c **** 	if (chip_Checksum != checksumData)
- 2249              		.loc 1 1317 0
+1316:ProgrammingSteps.c **** 	
+1317:ProgrammingSteps.c **** 	/* Compare the checksum data of silicon and hex file */
+1318:ProgrammingSteps.c **** 	if (chip_Checksum != checksumData)
+ 2249              		.loc 1 1318 0
  2250 004a FB88     		ldrh	r3, [r7, #6]
  2251 004c FA89     		ldrh	r2, [r7, #14]
  2252 004e 9A42     		cmp	r2, r3
  2253 0050 08D0     		beq	.L167
-1318:ProgrammingSteps.c ****     {
-1319:ProgrammingSteps.c ****         swd_PacketAck = swd_PacketAck | VERIFICATION_ERROR;
- 2254              		.loc 1 1319 0
+1319:ProgrammingSteps.c ****     {
+1320:ProgrammingSteps.c ****         swd_PacketAck = swd_PacketAck | VERIFICATION_ERROR;
+ 2254              		.loc 1 1320 0
  2255 0052 094B     		ldr	r3, .L169+8
  2256 0054 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  2257 0056 43F04003 		orr	r3, r3, #64
  2258 005a DAB2     		uxtb	r2, r3
  2259 005c 064B     		ldr	r3, .L169+8
  2260 005e 1A70     		strb	r2, [r3]
-1320:ProgrammingSteps.c **** 		return (FAILURE);
- 2261              		.loc 1 1320 0
+1321:ProgrammingSteps.c **** 		return (FAILURE);
+ 2261              		.loc 1 1321 0
  2262 0060 0023     		movs	r3, #0
  2263 0062 00E0     		b	.L168
  2264              	.L167:
-1321:ProgrammingSteps.c ****     }
-1322:ProgrammingSteps.c **** 	
-1323:ProgrammingSteps.c **** 	return (SUCCESS);
- 2265              		.loc 1 1323 0
+1322:ProgrammingSteps.c ****     }
+1323:ProgrammingSteps.c **** 	
+1324:ProgrammingSteps.c **** 	return (SUCCESS);
+ 2265              		.loc 1 1324 0
  2266 0064 0123     		movs	r3, #1
  2267              	.L168:
-1324:ProgrammingSteps.c **** }
- 2268              		.loc 1 1324 0 discriminator 1
+1325:ProgrammingSteps.c **** }
+ 2268              		.loc 1 1325 0 discriminator 1
  2269 0066 1846     		mov	r0, r3
  2270 0068 1037     		adds	r7, r7, #16
  2271              		.cfi_def_cfa_offset 8
@@ -3837,31 +3838,31 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2290              		.type	ReadHsspErrorStatus, %function
  2291              	ReadHsspErrorStatus:
  2292              	.LFB78:
-1325:ProgrammingSteps.c **** 
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 65
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 65
 
 
-1326:ProgrammingSteps.c **** /******************************************************************************
-1327:ProgrammingSteps.c **** * Function Name: ReadHsspErrorStatus
-1328:ProgrammingSteps.c **** *******************************************************************************
-1329:ProgrammingSteps.c **** *
-1330:ProgrammingSteps.c **** * Summary:
-1331:ProgrammingSteps.c **** *  Returns the HSSP Error status in case of FAILURE return in any one of the
-1332:ProgrammingSteps.c **** *  programming steps.
-1333:ProgrammingSteps.c **** *
-1334:ProgrammingSteps.c **** * Parameters:
-1335:ProgrammingSteps.c **** *  None.
-1336:ProgrammingSteps.c **** *
-1337:ProgrammingSteps.c **** * Return:
-1338:ProgrammingSteps.c **** *  swd_PacketAck - Each bit of this 8-bit return value has a specific meaning.
-1339:ProgrammingSteps.c **** *
-1340:ProgrammingSteps.c **** * Note:
-1341:ProgrammingSteps.c **** *  Refer to the application note pdf for details on the Error status bit
-1342:ProgrammingSteps.c **** *  definitions
-1343:ProgrammingSteps.c **** ******************************************************************************/
-1344:ProgrammingSteps.c **** unsigned char ReadHsspErrorStatus()
-1345:ProgrammingSteps.c **** {
- 2293              		.loc 1 1345 0
+1326:ProgrammingSteps.c **** 
+1327:ProgrammingSteps.c **** /******************************************************************************
+1328:ProgrammingSteps.c **** * Function Name: ReadHsspErrorStatus
+1329:ProgrammingSteps.c **** *******************************************************************************
+1330:ProgrammingSteps.c **** *
+1331:ProgrammingSteps.c **** * Summary:
+1332:ProgrammingSteps.c **** *  Returns the HSSP Error status in case of FAILURE return in any one of the
+1333:ProgrammingSteps.c **** *  programming steps.
+1334:ProgrammingSteps.c **** *
+1335:ProgrammingSteps.c **** * Parameters:
+1336:ProgrammingSteps.c **** *  None.
+1337:ProgrammingSteps.c **** *
+1338:ProgrammingSteps.c **** * Return:
+1339:ProgrammingSteps.c **** *  swd_PacketAck - Each bit of this 8-bit return value has a specific meaning.
+1340:ProgrammingSteps.c **** *
+1341:ProgrammingSteps.c **** * Note:
+1342:ProgrammingSteps.c **** *  Refer to the application note pdf for details on the Error status bit
+1343:ProgrammingSteps.c **** *  definitions
+1344:ProgrammingSteps.c **** ******************************************************************************/
+1345:ProgrammingSteps.c **** unsigned char ReadHsspErrorStatus()
+1346:ProgrammingSteps.c **** {
+ 2293              		.loc 1 1346 0
  2294              		.cfi_startproc
  2295              		@ args = 0, pretend = 0, frame = 0
  2296              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -3871,12 +3872,12 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2300              		.cfi_offset 7, -4
  2301 0002 00AF     		add	r7, sp, #0
  2302              		.cfi_def_cfa_register 7
-1346:ProgrammingSteps.c ****     return(swd_PacketAck);
- 2303              		.loc 1 1346 0
+1347:ProgrammingSteps.c ****     return(swd_PacketAck);
+ 2303              		.loc 1 1347 0
  2304 0004 034B     		ldr	r3, .L173
  2305 0006 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
-1347:ProgrammingSteps.c **** }
- 2306              		.loc 1 1347 0
+1348:ProgrammingSteps.c **** }
+ 2306              		.loc 1 1348 0
  2307 0008 1846     		mov	r0, r3
  2308 000a BD46     		mov	sp, r7
  2309              		.cfi_def_cfa_register 13
@@ -3897,31 +3898,31 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2324              		.global	ExitProgrammingMode
  2325              		.thumb
  2326              		.thumb_func
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 66
+
+
  2327              		.type	ExitProgrammingMode, %function
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 66
-
-
  2328              	ExitProgrammingMode:
  2329              	.LFB79:
-1348:ProgrammingSteps.c **** /******************************************************************************
-1349:ProgrammingSteps.c **** * Function Name: ExitProgrammingMode
-1350:ProgrammingSteps.c **** *******************************************************************************
-1351:ProgrammingSteps.c **** *
-1352:ProgrammingSteps.c **** * Summary:
-1353:ProgrammingSteps.c **** *  Releases the target PSoC 4 device from Programming mode.
-1354:ProgrammingSteps.c **** *
-1355:ProgrammingSteps.c **** * Parameters:
-1356:ProgrammingSteps.c **** *  None.
-1357:ProgrammingSteps.c **** *
-1358:ProgrammingSteps.c **** * Return:
-1359:ProgrammingSteps.c **** *  None.
-1360:ProgrammingSteps.c **** *
-1361:ProgrammingSteps.c **** * Note:
-1362:ProgrammingSteps.c **** *
-1363:ProgrammingSteps.c **** ******************************************************************************/
-1364:ProgrammingSteps.c **** void ExitProgrammingMode()
-1365:ProgrammingSteps.c **** {
- 2330              		.loc 1 1365 0
+1349:ProgrammingSteps.c **** /******************************************************************************
+1350:ProgrammingSteps.c **** * Function Name: ExitProgrammingMode
+1351:ProgrammingSteps.c **** *******************************************************************************
+1352:ProgrammingSteps.c **** *
+1353:ProgrammingSteps.c **** * Summary:
+1354:ProgrammingSteps.c **** *  Releases the target PSoC 4 device from Programming mode.
+1355:ProgrammingSteps.c **** *
+1356:ProgrammingSteps.c **** * Parameters:
+1357:ProgrammingSteps.c **** *  None.
+1358:ProgrammingSteps.c **** *
+1359:ProgrammingSteps.c **** * Return:
+1360:ProgrammingSteps.c **** *  None.
+1361:ProgrammingSteps.c **** *
+1362:ProgrammingSteps.c **** * Note:
+1363:ProgrammingSteps.c **** *
+1364:ProgrammingSteps.c **** ******************************************************************************/
+1365:ProgrammingSteps.c **** void ExitProgrammingMode()
+1366:ProgrammingSteps.c **** {
+ 2330              		.loc 1 1366 0
  2331              		.cfi_startproc
  2332              		@ args = 0, pretend = 0, frame = 0
  2333              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -3931,42 +3932,42 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2337              		.cfi_offset 14, -4
  2338 0002 00AF     		add	r7, sp, #0
  2339              		.cfi_def_cfa_register 7
-1366:ProgrammingSteps.c ****     /* Drive the SWDIO, SWDCK outputs low */
-1367:ProgrammingSteps.c ****     SetSwdckLow();
- 2340              		.loc 1 1367 0
+1367:ProgrammingSteps.c ****     /* Drive the SWDIO, SWDCK outputs low */
+1368:ProgrammingSteps.c ****     SetSwdckLow();
+ 2340              		.loc 1 1368 0
  2341 0004 FFF7FEFF 		bl	SetSwdckLow
-1368:ProgrammingSteps.c ****     SetSwdioLow();
- 2342              		.loc 1 1368 0
+1369:ProgrammingSteps.c ****     SetSwdioLow();
+ 2342              		.loc 1 1369 0
  2343 0008 FFF7FEFF 		bl	SetSwdioLow
-1369:ProgrammingSteps.c ****     
-1370:ProgrammingSteps.c ****     /* Make SWDIO, SWDCK High-Z after completing Programming */    
-1371:ProgrammingSteps.c ****     SetSwdioHizInput();
- 2344              		.loc 1 1371 0
+1370:ProgrammingSteps.c ****     
+1371:ProgrammingSteps.c ****     /* Make SWDIO, SWDCK High-Z after completing Programming */    
+1372:ProgrammingSteps.c ****     SetSwdioHizInput();
+ 2344              		.loc 1 1372 0
  2345 000c FFF7FEFF 		bl	SetSwdioHizInput
-1372:ProgrammingSteps.c ****     SetSwdckHizInput();
- 2346              		.loc 1 1372 0
+1373:ProgrammingSteps.c ****     SetSwdckHizInput();
+ 2346              		.loc 1 1373 0
  2347 0010 FFF7FEFF 		bl	SetSwdckHizInput
-1373:ProgrammingSteps.c ****     
-1374:ProgrammingSteps.c ****     /* Generate active low rest pulse for 100 uS */
-1375:ProgrammingSteps.c ****     SetXresLow();
- 2348              		.loc 1 1375 0
+1374:ProgrammingSteps.c ****     
+1375:ProgrammingSteps.c ****     /* Generate active low rest pulse for 100 uS */
+1376:ProgrammingSteps.c ****     SetXresLow();
+ 2348              		.loc 1 1376 0
  2349 0014 FFF7FEFF 		bl	SetXresLow
-1376:ProgrammingSteps.c ****     DelayHundredUs();    
- 2350              		.loc 1 1376 0
+1377:ProgrammingSteps.c ****     DelayHundredUs();    
+ 2350              		.loc 1 1377 0
  2351 0018 FFF7FEFF 		bl	DelayHundredUs
-1377:ProgrammingSteps.c ****     SetXresHigh();
- 2352              		.loc 1 1377 0
+1378:ProgrammingSteps.c ****     SetXresHigh();
+ 2352              		.loc 1 1378 0
  2353 001c FFF7FEFF 		bl	SetXresHigh
-1378:ProgrammingSteps.c **** 
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 67
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 67
 
 
-1379:ProgrammingSteps.c ****     /* Make XRES High-Z after generating the reset pulse */  
-1380:ProgrammingSteps.c ****     SetXresHizInput();
- 2354              		.loc 1 1380 0
+1379:ProgrammingSteps.c **** 
+1380:ProgrammingSteps.c ****     /* Make XRES High-Z after generating the reset pulse */  
+1381:ProgrammingSteps.c ****     SetXresHizInput();
+ 2354              		.loc 1 1381 0
  2355 0020 FFF7FEFF 		bl	SetXresHizInput
-1381:ProgrammingSteps.c **** }
- 2356              		.loc 1 1381 0
+1382:ProgrammingSteps.c **** }
+ 2356              		.loc 1 1382 0
  2357 0024 80BD     		pop	{r7, pc}
  2358              		.cfi_endproc
  2359              	.LFE79:
@@ -3984,21 +3985,21 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2371 0006 00000000 		.4byte	.Ldebug_abbrev0
  2372 000a 04       		.byte	0x4
  2373 000b 01       		.uleb128 0x1
- 2374 000c B9010000 		.4byte	.LASF74
+ 2374 000c 06020000 		.4byte	.LASF74
  2375 0010 01       		.byte	0x1
  2376 0011 DD000000 		.4byte	.LASF75
- 2377 0015 F5030000 		.4byte	.LASF76
+ 2377 0015 F0000000 		.4byte	.LASF76
  2378 0019 00000000 		.4byte	.Ldebug_ranges0+0
  2379 001d 00000000 		.4byte	0
  2380 0021 00000000 		.4byte	.Ldebug_line0
  2381 0025 02       		.uleb128 0x2
  2382 0026 01       		.byte	0x1
  2383 0027 06       		.byte	0x6
- 2384 0028 6E010000 		.4byte	.LASF0
+ 2384 0028 BB010000 		.4byte	.LASF0
  2385 002c 02       		.uleb128 0x2
  2386 002d 01       		.byte	0x1
  2387 002e 08       		.byte	0x8
- 2388 002f A8020000 		.4byte	.LASF1
+ 2388 002f F5020000 		.4byte	.LASF1
  2389 0033 02       		.uleb128 0x2
  2390 0034 02       		.byte	0x2
  2391 0035 05       		.byte	0x5
@@ -4006,31 +4007,31 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2393 003a 02       		.uleb128 0x2
  2394 003b 02       		.byte	0x2
  2395 003c 07       		.byte	0x7
- 2396 003d 4B030000 		.4byte	.LASF3
+ 2396 003d 98030000 		.4byte	.LASF3
  2397 0041 03       		.uleb128 0x3
- 2398 0042 5F040000 		.4byte	.LASF9
+ 2398 0042 62040000 		.4byte	.LASF9
  2399 0046 02       		.byte	0x2
  2400 0047 3F       		.byte	0x3f
  2401 0048 4C000000 		.4byte	0x4c
  2402 004c 02       		.uleb128 0x2
  2403 004d 04       		.byte	0x4
  2404 004e 05       		.byte	0x5
- 2405 004f 87030000 		.4byte	.LASF4
+ 2405 004f D4030000 		.4byte	.LASF4
  2406 0053 02       		.uleb128 0x2
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 68
+
+
  2407 0054 04       		.byte	0x4
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 68
-
-
  2408 0055 07       		.byte	0x7
- 2409 0056 BC030000 		.4byte	.LASF5
+ 2409 0056 09040000 		.4byte	.LASF5
  2410 005a 02       		.uleb128 0x2
  2411 005b 08       		.byte	0x8
  2412 005c 05       		.byte	0x5
- 2413 005d F0000000 		.4byte	.LASF6
+ 2413 005d 3D010000 		.4byte	.LASF6
  2414 0061 02       		.uleb128 0x2
  2415 0062 08       		.byte	0x8
  2416 0063 07       		.byte	0x7
- 2417 0064 FA020000 		.4byte	.LASF7
+ 2417 0064 47030000 		.4byte	.LASF7
  2418 0068 04       		.uleb128 0x4
  2419 0069 04       		.byte	0x4
  2420 006a 05       		.byte	0x5
@@ -4038,24 +4039,24 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2422 006f 02       		.uleb128 0x2
  2423 0070 04       		.byte	0x4
  2424 0071 07       		.byte	0x7
- 2425 0072 24030000 		.4byte	.LASF8
+ 2425 0072 71030000 		.4byte	.LASF8
  2426 0076 03       		.uleb128 0x3
- 2427 0077 9A030000 		.4byte	.LASF10
+ 2427 0077 E7030000 		.4byte	.LASF10
  2428 007b 03       		.byte	0x3
  2429 007c 2C       		.byte	0x2c
  2430 007d 41000000 		.4byte	0x41
  2431 0081 02       		.uleb128 0x2
  2432 0082 04       		.byte	0x4
  2433 0083 04       		.byte	0x4
- 2434 0084 7A010000 		.4byte	.LASF11
+ 2434 0084 C7010000 		.4byte	.LASF11
  2435 0088 02       		.uleb128 0x2
  2436 0089 08       		.byte	0x8
  2437 008a 04       		.byte	0x4
- 2438 008b DA030000 		.4byte	.LASF12
+ 2438 008b 27040000 		.4byte	.LASF12
  2439 008f 02       		.uleb128 0x2
  2440 0090 01       		.byte	0x1
  2441 0091 08       		.byte	0x8
- 2442 0092 73030000 		.4byte	.LASF13
+ 2442 0092 C0030000 		.4byte	.LASF13
  2443 0096 02       		.uleb128 0x2
  2444 0097 04       		.byte	0x4
  2445 0098 07       		.byte	0x7
@@ -4064,29 +4065,29 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2448 009e 04       		.byte	0x4
  2449 009f 2C000000 		.4byte	0x2c
  2450 00a3 06       		.uleb128 0x6
- 2451 00a4 75040000 		.4byte	.LASF77
+ 2451 00a4 78040000 		.4byte	.LASF77
  2452 00a8 01       		.byte	0x1
  2453 00a9 01       		.byte	0x1
  2454 00aa 48       		.byte	0x48
  2455 00ab C8000000 		.4byte	0xc8
  2456 00af 07       		.uleb128 0x7
- 2457 00b0 60020000 		.4byte	.LASF15
+ 2457 00b0 AD020000 		.4byte	.LASF15
  2458 00b4 00       		.sleb128 0
  2459 00b5 07       		.uleb128 0x7
- 2460 00b6 69040000 		.4byte	.LASF16
+ 2460 00b6 6C040000 		.4byte	.LASF16
  2461 00ba 01       		.sleb128 1
  2462 00bb 07       		.uleb128 0x7
- 2463 00bc 85040000 		.4byte	.LASF17
+ 2463 00bc 88040000 		.4byte	.LASF17
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 69
+
+
  2464 00c0 02       		.sleb128 2
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 69
-
-
  2465 00c1 07       		.uleb128 0x7
  2466 00c2 00000000 		.4byte	.LASF18
  2467 00c6 03       		.sleb128 3
  2468 00c7 00       		.byte	0
  2469 00c8 08       		.uleb128 0x8
- 2470 00c9 31030000 		.4byte	.LASF19
+ 2470 00c9 7E030000 		.4byte	.LASF19
  2471 00cd 01       		.byte	0x1
  2472 00ce 68       		.byte	0x68
  2473 00cf 2C000000 		.4byte	0x2c
@@ -4096,7 +4097,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2477 00dc 9C       		.byte	0x9c
  2478 00dd F0000000 		.4byte	0xf0
  2479 00e1 09       		.uleb128 0x9
- 2480 00e2 AC010000 		.4byte	.LASF21
+ 2480 00e2 F9010000 		.4byte	.LASF21
  2481 00e6 01       		.byte	0x1
  2482 00e7 6A       		.byte	0x6a
  2483 00e8 53000000 		.4byte	0x53
@@ -4105,7 +4106,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2486 00ee 74       		.sleb128 -12
  2487 00ef 00       		.byte	0
  2488 00f0 0A       		.uleb128 0xa
- 2489 00f1 B6020000 		.4byte	.LASF45
+ 2489 00f1 03030000 		.4byte	.LASF45
  2490 00f5 01       		.byte	0x1
  2491 00f6 C5       		.byte	0xc5
  2492 00f7 2C000000 		.4byte	0x2c
@@ -4114,7 +4115,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2495 0103 01       		.uleb128 0x1
  2496 0104 9C       		.byte	0x9c
  2497 0105 08       		.uleb128 0x8
- 2498 0106 AD040000 		.4byte	.LASF20
+ 2498 0106 B0040000 		.4byte	.LASF20
  2499 010a 01       		.byte	0x1
  2500 010b DF       		.byte	0xdf
  2501 010c 2C000000 		.4byte	0x2c
@@ -4124,7 +4125,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2505 0119 9C       		.byte	0x9c
  2506 011a 3B010000 		.4byte	0x13b
  2507 011e 09       		.uleb128 0x9
- 2508 011f 0A010000 		.4byte	.LASF22
+ 2508 011f 57010000 		.4byte	.LASF22
  2509 0123 01       		.byte	0x1
  2510 0124 E1       		.byte	0xe1
  2511 0125 53000000 		.4byte	0x53
@@ -4132,15 +4133,15 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2513 012a 91       		.byte	0x91
  2514 012b 74       		.sleb128 -12
  2515 012c 09       		.uleb128 0x9
- 2516 012d 9F010000 		.4byte	.LASF23
+ 2516 012d EC010000 		.4byte	.LASF23
  2517 0131 01       		.byte	0x1
  2518 0132 E2       		.byte	0xe2
  2519 0133 53000000 		.4byte	0x53
  2520 0137 02       		.uleb128 0x2
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 70
+
+
  2521 0138 91       		.byte	0x91
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 70
-
-
  2522 0139 70       		.sleb128 -16
  2523 013a 00       		.byte	0
  2524 013b 0B       		.uleb128 0xb
@@ -4154,7 +4155,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2532 0150 9C       		.byte	0x9c
  2533 0151 65010000 		.4byte	0x165
  2534 0155 0C       		.uleb128 0xc
- 2535 0156 3F040000 		.4byte	.LASF25
+ 2535 0156 42040000 		.4byte	.LASF25
  2536 015a 01       		.byte	0x1
  2537 015b 2801     		.2byte	0x128
  2538 015d 2C000000 		.4byte	0x2c
@@ -4163,7 +4164,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2541 0163 77       		.sleb128 -9
  2542 0164 00       		.byte	0
  2543 0165 0B       		.uleb128 0xb
- 2544 0166 90030000 		.4byte	.LASF26
+ 2544 0166 DD030000 		.4byte	.LASF26
  2545 016a 01       		.byte	0x1
  2546 016b 7501     		.2byte	0x175
  2547 016d 2C000000 		.4byte	0x2c
@@ -4173,7 +4174,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2551 017a 9C       		.byte	0x9c
  2552 017b D8010000 		.4byte	0x1d8
  2553 017f 0D       		.uleb128 0xd
- 2554 0180 B4030000 		.4byte	.LASF27
+ 2554 0180 01040000 		.4byte	.LASF27
  2555 0184 01       		.byte	0x1
  2556 0185 7501     		.2byte	0x175
  2557 0187 2C000000 		.4byte	0x2c
@@ -4189,7 +4190,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2567 019b 91       		.byte	0x91
  2568 019c 60       		.sleb128 -32
  2569 019d 0D       		.uleb128 0xd
- 2570 019e 41010000 		.4byte	.LASF29
+ 2570 019e 8E010000 		.4byte	.LASF29
  2571 01a2 01       		.byte	0x1
  2572 01a3 7501     		.2byte	0x175
  2573 01a5 3A000000 		.4byte	0x3a
@@ -4197,10 +4198,10 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2575 01aa 91       		.byte	0x91
  2576 01ab 64       		.sleb128 -28
  2577 01ac 0C       		.uleb128 0xc
- 2578 01ad 0A010000 		.4byte	.LASF22
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 71
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 71
 
 
+ 2578 01ad 57010000 		.4byte	.LASF22
  2579 01b1 01       		.byte	0x1
  2580 01b2 7701     		.2byte	0x177
  2581 01b4 53000000 		.4byte	0x53
@@ -4208,7 +4209,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2583 01b9 91       		.byte	0x91
  2584 01ba 70       		.sleb128 -16
  2585 01bb 0C       		.uleb128 0xc
- 2586 01bc 15010000 		.4byte	.LASF30
+ 2586 01bc 62010000 		.4byte	.LASF30
  2587 01c0 01       		.byte	0x1
  2588 01c1 7801     		.2byte	0x178
  2589 01c3 53000000 		.4byte	0x53
@@ -4225,7 +4226,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2600 01d6 76       		.sleb128 -10
  2601 01d7 00       		.byte	0
  2602 01d8 0B       		.uleb128 0xb
- 2603 01d9 CE030000 		.4byte	.LASF31
+ 2603 01d9 1B040000 		.4byte	.LASF31
  2604 01dd 01       		.byte	0x1
  2605 01de DD01     		.2byte	0x1dd
  2606 01e0 2C000000 		.4byte	0x2c
@@ -4235,7 +4236,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2610 01ed 9C       		.byte	0x9c
  2611 01ee 2F020000 		.4byte	0x22f
  2612 01f2 0D       		.uleb128 0xd
- 2613 01f3 FE000000 		.4byte	.LASF32
+ 2613 01f3 4B010000 		.4byte	.LASF32
  2614 01f7 01       		.byte	0x1
  2615 01f8 DD01     		.2byte	0x1dd
  2616 01fa 3A000000 		.4byte	0x3a
@@ -4243,7 +4244,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2618 01ff 91       		.byte	0x91
  2619 0200 6E       		.sleb128 -18
  2620 0201 0D       		.uleb128 0xd
- 2621 0202 38010000 		.4byte	.LASF33
+ 2621 0202 85010000 		.4byte	.LASF33
  2622 0206 01       		.byte	0x1
  2623 0207 DD01     		.2byte	0x1dd
  2624 0209 2F020000 		.4byte	0x22f
@@ -4251,18 +4252,18 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2626 020e 91       		.byte	0x91
  2627 020f 68       		.sleb128 -24
  2628 0210 0C       		.uleb128 0xc
- 2629 0211 0A010000 		.4byte	.LASF22
+ 2629 0211 57010000 		.4byte	.LASF22
  2630 0215 01       		.byte	0x1
  2631 0216 DF01     		.2byte	0x1df
  2632 0218 53000000 		.4byte	0x53
  2633 021c 02       		.uleb128 0x2
  2634 021d 91       		.byte	0x91
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 72
+
+
  2635 021e 74       		.sleb128 -12
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 72
-
-
  2636 021f 0C       		.uleb128 0xc
- 2637 0220 65030000 		.4byte	.LASF34
+ 2637 0220 B2030000 		.4byte	.LASF34
  2638 0224 01       		.byte	0x1
  2639 0225 E001     		.2byte	0x1e0
  2640 0227 53000000 		.4byte	0x53
@@ -4292,7 +4293,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2664 025c 91       		.byte	0x91
  2665 025d 70       		.sleb128 -16
  2666 025e 0C       		.uleb128 0xc
- 2667 025f C5020000 		.4byte	.LASF37
+ 2667 025f 12030000 		.4byte	.LASF37
  2668 0263 01       		.byte	0x1
  2669 0264 2A02     		.2byte	0x22a
  2670 0266 3A000000 		.4byte	0x3a
@@ -4300,7 +4301,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2672 026b 91       		.byte	0x91
  2673 026c 76       		.sleb128 -10
  2674 026d 0C       		.uleb128 0xc
- 2675 026e 5E030000 		.4byte	.LASF38
+ 2675 026e AB030000 		.4byte	.LASF38
  2676 0272 01       		.byte	0x1
  2677 0273 2B02     		.2byte	0x22b
  2678 0275 53000000 		.4byte	0x53
@@ -4309,7 +4310,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2681 027b 6C       		.sleb128 -20
  2682 027c 00       		.byte	0
  2683 027d 0B       		.uleb128 0xb
- 2684 027e 8F010000 		.4byte	.LASF39
+ 2684 027e DC010000 		.4byte	.LASF39
  2685 0282 01       		.byte	0x1
  2686 0283 B302     		.2byte	0x2b3
  2687 0285 2C000000 		.4byte	0x2c
@@ -4317,10 +4318,10 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2689 028d 00010000 		.4byte	.LFE70-.LFB70
  2690 0291 01       		.uleb128 0x1
  2691 0292 9C       		.byte	0x9c
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 73
+
+
  2692 0293 F0020000 		.4byte	0x2f0
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 73
-
-
  2693 0297 0E       		.uleb128 0xe
  2694 0298 6900     		.ascii	"i\000"
  2695 029a 01       		.byte	0x1
@@ -4338,7 +4339,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2707 02b1 91       		.byte	0x91
  2708 02b2 6C       		.sleb128 -20
  2709 02b3 0C       		.uleb128 0xc
- 2710 02b4 A0040000 		.4byte	.LASF41
+ 2710 02b4 A3040000 		.4byte	.LASF41
  2711 02b8 01       		.byte	0x1
  2712 02b9 B702     		.2byte	0x2b7
  2713 02bb 53000000 		.4byte	0x53
@@ -4346,7 +4347,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2715 02c0 91       		.byte	0x91
  2716 02c1 68       		.sleb128 -24
  2717 02c2 0C       		.uleb128 0xc
- 2718 02c3 0A010000 		.4byte	.LASF22
+ 2718 02c3 57010000 		.4byte	.LASF22
  2719 02c7 01       		.byte	0x1
  2720 02c8 B902     		.2byte	0x2b9
  2721 02ca 53000000 		.4byte	0x53
@@ -4377,14 +4378,14 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2746 02f8 2C000000 		.4byte	0x2c
  2747 02fc 00000000 		.4byte	.LFB71
  2748 0300 24010000 		.4byte	.LFE71-.LFB71
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 74
+
+
  2749 0304 01       		.uleb128 0x1
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 74
-
-
  2750 0305 9C       		.byte	0x9c
  2751 0306 1A030000 		.4byte	0x31a
  2752 030a 0C       		.uleb128 0xc
- 2753 030b 0A010000 		.4byte	.LASF22
+ 2753 030b 57010000 		.4byte	.LASF22
  2754 030f 01       		.byte	0x1
  2755 0310 1503     		.2byte	0x315
  2756 0312 53000000 		.4byte	0x53
@@ -4393,7 +4394,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2759 0318 74       		.sleb128 -12
  2760 0319 00       		.byte	0
  2761 031a 0F       		.uleb128 0xf
- 2762 031b 11030000 		.4byte	.LASF46
+ 2762 031b 5E030000 		.4byte	.LASF46
  2763 031f 01       		.byte	0x1
  2764 0320 8603     		.2byte	0x386
  2765 0322 2C000000 		.4byte	0x2c
@@ -4402,7 +4403,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2768 032e 01       		.uleb128 0x1
  2769 032f 9C       		.byte	0x9c
  2770 0330 0B       		.uleb128 0xb
- 2771 0331 4D010000 		.4byte	.LASF47
+ 2771 0331 9A010000 		.4byte	.LASF47
  2772 0335 01       		.byte	0x1
  2773 0336 A703     		.2byte	0x3a7
  2774 0338 2C000000 		.4byte	0x2c
@@ -4412,7 +4413,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2778 0345 9C       		.byte	0x9c
  2779 0346 97030000 		.4byte	0x397
  2780 034a 0C       		.uleb128 0xc
- 2781 034b B4030000 		.4byte	.LASF27
+ 2781 034b 01040000 		.4byte	.LASF27
  2782 034f 01       		.byte	0x1
  2783 0350 A903     		.2byte	0x3a9
  2784 0352 2C000000 		.4byte	0x2c
@@ -4428,7 +4429,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2794 0366 91       		.byte	0x91
  2795 0367 EC7D     		.sleb128 -276
  2796 0369 0C       		.uleb128 0xc
- 2797 036a FA040000 		.4byte	.LASF48
+ 2797 036a FD040000 		.4byte	.LASF48
  2798 036e 01       		.byte	0x1
  2799 036f AC03     		.2byte	0x3ac
  2800 0371 3A000000 		.4byte	0x3a
@@ -4436,18 +4437,18 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2802 0376 91       		.byte	0x91
  2803 0377 72       		.sleb128 -14
  2804 0378 0C       		.uleb128 0xc
- 2805 0379 56040000 		.4byte	.LASF49
+ 2805 0379 59040000 		.4byte	.LASF49
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 75
+
+
  2806 037d 01       		.byte	0x1
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 75
-
-
  2807 037e AD03     		.2byte	0x3ad
  2808 0380 3A000000 		.4byte	0x3a
  2809 0384 02       		.uleb128 0x2
  2810 0385 91       		.byte	0x91
  2811 0386 76       		.sleb128 -10
  2812 0387 0C       		.uleb128 0xc
- 2813 0388 0A010000 		.4byte	.LASF22
+ 2813 0388 57010000 		.4byte	.LASF22
  2814 038c 01       		.byte	0x1
  2815 038d AF03     		.2byte	0x3af
  2816 038f 53000000 		.4byte	0x53
@@ -4463,7 +4464,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2826 03a5 FF       		.byte	0xff
  2827 03a6 00       		.byte	0
  2828 03a7 0B       		.uleb128 0xb
- 2829 03a8 EE020000 		.4byte	.LASF50
+ 2829 03a8 3B030000 		.4byte	.LASF50
  2830 03ac 01       		.byte	0x1
  2831 03ad FD03     		.2byte	0x3fd
  2832 03af 2C000000 		.4byte	0x2c
@@ -4473,7 +4474,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2836 03bc 9C       		.byte	0x9c
  2837 03bd 2B040000 		.4byte	0x42b
  2838 03c1 0C       		.uleb128 0xc
- 2839 03c2 9E020000 		.4byte	.LASF51
+ 2839 03c2 EB020000 		.4byte	.LASF51
  2840 03c6 01       		.byte	0x1
  2841 03c7 FF03     		.2byte	0x3ff
  2842 03c9 53000000 		.4byte	0x53
@@ -4481,7 +4482,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2844 03ce 91       		.byte	0x91
  2845 03cf 68       		.sleb128 -24
  2846 03d0 0C       		.uleb128 0xc
- 2847 03d1 FA040000 		.4byte	.LASF48
+ 2847 03d1 FD040000 		.4byte	.LASF48
  2848 03d5 01       		.byte	0x1
  2849 03d6 0004     		.2byte	0x400
  2850 03d8 3A000000 		.4byte	0x3a
@@ -4497,10 +4498,10 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2860 03ec 91       		.byte	0x91
  2861 03ed 6C       		.sleb128 -20
  2862 03ee 0C       		.uleb128 0xc
- 2863 03ef 56040000 		.4byte	.LASF49
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 76
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 76
 
 
+ 2863 03ef 59040000 		.4byte	.LASF49
  2864 03f3 01       		.byte	0x1
  2865 03f4 0204     		.2byte	0x402
  2866 03f6 3A000000 		.4byte	0x3a
@@ -4524,7 +4525,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2884 0417 91       		.byte	0x91
  2885 0418 E87D     		.sleb128 -280
  2886 041a 0C       		.uleb128 0xc
- 2887 041b 95020000 		.4byte	.LASF53
+ 2887 041b E2020000 		.4byte	.LASF53
  2888 041f 01       		.byte	0x1
  2889 0420 0504     		.2byte	0x405
  2890 0422 97030000 		.4byte	0x397
@@ -4543,7 +4544,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2903 0440 9C       		.byte	0x9c
  2904 0441 B1040000 		.4byte	0x4b1
  2905 0445 0C       		.uleb128 0xc
- 2906 0446 B4030000 		.4byte	.LASF27
+ 2906 0446 01040000 		.4byte	.LASF27
  2907 044a 01       		.byte	0x1
  2908 044b 4A04     		.2byte	0x44a
  2909 044d 2C000000 		.4byte	0x2c
@@ -4551,18 +4552,18 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2911 0452 91       		.byte	0x91
  2912 0453 77       		.sleb128 -9
  2913 0454 0C       		.uleb128 0xc
- 2914 0455 D0040000 		.4byte	.LASF55
+ 2914 0455 D3040000 		.4byte	.LASF55
  2915 0459 01       		.byte	0x1
  2916 045a 4B04     		.2byte	0x44b
  2917 045c 2C000000 		.4byte	0x2c
  2918 0460 02       		.uleb128 0x2
  2919 0461 91       		.byte	0x91
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 77
+
+
  2920 0462 76       		.sleb128 -10
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 77
-
-
  2921 0463 0C       		.uleb128 0xc
- 2922 0464 D8020000 		.4byte	.LASF56
+ 2922 0464 25030000 		.4byte	.LASF56
  2923 0468 01       		.byte	0x1
  2924 0469 4C04     		.2byte	0x44c
  2925 046b 2C000000 		.4byte	0x2c
@@ -4570,7 +4571,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2927 0470 91       		.byte	0x91
  2928 0471 75       		.sleb128 -11
  2929 0472 0C       		.uleb128 0xc
- 2930 0473 8E040000 		.4byte	.LASF57
+ 2930 0473 91040000 		.4byte	.LASF57
  2931 0477 01       		.byte	0x1
  2932 0478 4D04     		.2byte	0x44d
  2933 047a B1040000 		.4byte	0x4b1
@@ -4578,7 +4579,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2935 047f 91       		.byte	0x91
  2936 0480 AC7F     		.sleb128 -84
  2937 0482 0C       		.uleb128 0xc
- 2938 0483 3F040000 		.4byte	.LASF25
+ 2938 0483 42040000 		.4byte	.LASF25
  2939 0487 01       		.byte	0x1
  2940 0488 4E04     		.2byte	0x44e
  2941 048a 2C000000 		.4byte	0x2c
@@ -4586,7 +4587,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2943 048f 91       		.byte	0x91
  2944 0490 AB7F     		.sleb128 -85
  2945 0492 0C       		.uleb128 0xc
- 2946 0493 FA040000 		.4byte	.LASF48
+ 2946 0493 FD040000 		.4byte	.LASF48
  2947 0497 01       		.byte	0x1
  2948 0498 5004     		.2byte	0x450
  2949 049a 3A000000 		.4byte	0x3a
@@ -4594,7 +4595,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2951 049f 91       		.byte	0x91
  2952 04a0 72       		.sleb128 -14
  2953 04a1 0C       		.uleb128 0xc
- 2954 04a2 0A010000 		.4byte	.LASF22
+ 2954 04a2 57010000 		.4byte	.LASF22
  2955 04a6 01       		.byte	0x1
  2956 04a7 5204     		.2byte	0x452
  2957 04a9 53000000 		.4byte	0x53
@@ -4610,20 +4611,20 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2967 04bf 3F       		.byte	0x3f
  2968 04c0 00       		.byte	0
  2969 04c1 0B       		.uleb128 0xb
- 2970 04c2 47020000 		.4byte	.LASF58
+ 2970 04c2 94020000 		.4byte	.LASF58
  2971 04c6 01       		.byte	0x1
  2972 04c7 A304     		.2byte	0x4a3
  2973 04c9 2C000000 		.4byte	0x2c
  2974 04cd 00000000 		.4byte	.LFB76
  2975 04d1 18020000 		.4byte	.LFE76-.LFB76
  2976 04d5 01       		.uleb128 0x1
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 78
+
+
  2977 04d6 9C       		.byte	0x9c
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 78
-
-
  2978 04d7 72050000 		.4byte	0x572
  2979 04db 0C       		.uleb128 0xc
- 2980 04dc 80010000 		.4byte	.LASF59
+ 2980 04dc CD010000 		.4byte	.LASF59
  2981 04e0 01       		.byte	0x1
  2982 04e1 A504     		.2byte	0x4a5
  2983 04e3 53000000 		.4byte	0x53
@@ -4639,7 +4640,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  2993 04f7 91       		.byte	0x91
  2994 04f8 74       		.sleb128 -12
  2995 04f9 0C       		.uleb128 0xc
- 2996 04fa FA040000 		.4byte	.LASF48
+ 2996 04fa FD040000 		.4byte	.LASF48
  2997 04fe 01       		.byte	0x1
  2998 04ff A704     		.2byte	0x4a7
  2999 0501 3A000000 		.4byte	0x3a
@@ -4647,7 +4648,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  3001 0506 91       		.byte	0x91
  3002 0507 70       		.sleb128 -16
  3003 0508 0C       		.uleb128 0xc
- 3004 0509 3F040000 		.4byte	.LASF25
+ 3004 0509 42040000 		.4byte	.LASF25
  3005 050d 01       		.byte	0x1
  3006 050e A804     		.2byte	0x4a8
  3007 0510 2C000000 		.4byte	0x2c
@@ -4655,7 +4656,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  3009 0515 91       		.byte	0x91
  3010 0516 67       		.sleb128 -25
  3011 0517 0C       		.uleb128 0xc
- 3012 0518 D8020000 		.4byte	.LASF56
+ 3012 0518 25030000 		.4byte	.LASF56
  3013 051c 01       		.byte	0x1
  3014 051d A904     		.2byte	0x4a9
  3015 051f 2C000000 		.4byte	0x2c
@@ -4671,18 +4672,18 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  3025 0531 91       		.byte	0x91
  3026 0532 73       		.sleb128 -13
  3027 0533 0C       		.uleb128 0xc
- 3028 0534 8E040000 		.4byte	.LASF57
+ 3028 0534 91040000 		.4byte	.LASF57
  3029 0538 01       		.byte	0x1
  3030 0539 AB04     		.2byte	0x4ab
  3031 053b B1040000 		.4byte	0x4b1
  3032 053f 03       		.uleb128 0x3
  3033 0540 91       		.byte	0x91
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 79
+
+
  3034 0541 A47F     		.sleb128 -92
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 79
-
-
  3035 0543 0C       		.uleb128 0xc
- 3036 0544 70020000 		.4byte	.LASF61
+ 3036 0544 BD020000 		.4byte	.LASF61
  3037 0548 01       		.byte	0x1
  3038 0549 AC04     		.2byte	0x4ac
  3039 054b B1040000 		.4byte	0x4b1
@@ -4690,7 +4691,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  3041 0550 91       		.byte	0x91
  3042 0551 E47E     		.sleb128 -156
  3043 0553 0C       		.uleb128 0xc
- 3044 0554 B4030000 		.4byte	.LASF27
+ 3044 0554 01040000 		.4byte	.LASF27
  3045 0558 01       		.byte	0x1
  3046 0559 AD04     		.2byte	0x4ad
  3047 055b 2C000000 		.4byte	0x2c
@@ -4698,7 +4699,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  3049 0560 91       		.byte	0x91
  3050 0561 72       		.sleb128 -14
  3051 0562 0C       		.uleb128 0xc
- 3052 0563 D0040000 		.4byte	.LASF55
+ 3052 0563 D3040000 		.4byte	.LASF55
  3053 0567 01       		.byte	0x1
  3054 0568 AE04     		.2byte	0x4ae
  3055 056a 2C000000 		.4byte	0x2c
@@ -4707,9 +4708,9 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  3058 0570 6E       		.sleb128 -18
  3059 0571 00       		.byte	0
  3060 0572 0B       		.uleb128 0xb
- 3061 0573 78030000 		.4byte	.LASF62
+ 3061 0573 C5030000 		.4byte	.LASF62
  3062 0577 01       		.byte	0x1
- 3063 0578 1005     		.2byte	0x510
+ 3063 0578 1105     		.2byte	0x511
  3064 057a 2C000000 		.4byte	0x2c
  3065 057e 00000000 		.4byte	.LFB77
  3066 0582 7C000000 		.4byte	.LFE77-.LFB77
@@ -4717,17 +4718,17 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  3068 0587 9C       		.byte	0x9c
  3069 0588 BA050000 		.4byte	0x5ba
  3070 058c 0C       		.uleb128 0xc
- 3071 058d A2030000 		.4byte	.LASF63
+ 3071 058d EF030000 		.4byte	.LASF63
  3072 0591 01       		.byte	0x1
- 3073 0592 1205     		.2byte	0x512
+ 3073 0592 1305     		.2byte	0x513
  3074 0594 53000000 		.4byte	0x53
  3075 0598 02       		.uleb128 0x2
  3076 0599 91       		.byte	0x91
  3077 059a 70       		.sleb128 -16
  3078 059b 0C       		.uleb128 0xc
- 3079 059c 87020000 		.4byte	.LASF64
+ 3079 059c D4020000 		.4byte	.LASF64
  3080 05a0 01       		.byte	0x1
- 3081 05a1 1305     		.2byte	0x513
+ 3081 05a1 1405     		.2byte	0x514
  3082 05a3 3A000000 		.4byte	0x3a
  3083 05a7 02       		.uleb128 0x2
  3084 05a8 91       		.byte	0x91
@@ -4735,46 +4736,46 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  3086 05aa 0C       		.uleb128 0xc
  3087 05ab 8F000000 		.4byte	.LASF65
  3088 05af 01       		.byte	0x1
- 3089 05b0 1405     		.2byte	0x514
+ 3089 05b0 1505     		.2byte	0x515
  3090 05b2 3A000000 		.4byte	0x3a
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 80
+
+
  3091 05b6 02       		.uleb128 0x2
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 80
-
-
  3092 05b7 91       		.byte	0x91
  3093 05b8 6E       		.sleb128 -18
  3094 05b9 00       		.byte	0
  3095 05ba 12       		.uleb128 0x12
- 3096 05bb D9040000 		.4byte	.LASF66
+ 3096 05bb DC040000 		.4byte	.LASF66
  3097 05bf 01       		.byte	0x1
- 3098 05c0 4005     		.2byte	0x540
+ 3098 05c0 4105     		.2byte	0x541
  3099 05c2 2C000000 		.4byte	0x2c
  3100 05c6 00000000 		.4byte	.LFB78
  3101 05ca 18000000 		.4byte	.LFE78-.LFB78
  3102 05ce 01       		.uleb128 0x1
  3103 05cf 9C       		.byte	0x9c
  3104 05d0 13       		.uleb128 0x13
- 3105 05d1 E1030000 		.4byte	.LASF78
+ 3105 05d1 2E040000 		.4byte	.LASF78
  3106 05d5 01       		.byte	0x1
- 3107 05d6 5405     		.2byte	0x554
+ 3107 05d6 5505     		.2byte	0x555
  3108 05d8 00000000 		.4byte	.LFB79
  3109 05dc 26000000 		.4byte	.LFE79-.LFB79
  3110 05e0 01       		.uleb128 0x1
  3111 05e1 9C       		.byte	0x9c
  3112 05e2 14       		.uleb128 0x14
- 3113 05e3 C2040000 		.4byte	.LASF67
+ 3113 05e3 C5040000 		.4byte	.LASF67
  3114 05e7 04       		.byte	0x4
  3115 05e8 55       		.byte	0x55
  3116 05e9 2C000000 		.4byte	0x2c
  3117 05ed 15       		.uleb128 0x15
- 3118 05ee ED040000 		.4byte	.LASF68
+ 3118 05ee F0040000 		.4byte	.LASF68
  3119 05f2 05       		.byte	0x5
- 3120 05f3 5506     		.2byte	0x655
+ 3120 05f3 9606     		.2byte	0x696
  3121 05f5 F9050000 		.4byte	0x5f9
  3122 05f9 16       		.uleb128 0x16
  3123 05fa 76000000 		.4byte	0x76
  3124 05fe 17       		.uleb128 0x17
- 3125 05ff 5A010000 		.4byte	.LASF69
+ 3125 05ff A7010000 		.4byte	.LASF69
  3126 0603 01       		.byte	0x1
  3127 0604 42       		.byte	0x42
  3128 0605 53000000 		.4byte	0x53
@@ -4782,7 +4783,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  3130 060a 03       		.byte	0x3
  3131 060b 00000000 		.4byte	checksum_Privileged
  3132 060f 17       		.uleb128 0x17
- 3133 0610 40030000 		.4byte	.LASF70
+ 3133 0610 8D030000 		.4byte	.LASF70
  3134 0614 01       		.byte	0x1
  3135 0615 43       		.byte	0x43
  3136 0616 53000000 		.4byte	0x53
@@ -4790,18 +4791,18 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  3138 061b 03       		.byte	0x3
  3139 061c 00000000 		.4byte	statusCode
  3140 0620 17       		.uleb128 0x17
- 3141 0621 69020000 		.4byte	.LASF71
+ 3141 0621 B6020000 		.4byte	.LASF71
  3142 0625 01       		.byte	0x1
  3143 0626 45       		.byte	0x45
  3144 0627 2C000000 		.4byte	0x2c
  3145 062b 05       		.uleb128 0x5
  3146 062c 03       		.byte	0x3
  3147 062d 00000000 		.4byte	result
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 81
+
+
  3148 0631 17       		.uleb128 0x17
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 81
-
-
- 3149 0632 20010000 		.4byte	.LASF72
+ 3149 0632 6D010000 		.4byte	.LASF72
  3150 0636 01       		.byte	0x1
  3151 0637 46       		.byte	0x46
  3152 0638 2C000000 		.4byte	0x2c
@@ -4809,7 +4810,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  3154 063d 03       		.byte	0x3
  3155 063e 00000000 		.4byte	chipProtectionData_Chip
  3156 0642 17       		.uleb128 0x17
- 3157 0643 AF030000 		.4byte	.LASF73
+ 3157 0643 FC030000 		.4byte	.LASF73
  3158 0647 01       		.byte	0x1
  3159 0648 48       		.byte	0x48
  3160 0649 A3000000 		.4byte	0xa3
@@ -4857,10 +4858,10 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  3202 0023 3A       		.uleb128 0x3a
  3203 0024 0B       		.uleb128 0xb
  3204 0025 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 82
+
+
  3205 0026 0B       		.uleb128 0xb
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 82
-
-
  3206 0027 49       		.uleb128 0x49
  3207 0028 13       		.uleb128 0x13
  3208 0029 00       		.byte	0
@@ -4917,10 +4918,10 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  3259 005c 03       		.uleb128 0x3
  3260 005d 0E       		.uleb128 0xe
  3261 005e 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 83
+
+
  3262 005f 0B       		.uleb128 0xb
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 83
-
-
  3263 0060 3B       		.uleb128 0x3b
  3264 0061 0B       		.uleb128 0xb
  3265 0062 27       		.uleb128 0x27
@@ -4977,10 +4978,10 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  3316 0096 18       		.uleb128 0x18
  3317 0097 9742     		.uleb128 0x2117
  3318 0099 19       		.uleb128 0x19
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 84
+
+
  3319 009a 00       		.byte	0
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 84
-
-
  3320 009b 00       		.byte	0
  3321 009c 0B       		.uleb128 0xb
  3322 009d 2E       		.uleb128 0x2e
@@ -5037,10 +5038,10 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  3373 00d1 13       		.uleb128 0x13
  3374 00d2 02       		.uleb128 0x2
  3375 00d3 18       		.uleb128 0x18
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 85
+
+
  3376 00d4 00       		.byte	0
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 85
-
-
  3377 00d5 00       		.byte	0
  3378 00d6 0E       		.uleb128 0xe
  3379 00d7 34       		.uleb128 0x34
@@ -5097,10 +5098,10 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  3430 010b 49       		.uleb128 0x49
  3431 010c 13       		.uleb128 0x13
  3432 010d 2F       		.uleb128 0x2f
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 86
+
+
  3433 010e 0B       		.uleb128 0xb
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 86
-
-
  3434 010f 00       		.byte	0
  3435 0110 00       		.byte	0
  3436 0111 12       		.uleb128 0x12
@@ -5157,10 +5158,10 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  3487 0146 03       		.uleb128 0x3
  3488 0147 0E       		.uleb128 0xe
  3489 0148 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 87
+
+
  3490 0149 0B       		.uleb128 0xb
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 87
-
-
  3491 014a 3B       		.uleb128 0x3b
  3492 014b 0B       		.uleb128 0xb
  3493 014c 49       		.uleb128 0x49
@@ -5217,10 +5218,10 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  3544 0000 9C000000 		.4byte	0x9c
  3545 0004 0200     		.2byte	0x2
  3546 0006 00000000 		.4byte	.Ldebug_info0
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 88
+
+
  3547 000a 04       		.byte	0x4
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 88
-
-
  3548 000b 00       		.byte	0
  3549 000c 0000     		.2byte	0
  3550 000e 0000     		.2byte	0
@@ -5277,10 +5278,10 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  3601 0030 00000000 		.4byte	.LFB69
  3602 0034 34010000 		.4byte	.LFE69
  3603 0038 00000000 		.4byte	.LFB70
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 89
+
+
  3604 003c 00010000 		.4byte	.LFE70
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 89
-
-
  3605 0040 00000000 		.4byte	.LFB71
  3606 0044 24010000 		.4byte	.LFE71
  3607 0048 00000000 		.4byte	.LFB72
@@ -5337,10 +5338,10 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  3637      6374696F 
  3637      6E536574 
  3638              	.LASF42:
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 90
+
+
  3639 005e 73696C69 		.ascii	"siliconIdData1\000"
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 90
-
-
  3639      636F6E49 
  3639      64446174 
  3639      613100
@@ -5390,333 +5391,333 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 1
  3659      696E6753 
  3659      74657073 
  3659      2E6300
- 3660              	.LASF6:
- 3661 00f0 6C6F6E67 		.ascii	"long long int\000"
- 3661      206C6F6E 
- 3661      6720696E 
- 3661      7400
- 3662              	.LASF32:
- 3663 00fe 63686563 		.ascii	"checksumRow\000"
- 3663      6B73756D 
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 91
+ 3660              	.LASF76:
+ 3661 00f0 443A5C55 		.ascii	"D:\\Users\\WorkBench\\Documents\\GitHub\\BackboneHS"
+ 3661      73657273 
+ 3661      5C576F72 
+ 3661      6B42656E 
+ 3661      63685C44 
+ 3662 011e 53505C50 		.ascii	"SP\\Programmer\\Programmer.cydsn\000"
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 91
 
 
- 3663      526F7700 
- 3664              	.LASF22:
- 3665 010a 70617261 		.ascii	"parameter1\000"
- 3665      6D657465 
- 3665      723100
- 3666              	.LASF30:
- 3667 0115 70617261 		.ascii	"parameter2\000"
- 3667      6D657465 
- 3667      723200
- 3668              	.LASF72:
- 3669 0120 63686970 		.ascii	"chipProtectionData_Chip\000"
- 3669      50726F74 
- 3669      65637469 
- 3669      6F6E4461 
- 3669      74615F43 
- 3670              	.LASF33:
- 3671 0138 63686563 		.ascii	"checksum\000"
- 3671      6B73756D 
- 3671      00
- 3672              	.LASF29:
- 3673 0141 726F7742 		.ascii	"rowByteSize\000"
- 3673      79746553 
- 3673      697A6500 
- 3674              	.LASF47:
- 3675 014d 50726F67 		.ascii	"ProgramFlash\000"
- 3675      72616D46 
- 3675      6C617368 
- 3675      00
- 3676              	.LASF69:
- 3677 015a 63686563 		.ascii	"checksum_Privileged\000"
- 3677      6B73756D 
- 3677      5F507269 
- 3677      76696C65 
- 3677      67656400 
- 3678              	.LASF0:
- 3679 016e 7369676E 		.ascii	"signed char\000"
- 3679      65642063 
- 3679      68617200 
- 3680              	.LASF11:
- 3681 017a 666C6F61 		.ascii	"float\000"
- 3681      7400
- 3682              	.LASF59:
- 3683 0180 70726F74 		.ascii	"protectionData\000"
- 3683      65637469 
- 3683      6F6E4461 
- 3683      746100
- 3684              	.LASF39:
- 3685 018f 56657269 		.ascii	"VerifySiliconId\000"
- 3685      66795369 
- 3685      6C69636F 
- 3685      6E496400 
- 3686              	.LASF23:
- 3687 019f 63686970 		.ascii	"chipProtData\000"
- 3687      50726F74 
- 3687      44617461 
- 3687      00
- 3688              	.LASF21:
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 92
+ 3662      726F6772 
+ 3662      616D6D65 
+ 3662      725C5072 
+ 3662      6F677261 
+ 3663              	.LASF6:
+ 3664 013d 6C6F6E67 		.ascii	"long long int\000"
+ 3664      206C6F6E 
+ 3664      6720696E 
+ 3664      7400
+ 3665              	.LASF32:
+ 3666 014b 63686563 		.ascii	"checksumRow\000"
+ 3666      6B73756D 
+ 3666      526F7700 
+ 3667              	.LASF22:
+ 3668 0157 70617261 		.ascii	"parameter1\000"
+ 3668      6D657465 
+ 3668      723100
+ 3669              	.LASF30:
+ 3670 0162 70617261 		.ascii	"parameter2\000"
+ 3670      6D657465 
+ 3670      723200
+ 3671              	.LASF72:
+ 3672 016d 63686970 		.ascii	"chipProtectionData_Chip\000"
+ 3672      50726F74 
+ 3672      65637469 
+ 3672      6F6E4461 
+ 3672      74615F43 
+ 3673              	.LASF33:
+ 3674 0185 63686563 		.ascii	"checksum\000"
+ 3674      6B73756D 
+ 3674      00
+ 3675              	.LASF29:
+ 3676 018e 726F7742 		.ascii	"rowByteSize\000"
+ 3676      79746553 
+ 3676      697A6500 
+ 3677              	.LASF47:
+ 3678 019a 50726F67 		.ascii	"ProgramFlash\000"
+ 3678      72616D46 
+ 3678      6C617368 
+ 3678      00
+ 3679              	.LASF69:
+ 3680 01a7 63686563 		.ascii	"checksum_Privileged\000"
+ 3680      6B73756D 
+ 3680      5F507269 
+ 3680      76696C65 
+ 3680      67656400 
+ 3681              	.LASF0:
+ 3682 01bb 7369676E 		.ascii	"signed char\000"
+ 3682      65642063 
+ 3682      68617200 
+ 3683              	.LASF11:
+ 3684 01c7 666C6F61 		.ascii	"float\000"
+ 3684      7400
+ 3685              	.LASF59:
+ 3686 01cd 70726F74 		.ascii	"protectionData\000"
+ 3686      65637469 
+ 3686      6F6E4461 
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 92
 
 
- 3689 01ac 74696D65 		.ascii	"time_elapsed\000"
- 3689      5F656C61 
- 3689      70736564 
- 3689      00
- 3690              	.LASF74:
- 3691 01b9 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 3691      4320342E 
- 3691      392E3320 
- 3691      32303135 
- 3691      30333033 
- 3692 01ec 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
- 3692      20726576 
- 3692      6973696F 
- 3692      6E203232 
- 3692      31323230 
- 3693 021f 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
- 3693      66756E63 
- 3693      74696F6E 
- 3693      2D736563 
- 3693      74696F6E 
- 3694              	.LASF58:
- 3695 0247 56657269 		.ascii	"VerifyProtectionSettings\000"
- 3695      66795072 
- 3695      6F746563 
- 3695      74696F6E 
- 3695      53657474 
- 3696              	.LASF15:
- 3697 0260 4F50454E 		.ascii	"OPEN_XXX\000"
- 3697      5F585858 
- 3697      00
- 3698              	.LASF71:
- 3699 0269 72657375 		.ascii	"result\000"
- 3699      6C7400
- 3700              	.LASF61:
- 3701 0270 726F7750 		.ascii	"rowProtectionFlashData\000"
- 3701      726F7465 
- 3701      6374696F 
- 3701      6E466C61 
- 3701      73684461 
- 3702              	.LASF64:
- 3703 0287 63686970 		.ascii	"chip_Checksum\000"
- 3703      5F436865 
- 3703      636B7375 
- 3703      6D00
- 3704              	.LASF53:
- 3705 0295 63686970 		.ascii	"chipData\000"
- 3705      44617461 
- 3705      00
- 3706              	.LASF51:
- 3707 029e 666C6173 		.ascii	"flashData\000"
- 3707      68446174 
- 3707      6100
- 3708              	.LASF1:
- 3709 02a8 756E7369 		.ascii	"unsigned char\000"
- 3709      676E6564 
- 3709      20636861 
- 3709      7200
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 93
+ 3686      746100
+ 3687              	.LASF39:
+ 3688 01dc 56657269 		.ascii	"VerifySiliconId\000"
+ 3688      66795369 
+ 3688      6C69636F 
+ 3688      6E496400 
+ 3689              	.LASF23:
+ 3690 01ec 63686970 		.ascii	"chipProtData\000"
+ 3690      50726F74 
+ 3690      44617461 
+ 3690      00
+ 3691              	.LASF21:
+ 3692 01f9 74696D65 		.ascii	"time_elapsed\000"
+ 3692      5F656C61 
+ 3692      70736564 
+ 3692      00
+ 3693              	.LASF74:
+ 3694 0206 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 3694      4320342E 
+ 3694      392E3320 
+ 3694      32303135 
+ 3694      30333033 
+ 3695 0239 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 3695      20726576 
+ 3695      6973696F 
+ 3695      6E203232 
+ 3695      31323230 
+ 3696 026c 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 3696      66756E63 
+ 3696      74696F6E 
+ 3696      2D736563 
+ 3696      74696F6E 
+ 3697              	.LASF58:
+ 3698 0294 56657269 		.ascii	"VerifyProtectionSettings\000"
+ 3698      66795072 
+ 3698      6F746563 
+ 3698      74696F6E 
+ 3698      53657474 
+ 3699              	.LASF15:
+ 3700 02ad 4F50454E 		.ascii	"OPEN_XXX\000"
+ 3700      5F585858 
+ 3700      00
+ 3701              	.LASF71:
+ 3702 02b6 72657375 		.ascii	"result\000"
+ 3702      6C7400
+ 3703              	.LASF61:
+ 3704 02bd 726F7750 		.ascii	"rowProtectionFlashData\000"
+ 3704      726F7465 
+ 3704      6374696F 
+ 3704      6E466C61 
+ 3704      73684461 
+ 3705              	.LASF64:
+ 3706 02d4 63686970 		.ascii	"chip_Checksum\000"
+ 3706      5F436865 
+ 3706      636B7375 
+ 3706      6D00
+ 3707              	.LASF53:
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 93
 
 
- 3710              	.LASF45:
- 3711 02b6 52656164 		.ascii	"ReadSromStatus\000"
- 3711      53726F6D 
- 3711      53746174 
- 3711      757300
- 3712              	.LASF37:
- 3713 02c5 746F7461 		.ascii	"total_packet_count\000"
- 3713      6C5F7061 
- 3713      636B6574 
- 3713      5F636F75 
- 3713      6E7400
- 3714              	.LASF56:
- 3715 02d8 726F7750 		.ascii	"rowProtectionByteSize\000"
- 3715      726F7465 
- 3715      6374696F 
- 3715      6E427974 
- 3715      6553697A 
- 3716              	.LASF50:
- 3717 02ee 56657269 		.ascii	"VerifyFlash\000"
- 3717      6679466C 
- 3717      61736800 
- 3718              	.LASF7:
- 3719 02fa 6C6F6E67 		.ascii	"long long unsigned int\000"
- 3719      206C6F6E 
- 3719      6720756E 
- 3719      7369676E 
- 3719      65642069 
- 3720              	.LASF46:
- 3721 0311 43686563 		.ascii	"ChecksumPrivileged\000"
- 3721      6B73756D 
- 3721      50726976 
- 3721      696C6567 
- 3721      656400
- 3722              	.LASF8:
- 3723 0324 756E7369 		.ascii	"unsigned int\000"
- 3723      676E6564 
- 3723      20696E74 
- 3723      00
- 3724              	.LASF19:
- 3725 0331 506F6C6C 		.ascii	"PollSromStatus\000"
- 3725      53726F6D 
- 3725      53746174 
- 3725      757300
- 3726              	.LASF70:
- 3727 0340 73746174 		.ascii	"statusCode\000"
- 3727      7573436F 
- 3727      646500
- 3728              	.LASF3:
- 3729 034b 73686F72 		.ascii	"short unsigned int\000"
- 3729      7420756E 
- 3729      7369676E 
- 3729      65642069 
- 3729      6E7400
- 3730              	.LASF38:
- 3731 035e 73746174 		.ascii	"status\000"
- 3731      757300
- 3732              	.LASF34:
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 94
+ 3708 02e2 63686970 		.ascii	"chipData\000"
+ 3708      44617461 
+ 3708      00
+ 3709              	.LASF51:
+ 3710 02eb 666C6173 		.ascii	"flashData\000"
+ 3710      68446174 
+ 3710      6100
+ 3711              	.LASF1:
+ 3712 02f5 756E7369 		.ascii	"unsigned char\000"
+ 3712      676E6564 
+ 3712      20636861 
+ 3712      7200
+ 3713              	.LASF45:
+ 3714 0303 52656164 		.ascii	"ReadSromStatus\000"
+ 3714      53726F6D 
+ 3714      53746174 
+ 3714      757300
+ 3715              	.LASF37:
+ 3716 0312 746F7461 		.ascii	"total_packet_count\000"
+ 3716      6C5F7061 
+ 3716      636B6574 
+ 3716      5F636F75 
+ 3716      6E7400
+ 3717              	.LASF56:
+ 3718 0325 726F7750 		.ascii	"rowProtectionByteSize\000"
+ 3718      726F7465 
+ 3718      6374696F 
+ 3718      6E427974 
+ 3718      6553697A 
+ 3719              	.LASF50:
+ 3720 033b 56657269 		.ascii	"VerifyFlash\000"
+ 3720      6679466C 
+ 3720      61736800 
+ 3721              	.LASF7:
+ 3722 0347 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 3722      206C6F6E 
+ 3722      6720756E 
+ 3722      7369676E 
+ 3722      65642069 
+ 3723              	.LASF46:
+ 3724 035e 43686563 		.ascii	"ChecksumPrivileged\000"
+ 3724      6B73756D 
+ 3724      50726976 
+ 3724      696C6567 
+ 3724      656400
+ 3725              	.LASF8:
+ 3726 0371 756E7369 		.ascii	"unsigned int\000"
+ 3726      676E6564 
+ 3726      20696E74 
+ 3726      00
+ 3727              	.LASF19:
+ 3728 037e 506F6C6C 		.ascii	"PollSromStatus\000"
+ 3728      53726F6D 
+ 3728      53746174 
+ 3728      757300
+ 3729              	.LASF70:
+ 3730 038d 73746174 		.ascii	"statusCode\000"
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 94
 
 
- 3733 0365 63686563 		.ascii	"checksum_chip\000"
- 3733      6B73756D 
- 3733      5F636869 
- 3733      7000
- 3734              	.LASF13:
- 3735 0373 63686172 		.ascii	"char\000"
- 3735      00
- 3736              	.LASF62:
- 3737 0378 56657269 		.ascii	"VerifyChecksum\000"
- 3737      66794368 
- 3737      65636B73 
- 3737      756D00
- 3738              	.LASF4:
- 3739 0387 6C6F6E67 		.ascii	"long int\000"
- 3739      20696E74 
- 3739      00
- 3740              	.LASF26:
- 3741 0390 4C6F6164 		.ascii	"LoadLatch\000"
- 3741      4C617463 
- 3741      6800
- 3742              	.LASF10:
- 3743 039a 696E7433 		.ascii	"int32_t\000"
- 3743      325F7400 
- 3744              	.LASF63:
- 3745 03a2 63686563 		.ascii	"checksum_All\000"
- 3745      6B73756D 
- 3745      5F416C6C 
- 3745      00
- 3746              	.LASF73:
- 3747 03af 666C6F77 		.ascii	"flow\000"
- 3747      00
- 3748              	.LASF27:
- 3749 03b4 61727261 		.ascii	"arrayID\000"
- 3749      79494400 
- 3750              	.LASF5:
- 3751 03bc 6C6F6E67 		.ascii	"long unsigned int\000"
- 3751      20756E73 
- 3751      69676E65 
- 3751      6420696E 
- 3751      7400
- 3752              	.LASF31:
- 3753 03ce 43686563 		.ascii	"ChecksumAPI\000"
- 3753      6B73756D 
- 3753      41504900 
- 3754              	.LASF12:
- 3755 03da 646F7562 		.ascii	"double\000"
- 3755      6C6500
- 3756              	.LASF78:
- 3757 03e1 45786974 		.ascii	"ExitProgrammingMode\000"
- 3757      50726F67 
- 3757      72616D6D 
- 3757      696E674D 
- 3757      6F646500 
- 3758              	.LASF76:
- 3759 03f5 443A5C55 		.ascii	"D:\\Users\\WorkBench\\Documents\\GitHub\\BackboneHS"
- 3759      73657273 
- 3759      5C576F72 
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 95
+ 3730      7573436F 
+ 3730      646500
+ 3731              	.LASF3:
+ 3732 0398 73686F72 		.ascii	"short unsigned int\000"
+ 3732      7420756E 
+ 3732      7369676E 
+ 3732      65642069 
+ 3732      6E7400
+ 3733              	.LASF38:
+ 3734 03ab 73746174 		.ascii	"status\000"
+ 3734      757300
+ 3735              	.LASF34:
+ 3736 03b2 63686563 		.ascii	"checksum_chip\000"
+ 3736      6B73756D 
+ 3736      5F636869 
+ 3736      7000
+ 3737              	.LASF13:
+ 3738 03c0 63686172 		.ascii	"char\000"
+ 3738      00
+ 3739              	.LASF62:
+ 3740 03c5 56657269 		.ascii	"VerifyChecksum\000"
+ 3740      66794368 
+ 3740      65636B73 
+ 3740      756D00
+ 3741              	.LASF4:
+ 3742 03d4 6C6F6E67 		.ascii	"long int\000"
+ 3742      20696E74 
+ 3742      00
+ 3743              	.LASF26:
+ 3744 03dd 4C6F6164 		.ascii	"LoadLatch\000"
+ 3744      4C617463 
+ 3744      6800
+ 3745              	.LASF10:
+ 3746 03e7 696E7433 		.ascii	"int32_t\000"
+ 3746      325F7400 
+ 3747              	.LASF63:
+ 3748 03ef 63686563 		.ascii	"checksum_All\000"
+ 3748      6B73756D 
+ 3748      5F416C6C 
+ 3748      00
+ 3749              	.LASF73:
+ 3750 03fc 666C6F77 		.ascii	"flow\000"
+ 3750      00
+ 3751              	.LASF27:
+ 3752 0401 61727261 		.ascii	"arrayID\000"
+ 3752      79494400 
+ 3753              	.LASF5:
+ 3754 0409 6C6F6E67 		.ascii	"long unsigned int\000"
+ 3754      20756E73 
+ 3754      69676E65 
+ 3754      6420696E 
+ 3754      7400
+ 3755              	.LASF31:
+ 3756 041b 43686563 		.ascii	"ChecksumAPI\000"
+ 3756      6B73756D 
+ 3756      41504900 
+ 3757              	.LASF12:
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 95
 
 
- 3759      6B42656E 
- 3759      63685C44 
- 3760 0423 53505C41 		.ascii	"SP\\AN84858\\Programmer.cydsn\000"
- 3760      4E383438 
- 3760      35385C50 
- 3760      726F6772 
- 3760      616D6D65 
+ 3758 0427 646F7562 		.ascii	"double\000"
+ 3758      6C6500
+ 3759              	.LASF78:
+ 3760 042e 45786974 		.ascii	"ExitProgrammingMode\000"
+ 3760      50726F67 
+ 3760      72616D6D 
+ 3760      696E674D 
+ 3760      6F646500 
  3761              	.LASF25:
- 3762 043f 63686970 		.ascii	"chipProtectionData_Hex\000"
+ 3762 0442 63686970 		.ascii	"chipProtectionData_Hex\000"
  3762      50726F74 
  3762      65637469 
  3762      6F6E4461 
  3762      74615F48 
  3763              	.LASF49:
- 3764 0456 726F7743 		.ascii	"rowCount\000"
+ 3764 0459 726F7743 		.ascii	"rowCount\000"
  3764      6F756E74 
  3764      00
  3765              	.LASF9:
- 3766 045f 5F5F696E 		.ascii	"__int32_t\000"
+ 3766 0462 5F5F696E 		.ascii	"__int32_t\000"
  3766      7433325F 
  3766      7400
  3767              	.LASF16:
- 3768 0469 56495247 		.ascii	"VIRGIN_OPEN\000"
+ 3768 046c 56495247 		.ascii	"VIRGIN_OPEN\000"
  3768      494E5F4F 
  3768      50454E00 
  3769              	.LASF77:
- 3770 0475 5472616E 		.ascii	"Transition_mode\000"
+ 3770 0478 5472616E 		.ascii	"Transition_mode\000"
  3770      73697469 
  3770      6F6E5F6D 
  3770      6F646500 
  3771              	.LASF17:
- 3772 0485 50524F54 		.ascii	"PROT_XXX\000"
+ 3772 0488 50524F54 		.ascii	"PROT_XXX\000"
  3772      5F585858 
  3772      00
  3773              	.LASF57:
- 3774 048e 726F7750 		.ascii	"rowProtectionData\000"
+ 3774 0491 726F7750 		.ascii	"rowProtectionData\000"
  3774      726F7465 
  3774      6374696F 
  3774      6E446174 
  3774      6100
  3775              	.LASF41:
- 3776 04a0 68657853 		.ascii	"hexSiliconId\000"
+ 3776 04a3 68657853 		.ascii	"hexSiliconId\000"
  3776      696C6963 
  3776      6F6E4964 
  3776      00
  3777              	.LASF20:
- 3778 04ad 47657443 		.ascii	"GetChipProtectionVal\000"
+ 3778 04b0 47657443 		.ascii	"GetChipProtectionVal\000"
  3778      68697050 
  3778      726F7465 
  3778      6374696F 
  3778      6E56616C 
  3779              	.LASF67:
- 3780 04c2 7377645F 		.ascii	"swd_PacketAck\000"
+ 3780 04c5 7377645F 		.ascii	"swd_PacketAck\000"
  3780      5061636B 
  3780      65744163 
  3780      6B00
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cchFGJiz.s 			page 96
+
+
  3781              	.LASF55:
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccJqJXhB.s 			page 96
-
-
- 3782 04d0 61727261 		.ascii	"arrayMax\000"
+ 3782 04d3 61727261 		.ascii	"arrayMax\000"
  3782      794D6178 
  3782      00
  3783              	.LASF66:
- 3784 04d9 52656164 		.ascii	"ReadHsspErrorStatus\000"
+ 3784 04dc 52656164 		.ascii	"ReadHsspErrorStatus\000"
  3784      48737370 
  3784      4572726F 
  3784      72537461 
  3784      74757300 
  3785              	.LASF68:
- 3786 04ed 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 3786 04f0 49544D5F 		.ascii	"ITM_RxBuffer\000"
  3786      52784275 
  3786      66666572 
  3786      00
  3787              	.LASF48:
- 3788 04fa 6E756D4F 		.ascii	"numOfFlashRows\000"
+ 3788 04fd 6E756D4F 		.ascii	"numOfFlashRows\000"
  3788      66466C61 
  3788      7368526F 
  3788      777300

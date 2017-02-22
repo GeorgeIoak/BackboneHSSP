@@ -34,7 +34,7 @@
 #define EZI2C_ENABLE_WAKEUP  (1u)
 #define EZI2C_SUBADDR_WIDTH  (0u)
 #define EZI2C_ADDRESSES      (1u)
-#define EZI2C_DEFAULT_ADDR1  (7u)
+#define EZI2C_DEFAULT_ADDR1  (8u)
 #define EZI2C_DEFAULT_ADDR2  (9u)
 
 

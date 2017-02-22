@@ -36,3 +36,15 @@ B_Hssp_Pioneer: B_Hssp_Pioneer.cydwr
 	LIN_Dynamic [v3.20] to [v3.40]
 
 
+Last Modified Date & Time: 02/20/2017 14:43:07
+
+Programmer: TopDesign.cysch
+	LED_R [v2.5] to [v2.20]
+	LED_G [v2.5] to [v2.20]
+	LED_B [v2.5] to [v2.20]
+
+Programmer: Programmer.cydwr
+	cy_boot [v5.30] to [v5.50]
+	LIN_Dynamic [v3.30] to [v3.40]
+
+
