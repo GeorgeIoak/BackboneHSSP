@@ -55,6 +55,9 @@
   <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\PWM_PM.c" value="SOURCE_C;CortexM3;;;;PWM" />
   <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\Clock_1.c" value="SOURCE_C;CortexM3;;;;Clock_1" />
   <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\Clock_1.h" value="HEADER;;;;;Clock_1" />
+  <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\Control_Reg.h" value="HEADER;;;;;Control_Reg" />
+  <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\Control_Reg.c" value="SOURCE_C;CortexM3;;;;Control_Reg" />
+  <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\Control_Reg_PM.c" value="SOURCE_C;CortexM3;;;;Control_Reg" />
   <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\LED_R_GND_aliases.h" value="HEADER;;;;;LED_R_GND" />
   <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\LED_R_GND.c" value="SOURCE_C;CortexM3;;;;LED_R_GND" />
   <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\LED_R_GND.h" value="HEADER;;;;;LED_R_GND" />

@@ -2,7 +2,7 @@
 --	Conversion of Programmer.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Tue Feb 21 17:39:29 2017
+--	Thu Feb 23 08:52:16 2017
 --
 
 USE cypress.cypress.all;
@@ -97,6 +97,31 @@ SIGNAL Net_97 : bit;
 SIGNAL Net_94 : bit;
 SIGNAL Net_99 : bit;
 SIGNAL \PWM:Net_114\ : bit;
+SIGNAL \Control_Reg:clk\ : bit;
+SIGNAL \Control_Reg:rst\ : bit;
+SIGNAL \Control_Reg:control_out_0\ : bit;
+SIGNAL Net_161 : bit;
+SIGNAL \Control_Reg:control_out_1\ : bit;
+SIGNAL Net_162 : bit;
+SIGNAL \Control_Reg:control_out_2\ : bit;
+SIGNAL Net_163 : bit;
+SIGNAL \Control_Reg:control_out_3\ : bit;
+SIGNAL Net_165 : bit;
+SIGNAL \Control_Reg:control_out_4\ : bit;
+SIGNAL Net_166 : bit;
+SIGNAL \Control_Reg:control_out_5\ : bit;
+SIGNAL Net_167 : bit;
+SIGNAL \Control_Reg:control_out_6\ : bit;
+SIGNAL Net_168 : bit;
+SIGNAL \Control_Reg:control_out_7\ : bit;
+SIGNAL \Control_Reg:control_7\ : bit;
+SIGNAL \Control_Reg:control_6\ : bit;
+SIGNAL \Control_Reg:control_5\ : bit;
+SIGNAL \Control_Reg:control_4\ : bit;
+SIGNAL \Control_Reg:control_3\ : bit;
+SIGNAL \Control_Reg:control_2\ : bit;
+SIGNAL \Control_Reg:control_1\ : bit;
+SIGNAL \Control_Reg:control_0\ : bit;
 SIGNAL tmpOE__LED_R_GND_net_0 : bit;
 SIGNAL tmpFB_0__LED_R_GND_net_0 : bit;
 SIGNAL tmpIO_0__LED_R_GND_net_0 : bit;
@@ -832,7 +857,7 @@ LED_B:cy_psoc3_pins_v1_10
 \PWM:PWMHW\:cy_psoc3_timer_v1_0
 	GENERIC MAP(cy_registers=>"")
 	PORT MAP(clock=>Net_93,
-		kill=>zero,
+		kill=>Net_99,
 		enable=>tmpOE__Pin_SWDCK_net_0,
 		capture=>zero,
 		timer_reset=>zero,
@@ -849,6 +874,16 @@ Clock_1:cy_clock_v1_0
 		is_digital=>'1')
 	PORT MAP(clock_out=>Net_93,
 		dig_domain_out=>open);
+\Control_Reg:Sync:ctrl_reg\:cy_psoc3_control
+	GENERIC MAP(cy_init_value=>"00000000",
+		cy_force_order=>'1',
+		cy_ctrl_mode_1=>"00000000",
+		cy_ctrl_mode_0=>"00000000",
+		cy_ext_reset=>'0')
+	PORT MAP(reset=>zero,
+		clock=>zero,
+		control=>(\Control_Reg:control_7\, \Control_Reg:control_6\, \Control_Reg:control_5\, \Control_Reg:control_4\,
+			\Control_Reg:control_3\, \Control_Reg:control_2\, \Control_Reg:control_1\, Net_99));
 LED_R_GND:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"d8573a58-b950-4456-a9ea-5c54b46b0b52",
 		drive_mode=>"110",

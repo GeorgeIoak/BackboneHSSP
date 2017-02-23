@@ -152,6 +152,8 @@ int main()
     LED_G_Write(0);
     LED_B_Write(0);
     LED_R_GND_Write(0);
+    /* Write a byte to a Control Register */
+    Control_Reg_Write(0x00u); //Enables PWM
     PWM_Start();
        
     /* Start EZI2C */
@@ -185,8 +187,10 @@ int main()
 	    /* Character LCD will display the status of HSSP Programming  */
 	    LCD_Char_ClearDisplay();
 	}
+    /* Write a byte to a Control Register */
+    Control_Reg_Write(0x01u); //Kills PWM
     PWM_Stop();
-    LED_B_Write(0);
+    LED_B_Write(0); //Turn Blue LED OFF
     
 	/* HSSP completed successfully */
     if(programResult == SUCCESS) 

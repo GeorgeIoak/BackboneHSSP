@@ -1,6 +1,6 @@
 // ======================================================================
 // Programmer.v generated from TopDesign.cysch
-// 02/21/2017 at 17:39
+// 02/23/2017 at 08:52
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -308,9 +308,31 @@ module PWM_v3_30_1 (
 
 endmodule
 
+// Component: CyControlReg_v1_80
+`ifdef CY_BLK_DIR
+`undef CY_BLK_DIR
+`endif
+
+`ifdef WARP
+`define CY_BLK_DIR "C:\Program Files\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_80"
+`include "C:\Program Files\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_80\CyControlReg_v1_80.v"
+`else
+`define CY_BLK_DIR "C:\Program Files\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_80"
+`include "C:\Program Files\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_80\CyControlReg_v1_80.v"
+`endif
+
 // top
 module top ;
 
+          wire  Net_170;
+          wire  Net_169;
+          wire  Net_168;
+          wire  Net_167;
+          wire  Net_166;
+          wire  Net_165;
+          wire  Net_163;
+          wire  Net_162;
+          wire  Net_161;
           wire  Net_134;
           wire  Net_105;
           wire  Net_104;
@@ -333,10 +355,10 @@ module top ;
           wire  Net_22;
     electrical  Net_47;
           wire  Net_5;
+          wire  Net_99;
           wire  Net_103;
           wire  Net_92;
           wire  Net_93;
-          wire  Net_99;
     electrical  Net_81;
     electrical  Net_82;
     electrical  Net_85;
@@ -1065,9 +1087,6 @@ module top ;
     ZeroTerminal ZeroTerminal_1 (
         .z(Net_92));
 
-    ZeroTerminal ZeroTerminal_2 (
-        .z(Net_99));
-
 
 	cy_clock_v1_0
 		#(.id("e5eb06af-8535-4884-a5bc-3bf1fdae1830"),
@@ -1079,6 +1098,30 @@ module top ;
 		Clock_1
 		 (.clock_out(Net_93));
 
+
+    CyControlReg_v1_80 Control_Reg (
+        .control_1(Net_161),
+        .control_2(Net_162),
+        .control_3(Net_163),
+        .control_0(Net_99),
+        .control_4(Net_165),
+        .control_5(Net_166),
+        .control_6(Net_167),
+        .control_7(Net_168),
+        .clock(1'b0),
+        .reset(1'b0));
+    defparam Control_Reg.Bit0Mode = 0;
+    defparam Control_Reg.Bit1Mode = 0;
+    defparam Control_Reg.Bit2Mode = 0;
+    defparam Control_Reg.Bit3Mode = 0;
+    defparam Control_Reg.Bit4Mode = 0;
+    defparam Control_Reg.Bit5Mode = 0;
+    defparam Control_Reg.Bit6Mode = 0;
+    defparam Control_Reg.Bit7Mode = 0;
+    defparam Control_Reg.BitValue = 0;
+    defparam Control_Reg.BusDisplay = 0;
+    defparam Control_Reg.ExtrReset = 0;
+    defparam Control_Reg.NumOutputs = 1;
 
 	wire [0:0] tmpOE__LED_R_GND_net;
 	wire [0:0] tmpFB_0__LED_R_GND_net;

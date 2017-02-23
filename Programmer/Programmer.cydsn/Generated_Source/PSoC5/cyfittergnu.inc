@@ -434,6 +434,28 @@
 .set Pin_Start__SHIFT, 2
 .set Pin_Start__SLW, CYREG_PRT2_SLW
 
+/* Control_Reg */
+.set Control_Reg_Sync_ctrl_reg__0__MASK, 0x01
+.set Control_Reg_Sync_ctrl_reg__0__POS, 0
+.set Control_Reg_Sync_ctrl_reg__16BIT_CONTROL_AUX_CTL_REG, CYREG_B0_UDB11_12_ACTL
+.set Control_Reg_Sync_ctrl_reg__16BIT_CONTROL_CONTROL_REG, CYREG_B0_UDB11_12_CTL
+.set Control_Reg_Sync_ctrl_reg__16BIT_CONTROL_COUNT_REG, CYREG_B0_UDB11_12_CTL
+.set Control_Reg_Sync_ctrl_reg__16BIT_COUNT_CONTROL_REG, CYREG_B0_UDB11_12_CTL
+.set Control_Reg_Sync_ctrl_reg__16BIT_COUNT_COUNT_REG, CYREG_B0_UDB11_12_CTL
+.set Control_Reg_Sync_ctrl_reg__16BIT_MASK_MASK_REG, CYREG_B0_UDB11_12_MSK
+.set Control_Reg_Sync_ctrl_reg__16BIT_MASK_PERIOD_REG, CYREG_B0_UDB11_12_MSK
+.set Control_Reg_Sync_ctrl_reg__16BIT_PERIOD_MASK_REG, CYREG_B0_UDB11_12_MSK
+.set Control_Reg_Sync_ctrl_reg__16BIT_PERIOD_PERIOD_REG, CYREG_B0_UDB11_12_MSK
+.set Control_Reg_Sync_ctrl_reg__CONTROL_AUX_CTL_REG, CYREG_B0_UDB11_ACTL
+.set Control_Reg_Sync_ctrl_reg__CONTROL_REG, CYREG_B0_UDB11_CTL
+.set Control_Reg_Sync_ctrl_reg__CONTROL_ST_REG, CYREG_B0_UDB11_ST_CTL
+.set Control_Reg_Sync_ctrl_reg__COUNT_REG, CYREG_B0_UDB11_CTL
+.set Control_Reg_Sync_ctrl_reg__COUNT_ST_REG, CYREG_B0_UDB11_ST_CTL
+.set Control_Reg_Sync_ctrl_reg__MASK, 0x01
+.set Control_Reg_Sync_ctrl_reg__MASK_CTL_AUX_CTL_REG, CYREG_B0_UDB11_MSK_ACTL
+.set Control_Reg_Sync_ctrl_reg__PER_CTL_AUX_CTL_REG, CYREG_B0_UDB11_MSK_ACTL
+.set Control_Reg_Sync_ctrl_reg__PERIOD_REG, CYREG_B0_UDB11_MSK
+
 /* Miscellaneous */
 .set BCLK__BUS_CLK__HZ, 62999999
 .set BCLK__BUS_CLK__KHZ, 62999

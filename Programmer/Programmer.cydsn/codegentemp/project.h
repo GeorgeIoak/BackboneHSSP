@@ -40,6 +40,7 @@
 #include "LED_B.h"
 #include "PWM.h"
 #include "Clock_1.h"
+#include "Control_Reg.h"
 #include "LED_R_GND_aliases.h"
 #include "LED_R_GND.h"
 #include "LCD_Char_LCDPort_aliases.h"

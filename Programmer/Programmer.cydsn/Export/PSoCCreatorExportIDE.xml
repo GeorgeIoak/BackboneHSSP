@@ -144,6 +144,9 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_R_GND_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_R_GND.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_R_GND.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Control_Reg.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Control_Reg.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Control_Reg_PM.c</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\Export\ARM_GCC_Generic">
