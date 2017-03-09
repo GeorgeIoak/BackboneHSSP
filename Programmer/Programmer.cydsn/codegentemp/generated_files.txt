@@ -53,6 +53,9 @@
   <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\PWM.c" value="SOURCE_C;CortexM3;;;;PWM" />
   <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\PWM.h" value="HEADER;;;;;PWM" />
   <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\PWM_PM.c" value="SOURCE_C;CortexM3;;;;PWM" />
+  <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\Pin_Power_aliases.h" value="HEADER;;;;;Pin_Power" />
+  <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\Pin_Power.c" value="SOURCE_C;CortexM3;;;;Pin_Power" />
+  <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\Pin_Power.h" value="HEADER;;;;;Pin_Power" />
   <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\Clock_1.c" value="SOURCE_C;CortexM3;;;;Clock_1" />
   <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\Clock_1.h" value="HEADER;;;;;Clock_1" />
   <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\Control_Reg.h" value="HEADER;;;;;Control_Reg" />

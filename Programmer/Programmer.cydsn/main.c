@@ -118,6 +118,8 @@ int main()
 	/* Variable to store the SROM Error status if errorStatus contains
 	   SROM_TIMEOUT_ERROR error */
     unsigned char sromErrorStatus;
+        
+    Pin_Power_Write(1); //Turn Relay OFF on Power Up
 	
 	/* Set USE_LCD macro to 0 if PSoC 5LP is not used as host microcontroller */
 	if(USE_LCD)
@@ -179,6 +181,7 @@ int main()
 
 
     /* Start the HSSP Programming and store the status */
+    Pin_Power_Write(0); //Turn relay on to power DUT, active low
     programResult = ProgramDevice();
     
 	/* Set USE_LCD macro to 0 if PSoC 5LP is not used as host microcontroller */
@@ -247,6 +250,7 @@ int main()
 			}
         }
     }
+    Pin_Power_Write(1); //Done programming power DUT OFF
 
 
         /* Do Nothing */

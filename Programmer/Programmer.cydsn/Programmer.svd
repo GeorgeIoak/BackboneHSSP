@@ -301,7 +301,7 @@
     <peripheral>
       <name>Control_Reg</name>
       <description>No description available</description>
-      <baseAddress>0x4000647B</baseAddress>
+      <baseAddress>0x40006575</baseAddress>
       <addressBlock>
         <offset>0</offset>
         <size>0x0</size>

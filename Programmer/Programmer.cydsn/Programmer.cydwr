@@ -214,6 +214,7 @@
       <Data key="068d9cda-21c5-4e26-942e-0c3a642dd8d0" value="Pin_XRES" />
       <Data key="083e1309-2fa1-42e3-a472-5843afc0d439/16a808f6-2e13-45b9-bce0-b001c8655113" value="ADC_Bypass" />
       <Data key="264be2d3-9481-494b-8d9c-c1905a45e9cc" value="Pin_EN1" />
+      <Data key="340e5a92-f438-41a3-bedc-72cb1d54c6a1" value="Pin_Power" />
       <Data key="724e57d8-aa62-4f79-abe9-bdecd9a76b81" value="Pin_OC" />
       <Data key="4588aa3b-dd4d-482a-9174-408439572817" value="Pin_Test" />
       <Data key="22863ebe-a37b-476f-b252-6e49a8c00b12" value="SDA" />
@@ -3354,6 +3355,11 @@
         <Data key="Port Format" value="1,2" />
       </Group>
     </Group>
+    <Group key="340e5a92-f438-41a3-bedc-72cb1d54c6a1">
+      <Group key="0">
+        <Data key="Port Format" value="0,3" />
+      </Group>
+    </Group>
     <Group key="724e57d8-aa62-4f79-abe9-bdecd9a76b81">
       <Group key="0">
         <Data key="Port Format" value="1,6" />
@@ -3367,29 +3373,6 @@
     <Group key="22863ebe-a37b-476f-b252-6e49a8c00b12">
       <Group key="0">
         <Data key="Port Format" value="12,1" />
-      </Group>
-    </Group>
-    <Group key="968297d3-9048-4d36-8b4b-2c484675ee74/ed092b9b-d398-4703-be89-cebf998501f6">
-      <Group key="0">
-        <Data key="Port Format" value="0,0" />
-      </Group>
-      <Group key="1">
-        <Data key="Port Format" value="0,1" />
-      </Group>
-      <Group key="2">
-        <Data key="Port Format" value="0,2" />
-      </Group>
-      <Group key="3">
-        <Data key="Port Format" value="0,3" />
-      </Group>
-      <Group key="4">
-        <Data key="Port Format" value="0,4" />
-      </Group>
-      <Group key="5">
-        <Data key="Port Format" value="0,5" />
-      </Group>
-      <Group key="6">
-        <Data key="Port Format" value="0,6" />
       </Group>
     </Group>
     <Group key="64580169-12c5-4154-bcc8-c030b8b61720">
@@ -3410,6 +3393,15 @@
     <Group key="UnAssigned Pins">
       <Group key="083e1309-2fa1-42e3-a472-5843afc0d439/16a808f6-2e13-45b9-bce0-b001c8655113">
         <Data key="0" value="131321033102062086" />
+      </Group>
+      <Group key="968297d3-9048-4d36-8b4b-2c484675ee74/ed092b9b-d398-4703-be89-cebf998501f6">
+        <Data key="0" value="131327908524880917" />
+        <Data key="1" value="131327908524880917" />
+        <Data key="2" value="131327908524880917" />
+        <Data key="3" value="131327908524880917" />
+        <Data key="4" value="131327908524880917" />
+        <Data key="5" value="131327908524880917" />
+        <Data key="6" value="131327908524880917" />
       </Group>
       <Group key="77715107-f8d5-47e5-a629-0fb83101ac6b">
         <Data key="0" value="131321029501546149" />

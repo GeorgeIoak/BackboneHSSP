@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <blockRegMap version="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://cypress.com/xsd/cyblockregmap cyblockregmap.xsd" xmlns="http://cypress.com/xsd/cyblockregmap">
-  <block name="LED_B" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="PWM" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
     <block name="vmIRQ" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="vmCompare" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
@@ -59,25 +58,27 @@
     <register name="PWM_PERIOD" address="0x40004F04" bitWidth="8" desc="TMRx.PER0 - Assigned Period" hidden="false" />
     <register name="PWM_COMPARE" address="0x40004F06" bitWidth="8" desc="TMRx.CNT_CMP0 - Assigned Compare Value" hidden="false" />
   </block>
+  <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="LED_B" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="LED_R" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="LED_G" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="LED_R_GND" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="cy_boot" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="Clock_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="Control_Reg" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
-    <register name="Control_Reg_CONTROL_REG" address="0x4000647B" bitWidth="8" desc="" hidden="false" />
+    <register name="Control_Reg_CONTROL_REG" address="0x40006575" bitWidth="8" desc="" hidden="false" />
   </block>
-  <block name="SCL" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="Pin_SWDIO" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Pin_Power" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Clock_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="LCD_Char" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
     <block name="LCDPort" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   </block>
+  <block name="Pin_Start" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Pin_SWDIO" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="Pin_SWDCK" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="Pin_XRES" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="Pin_Start" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="R2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="Vdd" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="SCL" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="R2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="SDA" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="R1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
 </blockRegMap>

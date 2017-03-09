@@ -39,6 +39,8 @@
 #include "LED_B_aliases.h"
 #include "LED_B.h"
 #include "PWM.h"
+#include "Pin_Power_aliases.h"
+#include "Pin_Power.h"
 #include "Clock_1.h"
 #include "Control_Reg.h"
 #include "LED_R_GND_aliases.h"
