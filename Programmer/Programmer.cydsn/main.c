@@ -157,6 +157,9 @@ int main()
     /* Write a byte to a Control Register */
     Control_Reg_Write(0x00u); //Enables PWM
     PWM_Start();
+    // Set SWDCK low initially because high bleeds though & powers board
+    Pin_SWDCK_Write(0);
+    Pin_SWDIO_Write(0);
        
     /* Start EZI2C */
    // EZI2C_Start();
@@ -250,7 +253,9 @@ int main()
 			}
         }
     }
+    Pin_SWDCK_Write(0); //Leaving high causes bleed through & powers device
     Pin_Power_Write(1); //Done programming power DUT OFF
+    Pin_XRES_SetDriveMode(Pin_XRES_DM_ALG_HIZ);
 
 
         /* Do Nothing */

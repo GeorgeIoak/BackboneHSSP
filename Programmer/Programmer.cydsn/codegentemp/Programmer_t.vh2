@@ -1,5 +1,5 @@
 -- Project:   D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\Programmer.cyprj
--- Generated: 03/09/2017 09:49:25
+-- Generated: 03/10/2017 13:35:48
 -- PSoC Creator  4.0 Update 1
 
 ENTITY Programmer IS
@@ -336,7 +336,7 @@ BEGIN
             drive_mode => "110",
             ibuf_enabled => "1",
             id => "52f31aa9-2f0a-497d-9a1f-1424095e13e6",
-            init_dr_st => "1",
+            init_dr_st => "0",
             input_buffer_sel => "00",
             input_clk_en => 0,
             input_sync => "1",
@@ -426,7 +426,7 @@ BEGIN
             drive_mode => "110",
             ibuf_enabled => "1",
             id => "068d9cda-21c5-4e26-942e-0c3a642dd8d0",
-            init_dr_st => "0",
+            init_dr_st => "1",
             input_buffer_sel => "00",
             input_clk_en => 0,
             input_sync => "1",

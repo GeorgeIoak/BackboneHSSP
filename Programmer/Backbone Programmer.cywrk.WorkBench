@@ -6,14 +6,14 @@
 <CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
 <userData>
 <dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
-<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Components">
 <TreeKeys>
 <v>Source</v>
 <v>Components</v>
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Backbone Programmer\Programmer">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Backbone Programmer\Programmer\Source Files\main.c">
 <ExpandedNodeIds>
 <v>Backbone Programmer</v>
 <v>Backbone Programmer\Programmer</v>
@@ -47,7 +47,6 @@
 <v>Backbone Programmer\Programmer\Source Files\SWD_PhysicalLayer.c</v>
 <v>Backbone Programmer\Programmer\Source Files\SWD_UpperPacketLayer.c</v>
 <v>Backbone Programmer\Programmer\Source Files\Timeout.c</v>
-<v>Backbone Programmer\Programmer\Generated_Source</v>
 <v>Backbone Programmer\Programmer\Generated_Source\PSoC5</v>
 <v>Backbone Programmer\Programmer\Generated_Source\PSoC5\Clock_1</v>
 <v>Backbone Programmer\Programmer\Generated_Source\PSoC5\Clock_1\Clock_1.c</v>
@@ -193,20 +192,9 @@
 <v>Backbone Programmer\Programmer\Source Files\SWD_UpperPacketLayer.c</v>
 <v>Backbone Programmer\Programmer\Source Files\Timeout.c</v>
 <v>Backbone Programmer\Programmer\Generated_Source</v>
-<v>Backbone Programmer\Programmer\Generated_Source\PSoC5</v>
-<v>Backbone Programmer\Programmer\Generated_Source\PSoC5\Clock_1</v>
-<v>Backbone Programmer\Programmer\Generated_Source\PSoC5\Clock_1\Clock_1.c</v>
-<v>Backbone Programmer\Programmer\Generated_Source\PSoC5\Clock_1\Clock_1.h</v>
-<v>Backbone Programmer\Programmer\Generated_Source\PSoC5\Control_Reg</v>
-<v>Backbone Programmer\Programmer\Generated_Source\PSoC5\Control_Reg\Control_Reg.c</v>
-<v>Backbone Programmer\Programmer\Generated_Source\PSoC5\Control_Reg\Control_Reg.h</v>
-<v>Backbone Programmer\Programmer\Generated_Source\PSoC5\Control_Reg\Control_Reg_PM.c</v>
-<v>Backbone Programmer\Programmer\Generated_Source\PSoC5\cy_boot</v>
-<v>Backbone Programmer\Programmer\Generated_Source\PSoC5\LCD_Char</v>
-<v>Backbone Programmer\Programmer\Generated_Source\PSoC5\LCD_Char\LCD_Char.c</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Backbone Programmer">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Backbone Programmer\Programmer\TopDesign\TopDesign.cysch">
 <ExpandedNodeIds>
 <v>Backbone Programmer</v>
 <v>Backbone Programmer\Programmer</v>
@@ -220,7 +208,7 @@
 <v>Backbone Programmer\Programmer\TopDesign\TopDesign.cysch</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Backbone Programmer">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Backbone Programmer\Programmer">
 <ExpandedNodeIds>
 <v>Backbone Programmer</v>
 <v>Backbone Programmer\Programmer</v>
@@ -275,6 +263,48 @@
 <VisibleNodeIds>
 <v>Backbone Programmer</v>
 <v>Backbone Programmer\Programmer</v>
+<v>Backbone Programmer\Programmer\CortexM3</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files\Clock_1.lst</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files\Cm3Start.lst</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files\Control_Reg.lst</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files\Control_Reg_PM.lst</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files\CyDmac.lst</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files\CyFlash.lst</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files\CyLib.lst</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files\cymetadata.lst</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files\cyPm.lst</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files\CySpc.lst</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files\cyutils.lst</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files\DataFetch.lst</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files\HexImage.lst</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD_Char.lst</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD_Char_LCDPort.lst</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD_Char_PM.lst</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files\LED_B.lst</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files\LED_G.lst</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files\LED_R.lst</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files\LED_R_GND.lst</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files\main.lst</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_Power.lst</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_Start.lst</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_SWDCK.lst</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_SWDIO.lst</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_XRES.lst</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files\ProgrammingSteps.lst</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files\PWM.lst</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files\PWM_PM.lst</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files\SCL.lst</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files\SDA.lst</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files\SWD_PacketLayer.lst</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files\SWD_PhysicalLayer.lst</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files\SWD_UpperPacketLayer.lst</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Listing Files\Timeout.lst</v>
+<v>Backbone Programmer\Programmer\CortexM3\ARM_GCC_493\Debug\Programmer.elf</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -332,9 +362,14 @@
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
-<name v=".\Programmer.cydsn\main.c" />
+<name v="D:\BB-JustApp\MTK_V_8\Firmware\PRoC_DUT\PRoC_DUT.cydsn\main.c" />
 <name v=".\Programmer.cydsn\TopDesign\TopDesign.cysch" />
 <name v=".\Programmer.cydsn\Programmer.cydwr" />
+<name v=".\Programmer.cydsn\ProgrammingSteps.c" />
+<name v=".\Programmer.cydsn\DataFetch.c" />
+<name v=".\Programmer.cydsn\SWD_PhysicalLayer.c" />
+<name v=".\Programmer.cydsn\RegisterDefines.h" />
+<name v=".\Programmer.cydsn\main.c" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -342,7 +377,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1421, 621" SelectedTabbedMdiWindow="e2070237-0e11-416a-9ec9-e0ed8777e20d"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="f6c3beda-3892-4cf1-9b24-1a43f96facd4" /><ToolWindow Key="CyFeedbackPageToolWindow:279a374f-99bb-478b-83b4-831f8474bf17:Component Feedback" Guid="db4d3ec7-c22a-4c91-a975-d88f36841e0f" /><DocumentWindow Key="79f49575-2220-4790-bfb0-e75df529db01" Guid="3ea81458-a0e4-4324-9d8e-40bb85bbd008" /><DocumentWindow Key="02a8cebe-6d12-4134-b340-f89b67b42063" Guid="b142cf61-8e06-4ed3-8f5c-5d173a9a94ec" /><DocumentWindow Key="7037edb0-81dc-4ef0-9f76-fd455af5098b" Guid="e2070237-0e11-416a-9ec9-e0ed8777e20d" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1360, 661" SelectedTabbedMdiWindow="5ed04e84-5c07-4a59-a647-702addb1b873"><DocumentWindow Key="9f849ba7-90d0-4f22-a400-c516d0bb40c0" Guid="b202e322-a072-4a49-8f78-205455b70052" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="f6c3beda-3892-4cf1-9b24-1a43f96facd4" /><DocumentWindow Key="2cb9a25e-6b26-483f-903f-142bee7b0cc7" Guid="a8fdf070-c148-4507-9c67-01f893be47d9" /><DocumentWindow Key="06cd3ce4-4da1-44a5-a39a-87d660d357b5" Guid="5ed04e84-5c07-4a59-a647-702addb1b873" /><DocumentWindow Key="47d7f8b0-e0ce-4c97-95e8-1c06324cfcd3" Guid="b0a70572-ef20-4579-aa8b-b99a9eb90d71" /><DocumentWindow Key="c195c304-cd0c-4f07-bb2a-f4a9a00dcca0" Guid="134698ae-3dc8-4e2c-b7ec-96491614f3e0" /><DocumentWindow Key="d6c16dc4-872a-4153-b4ab-37c89dcb531b" Guid="e42b9b71-3ab2-4e21-ae96-a96c89e9aaaf" /><DocumentWindow Key="83e32522-03ac-4629-af15-02079297f31e" Guid="9b4007a9-8a0a-4b43-8fca-5e8346420963" /><DocumentWindow Key="136fab0b-98fb-4358-8f8b-9e41903051bf" Guid="7b0b6fac-5155-4f73-b9ac-06fe0579bbd8" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

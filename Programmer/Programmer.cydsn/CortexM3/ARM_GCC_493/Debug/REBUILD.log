@@ -1,4 +1,4 @@
---------------- Rebuild Started: 02/21/2017 17:39:01 Project: Programmer, Configuration: ARM GCC 4.9-2015-q1-update Debug ---------------
+--------------- Rebuild Started: 03/10/2017 13:35:22 Project: Programmer, Configuration: ARM GCC 4.9-2015-q1-update Debug ---------------
 Deleting file ".\CortexM3\ARM_GCC_493\Debug\main.o"
 Deleting file ".\CortexM3\ARM_GCC_493\Debug\SWD_PhysicalLayer.o"
 Deleting file ".\CortexM3\ARM_GCC_493\Debug\SWD_PacketLayer.o"
@@ -33,6 +33,9 @@ Deleting file ".\CortexM3\ARM_GCC_493\Debug\PWM.o"
 Deleting file ".\CortexM3\ARM_GCC_493\Debug\PWM_PM.o"
 Deleting file ".\CortexM3\ARM_GCC_493\Debug\Clock_1.o"
 Deleting file ".\CortexM3\ARM_GCC_493\Debug\LED_R_GND.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\Control_Reg.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\Control_Reg_PM.o"
+Deleting file ".\CortexM3\ARM_GCC_493\Debug\Pin_Power.o"
 Deleting file ".\CortexM3\ARM_GCC_493\Debug\Programmer.hex"
 Deleting file ".\CortexM3\ARM_GCC_493\Debug\Programmer.elf"
 Deleting file ".\CortexM3\ARM_GCC_493\Debug\Programmer.map"
@@ -47,6 +50,7 @@ Elaborating Design...
 HDL Generation...
 Synthesis...
 Tech Mapping...
+ADD: pft.M0040: information: The following 7 pin(s) will be assigned a location by the fitter: \LCD_Char:LCDPort(0)\, \LCD_Char:LCDPort(1)\, \LCD_Char:LCDPort(2)\, \LCD_Char:LCDPort(3)\, \LCD_Char:LCDPort(4)\, \LCD_Char:LCDPort(5)\, \LCD_Char:LCDPort(6)\
 Analog Placement...
 Analog Routing...
 Analog Code Generation...
@@ -59,6 +63,20 @@ API Generation...
 Dependency Generation...
 Cleanup...
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/main.lst -g -Wall -ffunction-sections -O0 -ffat-lto-objects -c main.c -o .\CortexM3\ARM_GCC_493\Debug\main.o
+In file included from Generated_Source\PSoC5/Pin_SWDCK.h:22:0,
+                 from Generated_Source\PSoC5/project.h:23,
+                 from ./device.h:15,
+                 from main.c:61:
+main.c: In function 'main':
+Generated_Source\PSoC5/cypins.h:291:29: warning: statement with no effect [-Wunused-value]
+ #define PIN_DM_ALG_HIZ      (CY_PINS_DM_ALG_HIZ)
+                             ^
+Generated_Source\PSoC5/Pin_XRES.h:57:45: note: in expansion of macro 'PIN_DM_ALG_HIZ'
+         #define Pin_XRES_DM_ALG_HIZ         PIN_DM_ALG_HIZ
+                                             ^
+main.c:258:5: note: in expansion of macro 'Pin_XRES_DM_ALG_HIZ'
+     Pin_XRES_DM_ALG_HIZ;
+     ^
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/SWD_PhysicalLayer.lst -g -Wall -ffunction-sections -O0 -ffat-lto-objects -c SWD_PhysicalLayer.c -o .\CortexM3\ARM_GCC_493\Debug\SWD_PhysicalLayer.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/SWD_PacketLayer.lst -g -Wall -ffunction-sections -O0 -ffat-lto-objects -c SWD_PacketLayer.c -o .\CortexM3\ARM_GCC_493\Debug\SWD_PacketLayer.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/ProgrammingSteps.lst -g -Wall -ffunction-sections -O0 -ffat-lto-objects -c ProgrammingSteps.c -o .\CortexM3\ARM_GCC_493\Debug\ProgrammingSteps.o
@@ -91,12 +109,15 @@ arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/PWM_PM.lst -g -Wall -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\PWM_PM.c -o .\CortexM3\ARM_GCC_493\Debug\PWM_PM.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/Clock_1.lst -g -Wall -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\Clock_1.c -o .\CortexM3\ARM_GCC_493\Debug\Clock_1.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/LED_R_GND.lst -g -Wall -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\LED_R_GND.c -o .\CortexM3\ARM_GCC_493\Debug\LED_R_GND.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/Control_Reg.lst -g -Wall -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\Control_Reg.c -o .\CortexM3\ARM_GCC_493\Debug\Control_Reg.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/Control_Reg_PM.lst -g -Wall -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\Control_Reg_PM.c -o .\CortexM3\ARM_GCC_493\Debug\Control_Reg_PM.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/Pin_Power.lst -g -Wall -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\Pin_Power.c -o .\CortexM3\ARM_GCC_493\Debug\Pin_Power.o
 arm-none-eabi-as.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -alh=.\CortexM3\ARM_GCC_493\Debug/CyBootAsmGnu.lst -g -o .\CortexM3\ARM_GCC_493\Debug\CyBootAsmGnu.o Generated_Source\PSoC5\CyBootAsmGnu.s
-arm-none-eabi-ar.exe -rs .\CortexM3\ARM_GCC_493\Debug\Programmer.a .\CortexM3\ARM_GCC_493\Debug\cyfitter_cfg.o .\CortexM3\ARM_GCC_493\Debug\Pin_SWDCK.o .\CortexM3\ARM_GCC_493\Debug\Pin_XRES.o .\CortexM3\ARM_GCC_493\Debug\Pin_SWDIO.o .\CortexM3\ARM_GCC_493\Debug\LCD_Char.o .\CortexM3\ARM_GCC_493\Debug\LCD_Char_PM.o .\CortexM3\ARM_GCC_493\Debug\Pin_Start.o .\CortexM3\ARM_GCC_493\Debug\LCD_Char_LCDPort.o .\CortexM3\ARM_GCC_493\Debug\CyDmac.o .\CortexM3\ARM_GCC_493\Debug\CyFlash.o .\CortexM3\ARM_GCC_493\Debug\CyLib.o .\CortexM3\ARM_GCC_493\Debug\cyPm.o .\CortexM3\ARM_GCC_493\Debug\CySpc.o .\CortexM3\ARM_GCC_493\Debug\cyutils.o .\CortexM3\ARM_GCC_493\Debug\SDA.o .\CortexM3\ARM_GCC_493\Debug\SCL.o .\CortexM3\ARM_GCC_493\Debug\LED_R.o .\CortexM3\ARM_GCC_493\Debug\LED_G.o .\CortexM3\ARM_GCC_493\Debug\LED_B.o .\CortexM3\ARM_GCC_493\Debug\PWM.o .\CortexM3\ARM_GCC_493\Debug\PWM_PM.o .\CortexM3\ARM_GCC_493\Debug\Clock_1.o .\CortexM3\ARM_GCC_493\Debug\LED_R_GND.o .\CortexM3\ARM_GCC_493\Debug\CyBootAsmGnu.o
+arm-none-eabi-ar.exe -rs .\CortexM3\ARM_GCC_493\Debug\Programmer.a .\CortexM3\ARM_GCC_493\Debug\cyfitter_cfg.o .\CortexM3\ARM_GCC_493\Debug\Pin_SWDCK.o .\CortexM3\ARM_GCC_493\Debug\Pin_XRES.o .\CortexM3\ARM_GCC_493\Debug\Pin_SWDIO.o .\CortexM3\ARM_GCC_493\Debug\LCD_Char.o .\CortexM3\ARM_GCC_493\Debug\LCD_Char_PM.o .\CortexM3\ARM_GCC_493\Debug\Pin_Start.o .\CortexM3\ARM_GCC_493\Debug\LCD_Char_LCDPort.o .\CortexM3\ARM_GCC_493\Debug\CyDmac.o .\CortexM3\ARM_GCC_493\Debug\CyFlash.o .\CortexM3\ARM_GCC_493\Debug\CyLib.o .\CortexM3\ARM_GCC_493\Debug\cyPm.o .\CortexM3\ARM_GCC_493\Debug\CySpc.o .\CortexM3\ARM_GCC_493\Debug\cyutils.o .\CortexM3\ARM_GCC_493\Debug\SDA.o .\CortexM3\ARM_GCC_493\Debug\SCL.o .\CortexM3\ARM_GCC_493\Debug\LED_R.o .\CortexM3\ARM_GCC_493\Debug\LED_G.o .\CortexM3\ARM_GCC_493\Debug\LED_B.o .\CortexM3\ARM_GCC_493\Debug\PWM.o .\CortexM3\ARM_GCC_493\Debug\PWM_PM.o .\CortexM3\ARM_GCC_493\Debug\Clock_1.o .\CortexM3\ARM_GCC_493\Debug\LED_R_GND.o .\CortexM3\ARM_GCC_493\Debug\Control_Reg.o .\CortexM3\ARM_GCC_493\Debug\Control_Reg_PM.o .\CortexM3\ARM_GCC_493\Debug\Pin_Power.o .\CortexM3\ARM_GCC_493\Debug\CyBootAsmGnu.o
 arm-none-eabi-ar.exe: creating .\CortexM3\ARM_GCC_493\Debug\Programmer.a
 arm-none-eabi-gcc.exe -Wl,--start-group -o .\CortexM3\ARM_GCC_493\Debug\Programmer.elf .\CortexM3\ARM_GCC_493\Debug\main.o .\CortexM3\ARM_GCC_493\Debug\SWD_PhysicalLayer.o .\CortexM3\ARM_GCC_493\Debug\SWD_PacketLayer.o .\CortexM3\ARM_GCC_493\Debug\ProgrammingSteps.o .\CortexM3\ARM_GCC_493\Debug\SWD_UpperPacketLayer.o .\CortexM3\ARM_GCC_493\Debug\Timeout.o .\CortexM3\ARM_GCC_493\Debug\DataFetch.o .\CortexM3\ARM_GCC_493\Debug\HexImage.o .\CortexM3\ARM_GCC_493\Debug\cymetadata.o .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o .\CortexM3\ARM_GCC_493\Debug\Programmer.a "C:\Program Files\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_493\Debug\CyComponentLibrary.a" -mcpu=cortex-m3 -mthumb -g -ffunction-sections -O0 -ffat-lto-objects -L Generated_Source\PSoC5 -Wl,-Map,.\CortexM3\ARM_GCC_493\Debug/Programmer.map -T D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -Wl,--gc-sections -Wl,--end-group
 cyelftool.exe -C D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\CortexM3\ARM_GCC_493\Debug\Programmer.elf --flash_row_size 256 --flash_size 262144
 cyelftool.exe -S D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\CortexM3\ARM_GCC_493\Debug\Programmer.elf
-Flash used: 191062 of 262144 bytes (72.9 %).
+Flash used: 195190 of 262144 bytes (74.5 %).
 SRAM used: 20917 of 65536 bytes (31.9 %). Stack: 16384 bytes. Heap: 4096 bytes.
---------------- Rebuild Succeeded: 02/21/2017 17:39:57 ---------------
+--------------- Rebuild Succeeded: 03/10/2017 13:36:57 ---------------

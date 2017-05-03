@@ -33,7 +33,7 @@ Code Tested With:
 #define NUMBER_OF_FLASH_ROWS_HEX_FILE        1024
 #define FLASH_ROW_BYTE_SIZE_HEX_FILE         256
 #define FLASH_PROTECTION_BYTE_SIZE_HEX_FILE  128
-#define NUMBER_OF_FLASH_ROWS_NOT_INCLUDED    322
+#define NUMBER_OF_FLASH_ROWS_NOT_INCLUDED    307
 
  /*****************************************************************************
  * Global Constant Declarations 

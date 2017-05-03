@@ -1,6 +1,6 @@
 // ======================================================================
 // Programmer.v generated from TopDesign.cysch
-// 03/09/2017 at 09:49
+// 03/10/2017 at 13:35
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -374,7 +374,7 @@ module top ;
 		#(.id("52f31aa9-2f0a-497d-9a1f-1424095e13e6"),
 		  .drive_mode(3'b110),
 		  .ibuf_enabled(1'b1),
-		  .init_dr_st(1'b1),
+		  .init_dr_st(1'b0),
 		  .input_clk_en(0),
 		  .input_sync(1'b1),
 		  .input_sync_mode(1'b0),
@@ -449,7 +449,7 @@ module top ;
 		#(.id("068d9cda-21c5-4e26-942e-0c3a642dd8d0"),
 		  .drive_mode(3'b110),
 		  .ibuf_enabled(1'b1),
-		  .init_dr_st(1'b0),
+		  .init_dr_st(1'b1),
 		  .input_clk_en(0),
 		  .input_sync(1'b1),
 		  .input_sync_mode(1'b0),
