@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccWRpFkj.s 			page 1
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cccxaieO.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccWRpFkj.s 			page 1
   29:Generated_Source\PSoC5/LED_G.c **** * \brief Writes the value to the physical port (data output register), masking
   30:Generated_Source\PSoC5/LED_G.c **** *  and shifting the bits appropriately. 
   31:Generated_Source\PSoC5/LED_G.c **** *
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccWRpFkj.s 			page 2
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cccxaieO.s 			page 2
 
 
   32:Generated_Source\PSoC5/LED_G.c **** * The data output register controls the signal applied to the physical pin in 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccWRpFkj.s 			page 1
   52 0020 FB7B     		ldrb	r3, [r7, #15]
   53 0022 1343     		orrs	r3, r3, r2
   54 0024 DBB2     		uxtb	r3, r3
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccWRpFkj.s 			page 3
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cccxaieO.s 			page 3
 
 
   55 0026 0B70     		strb	r3, [r1]
@@ -136,7 +136,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccWRpFkj.s 			page 1
   66              	.L3:
   67 0032 00BF     		.align	2
   68              	.L2:
-  69 0034 30510040 		.word	1073762608
+  69 0034 00510040 		.word	1073762560
   70              		.cfi_endproc
   71              	.LFE0:
   72              		.size	LED_G_Write, .-LED_G_Write
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccWRpFkj.s 			page 1
   89:Generated_Source\PSoC5/LED_G.c **** *******************************************************************************/
   90:Generated_Source\PSoC5/LED_G.c **** void LED_G_SetDriveMode(uint8 mode)
   91:Generated_Source\PSoC5/LED_G.c **** {
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccWRpFkj.s 			page 4
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cccxaieO.s 			page 4
 
 
   81              		.loc 1 91 0
@@ -225,7 +225,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccWRpFkj.s 			page 1
  120              	.L6:
  121              		.align	2
  122              	.L5:
- 123 0034 18500040 		.word	1073762328
+ 123 0034 00500040 		.word	1073762304
  124              		.cfi_endproc
  125              	.LFE1:
  126              		.size	LED_G_SetDriveMode, .-LED_G_SetDriveMode
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccWRpFkj.s 			page 1
  133              	LED_G_Read:
  134              	.LFB2:
   94:Generated_Source\PSoC5/LED_G.c **** 
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccWRpFkj.s 			page 5
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cccxaieO.s 			page 5
 
 
   95:Generated_Source\PSoC5/LED_G.c **** 
@@ -291,14 +291,14 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccWRpFkj.s 			page 1
  160              	.L10:
  161 001a 00BF     		.align	2
  162              	.L9:
- 163 001c 31510040 		.word	1073762609
+ 163 001c 01510040 		.word	1073762561
  164              		.cfi_endproc
  165              	.LFE2:
  166              		.size	LED_G_Read, .-LED_G_Read
  167              		.section	.text.LED_G_ReadDataReg,"ax",%progbits
  168              		.align	2
  169              		.global	LED_G_ReadDataReg
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccWRpFkj.s 			page 6
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cccxaieO.s 			page 6
 
 
  170              		.thumb
@@ -358,14 +358,14 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccWRpFkj.s 			page 1
  196 0014 5DF8047B 		ldr	r7, [sp], #4
  197              		.cfi_restore 7
  198              		.cfi_def_cfa_offset 0
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccWRpFkj.s 			page 7
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cccxaieO.s 			page 7
 
 
  199 0018 7047     		bx	lr
  200              	.L14:
  201 001a 00BF     		.align	2
  202              	.L13:
- 203 001c 30510040 		.word	1073762608
+ 203 001c 00510040 		.word	1073762560
  204              		.cfi_endproc
  205              	.LFE3:
  206              		.size	LED_G_ReadDataReg, .-LED_G_ReadDataReg
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccWRpFkj.s 			page 1
  253 0057 08       		.byte	0x8
  254 0058 07       		.byte	0x7
  255 0059 40010000 		.4byte	.LASF7
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccWRpFkj.s 			page 8
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cccxaieO.s 			page 8
 
 
  256 005d 03       		.uleb128 0x3
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccWRpFkj.s 			page 1
  310 00cb 02       		.uleb128 0x2
  311 00cc 91       		.byte	0x91
  312 00cd 77       		.sleb128 -9
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccWRpFkj.s 			page 9
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cccxaieO.s 			page 9
 
 
  313 00ce 00       		.byte	0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccWRpFkj.s 			page 1
  367 000e 01       		.uleb128 0x1
  368 000f 10       		.uleb128 0x10
  369 0010 17       		.uleb128 0x17
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccWRpFkj.s 			page 10
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cccxaieO.s 			page 10
 
 
  370 0011 00       		.byte	0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccWRpFkj.s 			page 1
  424 0047 0B       		.uleb128 0xb
  425 0048 27       		.uleb128 0x27
  426 0049 19       		.uleb128 0x19
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccWRpFkj.s 			page 11
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cccxaieO.s 			page 11
 
 
  427 004a 11       		.uleb128 0x11
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccWRpFkj.s 			page 1
  481 0081 19       		.uleb128 0x19
  482 0082 49       		.uleb128 0x49
  483 0083 13       		.uleb128 0x13
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccWRpFkj.s 			page 12
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cccxaieO.s 			page 12
 
 
  484 0084 11       		.uleb128 0x11
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccWRpFkj.s 			page 1
  530              	.LASF16:
  531 001f 76616C75 		.ascii	"value\000"
  531      6500
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccWRpFkj.s 			page 13
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cccxaieO.s 			page 13
 
 
  532              	.LASF23:
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccWRpFkj.s 			page 1
  553 011a 646F7562 		.ascii	"double\000"
  553      6C6500
  554              	.LASF19:
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccWRpFkj.s 			page 14
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cccxaieO.s 			page 14
 
 
  555 0121 4C45445F 		.ascii	"LED_G_ReadDataReg\000"
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccWRpFkj.s 			page 1
  578 01e1 7369676E 		.ascii	"signed char\000"
  578      65642063 
  578      68617200 
-ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\ccWRpFkj.s 			page 15
+ARM GAS  C:\Users\WORKBE~1\AppData\Local\Temp\cccxaieO.s 			page 15
 
 
  579              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

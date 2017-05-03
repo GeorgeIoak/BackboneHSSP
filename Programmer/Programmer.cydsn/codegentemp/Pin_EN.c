@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: LED_R_GND.c  
+* File Name: Pin_EN.c  
 * Version 2.20
 *
 * Description:
@@ -15,15 +15,15 @@
 *******************************************************************************/
 
 #include "cytypes.h"
-#include "LED_R_GND.h"
+#include "Pin_EN.h"
 
 /* APIs are not generated for P15[7:6] on PSoC 5 */
 #if !(CY_PSOC5A &&\
-	 LED_R_GND__PORT == 15 && ((LED_R_GND__MASK & 0xC0) != 0))
+	 Pin_EN__PORT == 15 && ((Pin_EN__MASK & 0xC0) != 0))
 
 
 /*******************************************************************************
-* Function Name: LED_R_GND_Write
+* Function Name: Pin_EN_Write
 ****************************************************************************//**
 *
 * \brief Writes the value to the physical port (data output register), masking
@@ -52,17 +52,17 @@
 *  this function.
 *
 * \funcusage
-*  \snippet LED_R_GND_SUT.c usage_LED_R_GND_Write
+*  \snippet Pin_EN_SUT.c usage_Pin_EN_Write
 *******************************************************************************/
-void LED_R_GND_Write(uint8 value)
+void Pin_EN_Write(uint8 value)
 {
-    uint8 staticBits = (LED_R_GND_DR & (uint8)(~LED_R_GND_MASK));
-    LED_R_GND_DR = staticBits | ((uint8)(value << LED_R_GND_SHIFT) & LED_R_GND_MASK);
+    uint8 staticBits = (Pin_EN_DR & (uint8)(~Pin_EN_MASK));
+    Pin_EN_DR = staticBits | ((uint8)(value << Pin_EN_SHIFT) & Pin_EN_MASK);
 }
 
 
 /*******************************************************************************
-* Function Name: LED_R_GND_SetDriveMode
+* Function Name: Pin_EN_SetDriveMode
 ****************************************************************************//**
 *
 * \brief Sets the drive mode for each of the Pins component's pins.
@@ -85,16 +85,16 @@ void LED_R_GND_Write(uint8 value)
 *  APIs (primary method) or disable interrupts around this function.
 *
 * \funcusage
-*  \snippet LED_R_GND_SUT.c usage_LED_R_GND_SetDriveMode
+*  \snippet Pin_EN_SUT.c usage_Pin_EN_SetDriveMode
 *******************************************************************************/
-void LED_R_GND_SetDriveMode(uint8 mode)
+void Pin_EN_SetDriveMode(uint8 mode)
 {
-	CyPins_SetPinDriveMode(LED_R_GND_0, mode);
+	CyPins_SetPinDriveMode(Pin_EN_0, mode);
 }
 
 
 /*******************************************************************************
-* Function Name: LED_R_GND_Read
+* Function Name: Pin_EN_Read
 ****************************************************************************//**
 *
 * \brief Reads the associated physical port (pin status register) and masks 
@@ -108,16 +108,16 @@ void LED_R_GND_SetDriveMode(uint8 mode)
 *  The current value for the pins in the component as a right justified number.
 *
 * \funcusage
-*  \snippet LED_R_GND_SUT.c usage_LED_R_GND_Read  
+*  \snippet Pin_EN_SUT.c usage_Pin_EN_Read  
 *******************************************************************************/
-uint8 LED_R_GND_Read(void)
+uint8 Pin_EN_Read(void)
 {
-    return (LED_R_GND_PS & LED_R_GND_MASK) >> LED_R_GND_SHIFT;
+    return (Pin_EN_PS & Pin_EN_MASK) >> Pin_EN_SHIFT;
 }
 
 
 /*******************************************************************************
-* Function Name: LED_R_GND_ReadDataReg
+* Function Name: Pin_EN_ReadDataReg
 ****************************************************************************//**
 *
 * \brief Reads the associated physical port's data output register and masks 
@@ -126,8 +126,8 @@ uint8 LED_R_GND_Read(void)
 *
 * The data output register controls the signal applied to the physical pin in 
 * conjunction with the drive mode parameter. This is not the same as the 
-* preferred LED_R_GND_Read() API because the 
-* LED_R_GND_ReadDataReg() reads the data register instead of the status 
+* preferred Pin_EN_Read() API because the 
+* Pin_EN_ReadDataReg() reads the data register instead of the status 
 * register. For output pins this is a useful function to determine the value 
 * just written to the pin.
 *
@@ -136,19 +136,19 @@ uint8 LED_R_GND_Read(void)
 *  justified number for the component instance.
 *
 * \funcusage
-*  \snippet LED_R_GND_SUT.c usage_LED_R_GND_ReadDataReg 
+*  \snippet Pin_EN_SUT.c usage_Pin_EN_ReadDataReg 
 *******************************************************************************/
-uint8 LED_R_GND_ReadDataReg(void)
+uint8 Pin_EN_ReadDataReg(void)
 {
-    return (LED_R_GND_DR & LED_R_GND_MASK) >> LED_R_GND_SHIFT;
+    return (Pin_EN_DR & Pin_EN_MASK) >> Pin_EN_SHIFT;
 }
 
 
 /* If interrupt is connected for this Pins component */ 
-#if defined(LED_R_GND_INTSTAT) 
+#if defined(Pin_EN_INTSTAT) 
 
     /*******************************************************************************
-    * Function Name: LED_R_GND_SetInterruptMode
+    * Function Name: Pin_EN_SetInterruptMode
     ****************************************************************************//**
     *
     * \brief Configures the interrupt mode for each of the Pins component's
@@ -161,12 +161,12 @@ uint8 LED_R_GND_ReadDataReg(void)
     * \param position
     *  The pin position as listed in the Pins component. You may OR these to be 
     *  able to configure the interrupt mode of multiple pins within a Pins 
-    *  component. Or you may use LED_R_GND_INTR_ALL to configure the
+    *  component. Or you may use Pin_EN_INTR_ALL to configure the
     *  interrupt mode of all the pins in the Pins component.       
-    *  - LED_R_GND_0_INTR       (First pin in the list)
-    *  - LED_R_GND_1_INTR       (Second pin in the list)
+    *  - Pin_EN_0_INTR       (First pin in the list)
+    *  - Pin_EN_1_INTR       (Second pin in the list)
     *  - ...
-    *  - LED_R_GND_INTR_ALL     (All pins in Pins component)
+    *  - Pin_EN_INTR_ALL     (All pins in Pins component)
     *
     * \param mode
     *  Interrupt mode for the selected pins. Valid options are documented in
@@ -182,19 +182,19 @@ uint8 LED_R_GND_ReadDataReg(void)
     *  port.
     *
     * \funcusage
-    *  \snippet LED_R_GND_SUT.c usage_LED_R_GND_SetInterruptMode
+    *  \snippet Pin_EN_SUT.c usage_Pin_EN_SetInterruptMode
     *******************************************************************************/
-    void LED_R_GND_SetInterruptMode(uint16 position, uint16 mode)
+    void Pin_EN_SetInterruptMode(uint16 position, uint16 mode)
     {
-		if((position & LED_R_GND_0_INTR) != 0u) 
+		if((position & Pin_EN_0_INTR) != 0u) 
 		{ 
-			 LED_R_GND_0_INTTYPE_REG = (uint8)mode; 
+			 Pin_EN_0_INTTYPE_REG = (uint8)mode; 
 		}
     }
     
     
     /*******************************************************************************
-    * Function Name: LED_R_GND_ClearInterrupt
+    * Function Name: Pin_EN_ClearInterrupt
     ****************************************************************************//**
     *
     * \brief Clears any active interrupts attached with the component and returns 
@@ -211,11 +211,11 @@ uint8 LED_R_GND_ReadDataReg(void)
     *  those associated with the Pins component.
     *
     * \funcusage
-    *  \snippet LED_R_GND_SUT.c usage_LED_R_GND_ClearInterrupt
+    *  \snippet Pin_EN_SUT.c usage_Pin_EN_ClearInterrupt
     *******************************************************************************/
-    uint8 LED_R_GND_ClearInterrupt(void)
+    uint8 Pin_EN_ClearInterrupt(void)
     {
-        return (LED_R_GND_INTSTAT & LED_R_GND_MASK) >> LED_R_GND_SHIFT;
+        return (Pin_EN_INTSTAT & Pin_EN_MASK) >> Pin_EN_SHIFT;
     }
 
 #endif /* If Interrupts Are Enabled for this Pins component */ 

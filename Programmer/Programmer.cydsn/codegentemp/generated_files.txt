@@ -35,9 +35,22 @@
   <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\Pin_Start_aliases.h" value="HEADER;;;;;Pin_Start" />
   <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\Pin_Start.c" value="SOURCE_C;CortexM3;;;;Pin_Start" />
   <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\Pin_Start.h" value="HEADER;;;;;Pin_Start" />
+  <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\Pin_EN_aliases.h" value="HEADER;;;;;Pin_EN" />
+  <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\Pin_EN.c" value="SOURCE_C;CortexM3;;;;Pin_EN" />
+  <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\Pin_EN.h" value="HEADER;;;;;Pin_EN" />
+  <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\Pin_OC_aliases.h" value="HEADER;;;;;Pin_OC" />
+  <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\Pin_OC.c" value="SOURCE_C;CortexM3;;;;Pin_OC" />
+  <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\Pin_OC.h" value="HEADER;;;;;Pin_OC" />
   <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\SDA_aliases.h" value="HEADER;;;;;SDA" />
   <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\SDA.c" value="SOURCE_C;CortexM3;;;;SDA" />
   <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\SDA.h" value="HEADER;;;;;SDA" />
+  <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\ADC.c" value="SOURCE_C;CortexM3;;;;ADC" />
+  <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\ADC.h" value="HEADER;;;;;ADC" />
+  <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\ADC_INT.c" value="SOURCE_C;CortexM3;;;;ADC" />
+  <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\ADC_PM.c" value="SOURCE_C;CortexM3;;;;ADC" />
+  <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\Pin_BatLevel_aliases.h" value="HEADER;;;;;Pin_BatLevel" />
+  <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\Pin_BatLevel.c" value="SOURCE_C;CortexM3;;;;Pin_BatLevel" />
+  <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\Pin_BatLevel.h" value="HEADER;;;;;Pin_BatLevel" />
   <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\SCL_aliases.h" value="HEADER;;;;;SCL" />
   <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\SCL.c" value="SOURCE_C;CortexM3;;;;SCL" />
   <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\SCL.h" value="HEADER;;;;;SCL" />
@@ -53,20 +66,21 @@
   <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\PWM.c" value="SOURCE_C;CortexM3;;;;PWM" />
   <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\PWM.h" value="HEADER;;;;;PWM" />
   <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\PWM_PM.c" value="SOURCE_C;CortexM3;;;;PWM" />
-  <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\Pin_Power_aliases.h" value="HEADER;;;;;Pin_Power" />
-  <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\Pin_Power.c" value="SOURCE_C;CortexM3;;;;Pin_Power" />
-  <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\Pin_Power.h" value="HEADER;;;;;Pin_Power" />
   <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\Clock_1.c" value="SOURCE_C;CortexM3;;;;Clock_1" />
   <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\Clock_1.h" value="HEADER;;;;;Clock_1" />
   <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\Control_Reg.h" value="HEADER;;;;;Control_Reg" />
   <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\Control_Reg.c" value="SOURCE_C;CortexM3;;;;Control_Reg" />
   <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\Control_Reg_PM.c" value="SOURCE_C;CortexM3;;;;Control_Reg" />
-  <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\LED_R_GND_aliases.h" value="HEADER;;;;;LED_R_GND" />
-  <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\LED_R_GND.c" value="SOURCE_C;CortexM3;;;;LED_R_GND" />
-  <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\LED_R_GND.h" value="HEADER;;;;;LED_R_GND" />
   <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\LCD_Char_LCDPort_aliases.h" value="HEADER;;;;;LCD_Char_LCDPort" />
   <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\LCD_Char_LCDPort.c" value="SOURCE_C;CortexM3;;;;LCD_Char_LCDPort" />
   <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\LCD_Char_LCDPort.h" value="HEADER;;;;;LCD_Char_LCDPort" />
+  <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\ADC_IRQ.c" value="SOURCE_C;CortexM3;;;;ADC_IRQ" />
+  <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\ADC_IRQ.h" value="HEADER;;;;;ADC_IRQ" />
+  <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\ADC_theACLK.c" value="SOURCE_C;CortexM3;;;;ADC_theACLK" />
+  <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\ADC_theACLK.h" value="HEADER;;;;;ADC_theACLK" />
+  <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\ADC_Bypass_aliases.h" value="HEADER;;;;;ADC_Bypass" />
+  <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\ADC_Bypass.c" value="SOURCE_C;CortexM3;;;;ADC_Bypass" />
+  <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\ADC_Bypass.h" value="HEADER;;;;;ADC_Bypass" />
   <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\cm3gcc.ld" value="LINKER_SCRIPT;;;b98f980c-3bd1-4fc7-a887-c56a20a46fdd;;cy_boot" />
   <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\Cm3RealView.scat" value="LINKER_SCRIPT;;;fdb8e1ae-f83a-46cf-9446-1d703716f38a;;cy_boot" />
   <file name="D:\Users\WorkBench\Documents\GitHub\BackboneHSSP\Programmer\Programmer.cydsn\codegentemp\Cm3Start.c" value="SOURCE_C;CortexM3;;;;cy_boot" />

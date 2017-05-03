@@ -16,7 +16,9 @@
 ##################################################################### 
                     1::Clock Frequency Summary
 ===================================================================== 
-Number of clocks: 7
+Number of clocks: 9
+Clock: ADC_theACLK              | N/A  | Target: 10.50 MHz  | 
+Clock: ADC_theACLK(routed)      | N/A  | Target: 10.50 MHz  | 
 Clock: Clock_1                  | N/A  | Target: 0.00 MHz   | 
 Clock: Clock_1(fixed-function)  | N/A  | Target: 0.00 MHz   | 
 Clock: CyBUS_CLK                | N/A  | Target: 63.00 MHz  | 
@@ -59,7 +61,7 @@ Port Name  Setup to Clk  Clock Name:Phase
 
 Port Name     Clock to Out  Clock Name:Phase           
 ------------  ------------  -------------------------  
-LED_B(0)_PAD  26262         Clock_1(fixed-function):R  
+LED_B(0)_PAD  21189         Clock_1(fixed-function):R  
 
 
                          3.3::Pad to Pad

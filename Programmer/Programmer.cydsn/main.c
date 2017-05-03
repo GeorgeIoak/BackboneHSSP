@@ -119,7 +119,7 @@ int main()
 	   SROM_TIMEOUT_ERROR error */
     unsigned char sromErrorStatus;
         
-    Pin_Power_Write(1); //Turn Relay OFF on Power Up
+    Pin_EN_Write(1); //Disable Power Switch
 	
 	/* Set USE_LCD macro to 0 if PSoC 5LP is not used as host microcontroller */
 	if(USE_LCD)
@@ -153,7 +153,7 @@ int main()
     LED_R_Write(0);
     LED_G_Write(0);
     LED_B_Write(0);
-    LED_R_GND_Write(0);
+    //LED_R_GND_Write(0);
     /* Write a byte to a Control Register */
     Control_Reg_Write(0x00u); //Enables PWM
     PWM_Start();
@@ -184,7 +184,7 @@ int main()
 
 
     /* Start the HSSP Programming and store the status */
-    Pin_Power_Write(0); //Turn relay on to power DUT, active low
+    Pin_EN_Write(0); //Enable switch to power DUT, active low
     programResult = ProgramDevice();
     
 	/* Set USE_LCD macro to 0 if PSoC 5LP is not used as host microcontroller */
@@ -216,7 +216,7 @@ int main()
     else
     {
         LED_R_Write(1);
-        LED_R_GND_Write(0);
+        //LED_R_GND_Write(0);
 
 		/* Set USE_LCD macro to 0 if PSoC 5LP is not used as host microcontroller */
         if(USE_LCD)
@@ -254,7 +254,7 @@ int main()
         }
     }
     Pin_SWDCK_Write(0); //Leaving high causes bleed through & powers device
-    Pin_Power_Write(1); //Done programming power DUT OFF
+    Pin_EN_Write(1); //Done programming power DUT OFF
     Pin_XRES_SetDriveMode(Pin_XRES_DM_ALG_HIZ);
 
 
